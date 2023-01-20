@@ -1,0 +1,143 @@
+[ID]
+ NUMERO=0523
+ NOMBRE=DPACTIVOS
+ DESCRIPCION=Activos Fijos                                               
+ CONFIG=F
+ SINGUL=Activo Fijo                   
+ APLICA=06
+ PRIMARY_KEY='ATV_CODSUC,ATV_CODIGO'
+[END_ID]
+
+[FIELDS]
+ C001=ATV_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=ATV_ANOGAR          ,'N',002,0,'','Años de Garantía',0
+ C003=ATV_CENCOS          ,'C',008,0,'','Centro de Costos',0
+ C004=ATV_CODDEP          ,'C',010,0,'','Código Departamento',0
+ C005=ATV_CODGRU          ,'C',008,0,'','Grupo',0
+ C006=ATV_CODIGO          ,'C',015,0,'','Código',0
+ C007=ATV_CODMON          ,'C',003,0,'','Moneda o Divisa',0
+ C008=ATV_CODPRO          ,'C',010,0,'','Proveedor',1
+ C009=ATV_CODSUC          ,'C',006,0,'','Sucursal',1
+ C010=ATV_CODUBI          ,'C',008,0,'','Ubicación',0
+ C011=ATV_COSADQ          ,'N',016,2,'','Costo de Adquisición',0
+ C012=ATV_COSUND          ,'N',012,2,'','Costo por Unidad Producida',0
+ C013=ATV_CTAACT          ,'C',020,0,'','Cuenta de Activo',0
+ C014=ATV_CTAACU          ,'C',020,0,'','Depreciación Acumulada Activo',0
+ C015=ATV_CTADEP          ,'C',020,0,'','Depreciación Gasto',0
+ C016=ATV_CTAINT          ,'L',001,0,'','Cuentas Según Código de Integración',0
+ C017=ATV_DEPACU          ,'N',016,2,'','Depreciación Acumulada',0
+ C018=ATV_DEPMEN          ,'N',016,2,'','Depreciación Mensual Fija',0
+ C019=ATV_DEPRE           ,'C',001,0,'','Depreciable S/N',0
+ C020=ATV_DESCRI          ,'C',050,0,'','Descripción',0
+ C021=ATV_ESTADO          ,'C',001,0,'','Estado del Activo',0
+ C022=ATV_FCHADQ          ,'D',008,0,'','Fecha de Adquisición',0
+ C023=ATV_FCHDEP          ,'D',008,0,'','Fecha de Depreciación',0
+ C024=ATV_FCHEST          ,'D',008,0,'','Fecha Desincorporación',0
+ C025=ATV_FCHGAR          ,'D',008,0,'','Fecha de Garantía',0
+ C026=ATV_FCHINC          ,'D',008,0,'','Fecha de Inclusión',0
+ C027=ATV_FCHMAX          ,'D',008,0,'','Fecha Maxima Depreciación',0
+ C028=ATV_FILBMP          ,'C',060,0,'','Fichero BMP',0
+ C029=ATV_FILMAI          ,'N',007,0,'','Digitalización',0
+ C030=ATV_GARANT          ,'N',003,0,'','Tiempo de Garantía',0
+ C031=ATV_GARMOD          ,'C',001,0,'','Modo de Garantía',0
+ C032=ATV_ITEM            ,'C',004,0,'','Número de Item',0
+ C033=ATV_LINXLS          ,'N',004,0,'','Linea en Archivo XLS',0
+ C034=ATV_MEJACT          ,'C',015,0,'','Mejora del Activo',0
+ C035=ATV_MESDEP          ,'N',004,0,'','Meses Depreciados',0
+ C036=ATV_MESGAR          ,'N',002,0,'','Meses de garantía',0
+ C037=ATV_METODO          ,'C',001,0,'','Método de Depreciación',0
+ C038=ATV_NUMCC           ,'C',006,0,'','Centro de Costo Asignado',0
+ C039=ATV_NUMDOC          ,'C',010,0,'','Número del Documento',1
+ C040=ATV_NUMMEM          ,'N',006,0,'','Memo',0
+ C041=ATV_PORVAL          ,'N',002,0,'','% Valor de Salvamento',0
+ C042=ATV_SERIAL          ,'C',020,0,'','Número Serial',0
+ C043=ATV_TIPDOC          ,'C',003,0,'','Tipo de Documento',0
+ C044=ATV_UNIPRO          ,'N',010,2,'','Cantidad a Producir',0
+ C045=ATV_VALSAL          ,'N',016,2,'','Valor de Salvamento',0
+ C046=ATV_VIDA_A          ,'N',002,0,'','Vida Util en Años',0
+ C047=ATV_VIDA_M          ,'N',003,0,'','Más Vida Util en Meses',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCENCOS                , ATV_CENCOS=CEN_CODIGO <UPDATE>  <RUN>
+ T002=DPGRUACTIVOS            , ATV_CODGRU=GAC_CODIGO <UPDATE>  <RUN>
+ T003=DPSUCURSAL              , ATV_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+ T004=DPUBIACTIVOS            , ATV_CODUBI=UAC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPACTIVOSREP            , ATV_CODGRU=RDA_CODIGO, <UPDATE> <DELETE> <RUN>
+ T002=DPACTIVOS_CTA           , ATV_CODSUC,ATV_CODIGO=CIC_CODSUC,CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T003=DPDEPRECIAACT           , ATV_CODSUC,ATV_CODIGO=DEP_CODSUC,DEP_CODACT, <UPDATE> <DELETE> <RUN>
+ T004=DPDEPRECIAACT_HIS       , ATV_CODIGO=DEP_CODACT, <UPDATE> <DELETE> <RUN>
+ T005=DPDEPRECIAACT_HIS       , ATV_CODSUC,ATV_CODIGO=DEP_CODSUC,DEP_CODACT, <UPDATE> <DELETE> <RUN>
+ T006=DPDESINCORPACT          , ATV_CODIGO=DAC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T007=DPDESINCORPACT          , ATV_CODSUC,ATV_CODIGO=DAC_CODSUC,DAC_CODIGO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPASIENTOS              , ATV_CODIGO=MOC_CODAUX, <CAMPO:MOC_CUENTA>, <WHERE:>
+ T002=DPCENCOS                , ATV_CENCOS=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+ T003=DPCTA                   , ATV_CTAACT=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T004=DPCTA                   , ATV_CTAACU=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T005=DPCTA                   , ATV_CTADEP=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T006=DPGRUACTIVOS            , ATV_CODGRU=GAC_CODIGO, <CAMPO:GAC_DESCRI>, <WHERE:>
+ T007=DPPROVEEDOR             , ATV_CODPRO=PRO_CODIGO, <CAMPO:PRO_NOMBRE>, <WHERE:>
+ T008=DPSUCURSAL              , ATV_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+ T009=DPUBIACTIVOS            , ATV_CODUBI=UAC_CODIGO, <CAMPO:UAC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPACTIVOS INNER JOIN DPACTIVOSREP ON RDA_CODIGO=ATV_CODGRU
+ SELECT * FROM DPACTIVOS INNER JOIN DPACTIVOS_CTA ON CIC_CODSUC=ATV_CODSUC AND CIC_CODIGO=ATV_CODIGO
+ SELECT MOC_CUENTA FROM DPACTIVOS INNER JOIN DPASIENTOS ON MOC_CODAUX=ATV_CODIGO
+ SELECT CEN_DESCRI FROM DPACTIVOS INNER JOIN DPCENCOS ON CEN_CODIGO=ATV_CENCOS
+ SELECT CTA_DESCRI FROM DPACTIVOS INNER JOIN DPCTA ON CTA_CODIGO=ATV_CTAACT
+ SELECT CTA_DESCRI FROM DPACTIVOS INNER JOIN DPCTA ON CTA_CODIGO=ATV_CTAACU
+ SELECT CTA_DESCRI FROM DPACTIVOS INNER JOIN DPCTA ON CTA_CODIGO=ATV_CTADEP
+ SELECT * FROM DPACTIVOS INNER JOIN DPDEPRECIAACT ON DEP_CODSUC=ATV_CODSUC AND DEP_CODACT=ATV_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPDEPRECIAACT_HIS ON DEP_CODACT=ATV_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPDEPRECIAACT_HIS ON DEP_CODSUC=ATV_CODSUC AND DEP_CODACT=ATV_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPDESINCORPACT ON DAC_CODIGO=ATV_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPDESINCORPACT ON DAC_CODSUC=ATV_CODSUC AND DAC_CODIGO=ATV_CODIGO
+ SELECT GAC_DESCRI FROM DPACTIVOS INNER JOIN DPGRUACTIVOS ON GAC_CODIGO=ATV_CODGRU
+ SELECT PRO_NOMBRE FROM DPACTIVOS INNER JOIN DPPROVEEDOR ON PRO_CODIGO=ATV_CODPRO
+ SELECT SUC_DESCRI FROM DPACTIVOS INNER JOIN DPSUCURSAL ON SUC_CODIGO=ATV_CODSUC
+ SELECT UAC_DESCRI FROM DPACTIVOS INNER JOIN DPUBIACTIVOS ON UAC_CODIGO=ATV_CODUBI
+ SELECT * FROM DPACTIVOS INNER JOIN DPCENCOS ON ATV_CENCOS=CEN_CODIGO
+ SELECT ATV_DESCRI FROM DPACTIVOS INNER JOIN DPDEPRECIAACT ON ATV_CODSUC=DEP_CODSUC AND ATV_CODIGO=DEP_CODACT
+ SELECT ATV_DESCRI FROM DPACTIVOS INNER JOIN DPDEPRECIAACT_HIS ON ATV_CODSUC=DEP_CODSUC AND ATV_CODIGO=DEP_CODACT
+ SELECT ATV_DESCRI FROM DPACTIVOS INNER JOIN DPDESINCORPACT ON ATV_CODIGO=DAC_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPGRUACTIVOS ON ATV_CODGRU=GAC_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPSUCURSAL ON ATV_CODSUC=SUC_CODIGO
+ SELECT * FROM DPACTIVOS INNER JOIN DPUBIACTIVOS ON ATV_CODUBI=UAC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=ATV_DEPRE           ,Depreciable                                                                     
+ C002=ATV_DEPRE           ,No Depreciable                                                                  
+ C003=ATV_ESTADO          ,Activo                                                                          
+ C004=ATV_ESTADO          ,Desincorporado                                                                  
+ C005=ATV_ESTADO          ,Inactivo                                                                        
+ C006=ATV_GARMOD          ,Años                                                                            
+ C007=ATV_GARMOD          ,Días                                                                            
+ C008=ATV_GARMOD          ,Meses                                                                           
+ C009=ATV_GARMOD          ,Ninguna                                                                         
+ C010=ATV_METODO          ,Decreciente                                                                     
+ C011=ATV_METODO          ,Línea Recta                                                                     
+ C012=ATV_METODO          ,Unidades Producidades                                                           
+ C013=ATV_METODO          ,Variable                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

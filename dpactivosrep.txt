@@ -1,0 +1,42 @@
+[ID]
+ NUMERO=9564
+ NOMBRE=DPACTIVOSREP
+ DESCRIPCION=Repuestos de Activos                                        
+ CONFIG=F
+ SINGUL=Repuesto                      
+ APLICA=01
+ PRIMARY_KEY='RDA_CODIGO,RDA_CODINV'
+[END_ID]
+
+[FIELDS]
+ C001=RDA_CANTID          ,'N',005,2,'','Cantidad',0
+ C002=RDA_CODIGO          ,'C',020,0,'','Código de Activo',0
+ C003=RDA_CODINV          ,'C',020,0,'','Código del Producto',0
+ C004=RDA_FREMAN          ,'C',010,0,'','Frequencia de Mantenimiento',0
+ C005=RDA_FREREM          ,'C',010,0,'','Frequencia de Reemplazo',0
+ C006=RDA_REQMAN          ,'L',001,0,'','Requiere Mantenimiento',0
+ C007=RDA_REQREM          ,'L',001,0,'','Requiere Reemplazo',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPACTIVOS               , RDA_CODIGO=ATV_CODGRU <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPACTIVOSREP INNER JOIN DPACTIVOS ON RDA_CODIGO=ATV_CODGRU
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

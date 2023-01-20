@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=9930
+ NOMBRE=DPADDON
+ DESCRIPCION=Funcionalidades Adicionales                                 
+ CONFIG=Y
+ SINGUL=Funcionalidad Adicional       
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=ADD_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=ADD_AUTEJE          ,'L',001,0,'','Auto Ejecución',0
+ C003=ADD_BMP             ,'C',250,0,'','Fichero de la Imagen',0
+ C004=ADD_BOTBAR          ,'L',001,0,'','Botón de Barra',0
+ C005=ADD_CLAVE           ,'C',250,0,'','Clave',0
+ C006=ADD_CODIGO          ,'C',006,0,'PRIMARY KEY NOT NULL','Código',0
+ C007=ADD_CODPRO          ,'C',020,0,'','Código Producto',0
+ C008=ADD_DESCRI          ,'C',080,0,'','Descripción',0
+ C009=ADD_ESHOP           ,'L',001,0,'','Adquisición desde eAdaptaPro',0
+ C010=ADD_INSTAL          ,'L',001,0,'','Incluye en Instalador',0
+ C011=ADD_LLAVE           ,'M',010,0,'','Llave de Activación',0
+ C012=ADD_MENU            ,'L',001,0,'','Menú Macros',0
+ C013=ADD_NUMPOS          ,'N',004,0,'','Posición de Presentación',0
+ C014=ADD_BTNTEXT         ,'C',060,0,'','Texto Boton',0
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPPROGRA                , ADD_CODIGO=PRG_CODADD, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPADDON INNER JOIN DPPROGRA ON PRG_CODADD=ADD_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

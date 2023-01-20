@@ -1,0 +1,32 @@
+[ID]
+ NUMERO=9509
+ NOMBRE=DPARCHIVOX
+ DESCRIPCION=Archivadero X                                               
+ CONFIG=F
+ SINGUL=Archivadero X                 
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=ARCHIVOX            ,'C',035,0,'PRIMARY KEY NOT NULL','Archivo X',0
+ C002=CODAREA             ,'C',004,0,'','Código de Area',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
