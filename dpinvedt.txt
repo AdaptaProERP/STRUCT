@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=9944
+ NOMBRE=DPINVEDT
+ DESCRIPCION=Códigos de la EDT                                           
+ CONFIG=F
+ SINGUL=Código de EDT                 
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=EDT_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=EDT_CODIGO          ,'C',020,0,'','Código',0
+ C003=EDT_CODINV          ,'C',020,0,'','Código',0
+ C004=EDT_COMPET          ,'C',020,0,'','Competencia',0
+ C005=EDT_DESCRI          ,'C',060,0,'','Descripción',0
+ C006=EDT_FILMAI          ,'N',007,0,'','Registro para Digitalización',0
+ C007=EDT_NUMMEM          ,'N',010,0,'','Campo Memo',0
+ C008=EDT_RECURS          ,'C',020,0,'','Recurso',0
+ C009=EDT_ROL             ,'C',020,0,'','Rol Requerido',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPINV                   , EDT_CODINV=INV_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPINV                   , EDT_CODINV=INV_CODIGO, <CAMPO:INV_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPINVEDT INNER JOIN DPINV ON EDT_CODINV=INV_CODIGO
+ SELECT INV_DESCRI FROM DPINVEDT INNER JOIN DPINV ON INV_CODIGO=EDT_CODINV
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

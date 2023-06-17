@@ -1,0 +1,53 @@
+[ID]
+ NUMERO=9566
+ NOMBRE=DPFTPLEEDATOS
+ DESCRIPCION=Definición Lectura y envio de Dato FTP                      
+ CONFIG=Y
+ SINGUL=Lectura y Envio FTP           
+ APLICA=11
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=MSD_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=MSD_BD_DES          ,'C',120,0,'','Base de Datos Destino',0
+ C003=MSD_CODFTP          ,'C',005,0,'','Cód. FTP',0
+ C004=MSD_CODIGO          ,'C',006,0,'','Código',0
+ C005=MSD_CODSUC          ,'C',006,0,'','Sucursal',0
+ C006=MSD_DESCRI          ,'C',060,0,'','Descripción',0
+ C007=MSD_FCHRUN          ,'D',008,0,'','Ultima Ejecución',0
+ C008=MSD_FECHA           ,'D',008,0,'','Fecha',0
+ C009=MSD_FREQUE          ,'N',019,0,'','Frecuencia',0
+ C010=MSD_HORA            ,'C',008,0,'','Hora',0
+ C011=MSD_HORRUN          ,'C',008,0,'','Hora Ejecución',0
+ C012=MSD_LSUCUR          ,'L',001,0,'','Todas las Sucursales',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPRUNLEEFTPDET          , MSD_CODIGO=MSM_MODFTP, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPFTP                   , MSD_CODFTP=FTP_CODIGO, <CAMPO:FTP_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT FTP_DESCRI FROM DPFTPLEEDATOS INNER JOIN DPFTP ON FTP_CODIGO=MSD_CODFTP
+ SELECT * FROM DPFTPLEEDATOS INNER JOIN DPRUNLEEFTPDET ON MSM_MODFTP=MSD_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

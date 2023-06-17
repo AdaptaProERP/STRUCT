@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=9644
+ NOMBRE=DPMAILS
+ DESCRIPCION=Correos                                                     
+ CONFIG=Y
+ SINGUL=Correo                        
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=MAIL_ADJUNTO        ,'B',000,0,'','Adjunto',0
+ C002=MAIL_ADJUNTO_NOMBRE ,'C',080,0,'','Nombre del Adjunto',0
+ C003=MAIL_EXT            ,'C',005,0,'','Extensión',0
+ C004=MAIL_HTML           ,'M',000,0,'','HTML',0
+ C005=MAIL_ID             ,'N',010,0,'AUTO_INCREMENT PRIMARY KEY','Id',0
+ C006=MAIL_INTENTOS       ,'N',011,0,'','Intentos',0
+ C007=MAIL_REMITE         ,'C',050,0,'','Remite',0
+ C008=MAIL_REMITE_CLAVE   ,'C',050,0,'','Clave',0
+ C009=MAIL_REMITE_NAME    ,'C',050,0,'','Usuario',0
+ C010=MAIL_TITLE          ,'M',000,0,'','Titulo',0
+ C011=MAIL_TO             ,'C',050,0,'','Destino',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

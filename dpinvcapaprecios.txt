@@ -1,0 +1,46 @@
+[ID]
+ NUMERO=0134
+ NOMBRE=DPINVCAPAPRECIOS
+ DESCRIPCION=Capa de Precios                                             
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=CAP_CAPA            ,'N',005,0,'','Capa',0
+ C002=CAP_CODBAR          ,'C',010,0,'','Código de Barra',0
+ C003=CAP_CODIGO          ,'C',020,0,'','Producto',0
+ C004=CAP_CODSUC          ,'C',006,0,'','Sucursal',0
+ C005=CAP_FCHVEN          ,'D',008,0,'','Fecha de Vencimiento',0
+ C006=CAP_FECHA           ,'D',008,0,'','Fecha',0
+ C007=CAP_HORA            ,'C',008,0,'','Hora',0
+ C008=CAP_LOTE            ,'C',020,0,'','Lote',0
+ C009=CAP_PRECIO          ,'N',014,2,'','Precio de Venta',0
+ C010=CAP_UNDMED          ,'C',006,0,'','Unidad de Medida',0
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPMOVINV                , CAP_CODIGO,CAP_CAPA,CAP_FECHA=MOV_CODIGO,MOV_CAPAP,MOV_FECHA, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPINVCAPAPRECIOS INNER JOIN DPMOVINV ON MOV_CODIGO=CAP_CODIGO AND MOV_CAPAP=CAP_CAPA AND MOV_FECHA=CAP_FECHA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

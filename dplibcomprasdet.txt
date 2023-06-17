@@ -1,0 +1,92 @@
+[ID]
+ NUMERO=1011
+ NOMBRE=DPLIBCOMPRASDET
+ DESCRIPCION=Libro de Compras                                            
+ CONFIG=F
+ SINGUL=Libro de Compras              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=LBC_CBTNUM          ,'C',010,0,'','Cbte.;Contable',0
+ C002=LBC_CODCTA          ,'C',020,0,'','Cuenta;Contable',0
+ C003=LBC_CODMOD          ,'C',006,0,'','Cta;Ejercicio',0
+ C004=LBC_CODSUC          ,'C',006,0,'','Cód.;Suc.',0
+ C005=LBC_COMORG          ,'C',012,0,'','Nacional;Importado',0
+ C006=LBC_DESCRI          ,'C',140,0,'','Descripción',0
+ C007=LBC_FACAFE          ,'C',020,0,'','Factura;Afectada',0
+ C008=LBC_FCHDEC          ,'D',008,0,'','Fecha de Declaración',0
+ C009=LBC_FCHREG          ,'D',008,0,'','Fecha;Registro',0
+ C010=LBC_FCHRTI          ,'D',008,0,'','Fecha;Retención',0
+ C011=LBC_FECHA           ,'D',008,0,'','Fecha Emisión',0
+ C012=LBC_ITEM            ,'C',005,0,'','Item',0
+ C013=LBC_IVA_GN          ,'N',019,0,'','IVA;General',0
+ C014=LBC_IVA_RD          ,'N',019,0,'','IVA;Reducida',0
+ C015=LBC_IVA_S1          ,'N',019,0,'','IVA;Suntuario',0
+ C016=LBC_MTOBAS          ,'N',019,2,'','Base;Imponible',0
+ C017=LBC_MTOEXE          ,'N',019,2,'','Monto;Exento',0
+ C018=LBC_MTOEXO          ,'N',019,0,'','Monto;Exonerado',0
+ C019=LBC_MTOIVA          ,'N',019,2,'','Monto;IVA',0
+ C020=LBC_MTONCF          ,'N',019,0,'','Sin Crédito;Fiscal',0
+ C021=LBC_MTONET          ,'N',019,2,'','Compra;con IVA',0
+ C022=LBC_MTONSJ          ,'N',019,0,'','No;Sujeto',0
+ C023=LBC_MTORTI          ,'N',019,2,'','Monto;Retención',0
+ C024=LBC_NOTCRE          ,'C',010,0,'','Nota de Crédito',0
+ C025=LBC_NOTDEB          ,'C',010,0,'','Nota de Débito',0
+ C026=LBC_NUMFAC          ,'C',020,0,'','Número;Control',0
+ C027=LBC_NUMFIS          ,'C',020,0,'','Número;Fiscal',0
+ C028=LBC_NUMRTI          ,'C',010,0,'','Número;Retención',0
+ C029=LBC_PLAIMP          ,'C',010,0,'','Planilla;Import.',0
+ C030=LBC_PORIVA          ,'N',005,2,'','%;IVA',0
+ C031=LBC_PORRTI          ,'N',006,0,'','%Ret;IVA',0
+ C032=LBC_RIF             ,'C',015,0,'','RIF',0
+ C033=LBC_TIPTRA          ,'C',006,0,'','Tipo;Transac.',0
+ C034=LBC_USOCON          ,'C',020,0,'','Contrapartida',0
+ C035=LBC_USUARI          ,'C',003,0,'','Usuario',0
+ C036=LBC_TIPIVA          ,'C',002,0,'','Tipo;IVA',0
+ C037=LBC_BASIMP          ,'N',019,0,'','Base;Imponible',0
+ C038=LBC_NUMPAR          ,'C',005,0,'','Número;Partida',0
+ C039=LBC_TIPDOC          ,'C',003,0,'','Tipo;Doc.',0
+ C040=LBC_VALCAM          ,'N',019,0,'','Valor;Divisa',0
+ C041=LBC_CENCOS          ,'C',008,0,'','Centro;Costos',0
+ C042=LBC_CTAEGR          ,'C',020,0,'','Cuenta;Egreso',0
+ C043=LBC_CONISR          ,'C',003,0,'','Concepto;ISLR',0
+ C044=LBC_PORISR          ,'N',002,0,'','%;ISLR',0
+ C045=LBC_MTOISR          ,'N',019,0,'','Monto;RET/ISLR',0
+ C046=LBC_CODCAJ          ,'C',006,0,'','Código de Caja',0
+ C047=LBC_CODBCO          ,'C',006,0,'','Código de Banco',0
+ C048=LBC_CTABCO          ,'C',020,0,'','Cuenta Bancaria',0
+ C049=LBC_INSTRU          ,'C',004,0,'','Instrument Caja/Banco',0
+ C050=LBC_CODMON          ,'C',003,0,'','Divisa',0
+ C051=LBC_ACTIVO          ,'L',001,0,'','Registro Activo',0
+ C052=LBC_CODIGO          ,'C',010,0,'','Código del Proveedor',0
+ C053=LBC_CODCLI          ,'C',010,0,'','Código del Cliente',0
+ C054=LBC_ID              ,'C',003,0,'','ID del Recurso del Cliente',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=LBC_COMORG          ,Imp                                                                             
+ C002=LBC_COMORG          ,Importado                                                                       
+ C003=LBC_COMORG          ,Nac                                                                             
+ C004=LBC_COMORG          ,Nacional                                                                        
+ C005=LBC_FECHA           ,                                                                                
+ C006=LBC_TIPDOC          ,CRE                                                                             
+ C007=LBC_TIPDOC          ,DEB                                                                             
+ C008=LBC_TIPDOC          ,FAC                                                                             
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

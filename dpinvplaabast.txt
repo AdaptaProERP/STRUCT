@@ -1,0 +1,93 @@
+[ID]
+ NUMERO=0127
+ NOMBRE=DPINVPLAABAST
+ DESCRIPCION=Planificación de Abastecimiento                             
+ CONFIG=F
+ SINGUL=Abastecimiento                
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IPA_CANTID          ,'N',014,2,'','Cantidad Seleccionada',0
+ C002=IPA_CODIGO          ,'C',020,0,'','Producto',0
+ C003=IPA_CODPRO          ,'C',010,0,'','Proveedor',0
+ C004=IPA_CODSUC          ,'C',008,0,'','Sucursal',0
+ C005=IPA_COMENT          ,'C',080,0,'','Comentarios para Reposición',0
+ C006=IPA_COSTO           ,'N',014,2,'','Costo Solicitado',0
+ C007=IPA_DIAMES          ,'N',002,0,'','Día del Mes específico',0
+ C008=IPA_EXIMAX          ,'N',010,2,'','Existencia Máxima',0
+ C009=IPA_EXIMIN          ,'N',010,2,'','Existencia Mínima',0
+ C010=IPA_FECHA           ,'D',008,0,'','Fecha Proceso',0
+ C011=IPA_HORA            ,'C',008,0,'','Hora',0
+ C012=IPA_MODEXI          ,'C',001,0,'','Modalidad de Existencia',0
+ C013=IPA_NUMERO          ,'C',006,0,'','Identificación',1
+ C014=IPA_NUMMEM          ,'N',008,0,'','Memo para la Reposición',0
+ C015=IPA_NUMREG          ,'C',010,0,'','Número de Registro',0
+ C016=IPA_PERIOD          ,'C',015,0,'','Periodo de Revisión',0
+ C017=IPA_SELECC          ,'L',001,0,'','Seleccionado',0
+ C018=IPA_TIPCAL          ,'C',010,0,'','Forma de Cálculo',0
+ C019=IPA_TIPDOC          ,'C',004,0,'','Tipo de Documento Proveedor',0
+ C020=IPA_TIPEXI          ,'C',001,0,'','Tipo de Existencia',0
+ C021=IPA_TIPREP          ,'C',001,0,'','Origen de Reposición',0
+ C022=IPA_UNDMED          ,'C',008,0,'','Unidad de Medida',0
+ C023=IPA_USUARI          ,'C',003,0,'','Uusario',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPINV                   , IPA_CODIGO=INV_CODIGO <UPDATE> <DELETE> <RUN>
+ T002=DPINVMED                , IPA_CODIGO,IPA_UNDMED=IME_CODIGO,IME_UNDMED <UPDATE> <DELETE> <RUN>
+ T003=DPPROVEEDOR             , IPA_CODPRO=PRO_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPINVMED                , IPA_CODIGO,IPA_UNDMED=IME_CODIGO,IME_UNDMED, <CAMPO:IME_PRESEN>, <WHERE:>
+ T002=DPPROVEEDOR             , IPA_CODPRO=PRO_CODIGO, <CAMPO:PRO_NOMBRE>, <WHERE:>
+ T003=DPTIPDOCPRO             , IPA_TIPDOC=TDC_TIPO, <CAMPO:TDC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPINVPLAABAST INNER JOIN DPINV ON IPA_CODIGO=INV_CODIGO
+ SELECT * FROM DPINVPLAABAST INNER JOIN DPINVMED ON IPA_CODIGO=IME_CODIGO AND IPA_UNDMED=IME_UNDMED
+ SELECT IME_PRESEN FROM DPINVPLAABAST INNER JOIN DPINVMED ON IME_CODIGO=IPA_CODIGO AND IME_UNDMED=IPA_UNDMED
+ SELECT PRO_NOMBRE FROM DPINVPLAABAST INNER JOIN DPPROVEEDOR ON PRO_CODIGO=IPA_CODPRO
+ SELECT TDC_DESCRI FROM DPINVPLAABAST INNER JOIN DPTIPDOCPRO ON TDC_TIPO=IPA_TIPDOC
+ SELECT * FROM DPINVPLAABAST INNER JOIN DPPROVEEDOR ON IPA_CODPRO=PRO_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=IPA_MODEXI          ,Almacen                                                                         
+ C002=IPA_MODEXI          ,Consolidada                                                                     
+ C003=IPA_MODEXI          ,Sucursal                                                                        
+ C004=IPA_PERIOD          ,Anual                                                                           
+ C005=IPA_PERIOD          ,Bimestral                                                                       
+ C006=IPA_PERIOD          ,Dia específico                                                                  
+ C007=IPA_PERIOD          ,Diario                                                                          
+ C008=IPA_PERIOD          ,Mensual                                                                         
+ C009=IPA_PERIOD          ,Quincenal                                                                       
+ C010=IPA_PERIOD          ,Semanal                                                                         
+ C011=IPA_PERIOD          ,Semestral                                                                       
+ C012=IPA_PERIOD          ,Trimestral                                                                      
+ C013=IPA_TIPCAL          ,Agotamiento                                                                     
+ C014=IPA_TIPCAL          ,Consumo                                                                         
+ C015=IPA_TIPCAL          ,Rotación                                                                        
+ C016=IPA_TIPEXI          ,Contable                                                                        
+ C017=IPA_TIPEXI          ,Física                                                                          
+ C018=IPA_TIPEXI          ,Lógica                                                                          
+ C019=IPA_TIPREP          ,Adquisición                                                                     
+ C020=IPA_TIPREP          ,Compra                                                                          
+ C021=IPA_TIPREP          ,Producción                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,80 @@
+[ID]
+ NUMERO=0119
+ NOMBRE=DPGRU
+ DESCRIPCION=Grupos de Productos                                         
+ CONFIG=F
+ SINGUL=Grupo                         
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=GRU_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=GRU_CLRGRA          ,'N',010,0,'','Color para Gráficas',0
+ C003=GRU_CODCLA          ,'C',010,0,'','Código Clasificación',0
+ C004=GRU_CODIGO          ,'C',010,0,'PRIMARY KEY NOT NULL','Código',1
+ C005=GRU_COMCOB          ,'N',006,2,'','Comisión x Cobranza',0
+ C006=GRU_COMVTA          ,'N',006,2,'','Comisión x Venta',0
+ C007=GRU_COSINV          ,'L',001,0,'','Costo de Inventario',0
+ C008=GRU_DESCRI          ,'C',040,0,'','Descripción',0
+ C009=GRU_DIAS_A          ,'N',015,0,'','Dias para Abastecimiento',0
+ C010=GRU_EMANAG          ,'L',001,0,'','Afiliado eManager',0
+ C011=GRU_FILBMP          ,'C',070,0,'','Imagen en Bmp',0
+ C012=GRU_MEMO            ,'M',010,0,'','Comentario',0
+ C013=GRU_META            ,'C',010,0,'','Meta',0
+ C014=GRU_PERIODO         ,'C',015,0,'','Nuevo Campo',0
+ C015=GRU_PREFIJ          ,'C',010,0,'','Prefijo para Crear Productos',0
+ C016=GRU_TIPCAL          ,'C',015,0,'','Reposición',0
+ C017=GRU_TIPEXI          ,'C',015,0,'','Tipo de Existencia para Abastecimiento',0
+ C018=GRU_TIPREP          ,'C',015,0,'','Forma de Reposición',0
+ C019=GRU_UTILIZ          ,'C',030,0,'','Utilización',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPINV                   , GRU_CODIGO=INV_GRUPO, <UPDATE>  <RUN>
+ T002=DPTIPDOCCLIGRU          , GRU_CODIGO=TDG_GRUPO, <UPDATE> <DELETE> <RUN>
+ T003=DPTIPDOCPROGRU          , GRU_CODIGO=TDG_GRUPO, <UPDATE> <DELETE> <RUN>
+ T004=DPGRU_CTA               , GRU_CODIGO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM DPGRU INNER JOIN DPINV ON INV_GRUPO=GRU_CODIGO
+ SELECT * FROM DPGRU INNER JOIN DPTIPDOCCLIGRU ON TDG_GRUPO=GRU_CODIGO
+ SELECT * FROM DPGRU INNER JOIN DPTIPDOCPROGRU ON TDG_GRUPO=GRU_CODIGO
+ SELECT GRU_DESCRI FROM DPGRU INNER JOIN DPINV ON GRU_CODIGO=INV_GRUPO
+ SELECT * FROM DPGRU INNER JOIN DPGRU_CTA ON CIC_CODIGO=GRU_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=GRU_PERIODO         ,Anual                                                                           
+ C002=GRU_PERIODO         ,Bimensual                                                                       
+ C003=GRU_PERIODO         ,Cuatrimestral                                                                   
+ C004=GRU_PERIODO         ,Diaria                                                                          
+ C005=GRU_PERIODO         ,Mensual                                                                         
+ C006=GRU_PERIODO         ,Quincenal                                                                       
+ C007=GRU_PERIODO         ,Semanal                                                                         
+ C008=GRU_PERIODO         ,Semestral                                                                       
+ C009=GRU_PERIODO         ,Trimestral                                                                      
+ C010=GRU_TIPCAL          ,Agotamiento                                                                     
+ C011=GRU_TIPCAL          ,Consumo                                                                         
+ C012=GRU_TIPCAL          ,Ninguno                                                                         
+ C013=GRU_TIPCAL          ,Pedido                                                                          
+ C014=GRU_TIPCAL          ,Rotación                                                                        
+ C015=GRU_TIPEXI          ,Contable                                                                        
+ C016=GRU_TIPEXI          ,Física                                                                          
+ C017=GRU_TIPEXI          ,Lógica                                                                          
+ C018=GRU_TIPREP          ,Compra                                                                          
+ C019=GRU_TIPREP          ,Producción                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

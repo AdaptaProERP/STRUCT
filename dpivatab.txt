@@ -1,0 +1,42 @@
+[ID]
+ NUMERO=0118
+ NOMBRE=DPIVATAB
+ DESCRIPCION=Alicuotas de I.V.A.                                         
+ CONFIG=F
+ SINGUL=I.V.A.                        
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IVM_FECHA           ,'D',008,0,'PRIMARY KEY NOT NULL','Fecha Desde',0
+ C002=IVM_TASAA1          ,'N',006,2,'','Tasa Suntuaria Adicional 1',0
+ C003=IVM_TASAA2          ,'N',006,2,'','Tasa Suntuaria Adicional 2',0
+ C004=IVM_TASARD          ,'N',006,2,'','Tasa Reducida',0
+ C005=IVM_TASART          ,'N',006,2,'','Retención I.V.A.',0
+ C006=IVM_TASAVG          ,'N',006,2,'','Tasa General',0
+ C007=IVM_TASAZL          ,'N',006,2,'','Tasa Zona Libre',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPIVATABC               , IVM_FECHA=CTI_FECHA, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM DPIVATAB INNER JOIN DPIVATABC ON CTI_FECHA=IVM_FECHA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

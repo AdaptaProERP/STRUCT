@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPINVTRAN_CTA_CTA
+ DESCRIPCION=Cuentas Contables de DPINVTRAN_CTA                          
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY='CIC_CODIGO,CIC_CTAMOD,CIC_CODINT,CIC_CUENTA'
+[END_ID]
+
+[FIELDS]
+ C001=CIC_COD2            ,'C',010,0,'','Código Alterno',0
+ C002=CIC_CODIGO          ,'C',006,0,'','Código de Modelo del Plan de Cuentas',0
+ C003=CIC_CODINT          ,'C',006,0,'','Código de Integración Contable',0
+ C004=CIC_CODSUC          ,'C',010,0,'','Código de Código Tabla Maestra',0
+ C005=CIC_CTAMOD          ,'C',006,0,'','Modelo del Plan de Cuentas',0
+ C006=CIC_CUENTA          ,'C',020,0,'','Cuenta Contable',0
+ C007=CIC_FECHA           ,'D',008,0,'','Fecha',0
+ C008=CIC_HORA            ,'C',008,0,'','Hora',0
+ C009=CIC_USUARI          ,'C',008,0,'','Usuario',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

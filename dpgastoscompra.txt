@@ -1,0 +1,45 @@
+[ID]
+ NUMERO=0209
+ NOMBRE=DPGASTOSCOMPRA
+ DESCRIPCION=Catálogo de Gastos de Compras                               
+ CONFIG=F
+ SINGUL=Gasto                         
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=GAS_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=GAS_CODIGO          ,'C',025,0,'PRIMARY KEY NOT NULL','Código',1
+ C003=GAS_MEMO            ,'M',010,0,'','Comentarios',0
+ C004=GAS_MODO            ,'C',001,0,'','Modo de Distribución',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPDOCPROGASTO           , GAS_CODIGO=DCG_CODGAS, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT GAS_MODO FROM DPGASTOSCOMPRA INNER JOIN DPDOCPROGASXINV ON GAS_CODIGO=DXI_CODGAS
+ SELECT * FROM DPGASTOSCOMPRA INNER JOIN DPDOCPROGASTO ON DCG_CODGAS=GAS_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=GAS_MODO            ,Arancelario                                                                     
+ C002=GAS_MODO            ,Costo                                                                           
+ C003=GAS_MODO            ,Peso                                                                            
+ C004=GAS_MODO            ,Unidad                                                                          
+ C005=GAS_MODO            ,Volumen                                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

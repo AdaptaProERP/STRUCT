@@ -1,0 +1,114 @@
+[ID]
+ NUMERO=0035
+ NOMBRE=DPFORMYTAREAS
+ DESCRIPCION=Definición de Formalidad y Tareas                           
+ CONFIG=Y
+ SINGUL=Formalidad y Tarea            
+ APLICA=19
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=FYT_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=FYT_ALTER           ,'L',001,0,'','Alterado para el Usuario',0
+ C003=FYT_ANTERI          ,'L',001,0,'','Basado en Periodo Anterior',0
+ C004=FYT_APLSUC          ,'L',001,0,'','Aplica por Sucursal',0
+ C005=FYT_CLASIF          ,'C',020,0,'','Clasificación',0
+ C006=FYT_CODIGO          ,'C',015,0,'PRIMARY KEY','Código',0
+ C007=FYT_CODSUC          ,'C',006,0,'','Sucursal',0
+ C008=FYT_CONESP          ,'L',001,0,'','Especial',0
+ C009=FYT_CONGUB          ,'L',001,0,'','Gubernamental',0
+ C010=FYT_CONORD          ,'L',001,0,'','Ordinario',0
+ C011=FYT_DESCRP          ,'C',060,0,'','Descripción',0
+ C012=FYT_DIADES          ,'N',002,0,'','Día Desde',0
+ C013=FYT_DIAHAS          ,'N',002,0,'','Día Hasta',0
+ C014=FYT_FCHFIN          ,'D',008,0,'','Fecha Final',0
+ C015=FYT_FCHINI          ,'D',008,0,'','Fecha de Inicio',0
+ C016=FYT_FECHA           ,'D',008,0,'','Fecha',0
+ C017=FYT_HORA            ,'C',008,0,'','Hora',0
+ C018=FYT_ITEM            ,'C',005,0,'','Item',0
+ C019=FYT_MESDES          ,'C',012,0,'','Mes desde',0
+ C020=FYT_MESHAS          ,'C',012,0,'','Mes Hasta',0
+ C021=FYT_NIVPRI          ,'N',002,0,'','Nivel de Prioridad',0
+ C022=FYT_PERIOD          ,'C',010,0,'','Periodo',0
+ C023=FYT_PLZANO          ,'N',002,0,'','Plazo en Años',0
+ C024=FYT_PLZDIA          ,'N',003,0,'','Plazo en Días',0
+ C025=FYT_PLZMES          ,'N',002,0,'','Plazo en Meses',0
+ C026=FYT_PROGRA          ,'C',020,0,'','Programa',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPFORMYTAREASMOV        , FYT_CODIGO=FYT_CODIGO, <UPDATE> <DELETE> <RUN>
+ T002=DPFORMYTAREASPROG       , FYT_CODIGO=PFT_CODIGO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPEMPUSUARIO            , FYT_CODIGO=EXU_CODIGO, <CAMPO:>, <WHERE:>
+ T002=DPPROGRA                , FYT_PROGRA=PRG_CODIGO, <CAMPO:PRG_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPFORMYTAREAS INNER JOIN DPEMPUSUARIO ON EXU_CODIGO=FYT_CODIGO
+ SELECT * FROM DPFORMYTAREAS INNER JOIN DPFORMYTAREASMOV ON FYT_CODIGO=FYT_CODIGO
+ SELECT * FROM DPFORMYTAREAS INNER JOIN DPFORMYTAREASPROG ON PFT_CODIGO=FYT_CODIGO
+ SELECT PRG_DESCRI FROM DPFORMYTAREAS INNER JOIN DPPROGRA ON PRG_CODIGO=FYT_PROGRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=FYT_CLASIF          ,Cartelera Fiscal                                                                
+ C002=FYT_CLASIF          ,Deberes Formales                                                                
+ C003=FYT_CLASIF          ,Financiera                                                                      
+ C004=FYT_CLASIF          ,Laboral                                                                         
+ C005=FYT_CLASIF          ,Tributaria                                                                      
+ C006=FYT_MESDES          ,Abril                                                                           
+ C007=FYT_MESDES          ,Agosto                                                                          
+ C008=FYT_MESDES          ,Diciembre                                                                       
+ C009=FYT_MESDES          ,Enero                                                                           
+ C010=FYT_MESDES          ,Febrero                                                                         
+ C011=FYT_MESDES          ,Julio                                                                           
+ C012=FYT_MESDES          ,Junio                                                                           
+ C013=FYT_MESDES          ,Marzo                                                                           
+ C014=FYT_MESDES          ,Mayo                                                                            
+ C015=FYT_MESDES          ,Noviembre                                                                       
+ C016=FYT_MESDES          ,Octubre                                                                         
+ C017=FYT_MESDES          ,Septiembre                                                                      
+ C018=FYT_MESDES          ,Todos                                                                           
+ C019=FYT_MESHAS          ,Abril                                                                           
+ C020=FYT_MESHAS          ,Agosto                                                                          
+ C021=FYT_MESHAS          ,Diciembre                                                                       
+ C022=FYT_MESHAS          ,Enero                                                                           
+ C023=FYT_MESHAS          ,Febrero                                                                         
+ C024=FYT_MESHAS          ,Julio                                                                           
+ C025=FYT_MESHAS          ,Junio                                                                           
+ C026=FYT_MESHAS          ,Marzo                                                                           
+ C027=FYT_MESHAS          ,Mayo                                                                            
+ C028=FYT_MESHAS          ,Noviembre                                                                       
+ C029=FYT_MESHAS          ,Octubre                                                                         
+ C030=FYT_MESHAS          ,Septiembre                                                                      
+ C031=FYT_MESHAS          ,Todos                                                                           
+ C032=FYT_PERIOD          ,Anual                                                                           
+ C033=FYT_PERIOD          ,Bimensual                                                                       
+ C034=FYT_PERIOD          ,Diario                                                                          
+ C035=FYT_PERIOD          ,Indefinido                                                                      
+ C036=FYT_PERIOD          ,Mensual                                                                         
+ C037=FYT_PERIOD          ,Quiincenal                                                                      
+ C038=FYT_PERIOD          ,Quincenal                                                                       
+ C039=FYT_PERIOD          ,Semanal                                                                         
+ C040=FYT_PERIOD          ,Semestral                                                                       
+ C041=FYT_PERIOD          ,Trimestral                                                                      
+ C042=FYT_PERIOD          ,Una Vez                                                                         
+ C043=FYT_PERIOD          ,Unico                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

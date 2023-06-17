@@ -1,0 +1,55 @@
+[ID]
+ NUMERO=0106
+ NOMBRE=DPINVMED
+ DESCRIPCION=Unidades de Medida por Producto                             
+ CONFIG=F
+ SINGUL=Medidas por Producto          
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IME_CANTID          ,'N',010,3,'','Cantidad de Unidades',0
+ C002=IME_CODIGO          ,'C',020,0,'','Producto',0
+ C003=IME_COMPRA          ,'C',001,0,'','Compra',0
+ C004=IME_MEDPRE          ,'L',001,0,'','Representa Venta',0
+ C005=IME_PESO            ,'N',008,3,'','Peso en Kilos',0
+ C006=IME_PRESEN          ,'C',020,0,'','Presentación',0
+ C007=IME_SIGNO           ,'C',001,0,'','Signo',0
+ C008=IME_UNDMED          ,'C',020,0,'','Medida',0
+ C009=IME_VENTA           ,'C',001,0,'','Venta',0
+ C010=IME_VOLUME          ,'N',010,3,'','Volumen',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPINV                   , IME_CODIGO=INV_CODIGO <UPDATE> <DELETE> <RUN>
+ T002=DPUNDMED                , IME_UNDMED=UND_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPINVPLAABAST           , IME_CODIGO,IME_UNDMED=IPA_CODIGO,IPA_UNDMED, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM DPINVMED INNER JOIN DPINV ON IME_CODIGO=INV_CODIGO
+ SELECT * FROM DPINVMED INNER JOIN DPINVPLAABAST ON IPA_CODIGO=IME_CODIGO AND IPA_UNDMED=IME_UNDMED
+ SELECT IME_PRESEN FROM DPINVMED INNER JOIN DPINVPLAABAST ON IME_CODIGO=IPA_CODIGO AND IME_UNDMED=IPA_UNDMED
+ SELECT * FROM DPINVMED INNER JOIN DPUNDMED ON IME_UNDMED=UND_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=IME_SIGNO           ,* Multiplica                                                                    
+ C002=IME_SIGNO           ,/ Divide                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

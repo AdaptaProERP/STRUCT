@@ -1,0 +1,42 @@
+[ID]
+ NUMERO=0007
+ NOMBRE=DPINDEX
+ DESCRIPCION=Indices de las Tablas                                       
+ CONFIG=Y
+ SINGUL=                              
+ APLICA=20
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IND_ALTER           ,'L',001,0,'','Alterado',0
+ C002=IND_CLAVE           ,'C',080,0,'','Clave del Indice',1
+ C003=IND_DESCRI          ,'C',040,0,'','Descripciðn del Indice',1
+ C004=IND_INDICE          ,'C',020,0,'','Nombre de la Tabla Indice',1
+ C005=IND_NUMTAB          ,'C',004,0,'','N+mero de la Tabla',1
+ C006=IND_TABLA           ,'C',020,0,'','Nombre de la tabla',1
+ C007=IND_UNICO           ,'L',001,0,'','Unico',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTABLAS                , IND_TABLA=TAB_NOMBRE <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPINDEX INNER JOIN DPTABLAS ON IND_TABLA=TAB_NOMBRE
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

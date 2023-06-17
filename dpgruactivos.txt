@@ -1,0 +1,46 @@
+[ID]
+ NUMERO=0521
+ NOMBRE=DPGRUACTIVOS
+ DESCRIPCION=Grupo de Activos                                            
+ CONFIG=F
+ SINGUL=Grupo de Activo               
+ APLICA=06
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=GAC_ACTIVO          ,'L',001,0,'','Registro Activo',0
+ C002=GAC_CODIGO          ,'C',008,0,'PRIMARY KEY NOT NULL','C¢digo',1
+ C003=GAC_CTAFIJ          ,'L',001,0,'','Cuentas Contables Fijas',0
+ C004=GAC_CTAINT          ,'L',001,0,'','Cuentas Según Código de Integración',0
+ C005=GAC_DEPREC          ,'L',001,0,'','Depreciable',0
+ C006=GAC_DESCRI          ,'C',035,0,'','Descripción',0
+ C007=GAC_MEMO            ,'M',010,0,'','Comentario',0
+ C008=GAC_PORVLS          ,'N',003,2,'','% Valor de Salvamento',0
+ C009=GAC_VUTILA          ,'N',002,0,'','Vida Util en Años',0
+ C010=GAC_VUTILM          ,'N',002,0,'','Vida Util en Meses',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPACTIVOS               , GAC_CODIGO=ATV_CODGRU, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT GAC_DESCRI FROM DPGRUACTIVOS INNER JOIN DPACTIVOS ON GAC_CODIGO=ATV_CODGRU
+ SELECT * FROM DPGRUACTIVOS INNER JOIN DPACTIVOS ON ATV_CODGRU=GAC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

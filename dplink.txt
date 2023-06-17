@@ -1,0 +1,65 @@
+[ID]
+ NUMERO=0003
+ NOMBRE=DPLINK
+ DESCRIPCION=Enlaces entre tablas                                        
+ CONFIG=Y
+ SINGUL=                              
+ APLICA=20
+ PRIMARY_KEY='LNK_TABLED,LNK_TABLES,LNK_FIELDD,LNK_FIELDS'
+[END_ID]
+
+[FIELDS]
+ C001=LNK_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=LNK_ALTER           ,'L',001,0,'','Altera',0
+ C003=LNK_CATLGO          ,'L',001,0,'','Catalago de Datos',0
+ C004=LNK_DELETE          ,'L',001,0,'','Elimina Relacionados',0
+ C005=LNK_DISDEL          ,'L',001,0,'','DisDel',0
+ C006=LNK_DISUPD          ,'L',001,0,'','LNK_DISUPD',0
+ C007=LNK_FECHA           ,'D',008,0,'','Fecha',0
+ C008=LNK_FIELDD          ,'C',080,0,'','Campos de la Tabla Enlazada',0
+ C009=LNK_FIELDS          ,'C',080,0,'','Campos de la Tabla Solicitante',0
+ C010=LNK_HORA            ,'C',008,0,'','Hora',0
+ C011=LNK_LNKADD          ,'L',001,0,'','Reparar Agregando',0
+ C012=LNK_LNKDEL          ,'L',001,0,'','Reparar Delete',0
+ C013=LNK_PRGPOS          ,'C',030,0,'','Programa',0
+ C014=LNK_PRGPRE          ,'C',030,0,'','Programa Pre Ejecución',0
+ C015=LNK_REFERE          ,'C',010,0,'','Campo de Referencia Tabla Enlazada',0
+ C016=LNK_RUN             ,'L',001,0,'','Ejecutar desde la BD',0
+ C017=LNK_SETD            ,'C',100,0,'','Campos Comunes en Tabla Solicitante',0
+ C018=LNK_SETS            ,'C',100,0,'','Campos Comunes en Tabla Enlazada',0
+ C019=LNK_TABLED          ,'C',024,0,'','Tabla Enlazada',0
+ C020=LNK_TABLES          ,'C',024,0,'','Tabla Solicitante',0
+ C021=LNK_UPDATE          ,'L',001,0,'','Dependencia',0
+ C022=LNK_VIEWD           ,'L',001,0,'','Vista tabla Solicitada',0
+ C023=LNK_VIRTUA          ,'L',001,0,'','LNK_VIRTUAL',0
+ C024=LNK_WHERE           ,'C',040,0,'','Condiciðn de Relaciðn Enlazada',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTABLAS                , LNK_TABLED=TAB_NOMBRE <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPTABLAS                , LNK_TABLES=TAB_NOMBRE, <CAMPO:TAB_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT TAB_DESCRI FROM DPLINK INNER JOIN DPTABLAS ON TAB_NOMBRE=LNK_TABLES
+ SELECT * FROM DPLINK INNER JOIN DPTABLAS ON LNK_TABLED=TAB_NOMBRE
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

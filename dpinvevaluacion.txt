@@ -1,0 +1,51 @@
+[ID]
+ NUMERO=0325
+ NOMBRE=DPINVEVALUACION
+ DESCRIPCION=Evaluación de Productos                                     
+ CONFIG=F
+ SINGUL=Evaluación por Producto       
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=EXP_CODCLI          ,'C',010,0,'','Cliente',0
+ C002=EXP_CODINV          ,'C',020,0,'','Producto',0
+ C003=EXP_NUMENT          ,'C',008,0,'','Número Entrevista',0
+ C004=EXP_NUMMEM          ,'N',007,0,'','Memo Asociado',0
+ C005=EXP_TIPEXP          ,'C',001,0,'','Tipo de Expediente',0
+ C006=EXP_VALOR           ,'C',010,0,'','Respuesta',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCLIENTEENT            , EXP_NUMENT,EXP_TIPEXP=ENT_NUMERO,ENT_TIPO <UPDATE>  <RUN>
+ T002=DPCLIENTES              , EXP_CODCLI=CLI_CODIGO <UPDATE>  <RUN>
+ T003=DPINV                   , EXP_CODINV=INV_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPINVEVALUACION INNER JOIN DPCLIENTEENT ON EXP_NUMENT=ENT_NUMERO AND EXP_TIPEXP=ENT_TIPO
+ SELECT * FROM DPINVEVALUACION INNER JOIN DPCLIENTES ON EXP_CODCLI=CLI_CODIGO
+ SELECT * FROM DPINVEVALUACION INNER JOIN DPINV ON EXP_CODINV=INV_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=EXP_VALOR           ,Bueno                                                                           
+ C002=EXP_VALOR           ,Excelente                                                                       
+ C003=EXP_VALOR           ,Malo                                                                            
+ C004=EXP_VALOR           ,No Opina                                                                        
+ C005=EXP_VALOR           ,Pésimo                                                                          
+ C006=EXP_VALOR           ,Regular                                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

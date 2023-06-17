@@ -1,0 +1,44 @@
+[ID]
+ NUMERO=9965
+ NOMBRE=DPINDICADOR
+ DESCRIPCION=Indicadores                                                 
+ CONFIG=Y
+ SINGUL=Indicador                     
+ APLICA=22
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IND_CODIGO          ,'C',030,0,'PRIMARY KEY NOT NULL','Código',0
+ C002=IND_DESCRI          ,'C',080,0,'','Descripción',0
+ C003=IND_FIELDD          ,'C',030,0,'','Campo Fecha',0
+ C004=IND_FIELDN          ,'C',030,0,'','Campo Numérico',0
+ C005=IND_GROUP           ,'C',250,0,'','Group By',0
+ C006=IND_ID              ,'C',004,0,'','ID',1
+ C007=IND_JOIN            ,'C',250,0,'','Join',0
+ C008=IND_LABEL           ,'C',250,0,'','Etiquetas',0
+ C009=IND_ORDER           ,'C',250,0,'','Order By',0
+ C010=IND_PERIOD          ,'N',002,0,'','Periodo',0
+ C011=IND_SELECT          ,'C',250,0,'','Select',0
+ C012=IND_TABLA           ,'C',040,0,'','Tabla',0
+ C013=IND_WHERE           ,'C',250,0,'','Where',0
+ C014=IND_WHERER          ,'C',250,0,'','Where Run',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,36 @@
+[ID]
+ NUMERO=1072
+ NOMBRE=DPGRUURL
+ DESCRIPCION=Grupo de URL                                                
+ CONFIG=F
+ SINGUL=Grupo URL                     
+ APLICA=18
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=GDU_ACTIVO          ,'L',001,0,'','Activo',0
+ C002=GDU_CODIGO          ,'C',020,0,'','Código',0
+ C003=GDU_DESCRI          ,'C',250,0,'','Descripción',0
+ C004=GDU_HEIGHT          ,'N',004,0,'','Alto Imagen',0
+ C005=GDU_IMAGE           ,'L',001,0,'','Publica Imagen',0
+ C006=GDU_WIDTH           ,'N',004,0,'','Ancho Imagen',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,32 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPGRU_CTAREF
+ DESCRIPCION=Referencia de las Cuentas                                   
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=CIR_CODINT          ,'C',006,0,'','Código Integración',0
+ C002=CIR_DESCRI          ,'C',120,0,'','Referencia',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

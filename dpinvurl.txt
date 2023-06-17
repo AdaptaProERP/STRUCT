@@ -1,0 +1,33 @@
+[ID]
+ NUMERO=1070
+ NOMBRE=DPINVURL
+ DESCRIPCION=Dirección URL                                               
+ CONFIG=F
+ SINGUL=URL                           
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=URL_CODINV          ,'C',020,0,'','Código',0
+ C002=URL_IMAGEN          ,'M',000,0,'','Url Imagen',0
+ C003=URL_TEXTO           ,'M',000,0,'','Url Texto',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

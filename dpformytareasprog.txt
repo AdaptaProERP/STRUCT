@@ -1,0 +1,54 @@
+[ID]
+ NUMERO=9551
+ NOMBRE=DPFORMYTAREASPROG
+ DESCRIPCION=Calendario de Actividades y Tareas                          
+ CONFIG=Y
+ SINGUL=Calendario de Formalidades    
+ APLICA=20
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=PFT_CODEMP          ,'C',006,0,'','Código Empresa',1
+ C002=PFT_CODIGO          ,'C',015,0,'','Código de la Formalidad',0
+ C003=PFT_CODSUC          ,'C',006,0,'','Sucursal',1
+ C004=PFT_DESDE           ,'D',008,0,'','Fecha Planificada',0
+ C005=PFT_EDIT            ,'L',001,0,'','Fecha Editada',0
+ C006=PFT_ESTADO          ,'C',001,0,'','Estado',0
+ C007=PFT_FCHEJE          ,'D',008,0,'','Fecha Ejecutada',0
+ C008=PFT_FCHPLZ          ,'D',008,0,'','Fecha Plazo',0
+ C009=PFT_FILMAI          ,'N',007,0,'','Registro Digitalización',0
+ C010=PFT_HASTA           ,'D',008,0,'','Hasta',0
+ C011=PFT_NIVPRI          ,'N',002,0,'','Nivel de Prioridad',0
+ C012=PFT_NUMEJE          ,'C',004,0,'','Ejercicio',1
+ C013=PFT_NUMERO          ,'C',005,0,'','Número de Registro',0
+ C014=PFT_OPEN            ,'L',001,0,'','Formalidad Declaración Abierta',0
+ C015=PFT_OPENR           ,'L',001,0,'','Formalidad Registro Abierta',0
+ C016=PFT_USUARI          ,'C',003,0,'','Usuario de Ejecución',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPFORMYTAREAS           , PFT_CODIGO=FYT_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPFORMYTAREASPROG INNER JOIN DPFORMYTAREAS ON PFT_CODIGO=FYT_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PFT_ESTADO          ,Ejecutado                                                                       
+ C002=PFT_ESTADO          ,Pendiente                                                                       
+ C003=PFT_ESTADO          ,Suspendido                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,45 @@
+[ID]
+ NUMERO=9877
+ NOMBRE=DPINTREF
+ DESCRIPCION=Integridad Referencial                                      
+ CONFIG=Y
+ SINGUL=Integridad                    
+ APLICA=22
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=INT_BD              ,'C',040,0,'','Base de Datos',0
+ C002=INT_DXBASE          ,'C',030,0,'','Programa DpXbase',0
+ C003=INT_FECHA           ,'D',008,0,'','Fecha',0
+ C004=INT_MODO            ,'C',020,0,'','Modo',0
+ C005=INT_PCNAME          ,'C',040,0,'','Nombre del PC Ejecución',0
+ C006=INT_SQL             ,'M',010,0,'','Sentencia SQL',0
+ C007=INT_SQLERR          ,'M',010,0,'','Mensaje SQL',0
+ C008=INT_TABLA           ,'C',020,0,'','Nombre de la Tabla',0
+ C009=INT_TABVIN          ,'C',020,0,'','Tabla Vinculada',0
+ C010=INT_USUARI          ,'C',003,0,'','Usuario',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTABLAS                , INT_TABLA=TAB_NOMBRE <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPINTREF INNER JOIN DPTABLAS ON INT_TABLA=TAB_NOMBRE
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

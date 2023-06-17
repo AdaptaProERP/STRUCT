@@ -1,0 +1,32 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPLUNESBANCARIOS
+ DESCRIPCION=Lunes Bancarios                                             
+ CONFIG=Y
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=LUN_DESCRI          ,'C',250,0,'','Descripción',0
+ C002=LUN_FECHA           ,'D',008,0,'','Fecha',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

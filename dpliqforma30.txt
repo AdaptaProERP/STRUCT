@@ -1,0 +1,104 @@
+[ID]
+ NUMERO=0505
+ NOMBRE=DPLIQFORMA30
+ DESCRIPCION=Liquidación de Forma 30                                     
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=F30_20              ,'N',017,2,'','',0
+ C002=F30_21              ,'N',017,2,'','Reintegro Sólo Exportadores',0
+ C003=F30_22              ,'N',017,2,'','',0
+ C004=F30_24              ,'N',017,2,'','',0
+ C005=F30_30              ,'N',017,2,'','',0
+ C006=F30_31              ,'N',017,2,'','',0
+ C007=F30_312             ,'N',017,2,'','',0
+ C008=F30_313             ,'N',017,2,'','',0
+ C009=F30_32              ,'N',017,2,'','',0
+ C010=F30_322             ,'N',017,2,'','',0
+ C011=F30_323             ,'N',017,2,'','',0
+ C012=F30_33              ,'N',017,2,'','',0
+ C013=F30_332             ,'N',017,2,'','',0
+ C014=F30_333             ,'N',017,2,'','',0
+ C015=F30_34              ,'N',017,2,'','',0
+ C016=F30_342             ,'N',017,2,'','',0
+ C017=F30_343             ,'N',017,2,'','',0
+ C018=F30_35              ,'N',017,2,'','',0
+ C019=F30_36              ,'N',017,2,'','',0
+ C020=F30_37              ,'N',017,2,'','',0
+ C021=F30_38              ,'N',017,2,'','',0
+ C022=F30_39              ,'N',017,2,'','',0
+ C023=F30_40              ,'N',017,2,'','',0
+ C024=F30_41              ,'N',017,2,'','',0
+ C025=F30_42              ,'N',017,2,'','',0
+ C026=F30_43              ,'N',017,2,'','',0
+ C027=F30_442             ,'N',017,2,'','',0
+ C028=F30_443             ,'N',017,2,'','',0
+ C029=F30_452             ,'N',017,2,'','',0
+ C030=F30_453             ,'N',017,2,'','',0
+ C031=F30_46              ,'N',017,2,'','',0
+ C032=F30_47              ,'N',017,2,'','',0
+ C033=F30_48              ,'N',017,2,'','',0
+ C034=F30_49              ,'N',017,2,'','',0
+ C035=F30_50              ,'N',017,2,'','',0
+ C036=F30_51              ,'N',017,2,'','',0
+ C037=F30_52              ,'N',017,2,'','',0
+ C038=F30_53              ,'N',017,2,'','',0
+ C039=F30_54              ,'N',017,2,'','',0
+ C040=F30_55              ,'N',017,2,'','',0
+ C041=F30_56              ,'N',017,2,'','',0
+ C042=F30_57              ,'N',017,2,'','',0
+ C043=F30_58              ,'N',017,2,'','',0
+ C044=F30_60              ,'N',017,2,'','',0
+ C045=F30_61              ,'N',017,2,'','',0
+ C046=F30_62              ,'N',017,2,'','',0
+ C047=F30_65              ,'N',017,2,'','',0
+ C048=F30_66              ,'N',017,2,'','Retenciones del Periodo',0
+ C049=F30_67              ,'N',017,2,'','Saldo Retenciones de IVA no Aplicado',0
+ C050=F30_68              ,'N',017,2,'','Percepciones del Periodo',0
+ C051=F30_69              ,'N',017,2,'','Saldo de Percepciones en Aduanas',0
+ C052=F30_70              ,'N',017,2,'','Creditos Fiscales totalmente Deducc.',0
+ C053=F30_71              ,'N',017,2,'','Total Crédito Fiscales Deducibles',0
+ C054=F30_72              ,'N',017,2,'','Créditos Adquiridos por Cesión Ret',0
+ C055=F30_73              ,'N',017,2,'','Recuperación de Retenciones Solic.',0
+ C056=F30_74              ,'N',017,2,'','Total Retenciones',0
+ C057=F30_75              ,'N',017,2,'','Créditos Adquridos por Cesion Percep',0
+ C058=F30_76              ,'N',017,2,'','Recuperación de Percepciones Solc.',0
+ C059=F30_77              ,'N',017,2,'','Total Percepciones',0
+ C060=F30_78              ,'N',017,2,'','Sub-Total de Impuesto a Pagar',0
+ C061=F30_80              ,'N',017,2,'','Certificados de Deb Fiscales',0
+ C062=F30_81              ,'N',017,2,'','Reintegro Solicitado  (a Entes Exonerd)',0
+ C063=F30_82              ,'N',017,2,'','Certificados de Débitos Fiscales Exon',0
+ C064=F30_90              ,'N',017,2,'','',0
+ C065=F30_911             ,'N',017,2,'','',0
+ C066=F30_912             ,'N',017,2,'','',0
+ C067=F30_ANO             ,'C',004,0,'','Año',1
+ C068=F30_CBTPAG          ,'C',008,0,'','Comprobante de Pago',1
+ C069=F30_CODSUC          ,'C',008,0,'','Sucursal',1
+ C070=F30_DESDE           ,'D',008,0,'','Fecha Desde',0
+ C071=F30_FECHA           ,'D',008,0,'','Fecha Registro',0
+ C072=F30_HASTA           ,'D',008,0,'','Fecha Hasta',0
+ C073=F30_MES             ,'C',002,0,'','Mes',1
+ C074=F30_NUMREG          ,'C',010,0,'','Registro Planificación',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

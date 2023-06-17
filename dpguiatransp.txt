@@ -1,0 +1,45 @@
+[ID]
+ NUMERO=0324
+ NOMBRE=DPGUIATRANSP
+ DESCRIPCION=Guia de Transporte                                          
+ CONFIG=F
+ SINGUL=Guia                          
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=GTR_CODCLI          ,'C',010,0,'','',0
+ C002=GTR_CODCON          ,'C',004,0,'','',0
+ C003=GTR_CODMON          ,'C',003,0,'','Moneda o Divisa',0
+ C004=GTR_CODTRA          ,'C',006,0,'','Transportistas',0
+ C005=GTR_DESTIN          ,'C',020,0,'','',0
+ C006=GTR_FECHA           ,'D',008,0,'','',0
+ C007=GTR_NUMERO          ,'C',008,0,'','',0
+ C008=GTR_ORIGEN          ,'C',020,0,'','',0
+ C009=GTR_VALOR           ,'N',019,2,'','',0
+ C010=GTR_VIATIC          ,'N',019,2,'','',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTRANSP                , GTR_CODTRA=TRA_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPGUIATRANSP INNER JOIN DPTRANSP ON GTR_CODTRA=TRA_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

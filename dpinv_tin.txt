@@ -1,0 +1,107 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPINV_TIN
+ DESCRIPCION=Tareas Internas                                             
+ CONFIG=F
+ SINGUL=Tarea                         
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=INV_FCHACT          ,'D',008,0,'','Fecha de Actualización',0
+ C002=INV_REQPES          ,'C',001,0,'','Requiere Peso Compras/Comercialización',0
+ C003=INV_FCHCRE          ,'D',008,0,'','Fecha de Creación',0
+ C004=INV_CODMAR          ,'C',006,0,'','Marca',0
+ C005=INV_COSADQ          ,'N',014,2,'','Costo de Aquisición sin Gastos',0
+ C006=INV_COSFOB          ,'N',014,2,'','Costo en Otra Moneda F.O.B.',0
+ C007=INV_METCOS          ,'C',001,0,'','Método de Costo',0
+ C008=INV_RECALC          ,'L',001,0,'','Indicación de modificación',0
+ C009=INV_IMPPAT          ,'C',003,0,'','Código del Impuesto s/patente',0
+ C010=INV_NUMMEM          ,'N',006,0,'','Registro de Descripción Amplia',0
+ C011=INV_UTILIZ          ,'C',030,0,'','Utilización',0
+ C012=INV_IMPPVP          ,'N',006,2,'','%Impuesto al Precio de Venta',0
+ C013=INV_COMVTA          ,'N',010,2,'','Comisión por Venta',0
+ C014=INV_PROCED          ,'C',001,0,'','Procedencia',0
+ C015=INV_IVA             ,'C',002,0,'','Tipo de I.V.A.',0
+ C016=INV_ARANCE          ,'C',016,0,'','Código del Arancel',0
+ C017=INV_COSMER          ,'N',014,2,'','Costo del Mercado',0
+ C018=INV_PORFAC          ,'N',006,2,'','Porcentaje de Descuento por Unidad',0
+ C019=INV_OBS3            ,'C',040,0,'','Observación 3',0
+ C020=INV_OBS2            ,'C',040,0,'','Observación 2',0
+ C021=INV_OBS1            ,'C',040,0,'','Observación 1',0
+ C022=INV_CONCRI          ,'N',006,0,'','Consideración Crítica',0
+ C023=INV_EXIMAX          ,'N',011,2,'','Existencia M+xima en Unidades',0
+ C024=INV_EXIMIN          ,'N',011,2,'','Existencia M+nima en Unidades',0
+ C025=INV_GRUPO           ,'C',006,0,'','Grupo',0
+ C026=INV_UBICAC          ,'C',008,0,'','Ubicación Fisica',0
+ C027=INV_DESCRI          ,'C',180,0,'','Descripción',0
+ C028=INV_CODIGO          ,'C',020,0,'','Código',0
+ C029=INV_FILBMP          ,'C',060,0,'','Foto Bmp',0
+ C030=INV_PVPORG          ,'N',014,2,'','Precio de Venta Regular',0
+ C031=INV_PORARA          ,'N',006,2,'','% Arancel',0
+ C032=INV_EDITAR          ,'C',001,0,'','Editable',0
+ C033=INV_ESTADO          ,'C',001,0,'','Estado',0
+ C034=INV_TALLAS          ,'C',006,0,'','Código de Tallas',0
+ C035=INV_GRADOS          ,'N',003,0,'','Grados alcohólicos',0
+ C036=INV_CAPACI          ,'N',004,2,'','Capacidad por Botella',0
+ C037=INV_WEB             ,'C',001,0,'','Publicar en eDpcommerce',0
+ C038=INV_WEBMEM          ,'N',006,0,'','Publicar en eDpcommerce',0
+ C039=INV_REQMED          ,'C',001,0,'','Requiere Unidad de Medida',0
+ C040=INV_MESGAR          ,'N',002,0,'','Meses de Garantía',0
+ C041=INV_PROMO           ,'C',001,0,'','Promocion',0
+ C042=INV_LPT             ,'C',004,0,'','Puerto de Impresión',0
+ C043=INV_APLICA          ,'C',001,0,'','Aplicación',0
+ C044=INV_PAIS            ,'C',020,0,'','Pais de Origen',0
+ C045=INV_FILMAI          ,'N',007,0,'','Digitalización',0
+ C046=INV_PREREG          ,'C',001,0,'','Requiere Precio Regulado',0
+ C047=INV_ITEMCO          ,'C',001,0,'','Item comentario sin precio ni cantidad',0
+ C048=INV_ESCOMN          ,'C',001,0,'','Solo para Comentario',0
+ C049=INV_MEDMUL          ,'C',001,0,'','Multiples Unidades de Medida',0
+ C050=INV_TIPCOM          ,'C',001,0,'','Totalizar Componentes por Monto o Cant.',0
+ C051=INV_CODDEP          ,'C',010,0,'','Código del Departamento',0
+ C052=INV_REQMEM          ,'C',001,0,'','Requiere Memo',0
+ C053=INV_CATMER          ,'C',020,0,'','Categorizacion de mercado',0
+ C054=INV_CODRET          ,'C',003,0,'','Código Retención ISLR/Servicio',0
+ C055=INV_CODSAT          ,'C',100,0,'','Catálogo SAT Productos y Servicios',0
+ C056=INV_COSPRO          ,'N',018,0,'','Costo Promedio',0
+ C057=INV_CROSSD          ,'C',001,0,'','Cross-Docking',0
+ C058=INV_EXISTE          ,'N',018,0,'','Existencia',0
+ C059=INV_FCHCOS          ,'D',008,0,'','Fecha Ultimo Costo',0
+ C060=INV_PESO            ,'N',014,0,'','Peso en Kilos',0
+ C061=INV_USO             ,'C',120,0,'','Uso',0
+ C062=INV_VOLUME          ,'N',014,0,'','Peso Metros Cúbicos',0
+ C063=INV_CODEOR          ,'C',020,0,'','Código Organización',0
+ C064=INV_OBS4            ,'C',060,0,'','Observación 4',0
+ C065=INV_OBS5            ,'C',060,0,'','Observación 5',0
+ C066=INV_TIPO            ,'C',003,0,'','Tipo de Actividad',0
+ C067=INV_ACTIVO          ,'L',001,0,'','Activo',0
+ C068=INV_CRITIC          ,'L',001,0,'','Crítico',0
+ C069=INV_HORAS           ,'N',010,0,'','Horas',0
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPCLASIFICTAREAS        , INV_GRUPO=CDT_CODIGO, <CAMPO:CDT_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CDT_DESCRI FROM DPINV_TIN INNER JOIN DPCLASIFICTAREAS ON CDT_CODIGO=INV_GRUPO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=INV_ESTADO          ,Activo                                                                          
+ C002=INV_ESTADO          ,Inactivo                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

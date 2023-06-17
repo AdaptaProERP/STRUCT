@@ -1,0 +1,65 @@
+[ID]
+ NUMERO=0601
+ NOMBRE=DPFORMATOSPRN
+ DESCRIPCION=Formatos de Impresión Plana                                 
+ CONFIG=F
+ SINGUL=Formato                       
+ APLICA=18
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=FOR_ALTER           ,'L',001,0,'','Modificado',0
+ C002=FOR_AUTO            ,'L',001,0,'','Emisión Automática',0
+ C003=FOR_CIERRE          ,'L',001,0,'','Cierre Automático',0
+ C004=FOR_CODIGO          ,'C',020,0,'PRIMARY KEY NOT NULL','Código',0
+ C005=FOR_COPIAS          ,'N',002,0,'','Número de Copias',0
+ C006=FOR_DESCRI          ,'C',040,0,'','Descripción',0
+ C007=FOR_FECHA           ,'D',008,0,'','Fecha',0
+ C008=FOR_FUENTE          ,'M',010,0,'','Código Fuente',0
+ C009=FOR_GRUPO           ,'C',020,0,'','Código del Grupo',0
+ C010=FOR_HORA            ,'C',008,0,'','Hora',0
+ C011=FOR_PUERTO          ,'C',011,0,'','Puerto de Salida',0
+ C012=FOR_RUNFIN          ,'C',080,0,'','Ejecución Final',0
+ C013=FOR_RUNINI          ,'C',080,0,'','Ejecución Inicial',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPFORMATOGRU            , FOR_GRUPO=GDF_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPFORMATOSAREA          , FOR_CODIGO=ADF_CODFOR, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPFORMATOGRU            , FOR_GRUPO=GDF_CODIGO, <CAMPO:GDF_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPFORMATOSPRN INNER JOIN DPFORMATOGRU ON FOR_GRUPO=GDF_CODIGO
+ SELECT GDF_DESCRI FROM DPFORMATOSPRN INNER JOIN DPFORMATOGRU ON GDF_CODIGO=FOR_GRUPO
+ SELECT * FROM DPFORMATOSPRN INNER JOIN DPFORMATOSAREA ON ADF_CODFOR=FOR_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=FOR_PUERTO          ,Fichero.html                                                                    
+ C002=FOR_PUERTO          ,Fichero.txt                                                                     
+ C003=FOR_PUERTO          ,LPT1:                                                                           
+ C004=FOR_PUERTO          ,LPT2:                                                                           
+ C005=FOR_PUERTO          ,LPT3:                                                                           
+ C006=FOR_PUERTO          ,LPT4:                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=9576
+ NOMBRE=DPINVUTILIZ
+ DESCRIPCION=Utilización de Productos                                    
+ CONFIG=F
+ SINGUL=Utilización                   
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=UTL_ABASTE          ,'L',001,0,'','Nuevo Campo',0
+ C002=UTL_CODIGO          ,'C',080,0,'PRIMARY KEY NOT NULL','Utilización',0
+ C003=UTL_LIBINV          ,'L',001,0,'','Afecta Libro de Inventario',0
+ C004=UTL_TIPO            ,'C',001,0,'','Tipo de Ubicación',0
+ C005=UTL_UBIFIS          ,'L',001,0,'','Ubicación Física',0
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPTIPDOCCLIUTILIZ       , UTL_CODIGO=TDU_UTILIZ, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM DPINVUTILIZ INNER JOIN DPTIPDOCCLIUTILIZ ON TDU_UTILIZ=UTL_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=UTL_TIPO            ,Anaquel                                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

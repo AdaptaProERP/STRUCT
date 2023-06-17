@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=9862
+ NOMBRE=DPLIBCOMPRAS
+ DESCRIPCION=Libro de Compras                                            
+ CONFIG=F
+ SINGUL=Libro de Compra               
+ APLICA=08
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=LIB_CODIGO          ,'C',005,0,'','Código',0
+ C002=LIB_CODSUC          ,'C',006,0,'','Código Sucursal',1
+ C003=LIB_FCHEJE          ,'D',008,0,'','Fecha Ejecución',0
+ C004=LIB_FECHA           ,'D',008,0,'','Fecha Declaración',0
+ C005=LIB_OPEN            ,'L',001,0,'','Edo. Declaración',0
+ C006=LIB_OPENR           ,'L',001,0,'','Edo. Registro',0
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPSUCURSAL              , LIB_CODSUC=SUC_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPLIBCOMPRAS INNER JOIN DPSUCURSAL ON LIB_CODSUC=SUC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

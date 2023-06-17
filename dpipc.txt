@@ -1,0 +1,36 @@
+[ID]
+ NUMERO=0046
+ NOMBRE=DPIPC
+ DESCRIPCION=Registro del IPC / INPC                                     
+ CONFIG=Y
+ SINGUL=IPC                           
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ C001=IPC_ANO             ,'C',004,0,'','Año',0
+ C002=IPC_INPC            ,'N',019,5,'','Tasa INPC',0
+ C003=IPC_INPCE           ,'N',013,5,'','Estimado BAN-VENIIF',0
+ C004=IPC_MES             ,'C',002,0,'','Mes',0
+ C005=IPC_TASA            ,'N',019,5,'','Tasa IPC',0
+ C006=IPC_IPC             ,'N',019,0,'','IPC',0
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
