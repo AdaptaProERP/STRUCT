@@ -1,0 +1,59 @@
+[ID]
+ NUMERO=0503
+ NOMBRE=DPASIENTOCENCOS
+ DESCRIPCION=Asientos de Centro de Costos                                
+ CONFIG=F
+ SINGUL=Asiento                       
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ACC_ACTUAL          ,'C',001,0,'','Actualizado',0,''
+ C002=ACC_CODCOS          ,'C',008,0,'','Centro de Costo',0,''
+ C003=ACC_CODCTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C004=ACC_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C005=ACC_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C006=ACC_CTAMOD          ,'C',006,0,'','Codigo de Cuenta Modelo',0,''
+ C007=ACC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C008=ACC_ITEM            ,'C',004,0,'','Item del Comprobante',1,''
+ C009=ACC_MONTO           ,'N',016,2,'','Monto',0,''
+ C010=ACC_NUMCBT          ,'C',008,0,'','Comprobante',1,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPASIENTOS              , ACC_CODSUC,ACC_ACTUAL,ACC_NUMCBT,ACC_FECHA,ACC_ITEM,ACC_CODCTA=MOC_CODSUC,MOC_ACTUAL,MOC_NUMCBT,MOC_FECHA,MOC_ITEM,MOC_CUENTA <UPDATE> <DELETE> <RUN>
+ T002=DPCENCOS                , ACC_CODCOS=CEN_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPCENCOS                , ACC_CODCOS=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+ T002=DPCTA                   , ACC_CODCTA=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPASIENTOCENCOS INNER JOIN DPASIENTOS ON ACC_CODSUC=MOC_CODSUC AND ACC_ACTUAL=MOC_ACTUAL AND ACC_NUMCBT=MOC_NUMCBT AND ACC_FECHA=MOC_FECHA AND ACC_ITEM=MOC_ITEM AND ACC_CODCTA=MOC_CUENTA
+ SELECT * FROM DPASIENTOCENCOS INNER JOIN DPCENCOS ON ACC_CODCOS=CEN_CODIGO
+ SELECT CEN_DESCRI FROM DPASIENTOCENCOS INNER JOIN DPCENCOS ON CEN_CODIGO=ACC_CODCOS
+ SELECT CTA_DESCRI FROM DPASIENTOCENCOS INNER JOIN DPCTA ON CTA_CODIGO=ACC_CODCTA
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=ACC_ACTUAL          ,Auditor¡a                                                                       
+ C002=ACC_ACTUAL          ,No                                                                              
+ C003=ACC_ACTUAL          ,Si                                                                              
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

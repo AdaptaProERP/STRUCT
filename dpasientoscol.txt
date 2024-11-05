@@ -1,0 +1,42 @@
+[ID]
+ NUMERO=1011
+ NOMBRE=DPASIENTOSCOL
+ DESCRIPCION=Definici¢n Asiento Contable                                 
+ CONFIG=F
+ SINGUL=Definici¢n Asiento Contable   
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CTD_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=CTD_AFTER           ,'C',020,0,'','After',0,''
+ C003=CTD_DEFAUL          ,'C',250,0,'','Valor por Defecto',0,''
+ C004=CTD_FIELD           ,'C',020,0,'','Columna',0,''
+ C005=CTD_NUMPOS          ,'N',002,0,'','Posici¢n',0,''
+ C006=CTD_PICTUR          ,'C',024,0,'','Formato',0,''
+ C007=CTD_REPITE          ,'L',001,0,'','Repite',0,''
+ C008=CTD_SIZE            ,'N',003,0,'','Ancho',0,''
+ C009=CTD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C010=CTD_TITLE           ,'C',200,0,'','Titulo',0,''
+ C011=CTD_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

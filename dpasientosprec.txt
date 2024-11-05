@@ -1,0 +1,55 @@
+[ID]
+ NUMERO=0507
+ NOMBRE=DPASIENTOSPREC
+ DESCRIPCION=Asientos de Precontabilizaci¢n                              
+ CONFIG=F
+ SINGUL=Precontabilizaci¢n            
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOC_ACTUAL          ,'C',001,0,'','Actual',0,''
+ C002=MOC_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C003=MOC_CODAUX          ,'C',012,0,'','Auxiliar',0,''
+ C004=MOC_CODMON          ,'C',003,0,'','C¢digo de Moneda',0,''
+ C005=MOC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C006=MOC_CTAMOD          ,'C',006,0,'','Cuenta Modelo',0,'&oDp:cCtaMod'
+ C007=MOC_CUENTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C008=MOC_DESCRI          ,'C',050,0,'','Descripci¢n',0,''
+ C009=MOC_DOCPAG          ,'C',014,0,'','Documento de Pago',0,''
+ C010=MOC_DOCUME          ,'C',010,0,'','Documento',0,''
+ C011=MOC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=MOC_ITEM            ,'C',004,0,'','Item',0,''
+ C013=MOC_ITEM_O          ,'C',005,0,'','Item de Origen',0,''
+ C014=MOC_MONTO           ,'N',019,2,'','Monto',0,''
+ C015=MOC_NUMCBT          ,'C',008,0,'','Comprobante',0,''
+ C016=MOC_NUMMEM          ,'N',019,0,'','Memo',0,''
+ C017=MOC_NUMTRA          ,'C',008,0,'','N£mero de Transacci¢n',0,''
+ C018=MOC_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C019=MOC_RIF             ,'C',015,0,'','RIF del Auxiliar',0,''
+ C020=MOC_TIPASI          ,'C',003,0,'','Tipo de Asiento',0,''
+ C021=MOC_TIPO            ,'C',004,0,'','Tipo',0,''
+ C022=MOC_TIPTRA          ,'C',001,0,'','Tipo Transacci¢n',0,''
+ C023=MOC_USUARI          ,'C',003,0,'','Usuario',0,''
+ C024=MOC_VALCAM          ,'N',019,3,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

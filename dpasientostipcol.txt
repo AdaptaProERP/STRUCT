@@ -1,0 +1,36 @@
+[ID]
+ NUMERO=1011
+ NOMBRE=DPASIENTOSTIPCOL
+ DESCRIPCION=Tipos de Asientos Asiento Contable                          
+ CONFIG=F
+ SINGUL=Tipos de Asientos Asiento Cont
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TDC_ACTIVO          ,'L',001,0,'','Registro Activo',0,''
+ C002=TDC_DESCRI          ,'C',250,0,'','Descripci¢n',0,''
+ C003=TDC_SIZEFN          ,'N',003,0,'','Tama¤o de la Fuente de Letra',0,''
+ C004=TDC_TIPO            ,'C',003,0,'','Tipo',0,''
+ C005=TDC_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

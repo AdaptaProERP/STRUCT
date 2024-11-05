@@ -1,0 +1,64 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPASIENTOS_DEL
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Asientos                      
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOC_ACTUAL          ,'C',001,0,'','Actualizado',0,''
+ C002=MOC_ALTER           ,'L',001,0,'','Asientos Alterados o Discrecionalidad',0,''
+ C003=MOC_CENCOS          ,'C',008,0,'','Centro;Costo',0,''
+ C004=MOC_CODAUX          ,'C',020,0,'','C¢digo Auxiliar',0,''
+ C005=MOC_CODDEP          ,'C',010,0,'','C¢digo Departamento',0,''
+ C006=MOC_CODEMP          ,'C',004,0,'','C¢digo de Empresa',0,''
+ C007=MOC_CODINT          ,'C',010,0,'','C¢digo de Integraci¢n',0,''
+ C008=MOC_CODMON          ,'C',003,0,'','Moneda o Divisa',0,''
+ C009=MOC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C010=MOC_CTAMOD          ,'C',006,0,'','C¢digo Cuenta Modelo',0,''
+ C011=MOC_CUENTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C012=MOC_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+ C013=MOC_DOCPAG          ,'C',014,0,'','Documento de Pago',0,''
+ C014=MOC_DOCUME          ,'C',020,0,'','N£mero del Documento',0,''
+ C015=MOC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C016=MOC_FILMAI          ,'N',008,0,'','Registro de Digitalizaci¢n',0,''
+ C017=MOC_ITEM            ,'C',004,0,'','N£mero de Asiento',0,''
+ C018=MOC_ITEM_O          ,'C',005,0,'','N£mero de Asiento',0,''
+ C019=MOC_MONTO           ,'N',017,2,'','Monto',0,''
+ C020=MOC_MTOORG          ,'N',018,0,'','Monto Origen',0,''
+ C021=MOC_NUMCBT          ,'C',008,0,'','Comprobante',0,''
+ C022=MOC_NUMEJE          ,'C',004,0,'','N£mero Ejercicio',0,''
+ C023=MOC_NUMMEM          ,'N',006,0,'','N£meo de Memo',0,''
+ C024=MOC_NUMPAR          ,'C',005,0,'','N£mero de Partidaa',0,''
+ C025=MOC_NUMTRA          ,'C',008,0,'','N£mero de Transacci¢n',0,''
+ C026=MOC_ORIGEN          ,'C',003,0,'','M¢dulo de Origen',0,''
+ C027=MOC_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,''
+ C028=MOC_RIF             ,'C',012,0,'','RIF del C¢digo Auxiliar',0,''
+ C029=MOC_SERFIS          ,'C',002,0,'','Serie Fiscal',0,''
+ C030=MOC_TIPASI          ,'C',003,0,'','Tipo de Asiento',0,''
+ C031=MOC_TIPO            ,'C',004,0,'','Tipo de Documento',0,''
+ C032=MOC_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n Auxiliar',0,''
+ C033=MOC_VALCAM          ,'N',017,2,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
