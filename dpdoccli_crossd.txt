@@ -1,0 +1,103 @@
+[ID]
+ NUMERO=1069
+ NOMBRE=DPDOCCLI_CROSSD
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Documento                     
+ APLICA=03
+ PRIMARY_KEY='DOC_CODSUC,DOC_TIPDOC,DOC_TIPTRA,DOC_NUMERO,DOC_RECNUM,DOC_SERFIS'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DOC_ACT             ,'N',002,0,'','Estatus del Documento',0,''
+ C002=DOC_ANUFIS          ,'L',001,0,'','Anulaci¢n Fiscal',0,''
+ C003=DOC_ASODOC          ,'C',019,0,'','Documento Asociado',0,''
+ C004=DOC_BASNET          ,'N',017,2,'','Monto Neto',0,''
+ C005=DOC_CBTNUM          ,'C',008,0,'','Comprobante Contable',0,''
+ C006=DOC_CENCOS          ,'C',008,0,'','Centros de Costos',0,''
+ C007=DOC_CODDEP          ,'C',012,0,'','C¢digo Departamento',0,''
+ C008=DOC_CODIGO          ,'C',010,0,'','Cliente',0,''
+ C009=DOC_CODMON          ,'C',003,0,'','Moneda o Divisa',0,''
+ C010=DOC_CODPER          ,'C',006,0,'','C¢digo Personal',0,''
+ C011=DOC_CODREC          ,'C',010,0,'','C¢digo de Recurso',0,''
+ C012=DOC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C013=DOC_CODTER          ,'C',012,0,'','C¢digo de Terceros',0,''
+ C014=DOC_CODTRA          ,'C',006,0,'','Transporte',0,''
+ C015=DOC_CODVEN          ,'C',006,0,'','Vendedor',0,''
+ C016=DOC_CONDIC          ,'C',035,0,'','Condici¢n',0,''
+ C017=DOC_CREREC          ,'L',001,0,'','Creado en Recibo',0,''
+ C018=DOC_CXC             ,'N',002,0,'','Relaci¢n CxC',0,''
+ C019=DOC_DCTO            ,'N',006,2,'','% Descuento',0,''
+ C020=DOC_DESCCO          ,'C',030,0,'','Descuentos en Cascada',0,''
+ C021=DOC_DESTIN          ,'C',001,0,'','Nacional o Exportaci¢n',0,''
+ C022=DOC_DOCORG          ,'C',001,0,'','Origen del Documento',0,''
+ C023=DOC_ESTADO          ,'C',002,0,'','Estado del Documento',0,''
+ C024=DOC_EXPEXP          ,'C',010,0,'','Expediente de Exportaci¢n',0,''
+ C025=DOC_FACAFE          ,'C',010,0,'','Factura Afectada',0,''
+ C026=DOC_FAVORI          ,'L',001,0,'','Favorito',0,''
+ C027=DOC_FCHDEC          ,'D',008,0,'','Fecha Declaraci¢n para IVA',0,''
+ C028=DOC_FCHREC          ,'D',008,0,'','Fecha de Recepci¢n',0,''
+ C029=DOC_FCHVEN          ,'D',008,0,'','Vence',0,''
+ C030=DOC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C031=DOC_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C032=DOC_FORPAG          ,'C',001,0,'','Forma de Pago Condicionada',0,''
+ C033=DOC_GIRNUM          ,'C',008,0,'','N£mero de Registro de Giros',0,''
+ C034=DOC_HORA            ,'C',008,0,'','Hora',0,''
+ C035=DOC_IMPOTR          ,'N',017,2,'','Otros Impuestos',0,''
+ C036=DOC_IMPRES          ,'L',001,0,'','Impreso',0,''
+ C037=DOC_INVMON          ,'L',001,0,'','Productos Divisas',0,''
+ C038=DOC_IVABAS          ,'N',017,2,'','Base del IVA',0,''
+ C039=DOC_IVAREB          ,'N',002,0,'','%Rebaja del IVA',0,''
+ C040=DOC_MODFIS          ,'C',015,0,'','Modelo Fiscal',0,''
+ C041=DOC_MONNAC          ,'C',003,0,'','Moneda Nacional',0,''
+ C042=DOC_MTOCOM          ,'N',017,2,'','Monto de Comisi¢n',0,''
+ C043=DOC_MTOCOS          ,'N',017,2,'','Monto del Costo',0,''
+ C044=DOC_MTOEXE          ,'N',017,2,'','Monto Exento',0,''
+ C045=DOC_MTOIVA          ,'N',017,2,'','Monto del IVA',0,''
+ C046=DOC_NETO            ,'N',017,2,'','Neto',0,''
+ C047=DOC_NUMERO          ,'C',010,0,'','N£mero',0,''
+ C048=DOC_NUMFIS          ,'C',010,0,'','N£mero Fiscal',0,''
+ C049=DOC_NUMGTR          ,'C',008,0,'','N£mero de guia de Transporte',0,''
+ C050=DOC_NUMIMP          ,'N',002,0,'','Cantidad de Impresiones',0,''
+ C051=DOC_NUMMEM          ,'N',008,0,'','N£mero de Memo',0,''
+ C052=DOC_NUMPAG          ,'N',002,0,'','P ginas Control Fiscal',0,''
+ C053=DOC_NUMPAR          ,'C',005,0,'','N£mero de Partida',0,''
+ C054=DOC_NUMPER          ,'C',008,0,'','Documento Peri¢dico',0,''
+ C055=DOC_OTROS           ,'N',017,2,'','Otros Montos',0,''
+ C056=DOC_PLAEXP          ,'C',010,0,'','Planilla de Exportaci¢n',0,''
+ C057=DOC_PLAZO           ,'N',004,0,'','Plazo',0,''
+ C058=DOC_RECARG          ,'N',006,2,'','% Recargo',0,''
+ C059=DOC_RECNUM          ,'C',008,0,'','Recibo',0,''
+ C060=DOC_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,''
+ C061=DOC_RIF             ,'C',012,0,'','RIF',0,''
+ C062=DOC_SERFIS          ,'C',001,0,'','Serie Fiscal',0,''
+ C063=DOC_SUCCLI          ,'C',004,0,'','Sucursal del Cliente',0,''
+ C064=DOC_TIPAFE          ,'C',003,0,'','Tipo de Documento Afectado',0,''
+ C065=DOC_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C066=DOC_TIPORG          ,'C',003,0,'','Tipo de Documento Origen',0,''
+ C067=DOC_TIPPAG          ,'C',001,0,'','Tipo de Documento de Pago',0,''
+ C068=DOC_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C069=DOC_USUARI          ,'C',003,0,'','Usuario',0,''
+ C070=DOC_VALCAM          ,'N',015,4,'','Valor Cambiario',0,''
+ C071=DOC_VTAANT          ,'L',001,0,'','Venta Anticipada',0,''
+ C072=DOC_ZONANL          ,'C',001,0,'','Zona Libre o Nacional',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,40 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPTIPDOCCLISLD
+ DESCRIPCION=Saldos Tipo de Documento                                    
+ CONFIG=F
+ SINGUL=Saldo Tipo Doc                
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SLD_CANEXP          ,'N',019,3,'','Cant. Exportada',0,''
+ C002=SLD_CANREQ          ,'N',019,3,'','Cant. Requerida',0,''
+ C003=SLD_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C004=SLD_DOCDES          ,'C',006,0,'','Documento',0,''
+ C005=SLD_TIPDOC          ,'C',006,0,'','Tipo Documento',0,''
+ C006=SLD_XCUEXP          ,'N',019,3,'','Cant. X Unidad Exportada',0,''
+ C007=SLD_XCUREQ          ,'N',019,3,'','Cant. X Unidad',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+ SELECT * FROM DPTIPDOCCLISLD INNER JOIN DPSUCURSAL ON SLD_CODSUC=SUC_CODIGO
+ SELECT * FROM DPTIPDOCCLISLD INNER JOIN DPTIPDOCCLI ON SLD_TIPDOC=TDC_TIPO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

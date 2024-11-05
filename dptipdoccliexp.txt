@@ -1,0 +1,47 @@
+[ID]
+ NUMERO=9671
+ NOMBRE=DPTIPDOCCLIEXP
+ DESCRIPCION=Exportar                                                    
+ CONFIG=F
+ SINGUL=Definici¢n Exportar Documentos
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TEX_CODMOD          ,'C',004,0,'','Modelo de Negocios',0,''
+ C002=TEX_DESDE           ,'D',010,0,'','Exportar',0,''
+ C003=TEX_EDIT            ,'L',001,0,'','Vista Flujo de Procesos',0,'.T.'
+ C004=TEX_MEMOC           ,'M',000,0,'','Memo de Proceso Clic',0,''
+ C005=TEX_POS             ,'N',003,0,'','Posici¢n',0,''
+ C006=TEX_PROGRA          ,'C',030,0,'','Programa',0,''
+ C007=TEX_SELECT          ,'L',001,0,'','Exportar',0,'.T.'
+ C008=TEX_TIPDOC          ,'C',003,0,'','Tipo Documento',0,''
+ C009=TEX_TIPEXP          ,'C',003,0,'','Exportar',0,''
+ C010=TEX_TIPINI          ,'C',003,0,'','Tipo Documento Inicial',0,''
+ C011=TEX_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPMODPROCDOCCLI         , TEX_CODMOD=MPN_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPTIPDOCCLIEXP INNER JOIN DPMODPROCDOCCLI ON TEX_CODMOD=MPN_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

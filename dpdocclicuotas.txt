@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=9951
+ NOMBRE=DPDOCCLICUOTAS
+ DESCRIPCION=Cuotas de Pago                                              
+ CONFIG=F
+ SINGUL=Cuotas de Pago                
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DCC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C002=DCC_NUMERO          ,'C',010,0,'','N£mero',0,''
+ C003=DCC_TIPDOC          ,'C',003,0,'','Tipo',0,''
+ C004=DCC_TIPTRA          ,'C',001,0,'','Transacci¢n',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

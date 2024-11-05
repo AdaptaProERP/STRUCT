@@ -1,0 +1,54 @@
+[ID]
+ NUMERO=0306
+ NOMBRE=DPDOCCLIRTI
+ DESCRIPCION=Retenciones de IVA (Clientes)                               
+ CONFIG=F
+ SINGUL=Retenci¢n IVA                 
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=RTI_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C002=RTI_CONTAB          ,'C',001,0,'','Contabilizado',0,''
+ C003=RTI_DOCNUM          ,'C',010,0,'','N£mero de Retenci¢n (Documento)',1,''
+ C004=RTI_DOCTIP          ,'C',003,0,'','Tipo de Retenci¢n',0,''
+ C005=RTI_FCHDEC          ,'D',008,0,'','Fecha Declaraci¢n',0,''
+ C006=RTI_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C007=RTI_NUMCLI          ,'C',014,0,'','Retenci¢n del Cliente',0,''
+ C008=RTI_NUMERO          ,'C',010,0,'','N£mero de Documento',1,''
+ C009=RTI_NUMTRA          ,'C',008,0,'','N£mero de Transacci¢n',1,''
+ C010=RTI_PORCEN          ,'N',006,2,'','Porcentaje',0,''
+ C011=RTI_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C012=RTI_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPDOCCLI                , RTI_CODSUC,RTI_DOCTIP,RTI_DOCNUM,RTI_TIPTRA=DOC_CODSUC,DOC_TIPDOC,DOC_NUMERO,DOC_TIPTRA <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPSUCURSAL              , RTI_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCCLIRTI INNER JOIN DPDOCCLI ON RTI_CODSUC=DOC_CODSUC AND RTI_DOCTIP=DOC_TIPDOC AND RTI_DOCNUM=DOC_NUMERO AND RTI_TIPTRA=DOC_TIPTRA
+ SELECT SUC_DESCRI FROM DPDOCCLIRTI INNER JOIN DPSUCURSAL ON SUC_CODIGO=RTI_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

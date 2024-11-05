@@ -1,0 +1,73 @@
+[ID]
+ NUMERO=0302
+ NOMBRE=DPDOCCLIDIR
+ DESCRIPCION=Direcci¢n de Entrega por Documento                          
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CLI_CIUDAD          ,'C',100,0,'','Ciudad',0,''
+ C002=CLI_ESTADO          ,'C',100,0,'','Estado',0,''
+ C003=CLI_MUNICI          ,'C',100,0,'','Municipio',0,''
+ C004=DIR_CARGO           ,'C',035,0,'','Cargo',0,''
+ C005=DIR_CODIGO          ,'C',010,0,'','C½digo del Cliente',1,''
+ C006=DIR_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C007=DIR_CODTRA          ,'C',006,0,'','C¢digo de Transporte',0,''
+ C008=DIR_COMEN1          ,'C',040,0,'','Observaci¢n L¡nea 1',0,''
+ C009=DIR_COMEN2          ,'C',040,0,'','Observaci¢n L¡nea 2',0,''
+ C010=DIR_DIR1            ,'C',050,0,'','Direcci¢n de Entrega (1)',0,''
+ C011=DIR_DIR2            ,'C',050,0,'','Direcci¢n de Entrega (2)',0,''
+ C012=DIR_DIR3            ,'C',050,0,'','Direcci¢n de Entrega (3)',0,''
+ C013=DIR_DIRIGI          ,'C',040,0,'','Dirigido a persona',0,''
+ C014=DIR_FCHENT          ,'D',008,0,'','Fecha de Entrega',0,''
+ C015=DIR_FCHORD          ,'D',008,0,'','Fecha de Orden de Compra',0,''
+ C016=DIR_FLEDIV          ,'N',019,0,'','Monto Flete en Divisa',0,''
+ C017=DIR_FORENT          ,'C',050,0,'','Forma de Entrega',0,''
+ C018=DIR_GUIA            ,'C',020,0,'','N£mero de Guia',0,''
+ C019=DIR_HORENT          ,'C',008,0,'','Hora de Entrega',0,''
+ C020=DIR_NUMDOC          ,'C',010,0,'','N£mero de Documento Asociado',1,''
+ C021=DIR_ORDCOM          ,'C',010,0,'','Orden de Compra',1,''
+ C022=DIR_PAIS            ,'C',020,0,'','Pa¡s',0,''
+ C023=DIR_PARROQ          ,'C',020,0,'','Parroquia',0,''
+ C024=DIR_PERSON          ,'C',030,0,'','Persona que Recibe',0,''
+ C025=DIR_SUCCLI          ,'C',004,0,'','Sucursal del Cliente',0,''
+ C026=DIR_SUCTRA          ,'C',006,0,'','Sucursal del Transporte',0,''
+ C027=DIR_TELEFO          ,'C',012,0,'','Tel‚fono',0,''
+ C028=DIR_TIPDOC          ,'C',003,0,'','Tipo de Documento Asociado',0,''
+ C029=DIR_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C030=DIR_TRADES          ,'C',006,0,'','Transporte Destino',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPDOCCLI                , DIR_CODSUC,DIR_TIPDOC,DIR_NUMDOC,DIR_TIPTRA=DOC_CODSUC,DOC_TIPDOC,DOC_NUMERO,DOC_TIPTRA <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCCLIDIR INNER JOIN DPDOCCLI ON DIR_CODSUC=DOC_CODSUC AND DIR_TIPDOC=DOC_TIPDOC AND DIR_NUMDOC=DOC_NUMERO AND DIR_TIPTRA=DOC_TIPTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=DIR_FORENT          ,Envio por Encomienda                                                            
+ C002=DIR_FORENT          ,Envio por Transporte Externo                                                    
+ C003=DIR_FORENT          ,Envio por Transporte Interno                                                    
+ C004=DIR_FORENT          ,Proveedor lo Entrega                                                            
+ C005=DIR_FORENT          ,Proveedor lo Envia x Encomienda                                                 
+ C006=DIR_FORENT          ,Retira donde el Proveedor                                                       
+ C007=DIR_FORENT          ,Viene a Retirarlo                                                               
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

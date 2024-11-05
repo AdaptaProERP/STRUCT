@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=0314
+ NOMBRE=DPDOCCLIFORFIS
+ DESCRIPCION=Formas Fiscales de Documentos                               
+ CONFIG=F
+ SINGUL=Forma Fiscal x Documento      
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=FXD_CODSUC          ,'C',004,0,'','Sucursal',0,'&oDp:cSucursal'
+ C002=FXD_PC              ,'C',020,0,'','Ip del PC',0,''
+ C003=FXD_SERIE           ,'C',001,0,'','Serie Fiscal',0,''
+ C004=FXD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

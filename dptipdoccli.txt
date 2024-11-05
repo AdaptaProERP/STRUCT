@@ -1,0 +1,175 @@
+[ID]
+ NUMERO=0301
+ NOMBRE=DPTIPDOCCLI
+ DESCRIPCION=Tipo de Documentos de Cliente                               
+ CONFIG=F
+ SINGUL=Tipo de Documento             
+ APLICA=03
+ PRIMARY_KEY='TDC_TIPO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TDC_TIPO            ,'C',003,0,'PRIMARY KEY NOT NULL','Tipo',0,''
+ C002=TDC_ABREVI          ,'C',015,0,'','Abreviatura',0,''
+ C003=TDC_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C004=TDC_ALMACE          ,'L',001,0,'','Solicita Almac‚n',0,''
+ C005=TDC_ALTER           ,'L',001,0,'','Modificado',0,''
+ C006=TDC_AUTIMP          ,'L',001,0,'','Auto Impresi¢n',0,''
+ C007=TDC_CARGAP          ,'L',001,0,'','Orden de Carga con Pesaje',0,'.F.'
+ C008=TDC_CENCOS          ,'L',001,0,'','Centro de Costos',0,''
+ C009=TDC_CLRGRA          ,'N',010,0,'','Color para Gr ficas',0,''
+ C010=TDC_CNTRES          ,'L',001,0,'','Asientos Contables Resumidos',0,'.F.'
+ C011=TDC_CODALM          ,'L',001,0,'','C¢digo de Almac‚n',0,'.T.'
+ C012=TDC_CODCTA          ,'C',020,0,'','Cuenta Contable',0,'&oDp:cCtaIndef'
+ C013=TDC_COMISI          ,'L',001,0,'','Afecta Comisiones',0,''
+ C014=TDC_CONAUT          ,'L',001,0,'','Contabilizaci¢n Autom tica',0,''
+ C015=TDC_CONTAB          ,'L',001,0,'','Asientos Contables',0,''
+ C016=TDC_CROSSD          ,'L',001,0,'','Cross Docking',0,''
+ C017=TDC_CXC             ,'C',001,0,'','Cuentas por Cobrar',0,''
+ C018=TDC_DELETE          ,'L',001,0,'','Eliminar Registros',0,'.F.'
+ C019=TDC_DEPURA          ,'L',001,0,'','Depuraci¢n de Registros',0,'.F.'
+ C020=TDC_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+ C021=TDC_DESDE           ,'D',008,0,'','Fecha Desde',0,''
+ C022=TDC_DIFCAM          ,'L',001,0,'','Utilizado para Diferencial Cambiario',0,''
+ C023=TDC_DIFPAG          ,'L',001,0,'','Utilizado para Diferencias de Pago',0,''
+ C024=TDC_DOCDES          ,'C',003,0,'','Documento Destino',0,''
+ C025=TDC_DOCEDI          ,'L',001,0,'','Acceso desde Documentos',0,''
+ C026=TDC_DOCORG          ,'L',001,0,'','Documento de Origen',0,'.T.'
+ C027=TDC_DOCPRG          ,'L',001,0,'','Genera Documento Progresivo',0,''
+ C028=TDC_EDICOL          ,'L',001,0,'','Columnas Editables',0,''
+ C029=TDC_ESTCOM          ,'L',001,0,'','Estad¡stica de Compra',0,''
+ C030=TDC_ESTVTA          ,'L',001,0,'','Estad¡stica de Venta',0,''
+ C031=TDC_EXIVAL          ,'C',001,0,'','Existencia para Validaci¢n',0,''
+ C032=TDC_FECHA           ,'D',008,0,'','Fecha de Creaci¢n/Actualizaci¢n',0,''
+ C033=TDC_FILBMP          ,'C',250,0,'','Archivo Bmp Grande',0,''
+ C034=TDC_FILRPT          ,'C',060,0,'','Formato de Impresi¢n Crystal',0,''
+ C035=TDC_FORTXT          ,'L',001,0,'','Imprime en Formato Plano',0,''
+ C036=TDC_GENPRO          ,'L',001,0,'','Genera Proyecto',0,''
+ C037=TDC_GUIATR          ,'L',001,0,'','Guia de Transporte',0,'.F.'
+ C038=TDC_HORA            ,'C',005,0,'','Hora',0,''
+ C039=TDC_IMPPAG          ,'L',001,0,'','Imprimir si est  Pagada',0,''
+ C040=TDC_IMPTOT          ,'L',001,0,'','Importaci¢n Total',0,'.F.'
+ C041=TDC_INVACT          ,'N',002,0,'','Existencia Suma o Resta',0,''
+ C042=TDC_INVCON          ,'L',001,0,'','Inventario Contable',0,''
+ C043=TDC_INVFIS          ,'L',001,0,'','Inventario F¡sico',0,''
+ C044=TDC_INVLBX          ,'C',100,0,'','Formulario LBX de Productos',0,''
+ C045=TDC_INVLOG          ,'L',001,0,'','Inventario L¢gico',0,''
+ C046=TDC_INVMON          ,'L',001,0,'','Productos en Divisas',0,''
+ C047=TDC_IVA             ,'L',001,0,'','Calcula I.V.A.',0,''
+ C048=TDC_LBXEXI          ,'L',001,0,'','Browse muestra Existencia',0,'.F.'
+ C049=TDC_LIBTRA          ,'C',015,0,'','Transacci¢n Libro de Venta',0,''
+ C050=TDC_LIBVTA          ,'L',001,0,'','Libro de Venta',0,''
+ C051=TDC_LISTA           ,'L',001,0,'','Lista de Precio',0,'.T.'
+ C052=TDC_LITEM           ,'L',001,0,'','Requiere Items de Cuentas',0,''
+ C053=TDC_MNUOTR          ,'L',001,0,'','Men£ Otros Documentos',0,''
+ C054=TDC_MONEDA          ,'L',001,0,'','Moneda Extranjera',0,''
+ C055=TDC_MONETA          ,'L',001,0,'','Documento con Valor Monetario',0,'.T.'
+ C056=TDC_MOVED           ,'L',001,0,'','Mover N£mero de Documento',0,'.F.'
+ C057=TDC_MOVEF           ,'L',001,0,'','Mover N£mero de Fiscal',0,'.F.'
+ C058=TDC_NITEMS          ,'N',003,0,'','Cantidad M xima de Items',0,''
+ C059=TDC_NUMEDT          ,'L',001,0,'','Nœmero Editable',0,''
+ C060=TDC_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
+ C061=TDC_ORGPLA          ,'L',001,0,'','Origina desde Plantilla',0,''
+ C062=TDC_PAGOS           ,'L',001,0,'','Acepta Pagos',0,''
+ C063=TDC_PESO            ,'L',001,0,'','Peso',0,'.T.'
+ C064=TDC_PESPRI          ,'L',001,0,'','Peso Antes de Cantidad',0,''
+ C065=TDC_PICFIS          ,'C',020,0,'','Mascara para introducir N£mero Fiscal',0,''
+ C066=TDC_PICTUR          ,'C',020,0,'','Mascara',0,''
+ C067=TDC_POSCOM          ,'N',003,0,'','Posici¢n en Comercializaci¢n',0,'0'
+ C068=TDC_PRECIO          ,'L',001,0,'','Precio Din mico en Divisas',0,'.F.'
+ C069=TDC_PREDES          ,'L',001,0,'','Precio con Descuento',0,'.T.'
+ C070=TDC_PRODUC          ,'L',001,0,'','Requiere Productos',0,''
+ C071=TDC_REGTAR          ,'L',001,0,'','Genera Control de Taras de Carga',0,''
+ C072=TDC_REQAPR          ,'L',001,0,'','Requiere Aprobaci¢n',0,''
+ C073=TDC_REQDIG          ,'L',001,0,'','Requiere Digitalizaci¢n',0,''
+ C074=TDC_REQREC          ,'L',001,0,'','Requiere Recursos',0,''
+ C075=TDC_REQSCA          ,'L',001,0,'','Scannea Documento al Finalizar',0,''
+ C076=TDC_RETISR          ,'L',001,0,'','Retenciones de ISLR',0,''
+ C077=TDC_RETIVA          ,'L',001,0,'','Retenciones de IVA',0,''
+ C078=TDC_RETMUN          ,'L',001,0,'','Otras Retenciones',0,'.T.'
+ C079=TDC_REVALO          ,'L',001,0,'','Revalorizable',0,''
+ C080=TDC_SERIEF          ,'C',015,0,'','Serie Fiscal',0,''
+ C081=TDC_TARA            ,'L',001,0,'','Tara de Carga',0,''
+ C082=TDC_TEMANU          ,'C',050,0,'','Tema para Anular',0,''
+ C083=TDC_TEMMOD          ,'C',050,0,'','Tema para Modificar',0,''
+ C084=TDC_TIPORG          ,'L',001,0,'','Tipo de Origen',0,'.T.'
+ C085=TDC_TIPPRO          ,'C',003,0,'','Tipo de Documento Destino del Proveedor',0,''
+ C086=TDC_TRIBUT          ,'L',001,0,'','Tributo',0,'.F.'
+ C087=TDC_TRIGGE          ,'C',250,0,'','Evento en Triggers',0,''
+ C088=TDC_VALFCH          ,'L',001,0,'','Validar Fechas Restringidas',0,''
+ C089=TDC_XY              ,'L',001,0,'','X*Y   (Calcular Medidas)',0,'.F.'
+ C090=TDC_XYZ             ,'L',001,0,'','X*Y*Z (Calcular Volumen)',0,'.F.'
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPCLIENTESDIVXTIP       , TDC_TIPO=DXC_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T002=DPDOCCLI                , TDC_TIPO=DOC_TIPDOC, <UPDATE>  <RUN>
+ T003=DPDOCCLI_HIS            , TDC_TIPO=DOC_TIPDOC, <UPDATE>  <RUN>
+ T004=DPINVTIPDOCCLI          , TDC_TIPO=PXD_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T005=DPMODPROCDOCCLI         , TDC_TIPO=MPN_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T006=DPTIPDOCCLIGRU          , TDC_TIPO=TDG_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T007=DPTIPDOCCLIIMP          , TDC_TIPO=TIM_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T008=DPTIPDOCCLIMOT          , TDC_TIPO=MDC_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T009=DPTIPDOCCLI_CTA         , TDC_TIPO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T010=DPTIPDOCDIFCAM          , TDC_TIPO=DDC_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T011=DPTIPDOCXPLANT          , TDC_TIPO=TDP_TIPDOC, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPCTA                   , TDC_CODCTA=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T002=DPTIPDOCCLISLD          , TDC_TIPO=SLD_TIPDOC, <CAMPO:>, <WHERE:>
+ T003=DPTIPDOCCLIUTILIZ       , TDC_TIPO=TDU_TIPDOC, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPCLIENTESDIVXTIP ON DXC_TIPDOC=TDC_TIPO
+ SELECT CTA_DESCRI FROM DPTIPDOCCLI INNER JOIN DPCTA ON CTA_CODIGO=TDC_CODCTA
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPDOCCLI ON DOC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPDOCCLI_HIS ON DOC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPINVTIPDOCCLI ON PXD_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPMODPROCDOCCLI ON MPN_TIPDOC=TDC_TIPO
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPCLIENTECTA ON TDC_TIPO=CXC_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPCLIENTEPROG ON TDC_TIPO=DPG_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPDOCCLI ON TDC_TIPO=DOC_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPDOCCLICOMISION ON TDC_TIPO=CXD_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPDOCCLI_HIS ON TDC_TIPO=DOC_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPMODPROCDOCCLI ON TDC_TIPO=MPN_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPMOVINV ON TDC_TIPO=MOV_TIPDOC
+ SELECT TDC_DESCRI FROM DPTIPDOCCLI INNER JOIN DPMOVINV_HIS ON TDC_TIPO=MOV_TIPDOC
+ SELECT TDC_ABREVI FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLI ON TDC_TIPO=MDC_TIPDOC
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIGRU ON TDG_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIIMP ON TIM_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIMOT ON MDC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLISLD ON SLD_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIUTILIZ ON TDU_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLI_CTA ON CIC_CODIGO=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCDIFCAM ON DDC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCXPLANT ON TDP_TIPDOC=TDC_TIPO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=TDC_CXC             ,Cr‚dito                                                                         
+ C002=TDC_CXC             ,D‚bito                                                                          
+ C003=TDC_CXC             ,Neutro                                                                          
+ C004=TDC_EXIVAL          ,Contable                                                                        
+ C005=TDC_EXIVAL          ,F¡sica                                                                          
+ C006=TDC_EXIVAL          ,L¢gica                                                                          
+ C007=TDC_EXIVAL          ,Neutra                                                                          
+ C008=TDC_INVACT          ,Ninguna                                                                         
+ C009=TDC_INVACT          ,Resta                                                                           
+ C010=TDC_INVACT          ,Suma                                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

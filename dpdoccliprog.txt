@@ -1,0 +1,56 @@
+[ID]
+ NUMERO=0315
+ NOMBRE=DPDOCCLIPROG
+ DESCRIPCION=Programaci¢n Documentos del Cliente                         
+ CONFIG=F
+ SINGUL=                              
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PLC_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=PLC_ANO             ,'N',004,0,'','A¤o',0,''
+ C003=PLC_CODIGO          ,'C',020,0,'','C¢digo de Cliente',0,''
+ C004=PLC_CODSUC          ,'C',008,0,'','Sucursal',0,'&oDp:cSucursal'
+ C005=PLC_CUOTA           ,'C',004,0,'','N£mero de la Cuota',0,''
+ C006=PLC_FECHA           ,'D',008,0,'','Fecha}',0,''
+ C007=PLC_MES             ,'C',010,0,'','Mes',0,''
+ C008=PLC_MONTO           ,'N',014,2,'','Monto',0,''
+ C009=PLC_NUMDOC          ,'C',010,0,'','Documento',0,''
+ C010=PLC_NUMERO          ,'C',008,0,'','N£mero del Registro',0,''
+ C011=PLC_NUMORG          ,'C',010,0,'','Documento Original',0,''
+ C012=PLC_TIPDES          ,'C',003,0,'','Tipo Documento Destino',0,''
+ C013=PLC_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C014=PLC_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCLIENTES              , PLC_CODIGO=CLI_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPDOCCLI                , PLC_CODSUC,PLC_TIPDES,PLC_NUMDOC=DOC_CODSUC,DOC_TIPDOC,DOC_NUMERO, <CAMPO:>, <WHERE:DOC_TIPTRA="D">
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCCLIPROG INNER JOIN DPDOCCLI ON DOC_CODSUC=PLC_CODSUC AND DOC_TIPDOC=PLC_TIPDES AND DOC_NUMERO=PLC_NUMDOC
+ SELECT * FROM DPDOCCLIPROG INNER JOIN DPCLIENTES ON PLC_CODIGO=CLI_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

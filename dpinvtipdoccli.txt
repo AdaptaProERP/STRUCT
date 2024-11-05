@@ -9,10 +9,11 @@
 [END_ID]
 
 [FIELDS]
- C001=PXD_CODIGO          ,'C',020,0,'','Producto',0
- C002=PXD_NUMMEM          ,'N',010,0,'','Número Memo',0
- C003=PXD_SELECT          ,'L',001,0,'','Seleccionado',0
- C004=PXD_TIPDOC          ,'C',003,0,'','Tipo Documento',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PXD_CODIGO          ,'C',020,0,'','Producto',0,''
+ C002=PXD_NUMMEM          ,'N',010,0,'','N£mero Memo',0,''
+ C003=PXD_SELECT          ,'L',001,0,'','Seleccionado',0,''
+ C004=PXD_TIPDOC          ,'C',003,0,'','Tipo Documento',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
