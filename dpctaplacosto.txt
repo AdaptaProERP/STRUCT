@@ -1,17 +1,18 @@
 [ID]
- NUMERO=1000
- NOMBRE=DPGRU_CTAREF
- DESCRIPCION=Referencia de las Cuentas                                   
+ NUMERO=1052
+ NOMBRE=DPCTAPLACOSTO
+ DESCRIPCION=Distribuci¢n                                                
  CONFIG=F
- SINGUL=                              
- APLICA=01
+ SINGUL=Distribuci¢n de Costos        
+ APLICA=05
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
- C001=CIR_CODINT          ,'C',006,0,'','C¢digo Integraci¢n',0,''
- C002=CIR_DESCRI          ,'C',120,0,'','Referencia',0,''
+ C001=PCC_CODCTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C002=PCC_CODDIS          ,'C',020,0,'','Cuenta Distrubuida',0,''
+ C003=PCC_PORCEN          ,'N',006,2,'','%',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

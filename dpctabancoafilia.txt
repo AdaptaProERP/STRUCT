@@ -1,0 +1,36 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPCTABANCOAFILIA
+ DESCRIPCION=Afiliaci¢n de Cuentas                                       
+ CONFIG=F
+ SINGUL=Afiliaci¢n de Cuentas         
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CBA_CODBCO          ,'C',004,0,'','C¢digo del Banco',0,''
+ C002=CBA_CODCTA          ,'C',020,0,'','Cuenta Bancar¡a',0,''
+ C003=CBA_ESTADO          ,'C',001,0,'','Estado',0,''
+ C004=CBA_FECHA           ,'D',008,0,'','Fecha',0,'&DPFECHA()'
+ C005=CBA_RIF             ,'C',012,0,'','RIF',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

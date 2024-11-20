@@ -1,0 +1,68 @@
+[ID]
+ NUMERO=0419
+ NOMBRE=DPBCOCTAREGCON
+ DESCRIPCION=Registro de Conciliacion Bancaria                           
+ CONFIG=F
+ SINGUL=Registro de Conciliaci¢n      
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ECB_ASODOC          ,'C',010,0,'','Documento Asociado Recibo/Cbte Pago',0,''
+ C002=ECB_CHKSUM          ,'N',005,0,'','CheckSum',0,''
+ C003=ECB_CODBCO          ,'C',006,0,'','C¢digo Banco',0,''
+ C004=ECB_CODMON          ,'C',003,0,'','C¢digo Divisa',0,''
+ C005=ECB_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C006=ECB_CTABCO          ,'C',020,0,'','Cuenta Bancaria',0,''
+ C007=ECB_DEBE            ,'N',019,2,'','Debe',0,''
+ C008=ECB_DESCRI          ,'C',080,0,'','Descripci¢n',0,''
+ C009=ECB_FCHREG          ,'D',008,0,'','Fecha que fue leido el Registro',0,''
+ C010=ECB_FECHA           ,'D',008,0,'','Fecha',0,''
+ C011=ECB_HABER           ,'N',019,2,'','Haber',0,''
+ C012=ECB_ITEM            ,'C',006,0,'','Item',1,''
+ C013=ECB_MONTO           ,'N',019,2,'','Monto',0,''
+ C014=ECB_MTODIV          ,'N',019,2,'','Monto Divisa',0,''
+ C015=ECB_NUMREG          ,'C',006,0,'','Registro Lectura',0,''
+ C016=ECB_NUMTRA          ,'C',008,0,'','Transacci¢n Bancaria',0,''
+ C017=ECB_ORIGEN          ,'C',003,0,'','Tipo Documento',0,''
+ C018=ECB_REFERE          ,'C',020,0,'','Referencia',0,''
+ C019=ECB_RIF             ,'C',014,0,'','C¢digo del RIF',0,''
+ C020=ECB_SALDO           ,'N',019,2,'','Saldo',0,''
+ C021=ECB_TIPBCO          ,'C',004,0,'','Tipo de Transacci¢n Bancario',0,''
+ C022=ECB_TIPO            ,'C',200,0,'','Tipo de Transacci¢n',0,''
+ C023=ECB_TIPREL          ,'C',021,0,'','Relaci¢n',0,''
+ C024=ECB_VALCAM          ,'N',019,2,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCTABANCO              , ECB_CODBCO,ECB_CTABCO=BCO_CODIGO,BCO_CUENTA <UPDATE> <DELETE> <RUN>
+ T002=DPREGLEEEDOCTA          , ECB_CODBCO,ECB_CTABCO,ECB_NUMREG=RLE_CODBCO,RLE_CUENTA,RLE_NUMERO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPBCOCTAREGCON INNER JOIN DPCTABANCO ON ECB_CODBCO=BCO_CODIGO AND ECB_CTABCO=BCO_CUENTA
+ SELECT * FROM DPBCOCTAREGCON INNER JOIN DPREGLEEEDOCTA ON ECB_CODBCO=RLE_CODBCO AND ECB_CTABCO=RLE_CUENTA AND ECB_NUMREG=RLE_NUMERO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=ECB_TIPREL          ,Accionista                                                                      
+ C002=ECB_TIPREL          ,Cliente                                                                         
+ C003=ECB_TIPREL          ,Indefinido                                                                      
+ C004=ECB_TIPREL          ,Otro                                                                            
+ C005=ECB_TIPREL          ,Proveedor                                                                       
+ C006=ECB_TIPREL          ,Trabajador                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

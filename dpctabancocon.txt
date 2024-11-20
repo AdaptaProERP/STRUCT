@@ -1,0 +1,73 @@
+[ID]
+ NUMERO=0416
+ NOMBRE=DPCTABANCOCON
+ DESCRIPCION=Movimiento Bancario (Conciliaci¢n)                          
+ CONFIG=F
+ SINGUL=Movimiento Banco              
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOB_ACT             ,'N',002,0,'','Indicativo del status del Registro',0,''
+ C002=MOB_CENCOS          ,'C',008,0,'','Centro de costos',1,''
+ C003=MOB_CODBCO          ,'C',006,0,'','Codigo Banco',0,''
+ C004=MOB_CODCAJ          ,'C',006,0,'','Codigo Caja',1,''
+ C005=MOB_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C006=MOB_CODSUC          ,'C',006,0,'','Codigo Sucursal',0,'&oDp:cSucursal'
+ C007=MOB_COMENT          ,'C',060,0,'','Comentario',0,''
+ C008=MOB_COMPRO          ,'C',010,0,'','Comprobante Contable',1,''
+ C009=MOB_CTACON          ,'C',020,0,'','Cuenta Contrapartida',0,''
+ C010=MOB_CTAEGR          ,'C',020,0,'','Cuenta Egreso',0,''
+ C011=MOB_CUENTA          ,'C',020,0,'','Cuenta  Bancaria',0,''
+ C012=MOB_DESCRI          ,'C',040,0,'','Descripcion',0,''
+ C013=MOB_DOCASO          ,'C',010,0,'','Documento Asociado',1,''
+ C014=MOB_DOCUME          ,'C',014,0,'','Numero del Documento',0,''
+ C015=MOB_FCHCOM          ,'D',008,0,'','Fecha',0,''
+ C016=MOB_FCHCON          ,'D',008,0,'','Fecha Concialiacion',0,''
+ C017=MOB_FCHREG          ,'D',008,0,'','Fecha de Registro',0,''
+ C018=MOB_FECHA           ,'D',008,0,'','Fecha',0,''
+ C019=MOB_HORA            ,'C',008,0,'','Hora',0,''
+ C020=MOB_IDB             ,'N',006,2,'','Monto Debito',0,''
+ C021=MOB_MONNAC          ,'N',016,2,'','Moneda Nacional',0,''
+ C022=MOB_MONTO           ,'N',016,2,'','monto',0,''
+ C023=MOB_MTOCOM          ,'N',016,2,'','Comision Bancaria',0,''
+ C024=MOB_MTOIDB          ,'N',014,2,'','Monto IDB',0,''
+ C025=MOB_MTOIMP          ,'N',016,2,'','Monto ISLR',0,''
+ C026=MOB_NUMMEM          ,'N',006,0,'','Numero del Memo',0,''
+ C027=MOB_NUMTRA          ,'C',008,0,'','Numero de Transaccion',1,''
+ C028=MOB_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C029=MOB_TIPCTA          ,'C',001,0,'','ipo',0,''
+ C030=MOB_TIPO            ,'C',004,0,'','Tipo',0,''
+ C031=MOB_TRAASO          ,'C',008,0,'','Transferencia Asociada',1,''
+ C032=MOB_USUARI          ,'C',003,0,'','Usuario',0,''
+ C033=MOB_VALCAM          ,'N',012,2,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPBANCOTIP              , MOB_TIPO=TDB_CODIGO <UPDATE>  <RUN>
+ T002=DPCTABANCO              , MOB_CODBCO,MOB_CUENTA=BCO_CODIGO,BCO_CTABAN <UPDATE>  <RUN>
+ T003=DPSUCURSAL              , MOB_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPCTABANCOCON INNER JOIN DPBANCOTIP ON MOB_TIPO=TDB_CODIGO
+ SELECT * FROM DPCTABANCOCON INNER JOIN DPCTABANCO ON MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+ SELECT * FROM DPCTABANCOCON INNER JOIN DPSUCURSAL ON MOB_CODSUC=SUC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

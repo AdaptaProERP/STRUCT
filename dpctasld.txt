@@ -1,0 +1,48 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPCTASLD
+ DESCRIPCION=Saldo de Contable                                           
+ CONFIG=F
+ SINGUL=Saldo Contable                
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SLD_ASIACT          ,'N',010,0,'','Asientos Actualizados',0,''
+ C002=SLD_ASIPEN          ,'N',010,0,'','Asientos Pendientes',0,''
+ C003=SLD_CODSUC          ,'C',008,0,'','Sucursal',0,'&oDp:cSucursal'
+ C004=SLD_CTAMOD          ,'C',006,0,'','Cuenta Modelo',0,''
+ C005=SLD_CUENTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C006=SLD_DEBE            ,'N',019,2,'','Haber',0,''
+ C007=SLD_FCHFIN          ,'D',008,0,'','Fecha Hasta',0,''
+ C008=SLD_FCHINI          ,'D',008,0,'','Fecha Desde',0,''
+ C009=SLD_HABER           ,'N',019,2,'','N£mero Ejercicio',0,''
+ C010=SLD_NUMEJE          ,'C',004,0,'','Ejercicio',0,''
+ C011=SLD_SALDO           ,'N',019,2,'','Saldo',0,''
+ C012=SLD_SLDINI          ,'N',019,2,'','Saldo Inicial',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCTA                   , SLD_CTAMOD,SLD_CUENTA=CTA_CODMOD,CTA_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPCTASLD INNER JOIN DPCTA ON SLD_CTAMOD=CTA_CODMOD AND SLD_CUENTA=CTA_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

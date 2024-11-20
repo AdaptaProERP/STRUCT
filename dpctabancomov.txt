@@ -1,0 +1,113 @@
+[ID]
+ NUMERO=0406
+ NOMBRE=DPCTABANCOMOV
+ DESCRIPCION=Movimiento Bancario                                         
+ CONFIG=F
+ SINGUL=Movimiento                    
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOB_ACT             ,'N',002,0,'','Indicativo del Estatus del Registro',0,''
+ C002=MOB_CENCOS          ,'C',008,0,'','Centro de Costo',1,''
+ C003=MOB_CHKSUM          ,'N',006,0,'','CheckSum Registro de Conciliaci¢n',0,''
+ C004=MOB_CMNNAC          ,'C',003,0,'','Moneda Nacional',0,''
+ C005=MOB_CODBCO          ,'C',006,0,'','Banco',0,''
+ C006=MOB_CODCAJ          ,'C',006,0,'','C¢digo de Caja',1,''
+ C007=MOB_CODMOD          ,'C',006,0,'','C¢digo Cuenta Modelo',0,'&oDp:cCtaMod'
+ C008=MOB_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C009=MOB_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C010=MOB_COMENT          ,'C',060,0,'','Comentario',0,''
+ C011=MOB_COMPRO          ,'C',010,0,'','Comprobante Contable',1,''
+ C012=MOB_CTACON          ,'C',020,0,'','Cuenta Contrapartida',0,''
+ C013=MOB_CTAEGR          ,'C',020,0,'','Cuenta de Egreso',0,''
+ C014=MOB_CUENTA          ,'C',020,0,'','Cuenta Bancaria',0,''
+ C015=MOB_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+ C016=MOB_DOCASO          ,'C',010,0,'','Documento Asociado',1,''
+ C017=MOB_DOCUME          ,'C',016,0,'','N£mero del Documento',1,''
+ C018=MOB_ESTADO          ,'C',001,0,'','Estado',0,''
+ C019=MOB_FCHCOM          ,'D',008,0,'','Fecha para Contabilizar',0,''
+ C020=MOB_FCHCON          ,'D',008,0,'','Fecha de Conciliaci¢n',0,''
+ C021=MOB_FCHREG          ,'D',008,0,'','Fecha de Registro',0,''
+ C022=MOB_FECHA           ,'D',008,0,'','Fecha',0,''
+ C023=MOB_FILE            ,'C',015,0,'','Archivo FPT',0,''
+ C024=MOB_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C025=MOB_HORA            ,'C',008,0,'','Hora',0,''
+ C026=MOB_IDB             ,'N',006,2,'','D‚bito Bancario',0,''
+ C027=MOB_ITEMC           ,'C',006,0,'','Item de Conciliaci¢n',0,''
+ C028=MOB_MARFIN          ,'C',025,0,'','Marca Financiera',0,''
+ C029=MOB_MONNAC          ,'N',016,2,'','Moneda Nacional',0,''
+ C030=MOB_MONTO           ,'N',016,2,'','Monto',0,''
+ C031=MOB_MTOCOM          ,'N',016,2,'','Comisi¢n Bancaria',0,''
+ C032=MOB_MTODIV          ,'N',019,2,'','Monto en Divisas',0,''
+ C033=MOB_MTOIDB          ,'N',014,2,'','Monto del IDB',0,''
+ C034=MOB_MTOIMP          ,'N',016,2,'','Monto de Retenci¢n de ISLR',0,''
+ C035=MOB_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
+ C036=MOB_NUMPAG          ,'C',008,0,'','Registro de Pago',0,''
+ C037=MOB_NUMTRA          ,'C',008,0,'','N£mero de Transacci¢n',1,''
+ C038=MOB_ORGPAG          ,'C',003,0,'','Origen del Pago',0,''
+ C039=MOB_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C040=MOB_PUNTEO          ,'N',020,0,'','Punteo',0,''
+ C041=MOB_REGCON          ,'C',006,0,'','Registro de Conciliaci¢n',1,''
+ C042=MOB_REGDEP          ,'C',008,0,'','Registro Depuraci¢n',0,''
+ C043=MOB_RIF             ,'C',014,0,'','C¢digo del RIF',0,''
+ C044=MOB_SLDBCO          ,'N',019,2,'','Saldo estado de Cuenta',0,''
+ C045=MOB_TIPCTA          ,'C',001,0,'','Tipo de Cuenta',0,''
+ C046=MOB_TIPO            ,'C',004,0,'','Tipo de Transacci¢n',0,''
+ C047=MOB_TRAASO          ,'C',008,0,'','Transferencia Asociada',1,''
+ C048=MOB_USUARI          ,'C',003,0,'','Usuario',0,''
+ C049=MOB_VALCAM          ,'N',019,4,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPBANCOTIP              , MOB_TIPO=TDB_CODIGO <UPDATE>  <RUN>
+ T002=DPSUCURSAL              , MOB_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+ T003=DPCTABANCO              , MOB_CODBCO,MOB_CUENTA=BCO_CODIGO,BCO_CTABAN <UPDATE> <DELETE> <RUN>
+ T004=DPBANCOS                , MOB_CODBCO=BAN_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPBANCOS                , MOB_CODBCO=BAN_CODIGO, <CAMPO:BAN_NOMBRE>, <WHERE:>
+ T002=DPBANCOTIP              , MOB_TIPO=TDB_CODIGO, <CAMPO:TDB_NOMBRE>, <WHERE:>
+ T003=DPCTAEGRESO             , MOB_CTAEGR=CEG_CODIGO, <CAMPO:CEG_DESCRI>, <WHERE:>
+ T004=DPMEMO                  , MOB_NUMMEM=MEM_NUMERO, <CAMPO:MEM_DESCRI>, <WHERE:>
+ T005=DPSUCURSAL              , MOB_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+ T006=DPTABMON                , MOB_CODMON=MON_CODIGO, <CAMPO:MON_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT BAN_NOMBRE FROM DPCTABANCOMOV INNER JOIN DPBANCOS ON BAN_CODIGO=MOB_CODBCO
+ SELECT TDB_NOMBRE FROM DPCTABANCOMOV INNER JOIN DPBANCOTIP ON TDB_CODIGO=MOB_TIPO
+ SELECT * FROM DPCTABANCOMOV INNER JOIN DPBANCOTIP ON MOB_TIPO=TDB_CODIGO
+ SELECT MOB_DESCRI FROM DPCTABANCOMOV INNER JOIN DPCAJAMOV ON MOB_NUMTRA=CAJ_REGDEP AND MOB_CODBCO=CAJ_CODBCO AND MOB_CUENTA=CAJ_CUENTA
+ SELECT MOB_DESCRI FROM DPCTABANCOMOV INNER JOIN DPCAJAMOV_HIS ON MOB_NUMTRA=CAJ_REGDEP AND MOB_CODBCO=CAJ_CODBCO AND MOB_CUENTA=CAJ_CUENTA
+ SELECT MOB_CODBCO FROM DPCTABANCOMOV INNER JOIN DPCBTEPAGO ON MOB_CODSUC=PAG_CODSUC AND MOB_DOCASO=PAG_NUMERO
+ SELECT MOB_CODBCO FROM DPCTABANCOMOV INNER JOIN DPCBTEPAGO_HIS ON MOB_CODSUC=PAG_CODSUC AND MOB_DOCASO=PAG_NUMERO
+ SELECT * FROM DPCTABANCOMOV INNER JOIN DPSUCURSAL ON MOB_CODSUC=SUC_CODIGO
+ SELECT CEG_DESCRI FROM DPCTABANCOMOV INNER JOIN DPCTAEGRESO ON CEG_CODIGO=MOB_CTAEGR
+ SELECT MEM_DESCRI FROM DPCTABANCOMOV INNER JOIN DPMEMO ON MEM_NUMERO=MOB_NUMMEM
+ SELECT SUC_DESCRI FROM DPCTABANCOMOV INNER JOIN DPSUCURSAL ON SUC_CODIGO=MOB_CODSUC
+ SELECT MON_DESCRI FROM DPCTABANCOMOV INNER JOIN DPTABMON ON MON_CODIGO=MOB_CODMON
+ SELECT * FROM DPCTABANCOMOV INNER JOIN DPCTABANCO ON MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+ SELECT * FROM DPCTABANCOMOV INNER JOIN DPBANCOS ON MOB_CODBCO=BAN_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=MOB_ESTADO          ,Activo                                                                          
+ C002=MOB_ESTADO          ,Nulo                                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,47 @@
+[ID]
+ NUMERO=0418
+ NOMBRE=DPCTABCOEDOE
+ DESCRIPCION=Registro electr¢nico de Edo Cta Banco                       
+ CONFIG=F
+ SINGUL=                              
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ECE_CODBCO          ,'C',006,0,'','C¢digo del Banco',0,''
+ C002=ECE_CTABCO          ,'C',020,0,'','Cuenta Bancaria',0,''
+ C003=ECE_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C004=ECE_FECHA           ,'D',008,0,'','Fecha',0,''
+ C005=ECE_ID              ,'C',016,0,'','ID Fecha + Hora',0,''
+ C006=ECE_MONTO           ,'N',014,2,'','Monto',0,''
+ C007=ECE_NUMERO          ,'C',016,0,'','Numero en DPCTABCOMOV',0,''
+ C008=ECE_NUMFIL          ,'N',007,0,'','Numero DPFILEEMP',0,''
+ C009=ECE_REFERE          ,'C',020,0,'','Referencia',0,''
+ C010=ECE_SALDO           ,'N',014,2,'','Saldo',0,''
+ C011=ECE_TIPDOC          ,'C',004,0,'','Tipo de Documento DPCTABCOMOV',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCTABANCO              , ECE_CODBCO,ECE_CTABCO=BCO_CODIGO,BCO_CTABAN <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPCTABCOEDOE INNER JOIN DPCTABANCO ON ECE_CODBCO=BCO_CODIGO AND ECE_CTABCO=BCO_CTABAN
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,44 @@
+[ID]
+ NUMERO=0135
+ NOMBRE=DPCLASIFICTAREAS
+ DESCRIPCION=Clasificaci¢n de Tareas                                     
+ CONFIG=F
+ SINGUL=Clasificaci¢n de Tarea        
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CDT_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=CDT_CLRGRA          ,'N',010,0,'','Color Gr fica',0,''
+ C003=CDT_CLRHEX          ,'C',010,0,'','Color Hexadecimal',0,''
+ C004=CDT_CODIGO          ,'C',010,0,'','Clasificaci¢n de Tarea',0,''
+ C005=CDT_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C006=CDT_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C007=CDT_NUMMEM          ,'N',008,0,'','N£mero de Memo',0,''
+ C008=CDT_TIPO            ,'C',001,0,'','Tipo',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+ SELECT CDT_DESCRI FROM DPCLASIFICTAREAS INNER JOIN DPINV_TIN ON CDT_CODIGO=INV_GRUPO
+ SELECT CDT_DESCRI FROM DPCLASIFICTAREAS INNER JOIN DPMOVINV ON CDT_CODIGO=MOV_ASODOC
+ SELECT CDT_DESCRI FROM DPCLASIFICTAREAS INNER JOIN DPMOVINV_HIS ON CDT_CODIGO=MOV_ASODOC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CDT_TIPO            ,Proyecto                                                                        
+ C002=CDT_TIPO            ,Tarea                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

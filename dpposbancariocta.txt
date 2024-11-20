@@ -1,17 +1,18 @@
 [ID]
- NUMERO=1000
- NOMBRE=DPGRU_CTAREF
- DESCRIPCION=Referencia de las Cuentas                                   
+ NUMERO=0604
+ NOMBRE=DPPOSBANCARIOCTA
+ DESCRIPCION=Punto de Venta por Cta Bancaria                             
  CONFIG=F
- SINGUL=                              
- APLICA=01
+ SINGUL=Punto de Venta x Cuenta       
+ APLICA=04
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
- C001=CIR_CODINT          ,'C',006,0,'','C¢digo Integraci¢n',0,''
- C002=CIR_DESCRI          ,'C',120,0,'','Referencia',0,''
+ C001=PXC_CODBCO          ,'C',006,0,'','Banco',1,''
+ C002=PXC_CODPOS          ,'C',003,0,'','C¢digo de Punto de Venta',1,''
+ C003=PXC_CUENTA          ,'C',020,0,'','Cuenta',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

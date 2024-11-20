@@ -1,0 +1,104 @@
+[ID]
+ NUMERO=0400
+ NOMBRE=DPCTABANCO
+ DESCRIPCION=Cuentas Bancarias                                           
+ CONFIG=F
+ SINGUL=C¢digo de Banco               
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=BCO_ACTIVA          ,'L',001,0,'','Cuenta Activa',0,''
+ C002=BCO_CHEQUE          ,'N',010,0,'','N£mero del £ltimo cheque',0,''
+ C003=BCO_CODIGO          ,'C',006,0,'','C¢digo de la Cuenta Bancaria',1,''
+ C004=BCO_CODMAE          ,'C',010,0,'','Cliente',0,''
+ C005=BCO_CODMON          ,'C',003,0,'','C¢digo de Moneda',0,''
+ C006=BCO_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C007=BCO_COMEN1          ,'C',040,0,'','Comentario 1',0,''
+ C008=BCO_COMEN2          ,'C',040,0,'','Comentario 2',0,''
+ C009=BCO_CONDIG          ,'L',001,0,'','Conciliaci¢n Digital',0,''
+ C010=BCO_CTABAN          ,'C',020,0,'','Cuenta Bancaria',0,''
+ C011=BCO_CUENTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C012=BCO_DIASCO          ,'N',003,0,'','D¡as para conciliar',0,''
+ C013=BCO_ENLETR          ,'N',002,0,'','Longitud por L¡nea en Letras',0,''
+ C014=BCO_FCHCON          ,'D',008,0,'','Fecha de Conciliaci¢n',0,''
+ C015=BCO_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C016=BCO_FILSUC          ,'L',001,0,'','Filtra por Sucursal',0,'.T.'
+ C017=BCO_IDB             ,'L',001,0,'','Aplicar IDB',0,''
+ C018=BCO_IMPDOC          ,'L',001,0,'','',0,''
+ C019=BCO_INCREM          ,'L',001,0,'','',0,''
+ C020=BCO_INGRES          ,'L',001,0,'','Dep¢sito de Clientes',0,''
+ C021=BCO_LINOTR          ,'N',002,0,'','L¡neas para Cheques de Otras Plazas',0,''
+ C022=BCO_LINPLA          ,'N',002,0,'','L¡neas para Cheques de la Plaza',0,''
+ C023=BCO_NOTADB          ,'N',010,0,'','Nro. de Nota de D‚bito sucesivos',0,''
+ C024=BCO_NUMCBT          ,'C',008,0,'','Comprobante Contable',0,''
+ C025=BCO_NUMMEM          ,'N',007,0,'','Memo Banco',0,''
+ C026=BCO_OBSERV          ,'M',010,0,'','Observaci¢nes',0,''
+ C027=BCO_PAGAR           ,'L',001,0,'','Pagar',0,''
+ C028=BCO_RPTBCO          ,'C',080,0,'','Fotmato Dep¢sito del Mismo Banco',0,''
+ C029=BCO_RPTOTR          ,'C',080,0,'','Formato Dep¢sito Otros Bancos',0,''
+ C030=BCO_TIPCTA          ,'C',020,0,'','Tipo de Cuenta',0,''
+ C031=BCO_TITULA          ,'C',060,0,'','Titular de la Cuenta',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPBANCOS                , BCO_CODIGO=BAN_CODIGO <UPDATE>  <RUN>
+ T002=DPSUCURSAL              , BCO_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+ T003=DPTABMON                , BCO_CODMON=MON_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPBCOCTAREGCON          , BCO_CODIGO,BCO_CUENTA=ECB_CODBCO,ECB_CTABCO, <UPDATE> <DELETE> <RUN>
+ T002=DPCTABANCOCON           , BCO_CODIGO,BCO_CTABAN=MOB_CODBCO,MOB_CUENTA, <UPDATE>  <RUN>
+ T003=DPCTABANCOMOV_HIS       , BCO_CODIGO,BCO_CTABAN=MOB_CODBCO,MOB_CUENTA, <UPDATE>  <RUN>
+ T004=DPCTABANCOMOV_HIS       , BCO_CODSUC,BCO_CODIGO,BCO_CTABAN=MOB_CODSUC,MOB_CODBCO,MOB_CUENTA, <UPDATE>  <RUN>
+ T005=DPCTABCOEDOE            , BCO_CODIGO,BCO_CTABAN=ECE_CODBCO,ECE_CTABCO, <UPDATE> <DELETE> <RUN>
+ T006=DPCTABANCOMOV           , BCO_CODIGO,BCO_CTABAN=MOB_CODBCO,MOB_CUENTA, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPBANCOS                , BCO_CODIGO=BAN_CODIGO, <CAMPO:BAN_NOMBRE>, <WHERE:>
+ T002=DPCTA                   , BCO_CUENTA=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T003=DPSUCURSAL              , BCO_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+ T004=DPTABMON                , BCO_CODMON=MON_CODIGO, <CAMPO:MON_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT BAN_NOMBRE FROM DPCTABANCO INNER JOIN DPBANCOS ON BAN_CODIGO=BCO_CODIGO
+ SELECT * FROM DPCTABANCO INNER JOIN DPBCOCTAREGCON ON ECB_CODBCO=BCO_CODIGO AND ECB_CTABCO=BCO_CUENTA
+ SELECT CTA_DESCRI FROM DPCTABANCO INNER JOIN DPCTA ON CTA_CODIGO=BCO_CUENTA
+ SELECT * FROM DPCTABANCO INNER JOIN DPBANCOS ON BCO_CODIGO=BAN_CODIGO
+ SELECT * FROM DPCTABANCO INNER JOIN DPSUCURSAL ON BCO_CODSUC=SUC_CODIGO
+ SELECT * FROM DPCTABANCO INNER JOIN DPTABMON ON BCO_CODMON=MON_CODIGO
+ SELECT * FROM DPCTABANCO INNER JOIN DPCTABANCOCON ON MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+ SELECT * FROM DPCTABANCO INNER JOIN DPCTABANCOMOV_HIS ON MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+ SELECT * FROM DPCTABANCO INNER JOIN DPCTABANCOMOV_HIS ON MOB_CODSUC=BCO_CODSUC AND MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+ SELECT * FROM DPCTABANCO INNER JOIN DPCTABCOEDOE ON ECE_CODBCO=BCO_CODIGO AND ECE_CTABCO=BCO_CTABAN
+ SELECT SUC_DESCRI FROM DPCTABANCO INNER JOIN DPSUCURSAL ON SUC_CODIGO=BCO_CODSUC
+ SELECT MON_DESCRI FROM DPCTABANCO INNER JOIN DPTABMON ON MON_CODIGO=BCO_CODMON
+ SELECT * FROM DPCTABANCO INNER JOIN DPCTABANCOMOV ON MOB_CODBCO=BCO_CODIGO AND MOB_CUENTA=BCO_CTABAN
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=BCO_TIPCTA          ,Ahorro                                                                          
+ C002=BCO_TIPCTA          ,Corriente                                                                       
+ C003=BCO_TIPCTA          ,Custodia                                                                        
+ C004=BCO_TIPCTA          ,Exterior                                                                        
+ C005=BCO_TIPCTA          ,Inversi¢n                                                                       
+ C006=BCO_TIPCTA          ,Otras                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

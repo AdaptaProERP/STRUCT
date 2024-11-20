@@ -1,0 +1,75 @@
+[ID]
+ NUMERO=0410
+ NOMBRE=DPCTAPRESUP
+ DESCRIPCION=Cuentas Presupuestarias                                     
+ CONFIG=F
+ SINGUL=Partidas                      
+ APLICA=05
+ PRIMARY_KEY='CPP_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CPP_CODIGO          ,'C',020,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=CPP_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C003=CPP_CLASIF          ,'C',030,0,'','Clasificaci¢n',0,''
+ C004=CPP_CODCTA          ,'C',020,0,'','Cuenta Contable',0,'&oDp:cCtaIndef'
+ C005=CPP_CODNIV          ,'C',020,0,'','C¢digo Nivel',0,''
+ C006=CPP_CTADET          ,'L',001,0,'','Asientos',0,''
+ C007=CPP_CTAMOD          ,'C',006,0,'','C¢digo Ejercicio',0,'&oDp:cCtaMod'
+ C008=CPP_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C009=CPP_ITEM            ,'C',005,0,'','Item',1,''
+ C010=CPP_NIVEL           ,'N',002,0,'','Nivel',0,''
+ C011=CPP_NUMMEM          ,'N',008,0,'','N£mero de Memo',0,''
+ C012=CPP_PUBLI           ,'C',001,0,'','Publicaci¢n',0,''
+ C013=CPP_TIPO            ,'C',001,0,'','Tipo',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPCTAPRESUP_CTA         , CPP_CODIGO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T002=DPGRU                   , CPP_CODIGO=GRU_CTAPRE, <UPDATE> <DELETE> <RUN>
+ T003=NMOTRASNM               , CPP_CODIGO=OTR_CTAPRE, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPCTA                   , CPP_CODCTA=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CTA_DESCRI FROM DPCTAPRESUP INNER JOIN DPCTA ON CTA_CODIGO=CPP_CODCTA
+ SELECT * FROM DPCTAPRESUP INNER JOIN DPCTAPRESUP_CTA ON CIC_CODIGO=CPP_CODIGO
+ SELECT * FROM DPCTAPRESUP INNER JOIN DPGRU ON GRU_CTAPRE=CPP_CODIGO
+ SELECT * FROM DPCTAPRESUP INNER JOIN NMOTRASNM ON OTR_CTAPRE=CPP_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CPP_CLASIF          ,Accionistas                                                                     
+ C002=CPP_CLASIF          ,Prestadores de Servicios                                                        
+ C003=CPP_CLASIF          ,N¢mina                                                                          
+ C004=CPP_CLASIF          ,Adquisici¢n de Activos                                                          
+ C005=CPP_CLASIF          ,Proveedores                                                                     
+ C006=CPP_CLASIF          ,Otros                                                                           
+ C007=CPP_CLASIF          ,Impuestos                                                                       
+ C008=CPP_CLASIF          ,Servicios Operativos                                                            
+ C009=CPP_TIPO            ,Impuestos                                                                       
+ C010=CPP_TIPO            ,Servicios Operativos                                                            
+ C011=CPP_TIPO            ,Accionistas                                                                     
+ C012=CPP_TIPO            ,Prestadores de Servicios                                                        
+ C013=CPP_TIPO            ,N¢mina                                                                          
+ C014=CPP_TIPO            ,Adquisici¢n de Activos                                                          
+ C015=CPP_TIPO            ,Proveedores                                                                     
+ C016=CPP_TIPO            ,Otros                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

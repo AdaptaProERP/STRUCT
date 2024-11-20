@@ -1,17 +1,17 @@
 [ID]
- NUMERO=1000
- NOMBRE=DPGRU_CTAREF
- DESCRIPCION=Referencia de las Cuentas                                   
+ NUMERO=1011
+ NOMBRE=DPATV_CTAREF
+ DESCRIPCION=Referencia de las Cuentas de Activos                        
  CONFIG=F
- SINGUL=                              
- APLICA=01
+ SINGUL=Referencia de las Cuentas de A
+ APLICA=  
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
- C001=CIR_CODINT          ,'C',006,0,'','C¢digo Integraci¢n',0,''
- C002=CIR_DESCRI          ,'C',120,0,'','Referencia',0,''
+ C001=CIR_CODINT          ,'C',006,0,'','C‚dula',0,''
+ C002=CIR_DESCRI          ,'C',120,0,'','Descripci¢na',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

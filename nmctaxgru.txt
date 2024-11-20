@@ -1,17 +1,19 @@
 [ID]
- NUMERO=1000
- NOMBRE=DPGRU_CTAREF
- DESCRIPCION=Referencia de las Cuentas                                   
+ NUMERO=1576
+ NOMBRE=NMCTAXGRU
+ DESCRIPCION=Cuentas Contables por Grupo                                 
  CONFIG=F
- SINGUL=                              
+ SINGUL=Cuenta por Grupo              
  APLICA=01
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
- C001=CIR_CODINT          ,'C',006,0,'','C¢digo Integraci¢n',0,''
- C002=CIR_DESCRI          ,'C',120,0,'','Referencia',0,''
+ C001=CXG_CODCON          ,'C',004,0,'','Concepto',0,''
+ C002=CXG_CODCTA          ,'C',020,0,'','Cuenta',0,''
+ C003=CXG_CODGRU          ,'C',008,0,'','Unidad Grupo',1,''
+ C004=CXG_CONTRA          ,'C',020,0,'','Contrapartida',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

@@ -1,0 +1,58 @@
+[ID]
+ NUMERO=0409
+ NOMBRE=DPCLACTAEGRE
+ DESCRIPCION=Clasificaci¢n de Egresos                                    
+ CONFIG=F
+ SINGUL=Clasificaci¢n                 
+ APLICA=04
+ PRIMARY_KEY='CCE_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CCE_CODIGO          ,'C',010,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=CCE_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C003=CCE_CLRGRA          ,'N',010,0,'','Color para Gr ficas',0,''
+ C004=CCE_DESCRI          ,'C',049,0,'','Descripci¢n',0,''
+ C005=CCE_GASTO           ,'L',001,0,'','Gasto',0,''
+ C006=CCE_MEMO            ,'M',010,0,'','Comentarios',0,''
+ C007=CCE_TIPO            ,'C',030,0,'','Prioridad',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPCTAEGRESO             , CCE_CODIGO=CEG_CODCLA, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPCLACTAEGRE            , CCE_CODIGO=CCE_CODIGO, <CAMPO:CCE_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CCE_DESCRI FROM DPCLACTAEGRE INNER JOIN DPCLACTAEGRE ON CCE_CODIGO=CCE_CODIGO
+ SELECT CCE_DESCRI FROM DPCLACTAEGRE INNER JOIN DPCTAEGRESO ON CCE_CODIGO=CEG_CODCLA
+ SELECT * FROM DPCLACTAEGRE INNER JOIN DPCTAEGRESO ON CEG_CODCLA=CCE_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CCE_TIPO            ,Accionistas                                                                     
+ C002=CCE_TIPO            ,Adquisici¢n de Activos                                                          
+ C003=CCE_TIPO            ,Impuestos                                                                       
+ C004=CCE_TIPO            ,N¢mina                                                                          
+ C005=CCE_TIPO            ,Otros                                                                           
+ C006=CCE_TIPO            ,Prestadores de Servicios                                                        
+ C007=CCE_TIPO            ,Proveedores                                                                     
+ C008=CCE_TIPO            ,Servicios Operativos                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

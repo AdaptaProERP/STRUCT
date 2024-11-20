@@ -9,15 +9,16 @@
 [END_ID]
 
 [FIELDS]
- C001=CIC_COD2            ,'C',010,0,'','Código Alterno',0
- C002=CIC_CODIGO          ,'C',010,0,'','Código Tabla Maestra',0
- C003=CIC_CODINT          ,'C',006,0,'','Código de Integración Contable',0
- C004=CIC_CODSUC          ,'C',006,0,'','Código Sucursal',0
- C005=CIC_CTAMOD          ,'C',006,0,'','Modelo del Plan de Cuentas',0
- C006=CIC_CUENTA          ,'C',020,0,'','Cuenta Contable',0
- C007=CIC_FECHA           ,'D',008,0,'','Fecha',0
- C008=CIC_HORA            ,'C',008,0,'','Hora',0
- C009=CIC_USUARI          ,'C',008,0,'','Usuario',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CIC_COD2            ,'C',010,0,'','C¢digo Alterno',0,''
+ C002=CIC_CODIGO          ,'C',010,0,'','C¢digo Tabla Maestra',0,''
+ C003=CIC_CODINT          ,'C',006,0,'','C¢digo de Integraci¢n Contable',0,''
+ C004=CIC_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,'&oDp:cSucursal'
+ C005=CIC_CTAMOD          ,'C',006,0,'','Modelo del Plan de Cuentas',0,'&oDp:cCtaMod'
+ C006=CIC_CUENTA          ,'C',020,0,'','Cuenta Contable',0,'&oDp:cCtaIndef'
+ C007=CIC_FECHA           ,'D',008,0,'','Fecha',0,'&DPFECHA()'
+ C008=CIC_HORA            ,'C',008,0,'','Hora',0,'&DPHORA()'
+ C009=CIC_USUARI          ,'C',008,0,'','Usuario',0,'&oDp:cUsuario'
 [END_FIELDS]
 
 [TABLE_MAIN]

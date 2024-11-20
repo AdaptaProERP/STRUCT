@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=9895
+ NOMBRE=DPCTAUSO
+ DESCRIPCION=Utilizaci¢n de las Cuentas                                  
+ CONFIG=F
+ SINGUL=Uso de la Cuenta              
+ APLICA=01
+ PRIMARY_KEY='CUT_CODUSO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CUT_CODUSO          ,'C',002,0,'PRIMARY KEY','Codigo de Uso',0,''
+ C002=CUT_CODIGO          ,'C',020,0,'','Cuenta Contable',0,''
+ C003=CUT_CTAMOD          ,'C',006,0,'','Codigo de Cuenta Modelo',0,'&oDp:cCtaMod'
+ C004=CUT_TIPO            ,'C',001,0,'','Tipo Resultado o Financiero',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

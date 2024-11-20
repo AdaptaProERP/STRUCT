@@ -1,0 +1,48 @@
+[ID]
+ NUMERO=1030
+ NOMBRE=DPPROVEEDORPROGCTA
+ DESCRIPCION=Cuentas de Planificaci¢n                                    
+ CONFIG=F
+ SINGUL=Cuentas                       
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PPC_CODCTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C002=PPC_CODIGO          ,'C',010,0,'','C¢digo Proveedor',0,''
+ C003=PPC_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C004=PPC_CTAEGR          ,'C',020,0,'','Cuenta Egreso',0,'&oDp:cCtaIndef'
+ C005=PPC_CTAMOD          ,'C',006,0,'','Cuenta Modelo',0,''
+ C006=PPC_MONTO           ,'N',019,2,'','Monto',0,''
+ C007=PPC_MTODIV          ,'N',019,2,'','Monto;Divisa',0,''
+ C008=PPC_NUMERO          ,'C',010,0,'','N£mero',0,''
+ C009=PPC_REFERE          ,'C',040,0,'','Referencia',0,''
+ C010=PPC_TIPDOC          ,'C',003,0,'','Tipo Documento',0,''
+ C011=PPC_TIPIVA          ,'C',002,0,'','Tipo IVA',0,''
+ C012=PPC_VALCAM          ,'N',019,6,'','Valor Divisa',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCTAEGRESO             , PPC_CTAEGR=CEG_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPPROVEEDORPROGCTA INNER JOIN DPCTAEGRESO ON PPC_CTAEGR=CEG_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
