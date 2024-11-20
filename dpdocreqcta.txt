@@ -1,0 +1,72 @@
+[ID]
+ NUMERO=7904
+ NOMBRE=DPDOCREQCTA
+ DESCRIPCION=Documento Servicio Requisicion                              
+ CONFIG=F
+ SINGUL=Documento Servicio Requisicion
+ APLICA=08
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CRQ_ACT             ,'N',019,0,'','Estatus Activo',0,''
+ C002=CRQ_ASODOC          ,'C',010,0,'','Documento Asociado',0,''
+ C003=CRQ_ASOTIP          ,'C',003,0,'','Tipo de Documento Asociado',0,''
+ C004=CRQ_AUX             ,'C',008,0,'','Auxiliar',0,''
+ C005=CRQ_CANTID          ,'N',012,2,'','Cantidad',0,''
+ C006=CRQ_CENCOS          ,'C',008,0,'','Centro de Costos',1,''
+ C007=CRQ_CODAUX          ,'C',010,0,'','Auxiliar',0,''
+ C008=CRQ_CODCAJ          ,'C',008,0,'','C¢digo de Caja',0,''
+ C009=CRQ_CODCTA          ,'C',020,0,'','Codigo',1,''
+ C010=CRQ_CODIGO          ,'C',010,0,'','Proveedor',1,''
+ C011=CRQ_CODSUC          ,'C',006,0,'','Sucursal',1,''
+ C012=CRQ_CTAEGR          ,'C',020,0,'','Cuenta de Egreso',0,''
+ C013=CRQ_DESCRI          ,'C',250,0,'','Descripci¢n',0,''
+ C014=CRQ_DOCREF          ,'C',012,0,'','Referencia',0,''
+ C015=CRQ_DOCTIP          ,'C',003,0,'','Tipo Documento de Requisicion',0,''
+ C016=CRQ_EXPORT          ,'N',012,3,'','Cantidad Facturada',0,''
+ C017=CRQ_FACTUR          ,'C',010,0,'','Factura',1,''
+ C018=CRQ_FCHDEC          ,'D',008,0,'','Fecha Declaraci¢n',0,''
+ C019=CRQ_FECHA           ,'D',008,0,'','Fecha de Rquisicion',0,''
+ C020=CRQ_FRECIB          ,'D',008,0,'','Fecha Recibido',0,''
+ C021=CRQ_IMPORT          ,'N',012,3,'','Cantidad Importada',0,''
+ C022=CRQ_INSCAJ          ,'C',004,0,'','Instrumento de Caja',0,''
+ C023=CRQ_ITEM            ,'C',004,0,'','Item',1,''
+ C024=CRQ_ITEM_A          ,'C',004,0,'','Item Asociado',0,''
+ C025=CRQ_LIBCOM          ,'L',001,0,'','Afecta Libro de Compras',0,''
+ C026=CRQ_MONTO           ,'N',019,2,'','Monto',0,''
+ C027=CRQ_NUMERO          ,'C',010,0,'','N£mero',1,''
+ C028=CRQ_NUMFIS          ,'C',010,0,'','N£mero Control Fiscal',1,''
+ C029=CRQ_NUMMEM          ,'N',007,0,'','Numero de Memo',0,''
+ C030=CRQ_PORIVA          ,'N',019,2,'','% de IVA',0,''
+ C031=CRQ_PRECIB          ,'C',030,0,'','Persona que recibe',0,''
+ C032=CRQ_PROYEC          ,'C',008,0,'','Proyecto',1,''
+ C033=CRQ_REFERE          ,'C',020,0,'','Referencia Seg£n Planificaci¢n',0,''
+ C034=CRQ_RIF             ,'C',015,0,'','Rif',0,''
+ C035=CRQ_TIPCTA          ,'C',001,0,'','Tipo de Cuenta',0,''
+ C036=CRQ_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C037=CRQ_TIPIVA          ,'C',002,0,'','Tipo de IVA',0,''
+ C038=CRQ_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C039=CRQ_UNDMED          ,'C',008,0,'','Unidad de Medida',0,''
+ C040=CRQ_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CRQ_TIPCTA          ,Contable                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

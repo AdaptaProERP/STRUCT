@@ -1,0 +1,102 @@
+[ID]
+ NUMERO=7901
+ NOMBRE=DPMOVREQ
+ DESCRIPCION=Movimiento de Requisicion                                   
+ CONFIG=F
+ SINGUL=Movimiento de Requisicion     
+ APLICA=08
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOR_APLORG          ,'C',001,0,'','Aplicaci¢n Origen',0,''
+ C002=MOR_ASODOC          ,'C',010,0,'','Documento Asociado',0,''
+ C003=MOR_ASOTIP          ,'C',003,0,'','Tipo de Documento Asociado',0,''
+ C004=MOR_BANDA           ,'N',014,2,'','Impuesto Sobre Bandas',0,''
+ C005=MOR_CANTID          ,'N',012,3,'','Cantidad en unidades',0,''
+ C006=MOR_CDESC           ,'C',030,0,'','Descuentos Multiples',0,''
+ C007=MOR_CENCOS          ,'C',008,0,'','Centro de Costos',1,''
+ C008=MOR_CODALM          ,'C',003,0,'','Almac‚n',0,''
+ C009=MOR_CODAUX          ,'C',010,0,'','Codigo del Auxiliar',0,''
+ C010=MOR_CODCOM          ,'C',020,0,'','Compuesto',0,''
+ C011=MOR_CODCTA          ,'C',010,0,'','Cliente/Proveedor',1,''
+ C012=MOR_CODIGO          ,'C',020,0,'','Producto',0,''
+ C013=MOR_CODSUC          ,'C',006,0,'','Sucursal',0,''
+ C014=MOR_CODTRA          ,'C',004,0,'','Transacci¢n',0,''
+ C015=MOR_CODVEN          ,'C',006,0,'','Vendedor del Item',0,''
+ C016=MOR_CONTAB          ,'N',002,0,'','Transacci¢n Contable',0,''
+ C017=MOR_COSTO           ,'N',014,2,'','Costo por Medida',0,''
+ C018=MOR_CRECIB          ,'N',008,2,'','Cantidad Recibida',0,''
+ C019=MOR_CXUND           ,'N',013,5,'','Cantidad por Unidad',0,''
+ C020=MOR_DESCUE          ,'N',006,2,'','Descuento',0,''
+ C021=MOR_DOCUME          ,'C',010,0,'','Documento',0,''
+ C022=MOR_ESTADO          ,'C',020,0,'','Estado',0,''
+ C023=MOR_EXPEND          ,'N',014,2,'','Impuesto Expendio',0,''
+ C024=MOR_EXPORT          ,'N',012,3,'','Cantidad Facturada',0,''
+ C025=MOR_FCHVEN          ,'D',008,0,'','Fecha Vencimiento',0,''
+ C026=MOR_FECHA           ,'D',008,0,'','Fecha',0,''
+ C027=MOR_FISICO          ,'N',002,0,'','Transacci¢n F¡sico',0,''
+ C028=MOR_FRECIB          ,'D',008,0,'','Fecha Recibida',0,''
+ C029=MOR_HORA            ,'C',008,0,'','Hora',0,''
+ C030=MOR_IMPORT          ,'N',012,3,'','Cantidad Importada',0,''
+ C031=MOR_IMPOTR          ,'N',012,2,'','Otros Impuestos',0,''
+ C032=MOR_IMPPRO          ,'N',014,2,'','Impuesto Producci¢n',0,''
+ C033=MOR_INVACT          ,'N',002,0,'','Actualiza',0,''
+ C034=MOR_ITEM            ,'C',005,0,'','N£mero de Item',0,''
+ C035=MOR_ITEM_A          ,'C',005,0,'','Item Asociado',0,''
+ C036=MOR_ITEM_C          ,'C',005,0,'','Item Asociado para Componente',1,''
+ C037=MOR_IVA             ,'N',006,2,'','Aplicaci¢n IVA',0,''
+ C038=MOR_LISTA           ,'C',001,0,'','Lista de Precios',0,''
+ C039=MOR_LOGICO          ,'N',002,0,'','Transacci¢n L¢gica',0,''
+ C040=MOR_LOTE            ,'C',015,0,'','Lote',0,''
+ C041=MOR_MEMO            ,'M',010,0,'','Memo',0,''
+ C042=MOR_MTOCOM          ,'N',014,2,'','Monto Comisi¢n',0,''
+ C043=MOR_NUMMEM          ,'N',006,0,'','N£mero de Memo Asociado',0,''
+ C044=MOR_PRECIB          ,'C',030,0,'','Recibidor por',0,''
+ C045=MOR_PRECIO          ,'N',014,3,'','Precio de venta',0,''
+ C046=MOR_PREDOL          ,'N',014,2,'','Precio en Dolares',0,''
+ C047=MOR_PROYEC          ,'C',008,0,'','Proyecto',1,''
+ C048=MOR_TALL01          ,'N',004,0,'','Talla 01',0,''
+ C049=MOR_TALL02          ,'N',004,0,'','Talla 02',0,''
+ C050=MOR_TALL03          ,'N',004,0,'','Talla 03',0,''
+ C051=MOR_TALL04          ,'N',004,0,'','Talla 04',0,''
+ C052=MOR_TALL05          ,'N',004,0,'','Talla 05',0,''
+ C053=MOR_TALL06          ,'N',004,0,'','Talla 06',0,''
+ C054=MOR_TALL07          ,'N',004,0,'','Talla 07',0,''
+ C055=MOR_TALL08          ,'N',004,0,'','Talla 08',0,''
+ C056=MOR_TALL09          ,'N',004,0,'','Talla 09',0,''
+ C057=MOR_TALL10          ,'N',004,0,'','Talla 10',0,''
+ C058=MOR_TIPDOC          ,'C',004,0,'','Tipo de Documento',0,''
+ C059=MOR_TIPIVA          ,'C',002,0,'','Tipo de IVA',0,''
+ C060=MOR_TIPO            ,'C',001,0,'','Individual a Compuesto',0,''
+ C061=MOR_TOTAL           ,'N',018,2,'','Total Rengl¢n',0,''
+ C062=MOR_TOTDOL          ,'N',018,2,'','Total en Dolares',0,''
+ C063=MOR_UNDMED          ,'C',008,0,'','Medida',0,''
+ C064=MOR_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPINV                   , MOR_CODIGO=INV_CODIGO, <CAMPO:INV_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT INV_DESCRI FROM DPMOVREQ INNER JOIN DPINV ON INV_CODIGO=MOR_CODIGO
+ SELECT * FROM DPMOVREQ INNER JOIN DPDOCREQ ON MOR_CODSUC=DOR_CODSUC AND MOR_DOCUME=DOR_NUMERO AND MOR_TIPDOC=DOR_TIPDOC
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

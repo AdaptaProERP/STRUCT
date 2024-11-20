@@ -1,0 +1,54 @@
+[ID]
+ NUMERO=1071
+ NOMBRE=DPMOVINVHORA_TIN
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Horarios                      
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MIH_HORAS           ,'N',017,2,'','',0,''
+ C002=MIH_AMPMF           ,'C',001,0,'','',0,''
+ C003=MIH_AMPMI           ,'C',001,0,'','',0,''
+ C004=MIH_AM_F            ,'C',005,0,'','Hora Am Fin',0,''
+ C005=MIH_AM_I            ,'C',005,0,'','Hora Am Inicio',0,''
+ C006=MIH_CLASIF          ,'C',030,0,'','',0,''
+ C007=MIH_CODSUC          ,'C',006,0,'','',0,'&oDp:cSucursal'
+ C008=MIH_CONFIR          ,'L',001,0,'','',0,''
+ C009=MIH_ESTADO          ,'C',001,0,'','',0,''
+ C010=MIH_FAVORI          ,'C',030,0,'','',0,''
+ C011=MIH_FECHA           ,'D',008,0,'','',0,''
+ C012=MIH_FORMA           ,'C',020,0,'','',0,''
+ C013=MIH_HORAF           ,'C',005,0,'','',0,''
+ C014=MIH_HORAI           ,'C',005,0,'','',0,''
+ C015=MIH_ITEM            ,'C',005,0,'','',0,''
+ C016=MIH_LUGAR           ,'C',020,0,'','',0,''
+ C017=MIH_MAILP           ,'L',001,0,'','Mail Perosonal',0,''
+ C018=MIH_NUMERO          ,'C',010,0,'','',0,''
+ C019=MIH_NUMMEM          ,'N',018,0,'','',0,''
+ C020=MIH_PM_F            ,'C',005,0,'','Hora Pm Fin',0,''
+ C021=MIH_PM_I            ,'C',005,0,'','Hora Pm Inicio',0,''
+ C022=MIH_TIPDOC          ,'C',004,0,'','',0,''
+ C023=MIH_TIPO            ,'C',001,0,'','',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

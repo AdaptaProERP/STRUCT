@@ -1,0 +1,40 @@
+[ID]
+ NUMERO=0218
+ NOMBRE=DPDOCPROAUT
+ DESCRIPCION=Autorizaci¢n de Pagos                                       
+ CONFIG=F
+ SINGUL=Autorizaci¢n                  
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=AUP_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=AUP_APLICA          ,'L',001,0,'','Aplicado',0,''
+ C003=AUP_CODPRO          ,'C',010,0,'','Proveedor',1,''
+ C004=AUP_CODSUC          ,'C',008,0,'','Sucursal',0,'&oDp:cSucursal'
+ C005=AUP_FECHA           ,'D',008,0,'','Fecha',0,''
+ C006=AUP_ITEM            ,'C',005,0,'','Item',0,''
+ C007=AUP_MONTO           ,'N',014,2,'','Monto',0,''
+ C008=AUP_NUMERO          ,'C',010,0,'','Numero Documento',0,''
+ C009=AUP_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

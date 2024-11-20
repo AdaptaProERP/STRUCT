@@ -1,0 +1,95 @@
+[ID]
+ NUMERO=0208
+ NOMBRE=DPDOCPROCTA
+ DESCRIPCION=Cuentas Contables del Proveedor                             
+ CONFIG=F
+ SINGUL=Cuenta                        
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CCD_ACT             ,'N',019,0,'','Estatus Activo',0,''
+ C002=CCD_APLRTI          ,'L',001,0,'','Aplica Retenci¢n de IVA',0,''
+ C003=CCD_CENCOS          ,'C',008,0,'','Centro de Costos',1,'&oDp:cCenCos'
+ C004=CCD_CODCAJ          ,'C',008,0,'','C¢digo de Caja',0,''
+ C005=CCD_CODCON          ,'C',004,0,'','C¢digo Concepto',0,''
+ C006=CCD_CODCTA          ,'C',020,0,'','Proveedor',0,'&oDp:cCtaIndef'
+ C007=CCD_CODIGO          ,'C',010,0,'','Proveedor',1,''
+ C008=CCD_CODINT          ,'C',010,0,'','C¢digo de Integraci¢n',0,''
+ C009=CCD_CODPRO          ,'C',010,0,'','C¢digo Proveedor REI/CPT',1,''
+ C010=CCD_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C011=CCD_CONRET          ,'C',003,0,'','Concepto de Retenci¢n',1,''
+ C012=CCD_CTAEGR          ,'C',020,0,'','Cuenta de Egreso',1,'&oDp:cCtaIndef'
+ C013=CCD_CTAMOD          ,'C',006,0,'','C¢digo Cuenta Modelo',0,'&oDp:cCtaMod'
+ C014=CCD_DESCRI          ,'C',130,0,'','Descripci¢n',0,''
+ C015=CCD_DOCREF          ,'C',012,0,'','Referencia',0,''
+ C016=CCD_DOCTIP          ,'C',003,0,'','Tipo Documento de Compra',0,''
+ C017=CCD_FACTUR          ,'C',020,0,'','Factura',0,''
+ C018=CCD_FCHCOM          ,'D',008,0,'','Fecha del Compromiso DPDOCPROPROG',0,''
+ C019=CCD_FCHDEC          ,'D',008,0,'','Fecha Declaraci¢n',0,''
+ C020=CCD_FCHNUM          ,'C',005,0,'','Fecha de N¢mina Procesada',0,''
+ C021=CCD_FECHA           ,'D',008,0,'','Fecha de Compra',0,''
+ C022=CCD_GRUATV          ,'C',008,0,'','Grupo de Activos',0,''
+ C023=CCD_INSCAJ          ,'C',004,0,'','Instrumento de Caja',0,''
+ C024=CCD_ITEM            ,'C',004,0,'','Item',1,''
+ C025=CCD_IVAREB          ,'N',014,2,'','%Rebaja del IVA',0,''
+ C026=CCD_LBCPAR          ,'C',005,0,'','Partida libro de Compras',0,''
+ C027=CCD_LIBCOM          ,'L',001,0,'','Afecta Libro de Compras',0,''
+ C028=CCD_MONTO           ,'N',019,2,'','Monto',0,''
+ C029=CCD_NUMERO          ,'C',020,0,'','N£mero',0,''
+ C030=CCD_NUMFIS          ,'C',020,0,'','N£mero Control Fiscal',0,''
+ C031=CCD_NUMMEM          ,'N',007,0,'','Numero de Memo',0,''
+ C032=CCD_PORIVA          ,'N',019,2,'','% de IVA',0,''
+ C033=CCD_PORRTI          ,'N',003,0,'','% Retenci¢n',0,''
+ C034=CCD_RECNUM          ,'C',007,0,'','Recibo de N¢mina',0,''
+ C035=CCD_REFERE          ,'C',020,0,'','Referencia Seg£n Planificaci¢n',0,''
+ C036=CCD_RESIDE          ,'C',001,0,'','Reside en el Pais',1,''
+ C037=CCD_RIF             ,'C',015,0,'','Rif del Proveedor',0,''
+ C038=CCD_TIPCTA          ,'C',001,0,'','Tipo de Cuenta',0,''
+ C039=CCD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C040=CCD_TIPIVA          ,'C',002,0,'','Tipo de IVA',0,''
+ C041=CCD_TIPPER          ,'C',001,0,'','Tipo de Persona',1,''
+ C042=CCD_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C043=CCD_TOTAL           ,'N',014,2,'','Total Rengl¢n',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCENCOS                , CCD_CENCOS=CEN_CODIGO <UPDATE>  <RUN>
+ T002=DPCTA                   , CCD_CTAMOD,CCD_CODCTA=CTA_CODMOD,CTA_CODIGO <UPDATE> <DELETE> <RUN>
+ T003=DPCTAEGRESO             , CCD_CTAEGR=CEG_CODIGO <UPDATE> <DELETE> <RUN>
+ T004=DPDOCPRO                , CCD_CODSUC,CCD_TIPDOC,CCD_CODIGO,CCD_NUMERO,CCD_TIPTRA=DOC_CODSUC,DOC_TIPDOC,DOC_CODIGO,DOC_NUMERO,DOC_TIPTRA <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPCTAEGRESO             , CCD_CTAEGR=CEG_CODIGO, <CAMPO:CEG_DESCRI>, <WHERE:>
+ T002=DPPROVEEDOR             , CCD_CODIGO=PRO_CODIGO, <CAMPO:PRO_NOMBRE>, <WHERE:>
+ T003=DPPROVEEDORCERO         , CCD_CODSUC,CCD_TIPDOC,CCD_CODIGO,CCD_NUMERO,CCD_RIF=CCG_CODSUC,CCG_TIPDOC,CCG_CODIGO,CCG_NUMDOC,CCG_RIF, <CAMPO:CCG_NOMBRE>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CEG_DESCRI FROM DPDOCPROCTA INNER JOIN DPCTAEGRESO ON CEG_CODIGO=CCD_CTAEGR
+ SELECT * FROM DPDOCPROCTA INNER JOIN DPCENCOS ON CCD_CENCOS=CEN_CODIGO
+ SELECT * FROM DPDOCPROCTA INNER JOIN DPCTA ON CCD_CTAMOD=CTA_CODMOD AND CCD_CODCTA=CTA_CODIGO
+ SELECT * FROM DPDOCPROCTA INNER JOIN DPCTAEGRESO ON CCD_CTAEGR=CEG_CODIGO
+ SELECT * FROM DPDOCPROCTA INNER JOIN DPDOCPRO ON CCD_CODSUC=DOC_CODSUC AND CCD_TIPDOC=DOC_TIPDOC AND CCD_CODIGO=DOC_CODIGO AND CCD_NUMERO=DOC_NUMERO AND CCD_TIPTRA=DOC_TIPTRA
+ SELECT PRO_NOMBRE FROM DPDOCPROCTA INNER JOIN DPPROVEEDOR ON PRO_CODIGO=CCD_CODIGO
+ SELECT CCG_NOMBRE FROM DPDOCPROCTA INNER JOIN DPPROVEEDORCERO ON CCG_CODSUC=CCD_CODSUC AND CCG_TIPDOC=CCD_TIPDOC AND CCG_CODIGO=CCD_CODIGO AND CCG_NUMDOC=CCD_NUMERO AND CCG_RIF=CCD_RIF
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

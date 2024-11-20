@@ -1,0 +1,76 @@
+[ID]
+ NUMERO=0130
+ NOMBRE=DPDOCCONTEO
+ DESCRIPCION=Documento Conteo de Producto                                
+ CONFIG=F
+ SINGUL=Documento de Conteo           
+ APLICA=01
+ PRIMARY_KEY='DCI_CODSUC,DCI_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DCI_AFECON          ,'L',001,0,'','Contable',0,''
+ C002=DCI_AFEFIS          ,'L',001,0,'','F¡sico',0,''
+ C003=DCI_AFELOG          ,'L',001,0,'','L¢gico',0,''
+ C004=DCI_CAMPOA          ,'C',010,0,'','Campo Asociado',0,''
+ C005=DCI_CODALM          ,'C',003,0,'','Almac‚n',0,''
+ C006=DCI_CODIGO          ,'C',020,0,'','C¢digo Asociado',0,''
+ C007=DCI_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C008=DCI_DESCRI          ,'C',060,0,'','Descripci¢n',0,''
+ C009=DCI_ESTADO          ,'C',001,0,'','Estado',0,'Activo'
+ C010=DCI_FCHEJE          ,'D',008,0,'','Fecha de Ejecuci¢n',0,''
+ C011=DCI_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=DCI_FILSIZ          ,'C',080,0,'','Geometr¡a del Archivo',0,''
+ C013=DCI_FILXLS          ,'C',250,0,'','Archivo de Origen',0,''
+ C014=DCI_HORAEJ          ,'C',008,0,'','Hora de Ejecuci¢n',0,''
+ C015=DCI_NUMCBT          ,'C',008,0,'','Comprobante Contable',0,''
+ C016=DCI_NUMERO          ,'C',010,0,'','N£mero',0,''
+ C017=DCI_NUMMEM          ,'N',008,0,'','Campo Memo',0,''
+ C018=DCI_NUNMEM          ,'M',000,0,'','Comentarios',0,''
+ C019=DCI_TABLA           ,'C',020,0,'','Tabla Asociada',0,''
+ C020=DCI_TIPEXI          ,'C',001,0,'','Tipo de Existencia',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPALMACEN               , DCI_CODSUC,DCI_CODALM=ALM_CODSUC,ALM_CODIGO <UPDATE>  <RUN>
+ T002=DPSUCURSAL              , DCI_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPMOVCONTEO             , DCI_CODSUC,DCI_NUMERO=MDC_CODSUC,MDC_NUMERO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPALMACEN               , DCI_CODALM=ALM_CODIGO, <CAMPO:>, <WHERE:>
+ T002=DPSUCURSAL              , DCI_CODSUC=SUC_CODIGO, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCCONTEO INNER JOIN DPALMACEN ON ALM_CODIGO=DCI_CODALM
+ SELECT * FROM DPDOCCONTEO INNER JOIN DPALMACEN ON DCI_CODSUC=ALM_CODSUC AND DCI_CODALM=ALM_CODIGO
+ SELECT * FROM DPDOCCONTEO INNER JOIN DPSUCURSAL ON DCI_CODSUC=SUC_CODIGO
+ SELECT * FROM DPDOCCONTEO INNER JOIN DPMOVCONTEO ON MDC_CODSUC=DCI_CODSUC AND MDC_NUMERO=DCI_NUMERO
+ SELECT * FROM DPDOCCONTEO INNER JOIN DPSUCURSAL ON SUC_CODIGO=DCI_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=DCI_ESTADO          ,Activo                                                                          
+ C002=DCI_ESTADO          ,Nulo                                                                            
+ C003=DCI_TIPEXI          ,Contable                                                                        
+ C004=DCI_TIPEXI          ,F¡sico                                                                          
+ C005=DCI_TIPEXI          ,L¢gico                                                                          
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

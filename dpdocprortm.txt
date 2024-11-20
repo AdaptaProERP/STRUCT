@@ -1,0 +1,64 @@
+[ID]
+ NUMERO=9912
+ NOMBRE=DPDOCPRORTM
+ DESCRIPCION=Retenci¢n Municipal Aplicado en CxP                         
+ CONFIG=F
+ SINGUL=Retencion Municipal Proveedor 
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=RTM_BASE            ,'N',014,2,'','Base Imponible',0,''
+ C002=RTM_CODIGO          ,'C',010,0,'','Proveedor',1,''
+ C003=RTM_CODPAT          ,'C',015,0,'','Cod. Patente',0,''
+ C004=RTM_CODREM          ,'C',010,0,'','C¢digo de Retenci¢n',0,''
+ C005=RTM_CODRUC          ,'C',010,0,'','Cod. RUC',0,''
+ C006=RTM_CODSUC          ,'C',006,0,'','Sucursal',1,''
+ C007=RTM_CONTAB          ,'C',001,0,'','Contabilizado',0,''
+ C008=RTM_DESCRI          ,'C',100,0,'','Descripcion',0,''
+ C009=RTM_DOCNUM          ,'C',010,0,'','Documento RTM',1,''
+ C010=RTM_DOCTIP          ,'C',003,0,'','Tipo de Documento RTM',0,''
+ C011=RTM_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=RTM_ITEM            ,'C',006,0,'','Item',0,''
+ C013=RTM_MONTO           ,'N',014,2,'','Monto de Retencion',0,''
+ C014=RTM_MTOBAS          ,'N',014,2,'','Monto Base',0,''
+ C015=RTM_MTODED          ,'N',014,2,'','Monto Deducible',0,''
+ C016=RTM_MTOSUJ          ,'N',014,2,'','Monto Sujeto',0,''
+ C017=RTM_NUMERO          ,'C',020,0,'','N£mero Documento',1,''
+ C018=RTM_NUMTRA          ,'C',008,0,'','Transacci¢n',1,''
+ C019=RTM_PORCEN          ,'N',019,2,'','% de Retenci¢n',0,''
+ C020=RTM_PORIVA          ,'N',006,2,'','% de IVA',0,''
+ C021=RTM_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C022=RTM_TIPOPE          ,'C',001,0,'','Tipo de Operaci¢n',0,''
+ C023=RTM_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPPROVEEDOR             , RTM_CODIGO=PRO_CODIGO, <CAMPO:PRO_NOMBRE>, <WHERE:>
+ T002=DPSUCURSAL              , RTM_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT PRO_NOMBRE FROM DPDOCPRORTM INNER JOIN DPPROVEEDOR ON PRO_CODIGO=RTM_CODIGO
+ SELECT SUC_DESCRI FROM DPDOCPRORTM INNER JOIN DPSUCURSAL ON SUC_CODIGO=RTM_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=RTM_TIPOPE          ,Compra                                                                          
+ C002=RTM_TIPOPE          ,Servicio                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

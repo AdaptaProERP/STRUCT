@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=9933
+ NOMBRE=DPDOCPLANTILLAVAR
+ DESCRIPCION=Variable de Plantilla                                       
+ CONFIG=F
+ SINGUL=Variable                      
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=VAR_CODIGO          ,'C',020,0,'','C¢digo Plantilla',0,''
+ C002=VAR_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=VAR_DESCRI          ,'C',080,0,'','Nombre de la Variable',0,''
+ C004=VAR_ITEM            ,'C',005,0,'','Item',0,''
+ C005=VAR_MONTO           ,'N',018,2,'','Monto',0,''
+ C006=VAR_NOMBRE          ,'C',010,0,'','Nombre Variable',0,''
+ C007=VAR_SEL             ,'L',001,0,'','Seleccionar',0,'.T.'
+[END_FIELDS]
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCPLANTILLAVAR INNER JOIN DPDOCPLANTILLA ON VAR_CODSUC=DOC_CODSUC AND VAR_CODIGO=DOC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

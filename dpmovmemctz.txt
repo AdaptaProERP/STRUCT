@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=0362
+ NOMBRE=DPMOVMEMCTZ
+ DESCRIPCION=Memo y Descripci¢n de Movimiento de Coti                    
+ CONFIG=F
+ SINGUL=Memo de Cuerpo/Cotizaci¢n     
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MCT_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C002=MCT_ITEM            ,'C',005,0,'','N£mero del Item',1,''
+ C003=MCT_MEMO            ,'M',010,0,'','Campo Memo',0,''
+ C004=MCT_NUMCOT          ,'C',008,0,'','N£mero de Cotizacion',1,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

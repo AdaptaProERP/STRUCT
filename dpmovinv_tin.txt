@@ -1,0 +1,110 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPMOVINV_TIN
+ DESCRIPCION=Movimiento de Productos Hist¢rico                           
+ CONFIG=F
+ SINGUL=Movimiento de Producto        
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOV_LOTE            ,'C',040,0,'','Lote',0,''
+ C002=MOV_APLORG          ,'C',003,0,'','Aplicaci¢n Origen',0,''
+ C003=MOV_ASODOC          ,'C',010,0,'','N£mero;Origen',0,''
+ C004=MOV_ASOTIP          ,'C',003,0,'','Tip.;Org',0,''
+ C005=MOV_BANDA           ,'N',014,2,'','Impuesto;Banda',0,''
+ C006=MOV_CANTID          ,'N',012,2,'','Cant.',0,''
+ C007=MOV_CAPAC           ,'N',015,0,'','Capa de Costos',0,''
+ C008=MOV_CAPAP           ,'N',005,0,'','Capa de Precios',0,''
+ C009=MOV_CDESC           ,'C',030,0,'','Descuentos Multiples',0,''
+ C010=MOV_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C011=MOV_CODALM          ,'C',003,0,'','C¢d;Alm.',0,''
+ C012=MOV_CODCOM          ,'C',040,0,'','Componente',0,''
+ C013=MOV_CODCTA          ,'C',010,0,'','Cliente/Proveedor',0,''
+ C014=MOV_CODEDT          ,'C',008,0,'','C¢digo Cuenta Modelo',0,''
+ C015=MOV_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C016=MOV_CODMON          ,'C',003,0,'','C¢d.;Moneda',0,''
+ C017=MOV_CODPER          ,'C',006,0,'','Personal Asignado',0,''
+ C018=MOV_CODSUC          ,'C',006,0,'','Sucursal',0,''
+ C019=MOV_CODTRA          ,'C',004,0,'','Transacci¢n',0,''
+ C020=MOV_CODVEN          ,'C',006,0,'','Vendedor del Item',0,''
+ C021=MOV_CONTAB          ,'N',002,0,'','Transacci¢n Contable',0,''
+ C022=MOV_COSTO           ,'N',014,2,'','Costo',0,''
+ C023=MOV_CXUND           ,'N',013,2,'','Cant.;x Und',0,''
+ C024=MOV_CXUNDE          ,'N',014,3,'','Cant.;x Und',0,''
+ C025=MOV_DESCUE          ,'N',006,2,'','%;Desc',0,''
+ C026=MOV_DOCASO          ,'C',010,0,'','Documento Exportado',0,''
+ C027=MOV_DOCUME          ,'C',020,0,'','Documento',0,''
+ C028=MOV_EXPEND          ,'N',014,2,'','Impuesto Expendio',0,''
+ C029=MOV_EXPORT          ,'N',011,3,'','Cant. Exportada',0,''
+ C030=MOV_EXPRES          ,'C',030,0,'','Expresi¢n de Medidas',0,''
+ C031=MOV_FCHHOR          ,'C',018,0,'','Fecha y Hora para Ultimo Costo',0,''
+ C032=MOV_FCHINI          ,'D',008,0,'','Fecha Inicio',0,''
+ C033=MOV_FCHVEN          ,'D',008,0,'','Fecha;Vence',0,''
+ C034=MOV_FECHA           ,'D',008,0,'','Fecha',0,''
+ C035=MOV_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C036=MOV_FISICO          ,'N',002,0,'','Transacci¢n F¡sico',0,''
+ C037=MOV_HORA            ,'C',008,0,'','Hora',0,''
+ C038=MOV_IMPORT          ,'N',011,3,'','Cantidad Importada',0,''
+ C039=MOV_IMPOTR          ,'N',012,2,'','Otros Impuestos',0,''
+ C040=MOV_IMPPRO          ,'N',014,2,'','Impuesto Producci¢n',0,''
+ C041=MOV_INVACT          ,'N',002,0,'','Actualiza',0,''
+ C042=MOV_ITEM            ,'C',005,0,'','N£m.;Item',0,''
+ C043=MOV_ITEM_A          ,'C',005,0,'','N£m.;Item',0,''
+ C044=MOV_ITEM_C          ,'C',005,0,'','N£m.;Item',0,''
+ C045=MOV_ITEM_D          ,'C',005,0,'','N£m.;Item',0,''
+ C046=MOV_IVA             ,'N',006,2,'','%;IVA',0,''
+ C047=MOV_LISTA           ,'C',001,0,'','Lista',0,''
+ C048=MOV_LOGICO          ,'N',002,0,'','Transacci¢n L¢gica',0,''
+ C049=MOV_METCOS          ,'C',001,0,'','M‚todo de Costo',0,''
+ C050=MOV_MTOCLA          ,'N',014,2,'','Monto Clasificaci¢n',0,''
+ C051=MOV_MTOCOM          ,'N',014,2,'','Monto Comisi¢n',0,''
+ C052=MOV_MTODIV          ,'N',017,2,'','Monto en Divisa',0,''
+ C053=MOV_NOMCAR          ,'C',020,0,'','Caracter¡stica',0,''
+ C054=MOV_NUMCLA          ,'N',010,0,'','N£mero Clasificaci¢n',0,''
+ C055=MOV_NUMMEM          ,'N',006,0,'','Número de Memo Asociado',0,''
+ C056=MOV_NUMPAR          ,'C',005,0,'','Numero de Partida',0,''
+ C057=MOV_NUMPAT          ,'C',005,0,'','Numero de Partida',0,''
+ C058=MOV_PESAJE          ,'L',001,0,'','Originado desde Pesaje',0,''
+ C059=MOV_PESEXP          ,'N',018,0,'','Peso Exportado',0,''
+ C060=MOV_PESO            ,'N',017,2,'','Peso',0,''
+ C061=MOV_PRECIO          ,'N',014,2,'','Precio;Venta',0,''
+ C062=MOV_PREDIV          ,'N',018,0,'','Precio;Divisa',0,''
+ C063=MOV_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,''
+ C064=MOV_RIF             ,'C',015,0,'','RIF',0,''
+ C065=MOV_SUCORG          ,'C',006,0,'','Suc.;Origen',0,''
+ C066=MOV_TIPASO          ,'C',003,0,'','Tipo Documento Expotado',0,''
+ C067=MOV_TIPCAR          ,'C',020,0,'','Tipo;Caracter¡stica',0,''
+ C068=MOV_TIPDOC          ,'C',004,0,'','Tipo de Documento',0,''
+ C069=MOV_TIPIVA          ,'C',002,0,'','Tipo;IVA',0,''
+ C070=MOV_TIPO            ,'C',001,0,'','Individual a Compuesto',0,''
+ C071=MOV_TOTAL           ,'N',017,2,'','Monto;Total',0,''
+ C072=MOV_TOTDIV          ,'N',018,0,'','Total;Divisa',0,''
+ C073=MOV_UNDMED          ,'C',020,0,'','Unidad;Medida',0,''
+ C074=MOV_USUARI          ,'C',003,0,'','Usuario',0,''
+ C075=MOV_VOLUME          ,'N',018,0,'','Volumen',0,''
+ C076=MOV_W               ,'N',018,0,'','Medida W',0,''
+ C077=MOV_X               ,'N',018,0,'','Medida X',0,''
+ C078=MOV_Y               ,'N',018,0,'','Medida Y',0,''
+ C079=MOV_Z               ,'N',018,0,'','Medida Z',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

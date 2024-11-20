@@ -1,0 +1,87 @@
+[ID]
+ NUMERO=7902
+ NOMBRE=DPDOCREQ
+ DESCRIPCION=Documento Requisicion                                       
+ CONFIG=F
+ SINGUL=Documento Requisicion         
+ APLICA=08
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DOR_ACT             ,'N',002,0,'','Status',0,''
+ C002=DOR_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C003=DOR_CODCIE          ,'C',003,0,'','Uusario Cierre',0,''
+ C004=DOR_CODCOM          ,'C',015,0,'','Serial Asociado',0,''
+ C005=DOR_CODDIV          ,'C',006,0,'','Divisi¢n',0,''
+ C006=DOR_CODGER          ,'C',006,0,'','Gerencia',1,''
+ C007=DOR_CODINV          ,'C',015,0,'','Producto Asociado',0,''
+ C008=DOR_CODPER          ,'C',006,0,'','Trabajador Ejecutante',1,''
+ C009=DOR_CODSUC          ,'C',006,0,'','Sucursal',0,''
+ C010=DOR_CODUCE          ,'C',002,0,'','Usuario Cierre',0,''
+ C011=DOR_CODUN1          ,'C',003,0,'','C¢digo Usuario Nivel 1',0,''
+ C012=DOR_CODUN2          ,'C',003,0,'','C¢digo Usuario Nivel 2',0,''
+ C013=DOR_CODUN4          ,'C',003,0,'','Usuario Procesa Req',0,''
+ C014=DOR_COMEN1          ,'C',035,0,'','Comentario 1',0,''
+ C015=DOR_COMEN2          ,'C',035,0,'','Comentario 2',0,''
+ C016=DOR_CONTAB          ,'C',001,0,'','Contabilizado',0,''
+ C017=DOR_CONTAC          ,'C',030,0,'','Contacto',0,''
+ C018=DOR_EMPRES          ,'C',020,0,'','Empresa Destino',0,''
+ C019=DOR_ESTADO          ,'C',002,0,'','Estado',0,''
+ C020=DOR_FCHAN1          ,'D',008,0,'','Fecha Aprob. Nivel 1',0,''
+ C021=DOR_FCHAN2          ,'D',008,0,'','Fecha Aprob. Nivel 2',0,''
+ C022=DOR_FCHAN4          ,'D',008,0,'','Fecha de Proceaso Req',0,''
+ C023=DOR_FCHCER          ,'D',008,0,'','Fecha Cierre',0,''
+ C024=DOR_FCHCIE          ,'D',008,0,'','Fecha de Cierre',0,''
+ C025=DOR_FCHREQ          ,'D',008,0,'','Fecha Requerida',0,''
+ C026=DOR_FCHVIS          ,'D',008,0,'','Fecha Visita T‚cnica',0,''
+ C027=DOR_FECHA           ,'D',008,0,'','Fecha',0,''
+ C028=DOR_HORA            ,'C',008,0,'','Hora',0,''
+ C029=DOR_MEMO            ,'M',010,0,'','Memo',0,''
+ C030=DOR_NUMCBT          ,'C',008,0,'','Comprobante',1,''
+ C031=DOR_NUMDOC          ,'C',008,0,'','Documento Destino',0,''
+ C032=DOR_NUMERO          ,'C',010,0,'','N£mero',1,''
+ C033=DOR_NUMMEM          ,'N',006,0,'','N£mero de Memo',0,''
+ C034=DOR_SWCHIT          ,'L',001,0,'','Swchit',0,''
+ C035=DOR_TIPDES          ,'C',250,0,'','Descripcion del Tipo de Req.',0,''
+ C036=DOR_TIPDOC          ,'C',003,0,'','Tipo Documento',0,''
+ C037=DOR_TIPREQ          ,'C',001,0,'','Tipo Requisici¢n',0,''
+ C038=DOR_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPGERENCIA              , DOR_CODGER=GER_CODIGO, <CAMPO:GER_DESCRI>, <WHERE:>
+ T002=DPMOVREQ                , DOR_CODSUC,DOR_NUMERO,DOR_TIPDOC=MOR_CODSUC,MOR_DOCUME,MOR_TIPDOC, <CAMPO:>, <WHERE:>
+ T003=DPUSUREQ                , DOR_CODUN2=URQ_CODUSU, <CAMPO:URQ_CODPER>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT GER_DESCRI FROM DPDOCREQ INNER JOIN DPGERENCIA ON GER_CODIGO=DOR_CODGER
+ SELECT * FROM DPDOCREQ INNER JOIN DPMOVREQ ON MOR_CODSUC=DOR_CODSUC AND MOR_DOCUME=DOR_NUMERO AND MOR_TIPDOC=DOR_TIPDOC
+ SELECT URQ_CODPER FROM DPDOCREQ INNER JOIN DPUSUREQ ON URQ_CODUSU=DOR_CODUN2
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=DOR_ESTADO          ,Anulado                                                                         
+ C002=DOR_ESTADO          ,Aprobado                                                                        
+ C003=DOR_ESTADO          ,Cerrado                                                                         
+ C004=DOR_ESTADO          ,Elaborado                                                                       
+ C005=DOR_ESTADO          ,Procesada                                                                       
+ C006=DOR_ESTADO          ,Revisado                                                                        
+ C007=DOR_TIPREQ          ,Materiales                                                                      
+ C008=DOR_TIPREQ          ,Servicios                                                                       
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

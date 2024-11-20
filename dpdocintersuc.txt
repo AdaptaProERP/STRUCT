@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=0310
+ NOMBRE=DPDOCINTERSUC
+ DESCRIPCION=Documentos Inter Sucursal                                   
+ CONFIG=F
+ SINGUL=Documento Intersucursal       
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DXS_DESCOD          ,'C',010,0,'','Cliente Destino',1,''
+ C002=DXS_DESNUM          ,'C',010,0,'','N£mero Destino',1,''
+ C003=DXS_DESSUC          ,'C',008,0,'','Sucursal Destino',1,''
+ C004=DXS_DESTIP          ,'C',003,0,'','Tipo de Documento Destino',0,''
+ C005=DXS_ORGCOD          ,'C',010,0,'','Proveedor Origen',1,''
+ C006=DXS_ORGNUM          ,'C',010,0,'','N£mero Origen',1,''
+ C007=DXS_ORGSUC          ,'C',008,0,'','Sucursal Origen',1,''
+ C008=DXS_ORGTIP          ,'C',003,0,'','Tipo de Documento Origen',0,''
+ C009=DXS_VTANUM          ,'C',010,0,'','N£mero de Factura',1,''
+ C010=DXS_VTASUC          ,'C',008,0,'','Sucursal de Venta',0,''
+ C011=DXS_VTATIP          ,'C',003,0,'','Tipo Documento Venta',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPDOCCLI                , DXS_VTASUC,DXS_VTATIP,DXS_VTANUM=DOC_CODSUC,DOC_TIPDOC,DOC_NUMERO, <CAMPO:>, <WHERE:>
+ T002=DPSUCURSAL              , DXS_VTASUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCINTERSUC INNER JOIN DPDOCCLI ON DOC_CODSUC=DXS_VTASUC AND DOC_TIPDOC=DXS_VTATIP AND DOC_NUMERO=DXS_VTANUM
+ SELECT SUC_DESCRI FROM DPDOCINTERSUC INNER JOIN DPSUCURSAL ON SUC_CODIGO=DXS_VTASUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,64 @@
+[ID]
+ NUMERO=9908
+ NOMBRE=DPDOCENSBL
+ DESCRIPCION=Documento de Ensamblaje                                     
+ CONFIG=F
+ SINGUL=Documento de Ensamblaje       
+ APLICA=01
+ PRIMARY_KEY='DOC_CODSUC,DOC_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DOC_CANT            ,'N',008,0,'','Cantidad Solicitada',0,''
+ C002=DOC_CANTID          ,'C',019,0,'','Cantidad',0,''
+ C003=DOC_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C004=DOC_CODALM          ,'C',003,0,'','C¢digo de Almacen',0,''
+ C005=DOC_CODINV          ,'C',020,0,'','Producto Asociado',0,''
+ C006=DOC_CODPER          ,'C',006,0,'','Trabajador',0,''
+ C007=DOC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C008=DOC_CODUND          ,'C',008,0,'','Unidad de Medida Producto Asociado',0,''
+ C009=DOC_COMEN1          ,'C',035,0,'','Comentario 1',0,''
+ C010=DOC_COMEN2          ,'C',035,0,'','Comentario 2',0,''
+ C011=DOC_CONTAB          ,'C',001,0,'','Contabilidad',0,''
+ C012=DOC_COSTO           ,'N',022,2,'','Total Costo',0,''
+ C013=DOC_DOSIFICA        ,'C',020,0,'','Dosificaci¢n',0,''
+ C014=DOC_ESTADO          ,'C',001,0,'','Estado',0,''
+ C015=DOC_FECHA           ,'D',008,0,'','Fecha',0,'&DPFECHA()'
+ C016=DOC_HORA            ,'C',008,0,'','Hora',0,'&DPHORA()'
+ C017=DOC_MERMA           ,'N',006,2,'','Merma',0,''
+ C018=DOC_NDOSIFI         ,'C',020,0,'','Nueva Dosificaci¢n',0,''
+ C019=DOC_NUMCBT          ,'C',008,0,'','N£mero de Comprobante',0,''
+ C020=DOC_NUMERO          ,'C',010,0,'','N£mero',1,''
+ C021=DOC_NUMMEM          ,'N',006,0,'','N£mero',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPALMACEN               , DOC_CODALM=ALM_CODIGO, <CAMPO:>, <WHERE:>
+ T002=DPSUCURSAL              , DOC_CODSUC=SUC_CODIGO, <CAMPO:>, <WHERE:>
+ T003=DPUNDMED                , DOC_CODUND=UND_CODIGO, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCENSBL INNER JOIN DPALMACEN ON ALM_CODIGO=DOC_CODALM
+ SELECT * FROM DPDOCENSBL INNER JOIN DPCENCOS ON CEN_CODIGO=DOC_CENCOS
+ SELECT * FROM DPDOCENSBL INNER JOIN DPINV ON INV_CODIGO=DOC_CODINV
+ SELECT * FROM DPDOCENSBL INNER JOIN DPSUCURSAL ON SUC_CODIGO=DOC_CODSUC
+ SELECT * FROM DPDOCENSBL INNER JOIN DPUNDMED ON UND_CODIGO=DOC_CODUND
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

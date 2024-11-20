@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=0136
+ NOMBRE=DPMOVINVCLASIF
+ DESCRIPCION=Clasificaci¢n Item en Movimiento                            
+ CONFIG=F
+ SINGUL=Item de Clasificaci¢n         
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MCI_CANTID          ,'N',006,2,'','Cantidad',0,''
+ C002=MCI_CODSUC          ,'C',008,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=MCI_FORMA           ,'C',040,0,'','Forma',0,''
+ C004=MCI_GRUPO           ,'C',040,0,'','Grupo',0,''
+ C005=MCI_INCIDE          ,'N',010,2,'','Incidencia',0,''
+ C006=MCI_NUMERO          ,'N',008,0,'','Registro',0,''
+ C007=MCI_TIPCLA          ,'C',040,0,'','Clasificaci¢n',0,''
+ C008=MCI_TOTAL           ,'N',014,2,'','Total',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

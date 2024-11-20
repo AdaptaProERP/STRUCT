@@ -1,0 +1,49 @@
+[ID]
+ NUMERO=1109
+ NOMBRE=DPDOCPROISLR_HIS
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Retenci½n ISLR                
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=RXP_CODCON          ,'C',003,0,'','C¢digo de Concepto',0,''
+ C002=RXP_CODEQI          ,'C',003,0,'','C¢digo XML',0,''
+ C003=RXP_CODIGO          ,'C',010,0,'','Proveedor',0,''
+ C004=RXP_CODMON          ,'C',003,0,'','Moneda o Divisa',0,''
+ C005=RXP_CODSUC          ,'C',006,0,'','Sucursal',0,''
+ C006=RXP_DESCRI          ,'C',200,0,'','Descripci¢n del Concepto',0,''
+ C007=RXP_DOCNUM          ,'C',020,0,'','N£mero del Documento RET',0,''
+ C008=RXP_DOCTIP          ,'C',003,0,'','Tipo de Documento RET',0,''
+ C009=RXP_FECHA           ,'D',008,0,'','Fecha',0,''
+ C010=RXP_INTEGR          ,'C',001,0,'','Integrado con Contabilidad',0,''
+ C011=RXP_MTOBAS          ,'N',017,2,'','Base Imponible',0,''
+ C012=RXP_MTODED          ,'N',017,2,'','Deducible',0,''
+ C013=RXP_MTORET          ,'N',017,2,'','Monto Retenci½n',0,''
+ C014=RXP_MTOSUJ          ,'N',017,2,'','Sujeto',0,''
+ C015=RXP_NUMDOC          ,'C',020,0,'','Documento',0,''
+ C016=RXP_PORCEN          ,'N',008,2,'','%',0,''
+ C017=RXP_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C018=RXP_TIPTRA          ,'C',001,0,'','Transacci¢n Documento',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,51 @@
+[ID]
+ NUMERO=0202
+ NOMBRE=DPDOCPRODIR
+ DESCRIPCION=Direcci¢n de Recepci¢n                                      
+ CONFIG=F
+ SINGUL=Direcci½n                     
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DIR_CODIGO          ,'C',010,0,'','Proveedor',0,''
+ C002=DIR_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=DIR_COMEN1          ,'C',040,0,'','Comentarios 1',0,''
+ C004=DIR_COMEN2          ,'C',040,0,'','Comentarios 2',0,''
+ C005=DIR_DIR1            ,'C',050,0,'','Direcci¢n de Recepci¢n',0,''
+ C006=DIR_DIR2            ,'C',050,0,'','Direcci¢n L¡nea 2',0,''
+ C007=DIR_DIR3            ,'C',050,0,'','Direcci¢n L¡nea 3',0,''
+ C008=DIR_DIRIGI          ,'C',040,0,'','Dirigido a',0,''
+ C009=DIR_FCHORD          ,'D',008,0,'','',0,''
+ C010=DIR_NUMDOC          ,'C',020,0,'','N£mero del Documento',0,''
+ C011=DIR_ORDCOM          ,'C',020,0,'','',0,''
+ C012=DIR_PERSON          ,'C',030,0,'','Persona Contactada',0,''
+ C013=DIR_TELEFO          ,'C',012,0,'','Tel‚fono',0,''
+ C014=DIR_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C015=DIR_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPDOCPRO                , DIR_CODSUC,DIR_TIPDOC,DIR_CODIGO,DIR_NUMDOC,DIR_TIPTRA=DOC_CODSUC,DOC_TIPDOC,DOC_CODIGO,DOC_NUMERO,DOC_TIPTRA <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCPRODIR INNER JOIN DPDOCPRO ON DIR_CODSUC=DOC_CODSUC AND DIR_TIPDOC=DOC_TIPDOC AND DIR_CODIGO=DOC_CODIGO AND DIR_NUMDOC=DOC_NUMERO AND DIR_TIPTRA=DOC_TIPTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

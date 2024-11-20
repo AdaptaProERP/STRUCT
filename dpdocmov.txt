@@ -1,0 +1,68 @@
+[ID]
+ NUMERO=0137
+ NOMBRE=DPDOCMOV
+ DESCRIPCION=Entradas y Salidas                                          
+ CONFIG=F
+ SINGUL=Documento E/S                 
+ APLICA=01
+ PRIMARY_KEY='DOC_CODSUC,DOC_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DOC_CENCOS          ,'C',008,0,'','Centro de Costos',0,'&oDp:cCenCos'
+ C002=DOC_CODCOM          ,'C',015,0,'','Serial Asociado',0,''
+ C003=DOC_CODINV          ,'C',015,0,'','Producto Asociado',0,''
+ C004=DOC_CODPER          ,'C',006,0,'','Trabajador Ejecutante',1,'&oDp:cCodPer'
+ C005=DOC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C006=DOC_COMEN1          ,'C',035,0,'','Comentario 1',0,''
+ C007=DOC_COMEN2          ,'C',035,0,'','Comentario 2',0,''
+ C008=DOC_CONTAB          ,'C',001,0,'','Contabilizado',0,''
+ C009=DOC_EMPRES          ,'C',020,0,'','Empresa Destino',0,''
+ C010=DOC_ESTADO          ,'C',001,0,'','Estado',0,''
+ C011=DOC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=DOC_HORA            ,'C',008,0,'','Hora',0,''
+ C013=DOC_NUMCBT          ,'C',008,0,'','Comprobante',1,''
+ C014=DOC_NUMDOC          ,'C',008,0,'','Documento Destino',0,''
+ C015=DOC_NUMERO          ,'C',010,0,'','N£mero',1,''
+ C016=DOC_NUMMEM          ,'N',006,0,'','N£mero de Memo',0,''
+ C017=DOC_NUMPAR          ,'C',005,0,'','N£mero de Partidaa',0,''
+ C018=DOC_VALCAM          ,'N',019,0,'','Valor;Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCENCOS                , DOC_CENCOS=CEN_CODIGO <UPDATE>  <RUN>
+ T002=DPPERSONAL              , DOC_CODPER=PER_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPCENCOS                , DOC_CENCOS=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+ T002=DPPERSONAL              , DOC_CODPER=PER_CODIGO, <CAMPO:PER_NOMBRE>, <WHERE:>
+ T003=DPSUCURSAL              , DOC_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CEN_DESCRI FROM DPDOCMOV INNER JOIN DPCENCOS ON CEN_CODIGO=DOC_CENCOS
+ SELECT * FROM DPDOCMOV INNER JOIN DPCENCOS ON DOC_CENCOS=CEN_CODIGO
+ SELECT * FROM DPDOCMOV INNER JOIN DPPERSONAL ON DOC_CODPER=PER_CODIGO
+ SELECT PER_NOMBRE FROM DPDOCMOV INNER JOIN DPPERSONAL ON PER_CODIGO=DOC_CODPER
+ SELECT SUC_DESCRI FROM DPDOCMOV INNER JOIN DPSUCURSAL ON SUC_CODIGO=DOC_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=DOC_ESTADO          ,Activo                                                                          
+ C002=DOC_ESTADO          ,Nulo                                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

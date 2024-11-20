@@ -1,0 +1,57 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPDOCREQINV
+ DESCRIPCION=Requisiciones de Inventario                                 
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=REQ_CENCOS          ,'C',008,0,'','',0,''
+ C002=REQ_CODCOM          ,'C',015,0,'','',0,''
+ C003=REQ_CODDES          ,'C',020,0,'','C¢digo Destino',0,''
+ C004=REQ_CODINV          ,'C',015,0,'','',0,''
+ C005=REQ_CODORG          ,'C',020,0,'','C¢digo Origen',0,''
+ C006=REQ_CODPER          ,'C',006,0,'','',0,''
+ C007=REQ_CODSUC          ,'C',006,0,'','',0,'&oDp:cSucursal'
+ C008=REQ_COMEN1          ,'C',035,0,'','',0,''
+ C009=REQ_COMEN2          ,'C',035,0,'','',0,''
+ C010=REQ_CONTAB          ,'C',001,0,'','',0,''
+ C011=REQ_EMPRES          ,'C',020,0,'','',0,''
+ C012=REQ_ESTADO          ,'C',001,0,'','',0,''
+ C013=REQ_FCHENT          ,'D',008,0,'','',0,''
+ C014=REQ_FECHA           ,'D',008,0,'','',0,''
+ C015=REQ_HORA            ,'C',008,0,'','',0,''
+ C016=REQ_IDFROM          ,'C',020,0,'','Solicitante',0,''
+ C017=REQ_IDTO            ,'C',020,0,'','Para',0,''
+ C018=REQ_NUMCBT          ,'C',008,0,'','',0,''
+ C019=REQ_NUMDOC          ,'C',008,0,'','',0,''
+ C020=REQ_NUMERO          ,'C',010,0,'','',0,''
+ C021=REQ_NUMMEM          ,'N',019,0,'','',0,''
+ C022=REQ_NUMORG          ,'C',010,0,'','',0,''
+ C023=REQ_ORIGEN          ,'C',001,0,'','Origen',0,''
+ C024=REQ_TIPFRO          ,'C',003,0,'','Tipo de Origen',0,''
+ C025=REQ_TIPORG          ,'C',003,0,'','',0,''
+ C026=REQ_TIPTO           ,'C',003,0,'','Tipo Destino',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

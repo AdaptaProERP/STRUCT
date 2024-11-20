@@ -5,7 +5,7 @@
  CONFIG=F
  SINGUL=Documento                     
  APLICA=03
- PRIMARY_KEY='DOC_CODSUC,DOC_TIPDOC,DOC_TIPTRA,DOC_NUMERO,DOC_RECNUM,DOC_SERFIS'
+ PRIMARY_KEY='DOC_CODSUC,DOC_TIPDOC,DOC_TIPTRA,DOC_NUMERO,DOC_RECNUM,DOC_FECHA'
 [END_ID]
 
 [FIELDS]
@@ -185,16 +185,16 @@
  C006=DOC_ESTADO          ,Activo                                                                          
  C007=DOC_ESTADO          ,Almacenado                                                                      
  C008=DOC_ESTADO          ,Aprobado                                                                        
- C009=DOC_ESTADO          ,Entregado                                                                       
- C010=DOC_ESTADO          ,Exportado                                                                       
- C011=DOC_ESTADO          ,Facturado                                                                       
- C012=DOC_ESTADO          ,Maquila                                                                         
- C013=DOC_ESTADO          ,Nulo                                                                            
- C014=DOC_ESTADO          ,Obsequio                                                                        
- C015=DOC_ESTADO          ,Pagado                                                                          
- C016=DOC_ESTADO          ,Recibido                                                                        
- C017=DOC_ESTADO          ,Transferido                                                                     
- C018=DOC_ESTADO          ,Devuelto                                                                        
+ C009=DOC_ESTADO          ,Devuelto                                                                        
+ C010=DOC_ESTADO          ,Entregado                                                                       
+ C011=DOC_ESTADO          ,Exportado                                                                       
+ C012=DOC_ESTADO          ,Facturado                                                                       
+ C013=DOC_ESTADO          ,Maquila                                                                         
+ C014=DOC_ESTADO          ,Nulo                                                                            
+ C015=DOC_ESTADO          ,Obsequio                                                                        
+ C016=DOC_ESTADO          ,Pagado                                                                          
+ C017=DOC_ESTADO          ,Recibido                                                                        
+ C018=DOC_ESTADO          ,Transferido                                                                     
  C019=DOC_FECHA           ,                                                                                
  C020=DOC_GIRNUM          ,001                                                                             
  C021=DOC_NUMPER          ,ER=Error Impresora                                                              

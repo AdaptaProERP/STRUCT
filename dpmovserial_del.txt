@@ -1,0 +1,57 @@
+[ID]
+ NUMERO=1011
+ NOMBRE=DPMOVSERIAL_DEL
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Movimiento                    
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MSR_ACTIVO          ,'L',001,0,'','Registro Activo',0,''
+ C002=MSR_CANEMP          ,'N',010,0,'','Cantidad de Empaques',0,''
+ C003=MSR_CANTID          ,'N',010,0,'','Cantidad de Unidades',0,''
+ C004=MSR_CODALM          ,'C',003,0,'','Almacen',0,''
+ C005=MSR_CODCTA          ,'C',010,0,'','Cliente o Proveedor',0,''
+ C006=MSR_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C007=MSR_CODMON          ,'C',003,0,'','Moneda o Divisa',0,''
+ C008=MSR_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C009=MSR_CODTAR          ,'C',020,0,'','C¢digo de la Tara',0,''
+ C010=MSR_CODUBI          ,'C',006,0,'','C¢digo Ubicaci¢n F¡sica',0,''
+ C011=MSR_FCHVEN          ,'D',008,0,'','Fecha de Vencimiento',0,''
+ C012=MSR_FECHA           ,'D',008,0,'','Fecha',0,''
+ C013=MSR_HORA            ,'C',008,0,'','Hora',0,''
+ C014=MSR_ITEM            ,'C',005,0,'','Item',0,''
+ C015=MSR_LOTE            ,'C',020,0,'','Lote',0,''
+ C016=MSR_NUMDOC          ,'C',010,0,'','N£mero de Documento',0,''
+ C017=MSR_OBSERV          ,'C',040,0,'','Observaci¢n',0,''
+ C018=MSR_ORDPRO          ,'C',008,0,'','Orden de Producci¢n',0,''
+ C019=MSR_PESBAL          ,'L',001,0,'','Pesado Balanza',0,''
+ C020=MSR_PESBRU          ,'N',014,2,'','Peso Bruto',0,''
+ C021=MSR_PESO            ,'N',014,2,'','Peso',0,''
+ C022=MSR_PESTAR          ,'N',014,2,'','Peso Tara',0,''
+ C023=MSR_PRECIO          ,'N',014,2,'','Precio de Venta',0,''
+ C024=MSR_SERIAL          ,'C',040,0,'','Serial',0,''
+ C025=MSR_TIPDOC          ,'C',004,0,'','Tipo de Documento',0,''
+ C026=MSR_TIPO            ,'C',001,0,'','T',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

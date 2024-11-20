@@ -1,0 +1,63 @@
+[ID]
+ NUMERO=0212
+ NOMBRE=DPDOCPROPROG
+ DESCRIPCION=Planificaci¢n Tributaria y Deberes                          
+ CONFIG=F
+ SINGUL=Planificaci¢n                 
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PLP_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=PLP_ANO             ,'C',004,0,'','A¤o para Obtimizar b£squeda DPDIARIO',0,''
+ C003=PLP_CODIGO          ,'C',010,0,'','Proveedor',0,''
+ C004=PLP_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C005=PLP_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C006=PLP_CODUSU          ,'C',003,0,'','Usuario del Registro',0,''
+ C007=PLP_DESCRI          ,'C',120,0,'','Descripcion o Aviso',0,''
+ C008=PLP_DESDE           ,'D',008,0,'','Desde',0,''
+ C009=PLP_EDITAD          ,'L',001,0,'','Fecha Editada',0,''
+ C010=PLP_ESTADO          ,'C',001,0,'','Estado',0,''
+ C011=PLP_FCHDEC          ,'D',008,0,'','Fecha Declaraci¢n',0,''
+ C012=PLP_FECHA           ,'D',008,0,'','Fecha de Actividad',0,''
+ C013=PLP_HASTA           ,'D',008,0,'','Fecha Hasta',0,''
+ C014=PLP_MONTO           ,'N',019,2,'','Monto',0,''
+ C015=PLP_MTOCAL          ,'N',019,2,'','Monto Calculado',0,''
+ C016=PLP_MTODIV          ,'N',019,2,'','Monto;Divisa',0,''
+ C017=PLP_NUMDOC          ,'C',020,0,'','N£mero de Documento',0,''
+ C018=PLP_NUMERO          ,'C',008,0,'','Numero en Planificaci¢n',0,''
+ C019=PLP_NUMMEM          ,'N',007,0,'','Memo Asociado',0,''
+ C020=PLP_NUMREG          ,'C',010,0,'','N£mero de Registro',0,''
+ C021=PLP_REFERE          ,'C',040,0,'','Referencia',0,''
+ C022=PLP_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C023=PLP_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C024=PLP_VALCAM          ,'N',019,6,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPPROVEEDORPROG         , PLP_CODSUC,PLP_CODIGO,PLP_TIPDOC,PLP_NUMERO,PLP_REFERE=PGC_CODSUC,PGC_CODIGO,PGC_TIPDOC,PGC_NUMERO,PGC_REFERE <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPDOCPROPROG INNER JOIN DPPROVEEDORPROG ON PLP_CODSUC=PGC_CODSUC AND PLP_CODIGO=PGC_CODIGO AND PLP_TIPDOC=PGC_TIPDOC AND PLP_NUMERO=PGC_NUMERO AND PLP_REFERE=PGC_REFERE
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PLP_CODIGO          ,0000000022                                                                      
+ C002=PLP_CODSUC          ,000001                                                                          
+ C003=PLP_NUMREG          ,0000000001                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
