@@ -1,0 +1,132 @@
+[ID]
+ NUMERO=0228
+ NOMBRE=DPPROVEEDORPROG
+ DESCRIPCION=Programaci¢n de Compromisos                                 
+ CONFIG=F
+ SINGUL=Compromiso                    
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PGC_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=PGC_CANREG          ,'N',005,0,'','Cantidad de Registros',0,''
+ C003=PGC_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C004=PGC_CODBEN          ,'C',010,0,'','C¢digo del Beneficiario',0,''
+ C005=PGC_CODCTA          ,'C',020,0,'','Cuenta Contable Referencia',0,'&oDp:cCtaIndef'
+ C006=PGC_CODIGO          ,'C',010,0,'','C¢digo',1,''
+ C007=PGC_CODMON          ,'C',003,0,'','Moneda',0,''
+ C008=PGC_CODRET          ,'C',003,0,'','C¢digo de Retenci¢n',0,''
+ C009=PGC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C010=PGC_CTAEGR          ,'C',020,0,'','Cuenta Auxiliar',0,'&oDp:cCtaIndef'
+ C011=PGC_CTAMOD          ,'C',006,0,'','Cuenta Modelo',0,'&oDp:cCtaMod'
+ C012=PGC_DESCRI          ,'C',030,0,'','Descripci¢n',0,''
+ C013=PGC_DESDE           ,'D',008,0,'','Desde',0,''
+ C014=PGC_DIAS            ,'N',003,0,'','Frequencia en D¡as',0,''
+ C015=PGC_DOCORG          ,'C',020,0,'','N£mero;Doc/Org',0,''
+ C016=PGC_FCHINI          ,'D',008,0,'','Inicio del Cronograma',0,''
+ C017=PGC_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C018=PGC_HASTA           ,'D',008,0,'','Hasta',0,''
+ C019=PGC_ITEM            ,'C',008,0,'','Correlativo',0,''
+ C020=PGC_IVA             ,'C',002,0,'','IVA Aplicado',0,''
+ C021=PGC_MONTO           ,'N',016,2,'','Monto',0,''
+ C022=PGC_MTOBAS          ,'N',016,2,'','Monto B sico',0,''
+ C023=PGC_MTODIV          ,'N',019,0,'','Monto en Divisa',0,''
+ C024=PGC_NUMDOC          ,'C',020,0,'','N£mero de Documento Origen',0,''
+ C025=PGC_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C026=PGC_NUMMEM          ,'N',006,0,'','Referencia Memo',0,''
+ C027=PGC_PAGDES          ,'N',002,0,'','D¡a de Pago Desde',0,''
+ C028=PGC_PAGHAS          ,'N',002,0,'','D¡a de Pago Hasta',0,''
+ C029=PGC_PERIOD          ,'C',030,0,'','Periodo',0,''
+ C030=PGC_REFERE          ,'C',040,0,'','Referencia',0,''
+ C031=PGC_REGDES          ,'N',002,0,'','D¡a de Registro Desde',0,''
+ C032=PGC_REGHAS          ,'N',002,0,'','D¡a de Registro Hasta',0,''
+ C033=PGC_TIPDES          ,'C',003,0,'','Tipo;Destino',0,''
+ C034=PGC_TIPDOC          ,'C',003,0,'','Tipo Documento',0,''
+ C035=PGC_TIPO            ,'C',020,0,'','Tipo de Compromiso',0,''
+ C036=PGC_TIPORG          ,'C',003,0,'','Tipo;Doc/Org',0,''
+ C037=PGC_VALCAM          ,'N',019,6,'','Valor Divisa',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCTAEGRESO             , PGC_CTAEGR=CEG_CODIGO <UPDATE>  <RUN>
+ T002=DPIVATIP                , PGC_IVA=TIP_CODIGO <UPDATE>  <RUN>
+ T003=DPPROVEEDOR             , PGC_CODIGO=PRO_CODIGO <UPDATE> <DELETE> <RUN>
+ T004=DPSUCURSAL              , PGC_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+ T005=DPTIPDOCPRO             , PGC_TIPDOC=TDC_TIPO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPDOCPROPROG            , PGC_CODSUC,PGC_CODIGO,PGC_TIPDOC,PGC_NUMERO,PGC_REFERE=PLP_CODSUC,PLP_CODIGO,PLP_TIPDOC,PLP_NUMERO,PLP_REFERE, <UPDATE> <DELETE> <RUN>
+ T002=DPPROVEEDORPROG_CTA     , PGC_CODIGO,PGC_REFERE=CIC_CODIGO,CIC_COD2, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPCTAEGRESO             , PGC_CTAEGR=CEG_CODIGO, <CAMPO:CEG_DESCRI>, <WHERE:>
+ T002=DPSUCURSAL              , PGC_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+ T003=DPTIPDOCPRO             , PGC_TIPDOC=TDC_TIPO, <CAMPO:TDC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CEG_DESCRI FROM DPPROVEEDORPROG INNER JOIN DPCTAEGRESO ON CEG_CODIGO=PGC_CTAEGR
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPDOCPROPROG ON PLP_CODSUC=PGC_CODSUC AND PLP_CODIGO=PGC_CODIGO AND PLP_TIPDOC=PGC_TIPDOC AND PLP_NUMERO=PGC_NUMERO AND PLP_REFERE=PGC_REFERE
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPCTAEGRESO ON PGC_CTAEGR=CEG_CODIGO
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPIVATIP ON PGC_IVA=TIP_CODIGO
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPPROVEEDOR ON PGC_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPSUCURSAL ON PGC_CODSUC=SUC_CODIGO
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPTIPDOCPRO ON PGC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPPROVEEDORPROG INNER JOIN DPPROVEEDORPROG_CTA ON CIC_CODIGO=PGC_CODIGO AND CIC_COD2=PGC_REFERE
+ SELECT SUC_DESCRI FROM DPPROVEEDORPROG INNER JOIN DPSUCURSAL ON SUC_CODIGO=PGC_CODSUC
+ SELECT TDC_DESCRI FROM DPPROVEEDORPROG INNER JOIN DPTIPDOCPRO ON TDC_TIPO=PGC_TIPDOC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PGC_PERIOD          ,Anual                                                                           
+ C002=PGC_PERIOD          ,Bimestral                                                                       
+ C003=PGC_PERIOD          ,Cuatrimestral                                                                   
+ C004=PGC_PERIOD          ,Diario                                                                          
+ C005=PGC_PERIOD          ,Ejercicio Actual                                                                
+ C006=PGC_PERIOD          ,Ejercicio Anterior                                                              
+ C007=PGC_PERIOD          ,Indefinido                                                                      
+ C008=PGC_PERIOD          ,Mensual                                                                         
+ C009=PGC_PERIOD          ,Quincenal                                                                       
+ C010=PGC_PERIOD          ,Semanal                                                                         
+ C011=PGC_PERIOD          ,Semestral                                                                       
+ C012=PGC_PERIOD          ,Trimestral                                                                      
+ C013=PGC_TIPO            ,Alquiler                                                                        
+ C014=PGC_TIPO            ,Cesta Tickets                                                                   
+ C015=PGC_TIPO            ,Condominio                                                                      
+ C016=PGC_TIPO            ,Electricidad                                                                    
+ C017=PGC_TIPO            ,Estimada Municipal                                                              
+ C018=PGC_TIPO            ,Forma 26 Renta Definitiva                                                       
+ C019=PGC_TIPO            ,Forma 28 Renta Estimada                                                         
+ C020=PGC_TIPO            ,General                                                                         
+ C021=PGC_TIPO            ,INCES Aporte Patronal                                                           
+ C022=PGC_TIPO            ,INCES Aporte Trabajador                                                         
+ C023=PGC_TIPO            ,IVA Forma 30                                                                    
+ C024=PGC_TIPO            ,IVSSO                                                                           
+ C025=PGC_TIPO            ,Patente Municipal                                                               
+ C026=PGC_TIPO            ,Pol¡tica Habitacional                                                           
+ C027=PGC_TIPO            ,Retenci¢n ISLR PJ-D13                                                           
+ C028=PGC_TIPO            ,Retenci¢n ISLR PJ-ND14                                                          
+ C029=PGC_TIPO            ,Retenci¢n ISLR PN-NR12                                                          
+ C030=PGC_TIPO            ,Retenci¢n ISLR PN-R11                                                           
+ C031=PGC_TIPO            ,Retenciones de ISRL en XML                                                      
+ C032=PGC_TIPO            ,Retenciones de IVA                                                              
+ C033=PGC_TIPO            ,Servicios Contables                                                             
+ C034=PGC_TIPO            ,Tel‚fonos                                                                       
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

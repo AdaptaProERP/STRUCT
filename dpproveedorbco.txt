@@ -1,0 +1,40 @@
+[ID]
+ NUMERO=0229
+ NOMBRE=DPPROVEEDORBCO
+ DESCRIPCION=Cuentas Bancarias del Proveedor                             
+ CONFIG=F
+ SINGUL=Bancos del Proveedor          
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CBP_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=CBP_BANCO           ,'C',020,0,'','Nombre del Banco',0,''
+ C003=CBP_CODIGO          ,'C',010,0,'','C¢digo',0,''
+ C004=CBP_CODPRO          ,'C',010,0,'','Codigo del Proveedor',0,''
+ C005=CBP_CUENTA          ,'C',020,0,'','Cuenta Banacria',0,''
+ C006=CBP_FORPAG          ,'N',010,0,'','Forma de Pago',0,''
+ C007=CBP_ITEM            ,'C',004,0,'','Iten',0,''
+ C008=CBP_NUMMEM          ,'N',010,0,'','Campo Memo',0,''
+ C009=CBP_TIPCTA          ,'C',010,0,'','Tipo de Cuenta',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

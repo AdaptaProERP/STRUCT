@@ -1,0 +1,74 @@
+[ID]
+ NUMERO=2504
+ NOMBRE=DPEJECUCIONPROD
+ DESCRIPCION=Documento de Ejecuci¢n de Producci¢n                        
+ CONFIG=F
+ SINGUL=Ejecuci¢n                     
+ APLICA=09
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=EOP_ACT             ,'N',002,0,'','Situaci¢n',0,''
+ C002=EOP_CANTID          ,'N',010,2,'','Cantidad',0,''
+ C003=EOP_CBTNUM          ,'C',008,0,'','Comprobante Contable',0,''
+ C004=EOP_CODDEP          ,'C',006,0,'','Departamento Destino',0,''
+ C005=EOP_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C006=EOP_CODSUC          ,'C',008,0,'','Sucursal',1,'&oDp:cSucursal'
+ C007=EOP_COMENT          ,'C',060,0,'','Comentarios',0,''
+ C008=EOP_CONTAB          ,'L',001,0,'','Contabilizable',0,''
+ C009=EOP_COSTO           ,'N',016,2,'','Costo Materia Prima',0,''
+ C010=EOP_DEPORG          ,'C',006,0,'','Departamento Origen',0,''
+ C011=EOP_ESTADO          ,'C',001,0,'','Estado',0,''
+ C012=EOP_FECHA           ,'D',008,0,'','Ejecuci¢n',0,''
+ C013=EOP_FINAL           ,'L',001,0,'','Finalizar',0,''
+ C014=EOP_HORA            ,'C',005,0,'','Hora',0,''
+ C015=EOP_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C016=EOP_NUMMEM          ,'N',008,0,'','Registro de Descripci¢n Amplia',0,''
+ C017=EOP_ORDPRO          ,'C',008,0,'','Orden de Producci¢n',1,''
+ C018=EOP_TIPO            ,'C',001,0,'','Tipo de Ejecuci¢n',0,''
+ C019=EOP_TIPTRA          ,'C',001,0,'','Transacci¢n',0,''
+ C020=EOP_VALAGR          ,'N',015,2,'','Valor Agregado',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPORDENPRODUCC          , EOP_CODSUC,EOP_ORDPRO=ORP_CODSUC,ORP_NUMERO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPEJECUCIONVALAGRE      , EOP_CODSUC,EOP_TIPO,EOP_NUMERO=EVA_CODSUC,EVA_TIPO,EVA_NUMERO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPSUCURSAL              , EOP_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPEJECUCIONPROD INNER JOIN DPORDENPRODUCC ON EOP_CODSUC=ORP_CODSUC AND EOP_ORDPRO=ORP_NUMERO
+ SELECT * FROM DPEJECUCIONPROD INNER JOIN DPEJECUCIONVALAGRE ON EVA_CODSUC=EOP_CODSUC AND EVA_TIPO=EOP_TIPO AND EVA_NUMERO=EOP_NUMERO
+ SELECT SUC_DESCRI FROM DPEJECUCIONPROD INNER JOIN DPSUCURSAL ON SUC_CODIGO=EOP_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=EOP_ESTADO          ,Activo                                                                          
+ C002=EOP_ESTADO          ,Concluido                                                                       
+ C003=EOP_ESTADO          ,Nulo                                                                            
+ C004=EOP_TIPO            ,Avance                                                                          
+ C005=EOP_TIPO            ,Culminaci¢n                                                                     
+ C006=EOP_TIPO            ,FeedBack                                                                        
+ C007=EOP_TIPO            ,Inicio                                                                          
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

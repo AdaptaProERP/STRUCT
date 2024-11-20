@@ -1,0 +1,43 @@
+[ID]
+ NUMERO=9979
+ NOMBRE=NMTRABAJADORPROG
+ DESCRIPCION=Trabajador Programaci¢n                                     
+ CONFIG=F
+ SINGUL=                              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRT_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,'&oDp:cSucursal'
+ C002=PRT_CODTRA          ,'C',010,0,'','C¢digo',0,''
+ C003=PRT_DESCRI          ,'C',250,0,'','Descripci¢n',0,''
+ C004=PRT_ESTADO          ,'C',001,0,'','Estado',0,''
+ C005=PRT_FCHEJE          ,'D',008,0,'','Fecha Ejecuci¢n',0,'&DPFECHA()'
+ C006=PRT_FECHA           ,'D',008,0,'','Fecha Actividad',0,'&DPFECHA()'
+ C007=PRT_OTRNOM          ,'C',003,0,'','Otras N¢mina',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , PRT_CODTRA=CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM NMTRABAJADORPROG INNER JOIN NMTRABAJADOR ON PRT_CODTRA=CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

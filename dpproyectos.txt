@@ -1,0 +1,36 @@
+[ID]
+ NUMERO=1111
+ NOMBRE=DPPROYECTOS
+ DESCRIPCION=Proyectos                                                   
+ CONFIG=F
+ SINGUL=Proyectos                     
+ APLICA=  
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRY_CODIGO          ,'C',008,0,'','C¢digo',0,''
+ C002=PRY_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C003=PRY_CLASIF          ,'C',250,0,'','Clasificaci¢n',0,''
+ C004=PRY_COMEN1          ,'C',250,0,'','Comentario',0,''
+ C005=PRY_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

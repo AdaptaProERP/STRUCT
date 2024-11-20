@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=9508
+ NOMBRE=DPMYFUNCPROC
+ DESCRIPCION=Funciones y Procedimientos MySQL                            
+ CONFIG=Y
+ SINGUL=Funcion o Procedimiento       
+ APLICA=20
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=FUN_ALTER           ,'L',001,0,'','',0,''
+ C002=FUN_CODIGO          ,'C',008,0,'','',0,''
+ C003=FUN_COMENT          ,'M',010,0,'','',0,''
+ C004=FUN_DEFINE          ,'M',010,0,'','',0,''
+ C005=FUN_DSN             ,'C',020,0,'','',0,''
+ C006=FUN_NOMBRE          ,'C',100,0,'','',0,''
+ C007=FUN_RETURN          ,'C',020,0,'','',0,''
+ C008=FUN_TIPO            ,'C',001,0,'','',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

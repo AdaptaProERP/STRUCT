@@ -1,0 +1,75 @@
+[ID]
+ NUMERO=0017
+ NOMBRE=DPPROCESOS
+ DESCRIPCION=Procesos Autom ticos                                        
+ CONFIG=Y
+ SINGUL=Proceso                       
+ APLICA=20
+ PRIMARY_KEY='PRC_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRC_CODIGO          ,'C',020,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=PFP_ERPMSG          ,'C',250,0,'','Mensaje Panel ERP',0,''
+ C003=PRC_ACTIVO          ,'L',001,0,'','Activo',0,'.F.'
+ C004=PRC_ALLUSE          ,'L',001,0,'','Para todos los Usuarios',0,''
+ C005=PRC_ALTER           ,'L',001,0,'','Modificado',0,''
+ C006=PRC_AUTOM           ,'L',001,0,'','Autom tico',0,''
+ C007=PRC_CLASIF          ,'C',020,0,'','Clasificaci¢n',0,''
+ C008=PRC_CODADD          ,'C',006,0,'','C¢digo de Add-On',0,'"STD"'
+ C009=PRC_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+ C010=PRC_EMPRES          ,'L',001,0,'','Por Empresa',0,''
+ C011=PRC_ERPMSG          ,'C',250,0,'','Mensaje Panel ERP',0,''
+ C012=PRC_FCHRUN          ,'D',008,0,'','Fecha Ejecuci¢n',0,'CTOD("")'
+ C013=PRC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C014=PRC_FIN             ,'L',001,0,'','Proceso Concluido',0,'.F.'
+ C015=PRC_FREQUE          ,'N',002,0,'','Frecuencia',0,''
+ C016=PRC_HORA            ,'C',005,0,'','Hora',0,''
+ C017=PRC_INICIA          ,'L',035,0,'','Proceso Iniciado',0,'.F.'
+ C018=PRC_ITEM            ,'C',005,0,'','Correlativo',0,''
+ C019=PRC_MENU            ,'L',001,0,'','Men£ de Ejecuci¢n',0,''
+ C020=PRC_SAVE            ,'L',001,0,'','Guardar Traza',0,'.F.'
+ C021=PRC_SPEAK           ,'L',001,0,'','SPEAK Activo',0,'.F.'
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=DPPROCESOSEJEC          , PRC_CODIGO=PRE_CODPRO, <UPDATE> <DELETE> <RUN>
+ T002=DPPROCESOSMEMO          , PRC_CODIGO=PFP_CODIGO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPEMPUSUARIO            , PRC_CODIGO=EXU_CODIGO, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPPROCESOS INNER JOIN DPEMPUSUARIO ON EXU_CODIGO=PRC_CODIGO
+ SELECT * FROM DPPROCESOS INNER JOIN DPPROCESOSEJEC ON PRE_CODPRO=PRC_CODIGO
+ SELECT * FROM DPPROCESOS INNER JOIN DPPROCESOSMEMO ON PFP_CODIGO=PRC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PRC_CLASIF          ,Abastecimiento                                                                  
+ C002=PRC_CLASIF          ,Clientes y Facturaci¢n                                                          
+ C003=PRC_CLASIF          ,Contables                                                                       
+ C004=PRC_CLASIF          ,Deberes Formales                                                                
+ C005=PRC_CLASIF          ,Financiera                                                                      
+ C006=PRC_CLASIF          ,Laboral                                                                         
+ C007=PRC_CLASIF          ,Otros                                                                           
+ C008=PRC_CLASIF          ,Producci¢n                                                                      
+ C009=PRC_CLASIF          ,T‚cnico                                                                         
+ C010=PRC_CLASIF          ,Tributaria                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

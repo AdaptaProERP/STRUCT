@@ -1,0 +1,241 @@
+[ID]
+ NUMERO=0227
+ NOMBRE=DPPROVEEDOR
+ DESCRIPCION=Proveedores y Acreedores                                    
+ CONFIG=F
+ SINGUL=Proveedor                     
+ APLICA=02
+ PRIMARY_KEY='PRO_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRO_CODIGO          ,'C',010,0,'PRIMARY KEY NOT NULL','C¢digo',1,''
+ C002=PRO_ACTECO          ,'C',040,0,'','Actividad Econ¢minca Seg£n Seniat',0,''
+ C003=PRO_ACTIVI          ,'C',006,0,'','C¢digo de Actividad Econ¢mica',0,'&oDp:cActividad'
+ C004=PRO_AREA            ,'C',004,0,'','C¢d. Area',1,''
+ C005=PRO_CATEGO          ,'C',001,0,'','Categor¡a',0,''
+ C006=PRO_CELUL1          ,'C',015,0,'','Celular 1',0,''
+ C007=PRO_CELUL2          ,'C',015,0,'','Celullar 2',0,''
+ C008=PRO_CIUDAD          ,'C',100,0,'','Ciudad',0,'"Indefinida"'
+ C009=PRO_CLAVE           ,'C',010,0,'','Clave Web del proveedor',0,''
+ C010=PRO_CODCLA          ,'C',006,0,'','Clasificaci¢n',0,'&oDp:cProClasifica'
+ C011=PRO_CODMON          ,'C',003,0,'','Moneda para CxP',0,'&oDp:cMonedaExt'
+ C012=PRO_CODRET          ,'C',003,0,'','C¢digo de Retenci¢n ISLR',0,''
+ C013=PRO_CODRMU          ,'C',008,0,'','Codigo de Retenci¢n',0,'&oDp:cCodRmu'
+ C014=PRO_CONDIC          ,'C',030,0,'','Condici¢n',0,''
+ C015=PRO_CONESP          ,'C',001,0,'','Contribuyente Especial',0,''
+ C016=PRO_CONFIS          ,'C',040,0,'','Condici¢n Fiscal Seg£n Seniat',0,''
+ C017=PRO_CONTRI          ,'C',001,0,'','Contribuyente',0,''
+ C018=PRO_CREFIS          ,'C',001,0,'','Derecho a Cr‚dito Fiscal',0,''
+ C019=PRO_CROSSD          ,'C',001,0,'','Cross-Docking',0,''
+ C020=PRO_CTACON          ,'C',020,0,'','Cuenta Contable Cuentas por Pagar',0,''
+ C021=PRO_CUENTA          ,'C',020,0,'','Cuenta',0,''
+ C022=PRO_DESCUE          ,'N',006,2,'','Descuento en Compras',0,''
+ C023=PRO_DIAS            ,'N',003,0,'','D¡as de Plazo',0,''
+ C024=PRO_DIASEN          ,'N',003,0,'','D¡as de Entrega',0,''
+ C025=PRO_DIAVEN          ,'N',004,0,'','D¡as de Vencimiento',0,''
+ C026=PRO_DIR1            ,'C',050,0,'','Direcci¢n L¡nea 1',0,''
+ C027=PRO_DIR2            ,'C',050,0,'','Direcci¢n L¡nea 2',0,''
+ C028=PRO_DIR3            ,'C',050,0,'','Direcci¢n L¡nea 3',0,''
+ C029=PRO_DIR4            ,'C',050,0,'','Direcci¢n L¡nea 4',0,''
+ C030=PRO_EFECTO          ,'C',020,0,'','Cuenta Efecto por Pagar',0,''
+ C031=PRO_EMAIL           ,'C',070,0,'','Correo Electr¢nico',0,''
+ C032=PRO_ENOTRA          ,'C',001,0,'','C x P en Otra Moneda',0,'"S"'
+ C033=PRO_ESTADO          ,'C',020,0,'','Estado',0,'&oDp:cEstado'
+ C034=PRO_FCHUPD          ,'D',008,0,'','Fecha de Actualizaci¢n',0,''
+ C035=PRO_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C036=PRO_FILBMP          ,'C',030,0,'','Archivo de Foto',0,''
+ C037=PRO_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C038=PRO_ITF             ,'C',001,0,'','Aplica ITF',0,''
+ C039=PRO_LIMITE          ,'N',014,2,'','L¡mite de Cr‚dito',0,''
+ C040=PRO_LOGIN           ,'C',015,0,'','Login de la Web',0,''
+ C041=PRO_MTOVEN          ,'N',019,2,'','Monto Vencido',0,''
+ C042=PRO_MUNICI          ,'C',020,0,'','Municipio',0,'&oDp:cMunicipio'
+ C043=PRO_NIT             ,'C',015,0,'','Nit',0,''
+ C044=PRO_NOMBRE          ,'C',100,0,'','Nombre',0,''
+ C045=PRO_NUMMEM          ,'N',019,0,'','N£mero de Memo',0,''
+ C046=PRO_OBS1            ,'C',025,0,'','Observaci¢n 1',0,''
+ C047=PRO_OBS2            ,'C',025,0,'','Observaci¢n 2',0,''
+ C048=PRO_ORDOTR          ,'C',001,0,'','Ordenes de Compra en Otra Moneda',0,''
+ C049=PRO_PAIS            ,'C',020,0,'','Pa¡s',0,'&oDp:cPais'
+ C050=PRO_PARROQ          ,'C',020,0,'','Parroquia',0,'&oDp:cParroquia'
+ C051=PRO_PEDOTR          ,'C',001,0,'','Pedido en Otra Moneda',0,''
+ C052=PRO_PORRET          ,'N',005,2,'','% Retenci¢n ISLR',0,''
+ C053=PRO_REGFCM          ,'C',020,0,'','Registro Fiscal del Contribuyente Munici',0,''
+ C054=PRO_RESIDE          ,'C',001,0,'','Residente',0,'"S"'
+ C055=PRO_RETIVA          ,'N',006,2,'','% Retenci¢n de IVA',0,''
+ C056=PRO_RIF             ,'C',015,0,'','Rif',0,''
+ C057=PRO_RIFVAL          ,'L',001,0,'','Rif Validado en Seniat',0,''
+ C058=PRO_RNC             ,'C',040,0,'','Registro Nacional de Contratista',0,''
+ C059=PRO_RNCFEC          ,'C',010,0,'','RNC / FEC',0,''
+ C060=PRO_RNCPER          ,'C',020,0,'','RNC  Persona Contacto',0,''
+ C061=PRO_RNCREG          ,'N',008,0,'','Digitalizaci¢n RNC',0,''
+ C062=PRO_RNCTEL          ,'C',012,0,'','RNC Tel‚fono',0,''
+ C063=PRO_SCTOTR          ,'C',001,0,'','Solicitud de Cotizaci¢n en otra Moneda',0,''
+ C064=PRO_SITUAC          ,'C',001,0,'','Situaci¢n',0,'"Activo"'
+ C065=PRO_TEL1            ,'C',020,0,'','Tel‚fono 1',0,''
+ C066=PRO_TEL2            ,'C',020,0,'','Tel‚fono 2',0,''
+ C067=PRO_TEL3            ,'C',020,0,'','Tel‚fono 3',0,''
+ C068=PRO_TEL4            ,'C',020,0,'','Tel‚fono 4',0,''
+ C069=PRO_TEL5            ,'C',020,0,'','Tel‚fono 5',0,''
+ C070=PRO_TEL6            ,'C',020,0,'','Tel‚fonos 6',0,''
+ C071=PRO_TIPO            ,'C',080,0,'','Tipo de Relaci¢n',0,'"Proveedor"'
+ C072=PRO_TIPPER          ,'C',001,0,'','Tipo de Persona',0,'"J"'
+ C073=PRO_USUARI          ,'C',003,0,'','Usuario',0,'&oDp:cUsuario'
+ C074=PRO_WEB             ,'C',050,0,'','P gina Web',0,''
+ C075=PRO_ZONANL          ,'C',001,0,'','Zona Libre o Nacional',0,'"N"'
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPACTIVIDAD_E           , PRO_ACTIVI=ACT_CODIGO <UPDATE>  <RUN>
+ T002=DPPROCLA                , PRO_CODCLA=CLP_CODIGO <UPDATE>  <RUN>
+ T003=DPRETMUNTARIFA          , PRO_CODRMU=TRM_CODIGO <UPDATE>  <RUN>
+ T004=DPTIPPROVEEDOR          , PRO_TIPO=TIP_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPCAJAINSTXPROV         , PRO_CODIGO=IXP_CODPRO, <UPDATE> <DELETE> <RUN>
+ T002=DPCBTEPAGO              , PRO_CODIGO=PAG_CODIGO, <UPDATE>  <RUN>
+ T003=DPCBTEPAGO_HIS          , PRO_CODIGO=PAG_CODIGO, <UPDATE>  <RUN>
+ T004=DPDOCPRO                , PRO_CODIGO=DOC_CODIGO, <UPDATE>  <RUN>
+ T005=DPDOCPROISLR            , PRO_CODIGO=RXP_CODIGO, <UPDATE>  <RUN>
+ T006=DPDOCPRORTI             , PRO_CODIGO=RTI_CODIGO, <UPDATE>  <RUN>
+ T007=DPDOCPRORTI_HIS         , PRO_CODIGO=RTI_CODIGO, <UPDATE>  <RUN>
+ T008=DPDOCPRO_HIS            , PRO_CODIGO=DOC_CODIGO, <UPDATE>  <RUN>
+ T009=DPINVPLAABAST           , PRO_CODIGO=IPA_CODPRO, <UPDATE> <DELETE> <RUN>
+ T010=DPPROASOC               , PRO_CODIGO=CPA_CODIGO, <UPDATE> <DELETE> <RUN>
+ T011=DPPROSLD                , PRO_CODIGO=SLD_CODIGO, <UPDATE> <DELETE> <RUN>
+ T012=DPPROVCATPRECIO         , PRO_CODIGO=CPP_CODIGO, <UPDATE> <DELETE> <RUN>
+ T013=DPPROVEEDORCTA          , PRO_CODIGO=CXP_CODIGO, <UPDATE> <DELETE> <RUN>
+ T014=DPPROVEEDORPER          , PRO_CODIGO=PDP_CODIGO, <UPDATE> <DELETE> <RUN>
+ T015=DPPROVEEDORPROG         , PRO_CODIGO=PGC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T016=DPPROVEEDORSUC          , PRO_CODIGO=SDP_CODPRO, <UPDATE> <DELETE> <RUN>
+ T017=DPPROVEEDOR_CTA         , PRO_CODIGO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPACTIVIDAD_E           , PRO_ACTIVI=ACT_CODIGO, <CAMPO:ACT_DESCRI>, <WHERE:>
+ T002=DPCTA                   , PRO_CTACON=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T003=DPCTA                   , PRO_CUENTA=CTA_CODIGO, <CAMPO:CTA_DESCRI>, <WHERE:>
+ T004=DPMOVINV                , PRO_CODIGO=MOV_CODCTA, <CAMPO:>, <WHERE:MOV_APLORG="C">
+ T005=DPPAISES                , PRO_PAIS=PAIS, <CAMPO:PAIS>, <WHERE:>
+ T006=DPPROCLA                , PRO_CODCLA=CLP_CODIGO, <CAMPO:CLP_DESCRI>, <WHERE:>
+ T007=DPRETMUNTARIFA          , PRO_CODRMU=TRM_CODIGO, <CAMPO:TRM_DESCRI>, <WHERE:>
+ T008=DPTABMON                , PRO_CODMON=MON_CODIGO, <CAMPO:MON_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT ACT_DESCRI FROM DPPROVEEDOR INNER JOIN DPACTIVIDAD_E ON ACT_CODIGO=PRO_ACTIVI
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPCAJAINSTXPROV ON IXP_CODPRO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPCBTEPAGO ON PAG_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPCBTEPAGO_HIS ON PAG_CODIGO=PRO_CODIGO
+ SELECT CTA_DESCRI FROM DPPROVEEDOR INNER JOIN DPCTA ON CTA_CODIGO=PRO_CTACON
+ SELECT CTA_DESCRI FROM DPPROVEEDOR INNER JOIN DPCTA ON CTA_CODIGO=PRO_CUENTA
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPDOCPRO ON DOC_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPDOCPROISLR ON RXP_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPDOCPRORTI ON RTI_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPDOCPRORTI_HIS ON RTI_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPDOCPRO_HIS ON DOC_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPINVPLAABAST ON IPA_CODPRO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPMOVINV ON MOV_CODCTA=PRO_CODIGO
+ SELECT PAIS FROM DPPROVEEDOR INNER JOIN DPPAISES ON PAIS=PRO_PAIS
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROASOC ON CPA_CODIGO=PRO_CODIGO
+ SELECT CLP_DESCRI FROM DPPROVEEDOR INNER JOIN DPPROCLA ON CLP_CODIGO=PRO_CODCLA
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROSLD ON SLD_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVCATPRECIO ON CPP_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPACTIVIDAD_E ON PRO_ACTIVI=ACT_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPACTIVOS ON PRO_CODIGO=ATV_CODPRO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPCBTEPAGO ON PRO_CODIGO=PAG_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPCBTEPAGO_HIS ON PRO_CODIGO=PAG_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPRO ON PRO_CODIGO=DOC_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPROCTA ON PRO_CODIGO=CCD_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPROCTA_HIS ON PRO_CODIGO=CCD_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPROISLR ON PRO_CODIGO=RXP_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPRORTI ON PRO_CODIGO=RTI_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPRORTI_HIS ON PRO_CODIGO=RTI_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPRORTM ON PRO_CODIGO=RTM_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPDOCPRO_HIS ON PRO_CODIGO=DOC_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPINVPLAABAST ON PRO_CODIGO=IPA_CODPRO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPMOVINV ON PRO_CODIGO=MOV_CODCTA
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPMOVINV_HIS ON PRO_CODIGO=MOV_CODCTA
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROCLA ON PRO_CODCLA=CLP_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPPROVEEDOR ON PRO_CODIGO=CXP_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPRETMUNTARIFA ON PRO_CODRMU=TRM_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPTIPPROVEEDOR ON PRO_TIPO=TIP_CODIGO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPTRANSP ON PRO_CODIGO=TRA_CODPRO
+ SELECT PRO_NOMBRE FROM DPPROVEEDOR INNER JOIN DPVENDEDOR ON PRO_RIF=VEN_CEDULA
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVEEDORCTA ON CXP_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVEEDORPER ON PDP_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVEEDORPROG ON PGC_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVEEDORSUC ON SDP_CODPRO=PRO_CODIGO
+ SELECT * FROM DPPROVEEDOR INNER JOIN DPPROVEEDOR_CTA ON CIC_CODIGO=PRO_CODIGO
+ SELECT TRM_DESCRI FROM DPPROVEEDOR INNER JOIN DPRETMUNTARIFA ON TRM_CODIGO=PRO_CODRMU
+ SELECT MON_DESCRI FROM DPPROVEEDOR INNER JOIN DPTABMON ON MON_CODIGO=PRO_CODMON
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PRO_CATEGO          ,Bueno                                                                           
+ C002=PRO_CATEGO          ,Excelente                                                                       
+ C003=PRO_CATEGO          ,P‚simo                                                                          
+ C004=PRO_CATEGO          ,Regular                                                                         
+ C005=PRO_CONESP          ,No                                                                              
+ C006=PRO_CONESP          ,Si                                                                              
+ C007=PRO_CONTRI          ,No                                                                              
+ C008=PRO_CONTRI          ,Si                                                                              
+ C009=PRO_CREFIS          ,No                                                                              
+ C010=PRO_CREFIS          ,Si                                                                              
+ C011=PRO_CROSSD          ,Mixto                                                                           
+ C012=PRO_CROSSD          ,No                                                                              
+ C013=PRO_CROSSD          ,Si                                                                              
+ C014=PRO_ENOTRA          ,No                                                                              
+ C015=PRO_ENOTRA          ,Si                                                                              
+ C016=PRO_ITF             ,N                                                                               
+ C017=PRO_ITF             ,S                                                                               
+ C018=PRO_PEDOTR          ,NO                                                                              
+ C019=PRO_PEDOTR          ,S                                                                               
+ C020=PRO_RESIDE          ,No                                                                              
+ C021=PRO_RESIDE          ,Si                                                                              
+ C022=PRO_SITUAC          ,Activo                                                                          
+ C023=PRO_SITUAC          ,En Proceso                                                                      
+ C024=PRO_SITUAC          ,Inactivo                                                                        
+ C025=PRO_SITUAC          ,Por Formalizar                                                                  
+ C026=PRO_SITUAC          ,Suspendido                                                                      
+ C027=PRO_TEL6            ,NO                                                                              
+ C028=PRO_TEL6            ,SI                                                                              
+ C029=PRO_TIPO            ,Accionista                                                                      
+ C030=PRO_TIPO            ,Espor dicos                                                                     
+ C031=PRO_TIPO            ,Expor dicos                                                                     
+ C032=PRO_TIPO            ,Independiente                                                                   
+ C033=PRO_TIPO            ,Interno                                                                         
+ C034=PRO_TIPO            ,Ocasional                                                                       
+ C035=PRO_TIPO            ,Otro                                                                            
+ C036=PRO_TIPO            ,Prestador de Servicios                                                          
+ C037=PRO_TIPO            ,Proveedor                                                                       
+ C038=PRO_TIPO            ,Recaudador Tributario                                                           
+ C039=PRO_TIPO            ,Receptor Tributario                                                             
+ C040=PRO_TIPO            ,Seleccionado                                                                    
+ C041=PRO_TIPO            ,Servicios P£blicos                                                              
+ C042=PRO_TIPO            ,Trabajador                                                                      
+ C043=PRO_TIPO            ,Vendedor                                                                        
+ C044=PRO_TIPPER          ,Asociaci¢n Civil                                                                
+ C045=PRO_TIPPER          ,Consejo Comunal                                                                 
+ C046=PRO_TIPPER          ,Gubernamental                                                                   
+ C047=PRO_TIPPER          ,Jur¡dica                                                                        
+ C048=PRO_TIPPER          ,Natural                                                                         
+ C049=PRO_ZONANL          ,Libre                                                                           
+ C050=PRO_ZONANL          ,Nacional                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

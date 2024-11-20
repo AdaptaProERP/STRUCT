@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=8000
+ NOMBRE=DPFASEPRODUCC
+ DESCRIPCION=Fases de Produccion                                         
+ CONFIG=F
+ SINGUL=DPFASEPRODUCC                 
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=FAP_CODDEP          ,'C',006,0,'','Codigo del Departamento',0,''
+ C002=FAP_CODIGO          ,'C',020,0,'','Codigo',0,''
+ C003=FAP_CODINV          ,'C',020,0,'','Producto',0,''
+ C004=FAP_COMEN1          ,'C',040,0,'','Comentario',0,''
+ C005=FAP_COMEN2          ,'C',040,0,'','Comentario2',0,''
+ C006=FAP_DESCRI          ,'C',040,0,'','Descripcion',0,''
+ C007=FAP_NUMMEM          ,'N',008,0,'','Numero de Memo',0,''
+ C008=FAP_UNDMED          ,'C',008,0,'','Unidad de Medida',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

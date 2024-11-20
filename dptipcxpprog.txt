@@ -1,0 +1,43 @@
+[ID]
+ NUMERO=9640
+ NOMBRE=DPTIPCXPPROG
+ DESCRIPCION=Planificaci¢n Financiera                                    
+ CONFIG=F
+ SINGUL=Planificaci¢n Financiera      
+ APLICA=04
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TPP_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C002=TPP_CODIGO          ,'C',010,0,'','C¢digo Proveedor',0,''
+ C003=TPP_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C004=TPP_DESDE           ,'D',008,0,'','Desde',0,'&DPFECHA()'
+ C005=TPP_HASTA           ,'D',008,0,'','Hasta',0,'&DPFECHA()'
+ C006=TPP_PERIOD          ,'C',015,0,'','Periodo',0,''
+ C007=TPP_TIPDOC          ,'C',003,0,'','C¢digo',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTIPDOCPRO             , TPP_TIPDOC=TDC_TIPO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPTIPCXPPROG INNER JOIN DPTIPDOCPRO ON TPP_TIPDOC=TDC_TIPO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,46 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPPROSLD
+ DESCRIPCION=Saldo de Cuentas por Pagar                                  
+ CONFIG=F
+ SINGUL=Cuenta por Pagar              
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SLD_CODIGO          ,'C',010,0,'','C¢digo',0,''
+ C002=SLD_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=SLD_CXPDIV          ,'N',019,2,'','CxC en Divisas',0,''
+ C004=SLD_DOCCON          ,'N',004,0,'','Cant. Documentos por Contabilizar',0,''
+ C005=SLD_FCHCOM          ,'D',008,0,'','Fecha Ultima Compra',0,''
+ C006=SLD_FCHPAG          ,'D',008,0,'','Fecha;Pago',0,'&DPFECHA()'
+ C007=SLD_FCHREG          ,'D',008,0,'','Ultimo Registro',0,'&DPFECHA()'
+ C008=SLD_SALDO           ,'N',019,2,'','Saldo',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPPROVEEDOR             , SLD_CODIGO=PRO_CODIGO <UPDATE> <DELETE> <RUN>
+ T002=DPSUCURSAL              , SLD_CODSUC=SUC_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPPROSLD INNER JOIN DPPROVEEDOR ON SLD_CODIGO=PRO_CODIGO
+ SELECT * FROM DPPROSLD INNER JOIN DPSUCURSAL ON SLD_CODSUC=SUC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

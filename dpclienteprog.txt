@@ -1,0 +1,82 @@
+[ID]
+ NUMERO=0309
+ NOMBRE=DPCLIENTEPROG
+ DESCRIPCION=Documentos Peri¢dicos                                       
+ CONFIG=F
+ SINGUL=Documento Peri¢dico           
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DPG_CODIGO          ,'C',010,0,'','C¢digo del Cliente',1,''
+ C002=DPG_CODINV          ,'C',020,0,'','C¢digo del Producto',0,''
+ C003=DPG_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C004=DPG_CUODIV          ,'L',001,0,'','Cuotas Divisibles',0,''
+ C005=DPG_DIA             ,'N',004,0,'','D¡a del Mes',0,''
+ C006=DPG_DIAS            ,'N',006,0,'','Frecuencia en D¡as',0,''
+ C007=DPG_ESTATU          ,'C',001,0,'','Estatus',1,''
+ C008=DPG_FCGPRI          ,'D',008,0,'','Fecha de la Primera Factura',0,''
+ C009=DPG_FCHFIN          ,'D',008,0,'','Fecha de Culminaci¢n',0,''
+ C010=DPG_FCHINI          ,'D',008,0,'','Fecha de Inicio',0,''
+ C011=DPG_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=DPG_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C013=DPG_LTEXTO          ,'L',001,0,'','Genera Item con Texto',0,''
+ C014=DPG_MONTO           ,'N',014,2,'','Monto por Vez',0,''
+ C015=DPG_MTOORG          ,'N',014,2,'','Monto Original',0,''
+ C016=DPG_NUMDOC          ,'C',010,0,'','N£mero del Documento',0,''
+ C017=DPG_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C018=DPG_NUMMEM          ,'N',008,0,'','N£mero del Memo',0,''
+ C019=DPG_PERIOD          ,'C',015,0,'','Periodo',0,''
+ C020=DPG_REFERE          ,'C',120,0,'','Referencia',0,''
+ C021=DPG_TIPDES          ,'C',003,0,'','Tipo Documento Destino',0,''
+ C022=DPG_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C023=DPG_TIPTRA          ,'C',001,0,'','Tipo de Transacci¢n',0,''
+ C024=DPG_VALCAM          ,'N',019,0,'','Valor Divisa',0,''
+ C025=DPG_VARIA           ,'L',001,0,'','Variable',0,'.F.'
+ C026=DPG_VECES           ,'N',003,0,'','Veces',0,''
+ C027=INV_GRUACT          ,'C',008,0,'','Grupo de Activos',0,''
+ C028=PDG_CUOTAS          ,'L',001,0,'','Cuotas Divisibles',0,'.F.'
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPDOCCLI                , DPG_CODSUC,DPG_TIPDOC,DPG_NUMDOC,DPG_TIPTRA=DOC_CODSUC,DOC_TIPDOC,DOC_NUMERO,DOC_TIPTRA <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPCLIENTES              , DPG_CODIGO=CLI_CODIGO, <CAMPO:CLI_NOMBRE>, <WHERE:>
+ T002=DPTIPDOCCLI             , DPG_TIPDOC=TDC_TIPO, <CAMPO:TDC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPCLIENTEPROG INNER JOIN DPDOCCLI ON DPG_CODSUC=DOC_CODSUC AND DPG_TIPDOC=DOC_TIPDOC AND DPG_NUMDOC=DOC_NUMERO AND DPG_TIPTRA=DOC_TIPTRA
+ SELECT CLI_NOMBRE FROM DPCLIENTEPROG INNER JOIN DPCLIENTES ON CLI_CODIGO=DPG_CODIGO
+ SELECT TDC_DESCRI FROM DPCLIENTEPROG INNER JOIN DPTIPDOCCLI ON TDC_TIPO=DPG_TIPDOC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=DPG_ESTATU          ,Activo                                                                          
+ C002=DPG_ESTATU          ,Inactivo                                                                        
+ C003=DPG_PERIOD          ,Anual                                                                           
+ C004=DPG_PERIOD          ,Bimensual                                                                       
+ C005=DPG_PERIOD          ,Diario                                                                          
+ C006=DPG_PERIOD          ,Mensual                                                                         
+ C007=DPG_PERIOD          ,Quincenal                                                                       
+ C008=DPG_PERIOD          ,Semanal                                                                         
+ C009=DPG_PERIOD          ,Semestral                                                                       
+ C010=DPG_PERIOD          ,Trimestral                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,105 @@
+[ID]
+ NUMERO=2500
+ NOMBRE=DPORDENPRODUCC
+ DESCRIPCION=Ordenes de Producci¢n                                       
+ CONFIG=F
+ SINGUL=Orden de Producci¢n           
+ APLICA=09
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ORD_PEDNUM          ,'C',010,0,'','N£mero de Pedido',1,''
+ C002=ORP_ACT             ,'N',001,0,'','Activo',0,''
+ C003=ORP_CANTID          ,'N',016,0,'','Cantidad',0,''
+ C004=ORP_CODALM          ,'C',003,0,'','Almac‚n',1,''
+ C005=ORP_CODCLI          ,'C',010,0,'','Cliente',0,''
+ C006=ORP_CODCOM          ,'C',015,0,'','',0,''
+ C007=ORP_CODFOR          ,'C',020,0,'','Forma de Producci¢n',0,''
+ C008=ORP_CODINV          ,'C',020,0,'','Producto',0,''
+ C009=ORP_CODMAQ          ,'C',006,0,'','Maquina',0,''
+ C010=ORP_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C011=ORP_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C012=ORP_CODTRA          ,'C',006,0,'','Trabajador',1,''
+ C013=ORP_COMEN1          ,'C',040,0,'','Comentario 1',0,''
+ C014=ORP_COMEN2          ,'C',040,0,'','Comentario 2',0,''
+ C015=ORP_COSMAT          ,'N',015,2,'','',0,''
+ C016=ORP_COSVAA          ,'N',015,2,'','',0,''
+ C017=ORP_DESCR1          ,'C',060,0,'','',0,''
+ C018=ORP_DPTFIN          ,'C',006,0,'','Ultimo Dpto',0,''
+ C019=ORP_ESTADO          ,'C',001,0,'','Estatus',0,''
+ C020=ORP_FCHENT          ,'D',008,0,'','Fecha de Entrega',0,''
+ C021=ORP_FCHINI          ,'D',008,0,'','Fecha de Inicio',0,''
+ C022=ORP_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C023=ORP_HORAE           ,'C',008,0,'','Hora de Entrega',0,''
+ C024=ORP_LINEA           ,'C',006,0,'','',0,''
+ C025=ORP_NBATCH          ,'C',006,0,'','Sesiones',0,''
+ C026=ORP_NUMDOC          ,'C',010,0,'','N£mero de Documento Origen',0,''
+ C027=ORP_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C028=ORP_NUMMEM          ,'N',008,0,'','Registro Memo',0,''
+ C029=ORP_ORDCON          ,'C',008,0,'','',0,''
+ C030=ORP_PROGRA          ,'L',001,0,'','',0,''
+ C031=ORP_PRONRO          ,'C',008,0,'','',0,''
+ C032=ORP_PROPRI          ,'N',002,0,'','',0,''
+ C033=ORP_RUNDPR          ,'N',015,2,'','',0,''
+ C034=ORP_TBATCH          ,'N',010,0,'','',0,''
+ C035=ORP_TIPDOC          ,'C',004,0,'','Tipo de Documento',0,''
+ C036=ORP_TIPO            ,'C',001,0,'','Tipo',0,''
+ C037=ORP_UNDEJE          ,'N',015,2,'','',0,''
+ C038=ORP_UNDMED          ,'C',020,0,'','Unidad de Medida',0,''
+ C039=ORP_UNDPRO          ,'N',015,2,'','',0,''
+ C040=ORP_UNDREA          ,'N',014,2,'','',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPDPTOPRODUCC           , ORP_DPTFIN=DEP_CODIGO <UPDATE>  <RUN>
+ T002=DPFORMULASPROD          , ORP_CODFOR,ORP_CODINV=FOR_CODIGO,FOR_CODINV <UPDATE>  <RUN>
+ T003=DPSUCURSAL              , ORP_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPEJECUCIONPROD         , ORP_CODSUC,ORP_NUMERO=EOP_CODSUC,EOP_ORDPRO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=DPALMACEN               , ORP_CODALM=ALM_CODIGO, <CAMPO:ALM_DESCRI>, <WHERE:>
+ T002=DPFORMULASPROD          , ORP_CODFOR,ORP_CODINV=FOR_CODIGO,FOR_CODINV, <CAMPO:>, <WHERE:>
+ T003=DPINV                   , ORP_CODINV=INV_CODIGO, <CAMPO:INV_DESCRI>, <WHERE:>
+ T004=DPSUCURSAL              , ORP_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT ALM_DESCRI FROM DPORDENPRODUCC INNER JOIN DPALMACEN ON ALM_CODIGO=ORP_CODALM
+ SELECT * FROM DPORDENPRODUCC INNER JOIN DPEJECUCIONPROD ON EOP_CODSUC=ORP_CODSUC AND EOP_ORDPRO=ORP_NUMERO
+ SELECT * FROM DPORDENPRODUCC INNER JOIN DPFORMULASPROD ON FOR_CODIGO=ORP_CODFOR AND FOR_CODINV=ORP_CODINV
+ SELECT INV_DESCRI FROM DPORDENPRODUCC INNER JOIN DPINV ON INV_CODIGO=ORP_CODINV
+ SELECT * FROM DPORDENPRODUCC INNER JOIN DPDPTOPRODUCC ON ORP_DPTFIN=DEP_CODIGO
+ SELECT * FROM DPORDENPRODUCC INNER JOIN DPFORMULASPROD ON ORP_CODFOR=FOR_CODIGO AND ORP_CODINV=FOR_CODINV
+ SELECT * FROM DPORDENPRODUCC INNER JOIN DPSUCURSAL ON ORP_CODSUC=SUC_CODIGO
+ SELECT SUC_DESCRI FROM DPORDENPRODUCC INNER JOIN DPSUCURSAL ON SUC_CODIGO=ORP_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=ORP_ESTADO          ,Anulado                                                                         
+ C002=ORP_ESTADO          ,Concluido                                                                       
+ C003=ORP_ESTADO          ,Ejecuci¢n                                                                       
+ C004=ORP_ESTADO          ,Pendiente                                                                       
+ C005=ORP_ESTADO          ,Planificaci¢n                                                                   
+ C006=ORP_ESTADO          ,Suspendido                                                                      
+ C007=ORP_TIPO            ,Esamblar                                                                        
+ C008=ORP_TIPO            ,Separar                                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

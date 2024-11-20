@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=9758
+ NOMBRE=DPPROVEEDORSUC
+ DESCRIPCION=Sucursales del Proveedor                                    
+ CONFIG=F
+ SINGUL=Sucursal                      
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SDP_AREA            ,'C',004,0,'','',0,''
+ C002=SDP_CODIGO          ,'C',004,0,'','',0,''
+ C003=SDP_CODPRO          ,'C',010,0,'','',0,''
+ C004=SDP_DIR1            ,'C',040,0,'','',0,''
+ C005=SDP_DIR2            ,'C',040,0,'','',0,''
+ C006=SDP_DIR3            ,'C',040,0,'','',0,''
+ C007=SDP_ESTADO          ,'C',030,0,'','',0,''
+ C008=SDP_MUNICI          ,'C',030,0,'','',0,''
+ C009=SDP_NOMBRE          ,'C',050,0,'','',0,''
+ C010=SDP_PARROQ          ,'C',030,0,'','',0,''
+ C011=SDP_REPRES          ,'C',040,0,'','',0,''
+ C012=SDP_TEL1            ,'C',014,0,'','',0,''
+ C013=SDP_TEL2            ,'C',014,0,'','',0,''
+ C014=SDP_VIATIC          ,'N',019,2,'','',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPPROVEEDOR             , SDP_CODPRO=PRO_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPPROVEEDORSUC INNER JOIN DPPROVEEDOR ON SDP_CODPRO=PRO_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
