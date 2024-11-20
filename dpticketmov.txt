@@ -1,0 +1,63 @@
+[ID]
+ NUMERO=0343
+ NOMBRE=DPTICKETMOV
+ DESCRIPCION=Movimiento del Ticket                                       
+ CONFIG=F
+ SINGUL=Movimiento                    
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOV_BANDA           ,'N',019,2,'','',0,''
+ C002=MOV_CANTID          ,'N',019,2,'','',0,''
+ C003=MOV_CODALM          ,'C',003,0,'','',0,''
+ C004=MOV_CODCOM          ,'C',020,0,'','',0,''
+ C005=MOV_CODCTA          ,'C',010,0,'','',0,''
+ C006=MOV_CODIGO          ,'C',020,0,'','',0,''
+ C007=MOV_CODSUC          ,'C',006,0,'','',0,'&oDp:cSucursal'
+ C008=MOV_CODVEN          ,'C',006,0,'','',0,''
+ C009=MOV_CXUND           ,'N',019,4,'','',0,''
+ C010=MOV_DESCUE          ,'N',005,2,'','',0,''
+ C011=MOV_DOCUME          ,'C',010,0,'','',0,''
+ C012=MOV_EXPEND          ,'N',019,2,'','',0,''
+ C013=MOV_IMPORT          ,'N',019,3,'','',0,''
+ C014=MOV_IMPOTR          ,'N',019,2,'','',0,''
+ C015=MOV_INVACT          ,'N',019,0,'','',0,''
+ C016=MOV_ITEM            ,'C',005,0,'','',0,''
+ C017=MOV_IVA             ,'N',019,2,'','',0,''
+ C018=MOV_LISTA           ,'C',001,0,'','',0,''
+ C019=MOV_LOTE            ,'C',015,0,'','',0,''
+ C020=MOV_NUMMEM          ,'N',019,0,'','',0,''
+ C021=MOV_PRECIO          ,'N',019,2,'','',0,''
+ C022=MOV_SERFIS          ,'C',001,0,'','Serie Fiscal',0,''
+ C023=MOV_TIPIVA          ,'C',002,0,'','',0,''
+ C024=MOV_TIPO            ,'C',001,0,'','Venta/Devoluci¢n',0,''
+ C025=MOV_TOTAL           ,'N',019,2,'','',0,''
+ C026=MOV_UNDMED          ,'C',008,0,'','',0,''
+ C027=MOV_USUARI          ,'C',003,0,'','',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPTICKET                , MOV_TIPO,MOV_SERFIS,MOV_DOCUME=DOC_TIPO,DOC_SERFIS,DOC_NUMERO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPTICKETMOV INNER JOIN DPTICKET ON MOV_TIPO=DOC_TIPO AND MOV_SERFIS=DOC_SERFIS AND MOV_DOCUME=DOC_NUMERO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

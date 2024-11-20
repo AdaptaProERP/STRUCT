@@ -1,0 +1,109 @@
+[ID]
+ NUMERO=0407
+ NOMBRE=DPCAJAMOV
+ DESCRIPCION=Movimientos de Caja                                         
+ CONFIG=F
+ SINGUL=Caja Movimiento               
+ APLICA=04
+ PRIMARY_KEY='CAJ_CODSUC,CAJ_CODCAJ,CAJ_TIPO,CAJ_NUMERO,CAJ_DESCRI,CAJ_FECHA,CAJ_CODBCO,CAJ_CUENTA,CAJ_NUMDEP,CAJ_MONTO,CAJ_DOCASO,CAJ_DEBCRE,CAJ_NUMTRA'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CAJ_ACT             ,'N',002,0,'','Indicador de Estatus',0,''
+ C002=CAJ_BCODIR          ,'C',020,0,'','Directorio Bancario',0,''
+ C003=CAJ_CAJORG          ,'L',001,0,'','Estado de Origen de Caja',0,''
+ C004=CAJ_CENCOS          ,'C',008,0,'','Centro de Costos',0,''
+ C005=CAJ_CHQCTA          ,'C',020,0,'','Cuenta del Cheque',0,''
+ C006=CAJ_CHQPLA          ,'C',001,0,'','Componente',0,''
+ C007=CAJ_CMNNAC          ,'C',003,0,'','Moneda Nacional',0,''
+ C008=CAJ_CODBCO          ,'C',006,0,'','C¢digo del banco',1,''
+ C009=CAJ_CODCAJ          ,'C',006,0,'','C¢digo de Caja',1,''
+ C010=CAJ_CODCTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C011=CAJ_CODMAE          ,'C',010,0,'','Cliente o Proveedor',1,''
+ C012=CAJ_CODMON          ,'C',003,0,'','Moneda o Divisa',0,'&oDp:cMoneda'
+ C013=CAJ_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C014=CAJ_COMPRO          ,'C',008,0,'','Comprobante contable',0,''
+ C015=CAJ_CONTAB          ,'C',001,0,'','Contabilizado "S" S¡',0,''
+ C016=CAJ_CTAEGR          ,'C',020,0,'','Cuenta de Egreso',0,''
+ C017=CAJ_CUENTA          ,'C',020,0,'','Cuenta contable de la integraci¢n',0,''
+ C018=CAJ_DEBCRE          ,'N',002,0,'','Operaci¢n Ingreso o Egreso',0,''
+ C019=CAJ_DESCRI          ,'C',060,0,'','Descripci¢n de la operaci¢n',0,''
+ C020=CAJ_DOCASO          ,'C',010,0,'','Documento Asociado',1,''
+ C021=CAJ_FCHCON          ,'D',008,0,'','Fecha para Contabilizar',0,''
+ C022=CAJ_FCHDEP          ,'D',008,0,'','Fecha del dep¢sito',0,''
+ C023=CAJ_FECHA           ,'D',008,0,'','Fecha de emisi¢n',0,''
+ C024=CAJ_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C025=CAJ_HORA            ,'C',005,0,'','Hora',0,''
+ C026=CAJ_MARCAF          ,'C',020,0,'','Marca Financiera',0,''
+ C027=CAJ_MONTO           ,'N',014,2,'','Monto de la operaci¢n',0,''
+ C028=CAJ_MTODIV          ,'N',019,2,'','Monto en Divisa',0,''
+ C029=CAJ_MTOIMP          ,'N',014,2,'','Monto de Impuesto IVA desde Venta',0,''
+ C030=CAJ_MTOITF          ,'N',019,2,'','Monto IGTF',0,''
+ C031=CAJ_NUMCAJ          ,'C',014,0,'','ID del PC',0,''
+ C032=CAJ_NUMDEP          ,'C',020,0,'','N£mero de dep¢sito',0,''
+ C033=CAJ_NUMERO          ,'C',014,0,'','Cheque',0,''
+ C034=CAJ_NUMMEM          ,'N',006,0,'','Memo',0,''
+ C035=CAJ_NUMPAG          ,'C',008,0,'','Registro de Pago',0,''
+ C036=CAJ_NUMTRA          ,'C',008,0,'','N£mero de Transacci¢n',1,''
+ C037=CAJ_ORGPAG          ,'C',003,0,'','Origen del Pago',0,''
+ C038=CAJ_ORIGEN          ,'C',003,0,'','M¢dulo de origen de la operaci¢n',0,''
+ C039=CAJ_PORCOM          ,'N',006,3,'','% de Comisi¢n Bancaria',0,''
+ C040=CAJ_PORIMP          ,'N',006,2,'','% de ISLR',0,''
+ C041=CAJ_PORITF          ,'N',006,2,'','% ITF',0,''
+ C042=CAJ_POSBCO          ,'C',003,0,'','Punto de Venta Bancario',1,''
+ C043=CAJ_REGDEP          ,'C',008,0,'','Registro de Dep¢sito',1,''
+ C044=CAJ_TIPCTA          ,'C',001,0,'','Tipo de Cuenta',0,''
+ C045=CAJ_TIPO            ,'C',004,0,'','Tipo de operaci¢n',0,''
+ C046=CAJ_USUARI          ,'C',003,0,'','Usuario que origin¢ la operaci¢n',0,''
+ C047=CAJ_VALCAM          ,'N',019,6,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCAJA                  , CAJ_CODCAJ=CAJ_CODIGO <UPDATE> <DELETE> <RUN>
+ T002=DPSUCURSAL              , CAJ_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+ T003=DPCAJAINST              , CAJ_TIPO=ICJ_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPBANCODIRPOR           , CAJ_TIPO,CAJ_CODBCO,CAJ_MARCAF,CAJ_BCODIR=CXI_CODINS,CXI_CODBCO,CXI_MARCA,CXI_BANCO, <CAMPO:CXI_CODBCO>, <WHERE:>
+ T002=DPCAJA                  , CAJ_CODCAJ=CAJ_CODIGO, <CAMPO:CAJ_NOMBRE>, <WHERE:>
+ T003=DPCTABANCOMOV           , CAJ_REGDEP,CAJ_CODBCO,CAJ_CUENTA=MOB_NUMTRA,MOB_CODBCO,MOB_CUENTA, <CAMPO:MOB_DESCRI>, <WHERE:>
+ T004=DPCTAEGRESO             , CAJ_CTAEGR=CEG_CODIGO, <CAMPO:CEG_DESCRI>, <WHERE:>
+ T005=DPMARCASFINANC          , CAJ_MARCAF=MFN_NOMBRE, <CAMPO:MFN_NOMBRE>, <WHERE:>
+ T006=DPPOSBANCARIO           , CAJ_POSBCO=PVB_CODIGO, <CAMPO:PVB_CODBCO>, <WHERE:>
+ T007=DPSUCURSAL              , CAJ_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CXI_CODBCO FROM DPCAJAMOV INNER JOIN DPBANCODIRPOR ON CXI_CODINS=CAJ_TIPO AND CXI_CODBCO=CAJ_CODBCO AND CXI_MARCA=CAJ_MARCAF AND CXI_BANCO=CAJ_BCODIR
+ SELECT CAJ_NOMBRE FROM DPCAJAMOV INNER JOIN DPCAJA ON CAJ_CODIGO=CAJ_CODCAJ
+ SELECT * FROM DPCAJAMOV INNER JOIN DPCAJA ON CAJ_CODCAJ=CAJ_CODIGO
+ SELECT CAJ_DESCRI FROM DPCAJAMOV INNER JOIN DPMEMO ON CAJ_NUMMEM=MEM_NUMERO
+ SELECT * FROM DPCAJAMOV INNER JOIN DPSUCURSAL ON CAJ_CODSUC=SUC_CODIGO
+ SELECT MOB_DESCRI FROM DPCAJAMOV INNER JOIN DPCTABANCOMOV ON MOB_NUMTRA=CAJ_REGDEP AND MOB_CODBCO=CAJ_CODBCO AND MOB_CUENTA=CAJ_CUENTA
+ SELECT CEG_DESCRI FROM DPCAJAMOV INNER JOIN DPCTAEGRESO ON CEG_CODIGO=CAJ_CTAEGR
+ SELECT MFN_NOMBRE FROM DPCAJAMOV INNER JOIN DPMARCASFINANC ON MFN_NOMBRE=CAJ_MARCAF
+ SELECT PVB_CODBCO FROM DPCAJAMOV INNER JOIN DPPOSBANCARIO ON PVB_CODIGO=CAJ_POSBCO
+ SELECT SUC_DESCRI FROM DPCAJAMOV INNER JOIN DPSUCURSAL ON SUC_CODIGO=CAJ_CODSUC
+ SELECT * FROM DPCAJAMOV INNER JOIN DPCAJAINST ON CAJ_TIPO=ICJ_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CAJ_CHQPLA          ,Efectivo                                                                        
+ C002=CAJ_CHQPLA          ,Mismo Banco                                                                     
+ C003=CAJ_CHQPLA          ,Otros Bancos                                                                    
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

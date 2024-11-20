@@ -1,0 +1,47 @@
+[ID]
+ NUMERO=9649
+ NOMBRE=EMPEDIDOMOV
+ DESCRIPCION=Movimiento del Pedido On Line                               
+ CONFIG=F
+ SINGUL=Detalle Pedido ePedidos OnLine
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MPE_CANTID          ,'N',010,2,'','Cantidad',0,''
+ C002=MPE_CODCLI          ,'C',010,0,'','C¢digo de Cliente',0,''
+ C003=MPE_CODIGO          ,'C',020,0,'','C¢digo Producto',0,''
+ C004=MPE_CODVEN          ,'C',006,0,'','Vendedor',0,''
+ C005=MPE_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C006=MPE_ID              ,'I',010,0,'','Id Pedido',0,''
+ C007=MPE_PORIVA          ,'N',005,2,'','% IVA',0,''
+ C008=MPE_PRECIO          ,'N',018,2,'','Precio',0,''
+ C009=MPE_TIPIVA          ,'C',002,0,'','Tipo de Iva',0,''
+ C010=MPE_TOTAL           ,'N',018,2,'','Total',0,''
+ C011=MPE_UNDMED          ,'C',010,0,'','Unidad Medida',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=EMPEDIDO                , MPE_ID=PED_ID <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM EMPEDIDOMOV INNER JOIN EMPEDIDO ON MPE_ID=PED_ID
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

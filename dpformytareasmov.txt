@@ -9,20 +9,21 @@
 [END_ID]
 
 [FIELDS]
- C001=FYT_CLAVE           ,'C',030,0,'','Clave de Registro',0
- C002=FYT_CODEMP          ,'C',004,0,'','Empresa',0
- C003=FYT_CODIGO          ,'C',015,0,'','Código',0
- C004=FYT_CODSUC          ,'C',004,0,'','Sucursal',0
- C005=FYT_CODUSU          ,'C',003,0,'','Usuario',0
- C006=FYT_DESDE           ,'D',008,0,'','Desde',0
- C007=FYT_FECHA           ,'D',008,0,'','Fecha',0
- C008=FYT_FECHAT          ,'D',008,0,'','Fecha que debia Realizarse',0
- C009=FYT_HASTA           ,'D',008,0,'','Hasta',0
- C010=FYT_HORA            ,'C',005,0,'','Hora',0
- C011=FYT_IP              ,'C',020,0,'','Dirección IP del PC',0
- C012=FYT_NUMERO          ,'N',005,0,'','Número de Planificación',0
- C013=FYT_OBSERV          ,'C',040,0,'','Observaciones',0
- C014=FYT_PC              ,'C',020,0,'','Nombre del PC',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=FYT_CLAVE           ,'C',030,0,'','Clave de Registro',0,''
+ C002=FYT_CODEMP          ,'C',004,0,'','Empresa',0,''
+ C003=FYT_CODIGO          ,'C',015,0,'','C¢digo',0,''
+ C004=FYT_CODSUC          ,'C',004,0,'','Sucursal',0,'&oDp:cSucursal'
+ C005=FYT_CODUSU          ,'C',003,0,'','Usuario',0,''
+ C006=FYT_DESDE           ,'D',008,0,'','Desde',0,''
+ C007=FYT_FECHA           ,'D',008,0,'','Fecha',0,''
+ C008=FYT_FECHAT          ,'D',008,0,'','Fecha que debia Realizarse',0,''
+ C009=FYT_HASTA           ,'D',008,0,'','Hasta',0,''
+ C010=FYT_HORA            ,'C',005,0,'','Hora',0,''
+ C011=FYT_IP              ,'C',020,0,'','Direcci¢n IP del PC',0,''
+ C012=FYT_NUMERO          ,'N',005,0,'','N£mero de Planificaci¢n',0,''
+ C013=FYT_OBSERV          ,'C',040,0,'','Observaciones',0,''
+ C014=FYT_PC              ,'C',020,0,'','Nombre del PC',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
@@ -38,11 +39,11 @@
 
 
 [INNER_JOIN]
+ SELECT EMP_NOMBRE FROM DPFORMYTAREASMOV INNER JOIN DPEMPRESA ON EMP_CODIGO=FYT_CODEMP
  SELECT * FROM DPFORMYTAREASMOV INNER JOIN DPEMPRESA ON FYT_CODEMP=EMP_CODIGO
  SELECT * FROM DPFORMYTAREASMOV INNER JOIN DPFORMYTAREAS ON FYT_CODIGO=FYT_CODIGO
- SELECT EMP_NOMBRE FROM DPFORMYTAREASMOV INNER JOIN DPEMPRESA ON EMP_CODIGO=FYT_CODEMP
- SELECT OPE_NOMBRE FROM DPFORMYTAREASMOV INNER JOIN DPUSUARIOS ON OPE_NUMERO=FYT_CODUSU
  SELECT * FROM DPFORMYTAREASMOV INNER JOIN DPUSUARIOS ON FYT_CODUSU=OPE_NUMERO
+ SELECT OPE_NOMBRE FROM DPFORMYTAREASMOV INNER JOIN DPUSUARIOS ON OPE_NUMERO=FYT_CODUSU
 [END_INNER_JOIN]
 
 [OPTIONS]
