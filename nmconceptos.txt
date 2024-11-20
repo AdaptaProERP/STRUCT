@@ -1,0 +1,84 @@
+[ID]
+ NUMERO=1520
+ NOMBRE=NMCONCEPTOS
+ DESCRIPCION=Conceptos de Pago                                           
+ CONFIG=F
+ SINGUL=Concepto                      
+ APLICA=03
+ PRIMARY_KEY='CON_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CON_CODIGO          ,'C',004,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=CON_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C003=CON_ACUM01          ,'L',001,0,'','B sico',0,''
+ C004=CON_ACUM02          ,'L',001,0,'','Integral',0,''
+ C005=CON_ACUM03          ,'L',001,0,'','Utilidades',0,''
+ C006=CON_ACUM04          ,'L',001,0,'','Vacaciones',0,''
+ C007=CON_ACUMUL          ,'L',001,0,'','Genera Acumulados',0,''
+ C008=CON_ALTER           ,'L',001,0,'','Indica si fu‚ Alterado',0,''
+ C009=CON_CATORC          ,'L',001,0,'','Catorcenal',0,''
+ C010=CON_COLUMN          ,'C',020,0,'','Columna',0,''
+ C011=CON_COLVAR          ,'C',020,0,'','Variaci¢n',0,''
+ C012=CON_COMENT          ,'M',010,0,'','Comentarios',0,''
+ C013=CON_CTACON          ,'C',020,0,'','Contrapartida',0,''
+ C014=CON_CUENTA          ,'C',020,0,'','Cuenta Contable',0,''
+ C015=CON_DEPURA          ,'L',001,0,'','Activa Modo Depuraci¢n',0,''
+ C016=CON_DESCRI          ,'C',060,0,'','Descripci¢n',0,''
+ C017=CON_FECHA           ,'D',008,0,'','Fecha de Actualizaci¢n',0,''
+ C018=CON_FORMUL          ,'M',010,0,'','F¢rmula',0,''
+ C019=CON_HORA            ,'C',008,0,'','Hora',0,''
+ C020=CON_HTTP            ,'L',001,0,'','Carga Variaciones desde HTTP',0,''
+ C021=CON_ISLR            ,'L',001,0,'','Acumula ISLR',0,''
+ C022=CON_MARCA           ,'L',001,0,'','Tipo de N¢mina',0,''
+ C023=CON_MENSAJ          ,'C',035,0,'','Mensaje para Variaci¢n',0,''
+ C024=CON_MENSUA          ,'L',001,0,'','Mensual',0,''
+ C025=CON_NORMAL          ,'L',001,0,'','Salario Normal',0,''
+ C026=CON_OTRA            ,'L',001,0,'','Otra N¢mina',0,''
+ C027=CON_PICTUR          ,'C',040,0,'','Formato Input',0,''
+ C028=CON_PICTURE         ,'C',040,0,'','Formato Input',0,''
+ C029=CON_PRESTA          ,'L',001,0,'','Prestaciones',0,''
+ C030=CON_QUINCE          ,'L',001,0,'','Quicenal',0,''
+ C031=CON_RECACU          ,'L',001,0,'','Acumulado en Recibo',0,''
+ C032=CON_REDOND          ,'L',001,0,'','Redondeo',0,''
+ C033=CON_REPRES          ,'C',006,0,'','Representaci¢n',0,''
+ C034=CON_SEMANA          ,'L',001,0,'','Semanal',0,''
+ C035=CON_TIPNOM          ,'C',005,0,'','Tipo de N¢mina',0,''
+ C036=CON_VARVER          ,'L',001,0,'','Variaci¢n en Vertical',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=NMCONCEPTOS_CTA         , CON_CODIGO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T002=NMCTAXTRAB              , CON_CODIGO=CXT_CODCON, <UPDATE> <DELETE> <RUN>
+ T003=NMHISTORICO             , CON_CODIGO=HIS_CODCON, <UPDATE>  <RUN>
+ T004=NMTIPNOMXCONCEPTO       , CON_CODIGO=CXO_CODCON, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM NMCONCEPTOS INNER JOIN NMCTA ON CON_CUENTA=CTA_CODIGO
+ SELECT CON_DESCRI FROM NMCONCEPTOS INNER JOIN NMCTAXDEP ON CON_CODIGO=CXD_CODCON
+ SELECT CON_DESCRI FROM NMCONCEPTOS INNER JOIN NMCTAXTRAB ON CON_CODIGO=CXT_CODCON
+ SELECT CON_DESCRI FROM NMCONCEPTOS INNER JOIN NMCTAXUND ON CON_CODIGO=CXU_CODCON
+ SELECT CON_DESCRI FROM NMCONCEPTOS INNER JOIN NMDATEMP ON CON_CODIGO=DEM_CONFID
+ SELECT CON_DESCRI FROM NMCONCEPTOS INNER JOIN NMVARIAC ON CON_CODIGO=VAR_CODCON
+ SELECT * FROM NMCONCEPTOS INNER JOIN NMCONCEPTOS_CTA ON CIC_CODIGO=CON_CODIGO
+ SELECT * FROM NMCONCEPTOS INNER JOIN NMCTAXTRAB ON CXT_CODCON=CON_CODIGO
+ SELECT * FROM NMCONCEPTOS INNER JOIN NMHISTORICO ON HIS_CODCON=CON_CODIGO
+ SELECT * FROM NMCONCEPTOS INNER JOIN NMTIPNOMXCONCEPTO ON CXO_CODCON=CON_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

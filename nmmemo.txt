@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=1116
+ NOMBRE=NMMEMO
+ DESCRIPCION=Campos Memos                                                
+ CONFIG=F
+ SINGUL=Memo                          
+ APLICA=01
+ PRIMARY_KEY='MEM_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MEM_NUMERO          ,'N',008,0,'PRIMARY KEY NOT NULL','N£mero',0,''
+ C002=MEM_DESCRI          ,'C',040,0,'','Descripci¢n Asociada',0,''
+ C003=MEM_ID              ,'C',006,0,'','N£mero de Sucursal',0,''
+ C004=MEM_MEMO            ,'M',010,0,'','Contenido',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

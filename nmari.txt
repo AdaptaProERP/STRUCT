@@ -1,0 +1,72 @@
+[ID]
+ NUMERO=1512
+ NOMBRE=NMARI
+ DESCRIPCION=A.R.I. Del Trabajador                                       
+ CONFIG=F
+ SINGUL=A.R.I.                        
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ARI_A               ,'N',014,2,'','Columna',0,''
+ C002=ARI_ALQUIL          ,'N',014,2,'','Alquiler o Intereses Vivienda',0,''
+ C003=ARI_ASIGNA          ,'N',014,2,'','Asignaciones a la Fecha',0,''
+ C004=ARI_B               ,'N',014,2,'','Columna B',0,''
+ C005=ARI_C               ,'N',014,2,'','Columna C',0,''
+ C006=ARI_CODTRA          ,'C',012,0,'','C¢digo Trabajador',0,''
+ C007=ARI_D               ,'N',014,2,'','Columna D',0,''
+ C008=ARI_DESUNI          ,'L',001,0,'','Desgrav men Unico',0,''
+ C009=ARI_E               ,'N',014,2,'','Columna E',0,''
+ C010=ARI_F               ,'N',014,2,'','Columna F',0,''
+ C011=ARI_FECHA           ,'D',008,0,'','Fecha',0,''
+ C012=ARI_G               ,'N',014,2,'','Columna G',0,''
+ C013=ARI_H               ,'N',014,2,'','Columna H (H3)',0,''
+ C014=ARI_H1              ,'N',014,2,'','Rebaja Personal',0,''
+ C015=ARI_H2              ,'N',014,2,'','Carga Familiar',0,''
+ C016=ARI_H3              ,'N',014,2,'','Impuesto Retenido Dem s A¤os Anteriores',0,''
+ C017=ARI_HCM             ,'N',014,2,'','Primas de H.C.M.',0,''
+ C018=ARI_I               ,'N',014,2,'','Columna I',0,''
+ C019=ARI_IMPMAS          ,'N',012,0,'','Impuesto Pagado de m s',0,''
+ C020=ARI_INGANU          ,'N',016,2,'','Ingreso Anual',0,''
+ C021=ARI_INSDOC          ,'N',014,2,'','Institutos Docentes',0,''
+ C022=ARI_ISLR            ,'N',014,2,'','Impuesto Pagado',0,''
+ C023=ARI_J               ,'N',014,2,'','Columna J',0,''
+ C024=ARI_K               ,'N',014,2,'','Columna K',0,''
+ C025=ARI_MEMO            ,'M',010,0,'','Memo del Resultado',0,''
+ C026=ARI_OTRING          ,'N',014,2,'','Otros Ingresos',0,''
+ C027=ARI_PORCEN          ,'N',006,2,'','Porcentaje',0,''
+ C028=ARI_SERMED          ,'N',014,2,'','Servicios M‚dicos Odontol¢gicos',0,''
+ C029=ARI_TRIMES          ,'N',001,0,'','Trimestre',0,''
+ C030=ARI_UT              ,'N',014,2,'','Valor de la UT',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , ARI_CODTRA=CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=NMTRABAJADOR            , ARI_CODTRA=CODIGO, <CAMPO:NOMBRE>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMARI INNER JOIN NMTRABAJADOR ON ARI_CODTRA=CODIGO
+ SELECT NOMBRE FROM NMARI INNER JOIN NMTRABAJADOR ON CODIGO=ARI_CODTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

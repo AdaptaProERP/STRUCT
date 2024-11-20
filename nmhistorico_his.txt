@@ -1,0 +1,38 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=NMHISTORICO_HIS
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Hist¢rico                     
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=HIS_CODCON          ,'C',004,0,'','C¢digo de Concepto',0,''
+ C002=HIS_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=HIS_MONTO           ,'N',012,2,'','Monto',0,''
+ C004=HIS_NUMMEM          ,'N',006,0,'','N£mero de Memo',0,''
+ C005=HIS_NUMOBS          ,'N',006,0,'','N£mero Registro Memo',0,''
+ C006=HIS_NUMREC          ,'C',007,0,'','N£mero de Recibo',0,''
+ C007=HIS_VARIAC          ,'N',011,3,'','Monto de Variaci¢n',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

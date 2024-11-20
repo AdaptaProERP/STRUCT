@@ -1,0 +1,69 @@
+[ID]
+ NUMERO=1604
+ NOMBRE=NMCURRICULUM
+ DESCRIPCION=Curricula de Solicitantes                                   
+ CONFIG=F
+ SINGUL=Curriculum                    
+ APLICA=02
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CUR_APELLI          ,'C',020,0,'','Apellido',0,''
+ C002=CUR_CEDULA          ,'N',008,0,'','N£mero de C‚dula',0,''
+ C003=CUR_CELULA          ,'C',012,0,'','Celular (Movil)',0,''
+ C004=CUR_CODCAR          ,'C',008,0,'','Cargo que Aspira',0,''
+ C005=CUR_CODPRO          ,'C',008,0,'','Profesi¢n',0,''
+ C006=CUR_DIR1            ,'C',040,0,'','Direcci¢n 1',0,''
+ C007=CUR_DIR2            ,'C',040,0,'','Direcci¢n 2',0,''
+ C008=CUR_DIR3            ,'C',040,0,'','Direcci¢n 3',0,''
+ C009=CUR_EMAIL           ,'C',030,0,'','Correo Electr¢nico',0,''
+ C010=CUR_EXPER           ,'N',002,0,'','Experiencia en A¤os',0,''
+ C011=CUR_FCHDIS          ,'D',008,0,'','Fecha Disponible',0,''
+ C012=CUR_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C013=CUR_FILMAI          ,'N',008,0,'','Registro Digitalizaci¢n',0,''
+ C014=CUR_LINKED          ,'C',250,0,'','Registro en Linked-In',0,''
+ C015=CUR_NOMBRE          ,'C',020,0,'','Nombre',0,''
+ C016=CUR_NUMMEM          ,'N',007,0,'','N£mero de Memo',0,''
+ C017=CUR_ORGCAP          ,'C',250,0,'','Origen de Captaci¢n',0,''
+ C018=CUR_RIF             ,'C',012,0,'','RIF',0,''
+ C019=CUR_SUELDO          ,'N',012,2,'','Sueldo que Aspira',0,''
+ C020=CUR_TEL1            ,'C',012,0,'','Tel‚fono 2',0,''
+ C021=CUR_TELHAB          ,'C',012,0,'','Tel‚fono Habitaci¢n',0,''
+ C022=CUR_TIPCED          ,'C',001,0,'','Tipo de Cedula',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMPROFESION             , CUR_CODPRO=PRF_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=NMCARGOS                , CUR_CODCAR=CAR_CODIGO, <CAMPO:CAR_DESCRI>, <WHERE:>
+ T002=NMPROFESION             , CUR_CODPRO=PRF_CODIGO, <CAMPO:PRF_NOMBRE>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CAR_DESCRI FROM NMCURRICULUM INNER JOIN NMCARGOS ON CAR_CODIGO=CUR_CODCAR
+ SELECT * FROM NMCURRICULUM INNER JOIN NMPROFESION ON CUR_CODPRO=PRF_CODIGO
+ SELECT PRF_NOMBRE FROM NMCURRICULUM INNER JOIN NMPROFESION ON PRF_CODIGO=CUR_CODPRO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CUR_ORGCAP          ,CompuTrabajo                                                                    
+ C002=CUR_ORGCAP          ,Iniciativa del Aspirante                                                        
+ C003=CUR_ORGCAP          ,Linked-in                                                                       
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

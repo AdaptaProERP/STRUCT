@@ -1,0 +1,44 @@
+[ID]
+ NUMERO=1518
+ NOMBRE=NMTABVACVEN
+ DESCRIPCION=Vacaciones Pendientes                                       
+ CONFIG=F
+ SINGUL=NMTABVACVEN                   
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRE_ACTIVO          ,'L',001,0,'','',0,'.T.'
+ C002=PRE_CODTRA          ,'C',010,0,'','',0,''
+ C003=PRE_CUOTA           ,'N',019,2,'','',0,''
+ C004=PRE_FCHINI          ,'D',008,0,'','',0,''
+ C005=PRE_ID              ,'C',040,0,'','',0,''
+ C006=PRE_INTERE          ,'N',019,2,'','',0,''
+ C007=PRE_MODO            ,'N',019,0,'','',0,''
+ C008=PRE_MONTO           ,'N',019,2,'','',0,''
+ C009=PRE_NUMERO          ,'C',004,0,'','',0,''
+ C010=PRE_NUMREC          ,'C',007,0,'','',0,''
+ C011=PRE_PROXIM          ,'L',001,0,'','',0,''
+ C012=PRE_TASA            ,'N',019,2,'','',0,''
+ C013=PRE_TIPO            ,'C',001,0,'','',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

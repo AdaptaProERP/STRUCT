@@ -1,0 +1,54 @@
+[ID]
+ NUMERO=1583
+ NOMBRE=NMDATEMP
+ DESCRIPCION=Datos de la Empresa                                         
+ CONFIG=F
+ SINGUL=Datos de la Empresa           
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DEM_CENCOS          ,'L',001,0,'','Contabiliza por Centro de Costos',0,''
+ C002=DEM_CONFID          ,'C',004,0,'','Concepto Fideicomiso',0,''
+ C003=DEM_CONVAC          ,'C',004,0,'','Concepto Vacaciones',0,''
+ C004=DEM_DEPUND          ,'C',001,0,'','Contabilizado a Trav‚s',0,''
+ C005=DEM_DIR1            ,'C',040,0,'','Direcci¢n 1',0,''
+ C006=DEM_DIR2            ,'C',040,0,'','Direcci¢n 2',0,''
+ C007=DEM_DIR3            ,'C',040,0,'','Direcci¢n 3',0,''
+ C008=DEM_FCHDH           ,'C',001,0,'','Fecha Desde o Hasta',0,''
+ C009=DEM_INFPRE          ,'C',008,0,'','Informe de Pren¢mina',0,''
+ C010=DEM_INISEM          ,'C',002,0,'','Inicio de la Semana',0,''
+ C011=DEM_MINTRA          ,'C',010,0,'','Ministerior del Trabajo',0,''
+ C012=DEM_REDOND          ,'L',001,0,'','Redondeo de 5 a 0',0,''
+ C013=DEM_RIF             ,'C',010,0,'','RIF',0,''
+ C014=DEM_SSO             ,'C',010,0,'','Seguro Social',0,''
+ C015=DEM_TEL1            ,'C',012,0,'','Tel‚fono 1',0,''
+ C016=DEM_TEL2            ,'C',012,0,'','Tel‚fono 2',0,''
+ C017=DEM_TEL3            ,'C',012,0,'','Tel‚fono 3',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=NMCONCEPTOS             , DEM_CONFID=CON_CODIGO, <CAMPO:CON_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CON_DESCRI FROM NMDATEMP INNER JOIN NMCONCEPTOS ON CON_CODIGO=DEM_CONFID
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

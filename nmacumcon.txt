@@ -1,0 +1,46 @@
+[ID]
+ NUMERO=1595
+ NOMBRE=NMACUMCON
+ DESCRIPCION=Acumulado Mensual por Concepto                              
+ CONFIG=F
+ SINGUL=Acumulado por Concepto        
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ACU_01              ,'N',017,2,'','Enero',0,''
+ C002=ACU_02              ,'N',017,2,'','Febrero',0,''
+ C003=ACU_03              ,'N',017,2,'','Marzo',0,''
+ C004=ACU_04              ,'N',017,2,'','Abril',0,''
+ C005=ACU_05              ,'N',017,2,'','Mayo',0,''
+ C006=ACU_06              ,'N',017,2,'','Junio',0,''
+ C007=ACU_07              ,'N',017,2,'','Julio',0,''
+ C008=ACU_08              ,'N',017,2,'','Agosto',0,''
+ C009=ACU_09              ,'N',017,2,'','Septiembre',0,''
+ C010=ACU_10              ,'N',017,2,'','Octubre',0,''
+ C011=ACU_11              ,'N',017,2,'','Noviembre',0,''
+ C012=ACU_12              ,'N',017,2,'','Diciembre',0,''
+ C013=ACU_ANO             ,'C',004,0,'','A¤o',1,''
+ C014=ACU_CODCON          ,'C',004,0,'','Concepto',0,''
+ C015=ACU_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

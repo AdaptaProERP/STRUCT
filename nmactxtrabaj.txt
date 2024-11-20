@@ -1,0 +1,49 @@
+[ID]
+ NUMERO=1567
+ NOMBRE=NMACTXTRABAJ
+ DESCRIPCION=Actividades para el Trabajador                              
+ CONFIG=F
+ SINGUL=Actividad por Trabajador      
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=AXT_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C002=AXT_CARTA           ,'C',040,0,'','Carta',0,''
+ C003=AXT_CLASIF          ,'C',030,0,'','Clasificaci¢n',0,''
+ C004=AXT_CODGRU          ,'C',020,0,'','C¢digo del Grupo',0,''
+ C005=AXT_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C006=AXT_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C007=AXT_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C008=AXT_DIA             ,'N',002,0,'','D¡a',0,''
+ C009=AXT_DIAS            ,'N',003,0,'','D¡as de Plazo',0,''
+ C010=AXT_EVENTO          ,'C',020,0,'','Evento',0,''
+ C011=AXT_FCHEDI          ,'L',001,0,'','Fecha de Calendario Editable',0,''
+ C012=AXT_FICHER          ,'C',030,0,'','Fichero',0,''
+ C013=AXT_ITEM            ,'C',004,0,'','Item',0,''
+ C014=AXT_MEMO            ,'M',010,0,'','Comentarios',0,''
+ C015=AXT_MES             ,'C',012,0,'','Mes',0,''
+ C016=AXT_PERIOD          ,'C',015,0,'','Periodo',0,''
+ C017=AXT_TAREA           ,'C',020,0,'','Tarea o Registro',0,''
+ C018=AXT_XCARTA          ,'L',001,0,'','Por Carta o Archivo',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

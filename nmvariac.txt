@@ -1,0 +1,55 @@
+[ID]
+ NUMERO=1584
+ NOMBRE=NMVARIAC
+ DESCRIPCION=Variaciones                                                 
+ CONFIG=F
+ SINGUL=Variaci¢n                     
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=VAR_AJUSTE          ,'N',010,3,'','Ajuste del Concepto',0,''
+ C002=VAR_CANTID          ,'N',012,3,'','Cantidad o Valor',0,''
+ C003=VAR_CODCON          ,'C',004,0,'','Concepto',0,''
+ C004=VAR_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C005=VAR_CODTRA          ,'C',012,0,'','Trabajador',0,''
+ C006=VAR_DESDE           ,'D',008,0,'','Fecha Desde',0,''
+ C007=VAR_HASTA           ,'D',008,0,'','Fecha Hasta',0,''
+ C008=VAR_NUMMEM          ,'N',007,0,'','N£mero de Memo',0,''
+ C009=VAR_OBSERV          ,'C',040,0,'','Observaciones o Comentarios',0,''
+ C010=VAR_OTRNOM          ,'C',002,0,'','Otra N¢mina',0,''
+ C011=VAR_TIPNOM          ,'C',001,0,'','Tipo de N¢mina',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=NMCONCEPTOS             , VAR_CODCON=CON_CODIGO, <CAMPO:CON_DESCRI>, <WHERE:>
+ T002=NMTRABAJADOR            , VAR_CODTRA=CODIGO, <CAMPO:APELLIDO>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT CON_DESCRI FROM NMVARIAC INNER JOIN NMCONCEPTOS ON CON_CODIGO=VAR_CODCON
+ SELECT APELLIDO FROM NMVARIAC INNER JOIN NMTRABAJADOR ON CODIGO=VAR_CODTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=VAR_TIPNOM          ,Catorcenal                                                                      
+ C002=VAR_TIPNOM          ,Mensual                                                                         
+ C003=VAR_TIPNOM          ,Otra                                                                            
+ C004=VAR_TIPNOM          ,Quincenal                                                                       
+ C005=VAR_TIPNOM          ,Semanal                                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

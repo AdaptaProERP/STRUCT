@@ -1,0 +1,43 @@
+[ID]
+ NUMERO=1513
+ NOMBRE=NMCONTRATOS
+ DESCRIPCION=Contratos Laborales                                         
+ CONFIG=F
+ SINGUL=Contrato                      
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CTR_CODTRA          ,'C',010,0,'','C¢digo del Trabajador',1,''
+ C002=CTR_FCHFIN          ,'D',008,0,'','Fecha de Culminaci¢n',0,''
+ C003=CTR_FCHINI          ,'D',008,0,'','Fecha de Inicio',0,''
+ C004=CTR_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C005=CTR_FILMAI          ,'N',008,0,'','Digitalizaci¢n',0,''
+ C006=CTR_NUMERO          ,'C',008,0,'','Numero',0,''
+ C007=CTR_NUMMEM          ,'N',008,0,'','Menu',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , CTR_CODTRA=CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM NMCONTRATOS INNER JOIN NMTRABAJADOR ON CTR_CODTRA=CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

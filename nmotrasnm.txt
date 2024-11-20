@@ -1,0 +1,92 @@
+[ID]
+ NUMERO=1548
+ NOMBRE=NMOTRASNM
+ DESCRIPCION=Tipos de N¢mina                                             
+ CONFIG=F
+ SINGUL=Tipo de N¢mina                
+ APLICA=01
+ PRIMARY_KEY='OTR_TIPO,OTR_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=OTR_ACTIVO          ,'L',001,0,'','Registro Activo',0,''
+ C002=OTR_CALASI          ,'L',001,0,'','Calendario de Asistencia',0,''
+ C003=OTR_CODCTA          ,'C',020,0,'','Cuenta Contable por Pagar',0,''
+ C004=OTR_CODFOR          ,'C',030,0,'','Formato Crystal',0,''
+ C005=OTR_CODIGO          ,'C',002,0,'','C¢digo',0,''
+ C006=OTR_CODMON          ,'C',003,0,'','Moneda',0,'&oDp:cMoneda'
+ C007=OTR_CODNOM          ,'C',003,0,'','C¢digo;N¢mina',0,''
+ C008=OTR_CODREP          ,'C',010,0,'','Reporte de N¢mina Recibos',0,''
+ C009=OTR_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C010=OTR_DIVPLF          ,'N',019,0,'','Monto Divisa Planfinicaci¢n',0,''
+ C011=OTR_FCHPLF          ,'C',005,0,'','Registro Referencia Planificaci¢n Financ',0,''
+ C012=OTR_FIN             ,'D',008,0,'','Fecha de Culminaci¢n',0,''
+ C013=OTR_FINPLF          ,'D',008,0,'','Fecha Culminaci¢n Planificaci¢n Financie',0,''
+ C014=OTR_INICIO          ,'D',008,0,'','Fecha de Inicio',0,''
+ C015=OTR_MTOPLF          ,'N',019,0,'','Monto Planfinicaci¢n',0,''
+ C016=OTR_OTRANM          ,'L',001,0,'','Planificaci¢n Financiera',0,''
+ C017=OTR_PERIOD          ,'C',014,0,'','Periodo de Actualizaci¢n',0,''
+ C018=OTR_PLAFIN          ,'L',001,0,'','Planificaci¢n Financiera',0,''
+ C019=OTR_PRGPRE          ,'M',010,0,'','Programa Calculo Presupuestario',0,''
+ C020=OTR_REPPRE          ,'C',010,0,'','Reporte Pren¢mina',0,''
+ C021=OTR_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C022=OTR_TIPO            ,'C',001,0,'','Tipo de N¢mina',0,''
+ C023=OTR_TIPTRA          ,'C',020,0,'','Tipo de Trabajador',0,''
+ C024=OTR_USUARI          ,'C',050,0,'','Lista de Usuario Autorizados',0,''
+ C025=OTR_VARIAC          ,'L',001,0,'','Depende de Variaciones',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=NMOTRASNM_CTA           , OTR_CODIGO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T002=NMTIPNOMXCONCEPTO       , OTR_CODNOM=CXO_CODNOM, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=NMFECHAS                , OTR_CODIGO=FCH_OTRNOM, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMOTRASNM INNER JOIN NMFECHAS ON FCH_OTRNOM=OTR_CODIGO
+ SELECT * FROM NMOTRASNM INNER JOIN NMOTRASNM_CTA ON CIC_CODIGO=OTR_CODIGO
+ SELECT * FROM NMOTRASNM INNER JOIN NMTIPNOMXCONCEPTO ON CXO_CODNOM=OTR_CODNOM
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=OTR_PERIOD          ,Anual                                                                           
+ C002=OTR_PERIOD          ,Bimestral                                                                       
+ C003=OTR_PERIOD          ,Catorcenal                                                                      
+ C004=OTR_PERIOD          ,Cuatrimestral                                                                   
+ C005=OTR_PERIOD          ,Diario                                                                          
+ C006=OTR_PERIOD          ,Ejercicio                                                                       
+ C007=OTR_PERIOD          ,Fecha del Sistema                                                               
+ C008=OTR_PERIOD          ,Indefinida                                                                      
+ C009=OTR_PERIOD          ,Indicada                                                                        
+ C010=OTR_PERIOD          ,Mensual                                                                         
+ C011=OTR_PERIOD          ,Quincenal                                                                       
+ C012=OTR_PERIOD          ,Semanal                                                                         
+ C013=OTR_PERIOD          ,Semestral                                                                       
+ C014=OTR_PERIOD          ,Trimestral                                                                      
+ C015=OTR_TIPO            ,Catorcenal                                                                      
+ C016=OTR_TIPO            ,Mensual                                                                         
+ C017=OTR_TIPO            ,Otra                                                                            
+ C018=OTR_TIPO            ,Otros                                                                           
+ C019=OTR_TIPO            ,Quincenal                                                                       
+ C020=OTR_TIPO            ,Semanal                                                                         
+ C021=OTR_TIPTRA          ,Activos                                                                         
+ C022=OTR_TIPTRA          ,Liquidados                                                                      
+ C023=OTR_TIPTRA          ,Todos                                                                           
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

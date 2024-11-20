@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1568
+ NOMBRE=NMCALXTRABAJ
+ DESCRIPCION=Calendario por Trabajador                                   
+ CONFIG=F
+ SINGUL=Calendario por Trabajador     
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CXT_CODACT          ,'C',020,0,'','Tarea',0,''
+ C002=CXT_CODGRU          ,'C',020,0,'','Grupo',0,''
+ C003=CXT_CODIGO          ,'C',010,0,'','C¢digo',0,''
+ C004=CXT_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C005=CXT_ESTADO          ,'C',001,0,'','Estado',0,''
+ C006=CXT_FCHTAR          ,'D',008,0,'','Fecha de la tarea',0,''
+ C007=CXT_FECHA           ,'D',008,0,'','Fecha de Registro',0,''
+ C008=CXT_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

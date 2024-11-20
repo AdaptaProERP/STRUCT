@@ -1,0 +1,68 @@
+[ID]
+ NUMERO=3013
+ NOMBRE=NMTRABOTROS
+ DESCRIPCION=Datos Adicionales de Trabajadores                           
+ CONFIG=F
+ SINGUL=Datos Adicional Trabajador    
+ APLICA=01
+ PRIMARY_KEY='CODTRA'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CODTRA              ,'C',012,0,'PRIMARY KEY NOT NULL','Codigo Trabajador',0,''
+ C002=CARGAFAM            ,'N',002,0,'','Numero de Carga Familiar',0,''
+ C003=CARGO               ,'C',025,0,'','Descripcion de Cargo',0,''
+ C004=CODGRU              ,'C',008,0,'','Codigo Grupo',0,''
+ C005=CODPRE              ,'N',004,0,'','Codigo Oficio',0,''
+ C006=DESCGUARD           ,'C',001,0,'','Hijos en Guarderias',0,''
+ C007=EMBARAZO            ,'C',001,0,'','Esta Embarazada',0,''
+ C008=ESPECIA             ,'C',025,0,'','Especializacion',0,''
+ C009=FAMDISC             ,'C',001,0,'','Familiar con Discapacidad',0,''
+ C010=FIJ_DISACC          ,'C',001,0,'','Tiene Discapacidad por Accidente',0,''
+ C011=FIJ_DISAUD          ,'C',001,0,'','Tiene Discapacidad Auditiva',0,''
+ C012=FIJ_DISINT          ,'C',001,0,'','Tiene Discapacidad Intelectual',0,''
+ C013=FIJ_DISMEN          ,'C',001,0,'','Tiene Discapacidad Mental',0,''
+ C014=FIJ_DISMUS          ,'C',001,0,'','Tiene Discapacidad Muscular',0,''
+ C015=FIJ_DISOTR          ,'C',025,0,'','Tiene Otra Discapacidad',0,''
+ C016=FIJ_DISVIS          ,'C',001,0,'','Tiene Discapacidad Visual',0,''
+ C017=FIJ_ENFER           ,'C',001,0,'','Enfermadad Laboral',0,''
+ C018=FIJ_INDIGE          ,'C',001,0,'','Es Indigena',0,''
+ C019=HEXTSEM             ,'N',002,0,'','Horas Extras Promedio Semanales',0,''
+ C020=HORNOCT             ,'N',002,0,'','Horas Nocturnas Promedio',0,''
+ C021=HSEM                ,'N',002,0,'','Horas Promedio Semanal',0,''
+ C022=INGRESO             ,'D',008,0,'','Fecha Ingreso',0,''
+ C023=LABDOM              ,'C',001,0,'','Labora los Domingos',0,''
+ C024=MTO_GUARD           ,'N',009,2,'','Monto Guarderia',0,''
+ C025=NUMCED              ,'N',010,0,'','N£mero Cedula',0,''
+ C026=SALPRO              ,'N',009,2,'','Salario Promedio',0,''
+ C027=SINDICA             ,'C',001,0,'','Sindicalizado',0,''
+ C028=SUBPRO              ,'N',004,0,'','Subproceso',0,''
+ C029=TIPJOR              ,'C',001,0,'','Jornada del Trabajador',0,''
+ C030=TIPTRAB             ,'C',002,0,'','Tipo de Trabajador',0,''
+ C031=TIP_CTTO            ,'C',002,0,'','Tipo de Contrato',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=NMTRABAJADOR            , CODTRA=CODIGO, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMTRABOTROS INNER JOIN NMTRABAJADOR ON CODIGO=CODTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

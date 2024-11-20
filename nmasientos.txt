@@ -1,0 +1,44 @@
+[ID]
+ NUMERO=1580
+ NOMBRE=NMASIENTOS
+ DESCRIPCION=Asientos Contables Exportados                               
+ CONFIG=F
+ SINGUL=Asiento                       
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ASI_CUENTA          ,'C',020,0,'','Cuenta',1,''
+ C002=ASI_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C003=ASI_DESDE           ,'D',008,0,'','Desde',0,''
+ C004=ASI_FECHA           ,'D',008,0,'','Fecha',0,''
+ C005=ASI_HASTA           ,'D',008,0,'','Hasta',0,''
+ C006=ASI_MONTO           ,'N',018,2,'','Monto',0,''
+ C007=ASI_NUMCBT          ,'C',008,0,'','Comprobante',1,''
+ C008=ASI_NUMDOC          ,'C',010,0,'','Numero Documento',0,''
+ C009=ASI_NUMERO          ,'C',006,0,'','N£mero',1,''
+ C010=ASI_OTRNOM          ,'C',002,0,'','Otra N¢mina',0,''
+ C011=ASI_SITUAC          ,'C',001,0,'','Enviado o Reversado',0,''
+ C012=ASI_TIPDOC          ,'C',002,0,'','Tipo Documento',0,''
+ C013=ASI_TIPNOM          ,'C',001,0,'','Tipo de N¢mina',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

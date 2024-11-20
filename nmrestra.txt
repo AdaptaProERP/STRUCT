@@ -1,0 +1,54 @@
+[ID]
+ NUMERO=1594
+ NOMBRE=NMRESTRA
+ DESCRIPCION=Salarios Promedios                                          
+ CONFIG=F
+ SINGUL=Salario Promedio              
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=RMT_ANO             ,'C',004,0,'','A¤o',1,''
+ C002=RMT_ASIGNA          ,'N',014,2,'','B sico',0,''
+ C003=RMT_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C004=RMT_CODTRA          ,'C',012,0,'','Trabajador',0,''
+ C005=RMT_DEDUCC          ,'N',014,2,'','Deducci¢n',0,''
+ C006=RMT_MES             ,'C',002,0,'','Mes',1,''
+ C007=RMT_MINIMO          ,'L',001,0,'','Sueldo M¡nimo',0,''
+ C008=RMT_PROM_A          ,'N',014,2,'','B sico',0,''
+ C009=RMT_PROM_B          ,'N',014,2,'','Integral',0,''
+ C010=RMT_PROM_C          ,'N',014,2,'','Utilidades',0,''
+ C011=RMT_PROM_D          ,'N',019,2,'','Vacaciones',0,''
+ C012=RMT_SUELDO          ,'N',014,2,'','Sueldo B sico',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , RMT_CODTRA=CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=NMTRABAJADOR            , RMT_CODTRA=CODIGO, <CAMPO:APELLIDO>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMRESTRA INNER JOIN NMTRABAJADOR ON RMT_CODTRA=CODIGO
+ SELECT APELLIDO FROM NMRESTRA INNER JOIN NMTRABAJADOR ON CODIGO=RMT_CODTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

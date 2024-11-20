@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=1530
+ NOMBRE=NMCONSTANTES
+ DESCRIPCION=Valores Constantes para Conceptos                           
+ CONFIG=F
+ SINGUL=Constante                     
+ APLICA=01
+ PRIMARY_KEY='CNS_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CNS_CODIGO          ,'C',003,0,'PRIMARY KEY NOT NULL','C¢digo',1,''
+ C002=CNS_ALTERA          ,'L',001,0,'','Alterado por Usuario',0,''
+ C003=CNS_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C004=CNS_FECHA           ,'D',008,0,'','Fecha de Modificacion',0,''
+ C005=CNS_HORA            ,'C',008,0,'','Hora',0,''
+ C006=CNS_TIPO            ,'C',001,0,'','Tipo de Dato',0,''
+ C007=CNS_VALOR           ,'C',025,0,'','Valor de la Constantes',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CNS_TIPO            ,AlfaNum‚rico                                                                    
+ C002=CNS_TIPO            ,Fecha                                                                           
+ C003=CNS_TIPO            ,Num‚rico                                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

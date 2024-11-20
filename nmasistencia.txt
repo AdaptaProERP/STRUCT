@@ -1,0 +1,51 @@
+[ID]
+ NUMERO=1617
+ NOMBRE=NMASISTENCIA
+ DESCRIPCION=Registro Diario de Asistencia                               
+ CONFIG=F
+ SINGUL=Asistencia Diario             
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=RAS_AM_FIN          ,'C',005,0,'','Hora Salida   AM',0,''
+ C002=RAS_AM_INI          ,'C',005,0,'','Hora Ingreso  AM',0,''
+ C003=RAS_CODTRA          ,'C',010,0,'','C¢digo del Trabajador',0,''
+ C004=RAS_FECHA           ,'D',008,0,'','Fecha',0,''
+ C005=RAS_HOR_AM          ,'N',004,2,'','Horas Trabajadas   AM',0,''
+ C006=RAS_HOR_PM          ,'N',004,2,'','Horas Trabajadas AM',0,''
+ C007=RAS_MEM_AM          ,'N',007,0,'','Registro Memo   AM',0,''
+ C008=RAS_MEM_PM          ,'N',007,0,'','Registro Memo PM',0,''
+ C009=RAS_PM_FIN          ,'C',005,0,'','Hora Salida PM',0,''
+ C010=RAS_PM_INI          ,'C',005,0,'','Hora Ingreso PM',0,''
+ C011=RAS_RET_AM          ,'N',004,2,'','Horas Retardo     PM',0,''
+ C012=RAS_RET_PM          ,'N',004,2,'','Horas Retardo PM',0,''
+ C013=RAS_TIPASI          ,'C',002,0,'','Tipo de Asistencia',0,''
+ C014=RAS_TIPO            ,'C',001,0,'','Tipo',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=RAS_TIPO            ,Activo                                                                          
+ C002=RAS_TIPO            ,Descanso                                                                        
+ C003=RAS_TIPO            ,Feriado                                                                         
+ C004=RAS_TIPO            ,Inasistencia                                                                    
+ C005=RAS_TIPO            ,Reposo                                                                          
+ C006=RAS_TIPO            ,Vacaciones                                                                      
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

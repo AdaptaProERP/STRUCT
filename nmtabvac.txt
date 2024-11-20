@@ -1,0 +1,61 @@
+[ID]
+ NUMERO=1591
+ NOMBRE=NMTABVAC
+ DESCRIPCION=Tabla de Vacaciones                                         
+ CONFIG=F
+ SINGUL=Tabla Vacaci¢n                
+ APLICA=01
+ PRIMARY_KEY='TAB_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TAB_NUMERO          ,'C',008,0,'PRIMARY KEY NOT NULL','N£mero',1,''
+ C002=TAB_BORRAR          ,'L',001,0,'','Indicar Borrar',0,''
+ C003=TAB_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C004=TAB_CODTRA          ,'C',012,0,'','Trabajador',0,''
+ C005=TAB_DESDE           ,'D',008,0,'','Inicio',0,''
+ C006=TAB_DIAACU          ,'N',005,2,'','Dias Acumulados para Futuras Vacaciones',0,''
+ C007=TAB_DIAADI          ,'N',003,0,'','Dias Adicionales',0,''
+ C008=TAB_DIADES          ,'N',003,0,'','Descanso',0,''
+ C009=TAB_DIADIS          ,'N',003,0,'','D¡as Disfrutados',0,''
+ C010=TAB_DIAFER          ,'N',003,0,'','Dias Feriados',0,''
+ C011=TAB_DIAHAB          ,'N',005,2,'','Dias H biles',0,''
+ C012=TAB_DIAPEN          ,'N',003,0,'','Dias Pendientes',0,''
+ C013=TAB_DIAS            ,'N',004,0,'','Dias Calendario',0,''
+ C014=TAB_DIAVAC          ,'N',005,2,'','Dias',0,''
+ C015=TAB_FCHREI          ,'D',008,0,'','Fecha de Reintegro',0,''
+ C016=TAB_FECHA           ,'D',008,0,'','Fecha de Proceso',0,''
+ C017=TAB_HASTA           ,'D',008,0,'','Hasta',0,''
+ C018=TAB_NUMREC          ,'C',007,0,'','Recibo',1,''
+ C019=TAB_PROCES          ,'L',001,0,'','Procesado',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , TAB_CODTRA=CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=NMTRABAJADOR            , TAB_CODTRA=CODIGO, <CAMPO:APELLIDO>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMTABVAC INNER JOIN NMTRABAJADOR ON TAB_CODTRA=CODIGO
+ SELECT APELLIDO FROM NMTABVAC INNER JOIN NMTRABAJADOR ON CODIGO=TAB_CODTRA
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

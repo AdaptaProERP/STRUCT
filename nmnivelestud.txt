@@ -1,0 +1,45 @@
+[ID]
+ NUMERO=1600
+ NOMBRE=NMNIVELESTUD
+ DESCRIPCION=Niveles de Estudio                                          
+ CONFIG=F
+ SINGUL=Nivel de Estudio              
+ APLICA=01
+ PRIMARY_KEY='NES_DESCRI'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=NES_DESCRI          ,'C',040,0,'PRIMARY KEY NOT NULL','Descripci¢n',0,''
+ C002=NES_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C003=NES_TIPO            ,'C',001,0,'','Tipo',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=NMESTUDACAD             , NES_DESCRI=ESA_NIVEST, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM NMNIVELESTUD INNER JOIN NMESTUDACAD ON ESA_NIVEST=NES_DESCRI
+ SELECT NES_DESCRI FROM NMNIVELESTUD INNER JOIN NMESTUDACAD ON NES_DESCRI=ESA_NIVEST
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=NES_TIPO            ,Acad‚mico                                                                       
+ C002=NES_TIPO            ,Complementaria                                                                  
+ C003=NES_TIPO            ,Idiomas                                                                         
+ C004=NES_TIPO            ,Indefinido                                                                      
+ C005=NES_TIPO            ,Otro                                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

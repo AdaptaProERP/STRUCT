@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=1562
+ NOMBRE=NMTABXUSU
+ DESCRIPCION=Tabla por Usuario                                           
+ CONFIG=F
+ SINGUL=Tabla por Usuario             
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TXU_CODIGO          ,'C',020,0,'','Nombre del Campo',0,''
+ C002=TXU_CODUSU          ,'C',003,0,'','C¢digo de Usuario',0,''
+ C003=TXU_PERMIS          ,'L',001,0,'','Permiso',0,''
+ C004=TXU_TABLA           ,'C',020,0,'','Nombre de la Tabla',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPUSUARIOS              , TXU_CODUSU=OPE_NUMERO,OPE_NUMERO, <CAMPO:OPE_NOMBRE>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ Desigualdad NMTABXUSU                DPUSUARIOS               OPE_NUMERO,OPE_NUMERO                                                            Vs TXU_CODUSU                                                                      
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

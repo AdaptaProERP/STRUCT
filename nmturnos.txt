@@ -1,0 +1,133 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=NMTURNOS
+ DESCRIPCION=Turnos                                                      
+ CONFIG=F
+ SINGUL=Turnos                        
+ APLICA=  
+ PRIMARY_KEY='TUR_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TUR_CODIGO          ,'C',003,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=TUR_DESCRI          ,'C',120,0,'','Descripci¢n',0,''
+ C003=TUR_DOMACT          ,'L',001,0,'','Domingo',0,'.T.'
+ C004=TUR_DOME1           ,'C',007,0,'','Entrada (1) Domingo',0,'"00:00:A"'
+ C005=TUR_DOME2           ,'C',007,0,'','Entrada (2) Domingo',0,'"00:00:A"'
+ C006=TUR_DOME3           ,'C',007,0,'','Entrada (3) Domingo',0,'"00:00:P"'
+ C007=TUR_DOME4           ,'C',007,0,'','Entrada (4) Domingo',0,'"00:00:P"'
+ C008=TUR_DOMH1           ,'N',007,2,'','Horas (1) Domingo',0,''
+ C009=TUR_DOMH2           ,'N',007,2,'','Horas (2) Domingo',0,''
+ C010=TUR_DOMH3           ,'N',007,2,'','Horas (3) Domingo',0,''
+ C011=TUR_DOMH4           ,'N',007,2,'','Horas (4) Domingo',0,''
+ C012=TUR_DOMHOR          ,'N',010,2,'','Total Horas Domingo',0,'0'
+ C013=TUR_DOMS1           ,'C',007,0,'','Salida (1) Domingo',0,'"00:00:A"'
+ C014=TUR_DOMS2           ,'C',007,0,'','Salida (2) Domingo',0,'"00:00:A"'
+ C015=TUR_DOMS3           ,'C',007,0,'','Salida (3) Domingo',0,'"00:00:P"'
+ C016=TUR_DOMS4           ,'C',007,0,'','Salida (4) Domingo',0,'"00:00:P"'
+ C017=TUR_HORAS           ,'N',010,0,'','Total Horas Semanal',0,''
+ C018=TUR_JUEACT          ,'L',001,0,'','Jueves',0,'.T.'
+ C019=TUR_JUEE1           ,'C',007,0,'','Entrada (1) Jueves',0,'"00:00:A"'
+ C020=TUR_JUEE2           ,'C',007,0,'','Entrada (2) Jueves',0,'"00:00:A"'
+ C021=TUR_JUEE3           ,'C',007,0,'','Entrada (3) Jueves',0,'"00:00:P"'
+ C022=TUR_JUEE4           ,'C',007,0,'','Entrada (4) Jueves',0,'"00:00:P"'
+ C023=TUR_JUEH1           ,'N',007,2,'','Horas (1) Jueves',0,''
+ C024=TUR_JUEH2           ,'N',007,2,'','Horas (2) Jueves',0,''
+ C025=TUR_JUEH3           ,'N',007,2,'','Horas (3) Jueves',0,''
+ C026=TUR_JUEH4           ,'N',007,2,'','Horas (4) Jueves',0,''
+ C027=TUR_JUEHOR          ,'N',010,2,'','Total Horas Jueves',0,'0'
+ C028=TUR_JUES1           ,'C',007,0,'','Salida (1) Jueves',0,'"00:00:A"'
+ C029=TUR_JUES2           ,'C',007,0,'','Salida (2) Jueves',0,'"00:00:A"'
+ C030=TUR_JUES3           ,'C',007,0,'','Salida (3) Jueves',0,'"00:00:P"'
+ C031=TUR_JUES4           ,'C',007,0,'','Salida (4) Jueves',0,'"00:00:P"'
+ C032=TUR_LUNACT          ,'L',001,0,'','Lunes',0,'.T.'
+ C033=TUR_LUNE1           ,'C',007,0,'','Entrada (1) Lunes',0,'"00:00:A"'
+ C034=TUR_LUNE2           ,'C',007,0,'','Entrada (2) Lunes',0,'"00:00:A"'
+ C035=TUR_LUNE3           ,'C',007,0,'','Entrada (3) Lunes',0,'"00:00:P"'
+ C036=TUR_LUNE4           ,'C',007,0,'','Entrada (4) Lunes',0,'"00:00:P"'
+ C037=TUR_LUNH1           ,'N',007,2,'','Horas (1) Lunes',0,''
+ C038=TUR_LUNH2           ,'N',007,2,'','Horas (2) Lunes',0,''
+ C039=TUR_LUNH3           ,'N',007,2,'','Horas (3) Lunes',0,''
+ C040=TUR_LUNH4           ,'N',007,2,'','Horas (4) Lunes',0,''
+ C041=TUR_LUNHOR          ,'N',010,2,'','Total Horas Lunes',0,''
+ C042=TUR_LUNS1           ,'C',007,0,'','Salida (1) Lunes',0,'"00:00:A"'
+ C043=TUR_LUNS2           ,'C',007,0,'','Salida (2) Lunes',0,'"00:00:A"'
+ C044=TUR_LUNS3           ,'C',007,0,'','Salida (3) Lunes',0,'"00:00:P"'
+ C045=TUR_LUNS4           ,'C',007,0,'','Salida (4) Lunes',0,'"00:00:P"'
+ C046=TUR_MARACT          ,'L',001,0,'','Martes',0,'.T.'
+ C047=TUR_MARE1           ,'C',007,0,'','Entrada (1) Martes',0,'"00:00:A"'
+ C048=TUR_MARE2           ,'C',007,0,'','Entrada (2) Martes',0,'"00:00:A"'
+ C049=TUR_MARE3           ,'C',007,0,'','Entrada (3) Martes',0,'"00:00:P"'
+ C050=TUR_MARE4           ,'C',007,0,'','Entrada (4) Martes',0,'"00:00:P"'
+ C051=TUR_MARH1           ,'N',007,2,'','Horas (1) Martes',0,''
+ C052=TUR_MARH2           ,'N',007,2,'','Horas (2) Martes',0,''
+ C053=TUR_MARH3           ,'N',007,2,'','Horas (3) Martes',0,''
+ C054=TUR_MARH4           ,'N',007,2,'','Horas (4) Martes',0,''
+ C055=TUR_MARHOR          ,'N',010,2,'','Total Horas Martes',0,'0'
+ C056=TUR_MARS1           ,'C',007,0,'','Salida (1) Martes',0,'"00:00:A"'
+ C057=TUR_MARS2           ,'C',007,0,'','Salida (2) Martes',0,'"00:00:A"'
+ C058=TUR_MARS3           ,'C',007,0,'','Salida (3) Martes',0,'"00:00:P"'
+ C059=TUR_MARS4           ,'C',007,0,'','Salida (4) Martes',0,'"00:00:P"'
+ C060=TUR_MIEACT          ,'L',001,0,'','Miercoles',0,'.T.'
+ C061=TUR_MIEE1           ,'C',007,0,'','Entrada (1) Miercoles',0,'"00:00:A"'
+ C062=TUR_MIEE2           ,'C',007,0,'','Entrada (2) Miercoles',0,'"00:00:A"'
+ C063=TUR_MIEE3           ,'C',007,0,'','Entrada (3) Miercoles',0,'"00:00:P"'
+ C064=TUR_MIEE4           ,'C',007,0,'','Entrada (4) Miercoles',0,'"00:00:P"'
+ C065=TUR_MIEH1           ,'N',007,2,'','Horas (1) Miercoles',0,''
+ C066=TUR_MIEH2           ,'N',007,2,'','Horas (2) Miercoles',0,''
+ C067=TUR_MIEH3           ,'N',007,2,'','Horas (3) Miercoles',0,''
+ C068=TUR_MIEH4           ,'N',007,2,'','Horas (4) Miercoles',0,''
+ C069=TUR_MIEHOR          ,'N',010,2,'','Total Horas Miercoles',0,'0'
+ C070=TUR_MIES1           ,'C',007,0,'','Salida (1) Miercoles',0,'"00:00:A"'
+ C071=TUR_MIES2           ,'C',007,0,'','Salida (2) Miercoles',0,'"00:00:A"'
+ C072=TUR_MIES3           ,'C',007,0,'','Salida (3) Miercoles',0,'"00:00:P"'
+ C073=TUR_MIES4           ,'C',007,0,'','Salida (4) Miercoles',0,'"00:00:P"'
+ C074=TUR_SABACT          ,'L',001,0,'','S bado',0,'.T.'
+ C075=TUR_SABE1           ,'C',007,0,'','Entrada (1) S bado',0,'"00:00:A"'
+ C076=TUR_SABE2           ,'C',007,0,'','Entrada (2) S bado',0,'"00:00:A"'
+ C077=TUR_SABE3           ,'C',007,0,'','Entrada (3) S bado',0,'"00:00:P"'
+ C078=TUR_SABE4           ,'C',007,0,'','Entrada (4) S bado',0,'"00:00:P"'
+ C079=TUR_SABH1           ,'N',007,2,'','Horas (1) S bado',0,''
+ C080=TUR_SABH2           ,'N',007,2,'','Horas (2) S bado',0,''
+ C081=TUR_SABH3           ,'N',007,2,'','Horas (3) S bado',0,''
+ C082=TUR_SABH4           ,'N',007,2,'','Horas (4) S bado',0,''
+ C083=TUR_SABHOR          ,'N',010,2,'','Total Horas S bado',0,'0'
+ C084=TUR_SABS1           ,'C',007,0,'','Salida (1) S bado',0,'"00:00:A"'
+ C085=TUR_SABS2           ,'C',007,0,'','Salida (2) S bado',0,'"00:00:A"'
+ C086=TUR_SABS3           ,'C',007,0,'','Salida (3) S bado',0,'"00:00:P"'
+ C087=TUR_SABS4           ,'C',007,0,'','Salida (4) S bado',0,'"00:00:P"'
+ C088=TUR_VIEACT          ,'L',001,0,'','Viernes',0,'.T.'
+ C089=TUR_VIEE1           ,'C',007,0,'','Entrada (1) Viernes',0,'"00:00:A"'
+ C090=TUR_VIEE2           ,'C',007,0,'','Entrada (2) Viernes',0,'"00:00:A"'
+ C091=TUR_VIEE3           ,'C',007,0,'','Entrada (3) Viernes',0,'"00:00:P"'
+ C092=TUR_VIEE4           ,'C',007,0,'','Entrada (4) Viernes',0,'"00:00:P"'
+ C093=TUR_VIEH1           ,'N',007,2,'','Horas (1) Viernes',0,''
+ C094=TUR_VIEH2           ,'N',007,2,'','Horas (2) Viernes',0,''
+ C095=TUR_VIEH3           ,'N',007,2,'','Horas (3) Viernes',0,''
+ C096=TUR_VIEH4           ,'N',007,2,'','Horas (4) Viernes',0,''
+ C097=TUR_VIEHOR          ,'N',010,2,'','Total Horas Viernes',0,'0'
+ C098=TUR_VIES1           ,'C',007,0,'','Salida (1) Viernes',0,'"00:00:A"'
+ C099=TUR_VIES2           ,'C',007,0,'','Salida (2) Viernes',0,'"00:00:A"'
+ C100=TUR_VIES3           ,'C',007,0,'','Salida (3) Viernes',0,'"00:00:P"'
+ C101=TUR_VIES4           ,'C',007,0,'','Salida (4) Viernes',0,'"00:00:P"'
+[END_FIELDS]
+
+[INNER_JOIN]
+ SELECT TUR_DESCRI FROM NMTURNOS INNER JOIN NMTRABAJADOR ON TUR_CODIGO=COD_TURNO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

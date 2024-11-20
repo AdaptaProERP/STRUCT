@@ -1,0 +1,103 @@
+[ID]
+ NUMERO=1535
+ NOMBRE=NMJORNADAS
+ DESCRIPCION=Jornada                                                     
+ CONFIG=F
+ SINGUL=Jornada                       
+ APLICA=01
+ PRIMARY_KEY='JOR_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=JOR_CODIGO          ,'C',004,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=JOR_DESCRI          ,'C',030,0,'','Descripci¢n',0,''
+ C003=JOR_DOAM            ,'L',001,0,'','Domingo Am',0,''
+ C004=JOR_DOEAM           ,'C',005,0,'','Domingo Entrada AM',0,''
+ C005=JOR_DOEPM           ,'C',005,0,'','Domingo Entrada PM',0,''
+ C006=JOR_DOHAM           ,'N',005,0,'','Horas AM Domingo',0,''
+ C007=JOR_DOHOR           ,'N',005,0,'','Horas Domingo',0,''
+ C008=JOR_DOHPM           ,'N',005,0,'','Horas PM Domingo',0,''
+ C009=JOR_DOPM            ,'L',001,0,'','Domingo PM',0,''
+ C010=JOR_DOSAM           ,'C',005,0,'','Domingo Salida AM',0,''
+ C011=JOR_DOSPM           ,'C',005,0,'','Domingo Salida PM',0,''
+ C012=JOR_JUAM            ,'L',001,0,'','Jueves AM',0,''
+ C013=JOR_JUEAM           ,'C',005,0,'','Jueves Entrada Am',0,''
+ C014=JOR_JUEPM           ,'C',005,0,'','Jueves Entrada PM',0,''
+ C015=JOR_JUHAM           ,'N',005,0,'','Horas AM Jueves',0,''
+ C016=JOR_JUHOR           ,'N',005,0,'','Horas Jueves',0,''
+ C017=JOR_JUHPM           ,'N',005,0,'','Horas PM Jueves',0,''
+ C018=JOR_JUPM            ,'L',001,0,'','Jueves PM',0,''
+ C019=JOR_JUSAM           ,'C',005,0,'','Jueves Salida AM',0,''
+ C020=JOR_JUSPM           ,'C',005,0,'','Jueves Salida PM',0,''
+ C021=JOR_LUAM            ,'L',001,0,'','Lunes Am',0,''
+ C022=JOR_LUEAM           ,'C',005,0,'','Lunes Entrada AM',0,''
+ C023=JOR_LUEPM           ,'C',005,0,'','Lunes Entrada PM',0,''
+ C024=JOR_LUHAM           ,'N',005,0,'','Horas AM L£nes',0,''
+ C025=JOR_LUHOR           ,'N',005,0,'','Horas L£nes',0,''
+ C026=JOR_LUHPM           ,'N',005,0,'','Horas PM L£nes',0,''
+ C027=JOR_LUPM            ,'L',001,0,'','Lunes PM',0,''
+ C028=JOR_LUSAM           ,'C',005,0,'','Lunes Salida AM',0,''
+ C029=JOR_LUSPM           ,'C',005,0,'','Lunes Salida PM',0,''
+ C030=JOR_MAAM            ,'L',001,0,'','Martes AM',0,''
+ C031=JOR_MAEAM           ,'C',005,0,'','Martes Entrada AM',0,''
+ C032=JOR_MAEPM           ,'C',005,0,'','Martes Entrada PM',0,''
+ C033=JOR_MAHAM           ,'N',005,0,'','Horas AM Martes',0,''
+ C034=JOR_MAHOR           ,'N',005,0,'','Horas Martes',0,''
+ C035=JOR_MAHPM           ,'N',005,0,'','Horas PM Martes',0,''
+ C036=JOR_MAPM            ,'L',001,0,'','Martes PM',0,''
+ C037=JOR_MASAM           ,'C',005,0,'','Martes Salida AM',0,''
+ C038=JOR_MASPM           ,'C',005,0,'','Martes Salida PM',0,''
+ C039=JOR_MIAM            ,'L',001,0,'','Miercoles AM',0,''
+ C040=JOR_MIEAM           ,'C',005,0,'','Miercoles Entrada AM',0,''
+ C041=JOR_MIEPM           ,'C',005,0,'','Miercoles Entrada PM',0,''
+ C042=JOR_MIHAM           ,'N',005,0,'','Horas AM Miercoles',0,''
+ C043=JOR_MIHOR           ,'N',005,0,'','Horas Miercoles',0,''
+ C044=JOR_MIHPM           ,'N',005,0,'','Horas PM Miercoles',0,''
+ C045=JOR_MIPM            ,'L',001,0,'','Miercoles PM',0,''
+ C046=JOR_MISAM           ,'C',005,0,'','Miercoles Salida AM',0,''
+ C047=JOR_MISPM           ,'C',005,0,'','Miercoles Salida PM',0,''
+ C048=JOR_SAAM            ,'L',001,0,'','Sabado AM',0,''
+ C049=JOR_SAEAM           ,'C',005,0,'','S bado Entrada AM',0,''
+ C050=JOR_SAEPM           ,'C',005,0,'','Sabado Entrada PM',0,''
+ C051=JOR_SAHAM           ,'N',005,0,'','Horas AM S bado',0,''
+ C052=JOR_SAHOR           ,'N',005,0,'','Horas S bado',0,''
+ C053=JOR_SAHPM           ,'N',005,0,'','Horas PM S bado',0,''
+ C054=JOR_SAPM            ,'L',001,0,'','Sabado PM',0,''
+ C055=JOR_SASAM           ,'C',005,0,'','Sabado Salida AM',0,''
+ C056=JOR_SASPM           ,'C',005,0,'','Sabado Salida PM',0,''
+ C057=JOR_VIAM            ,'L',001,0,'','Viernes AM',0,''
+ C058=JOR_VIEAM           ,'C',005,0,'','Viernes Entrada AM',0,''
+ C059=JOR_VIEPM           ,'C',005,0,'','Viernes Entrada Pm',0,''
+ C060=JOR_VIHAM           ,'N',005,0,'','Horas AM Viernes',0,''
+ C061=JOR_VIHOR           ,'N',005,0,'','Horas Viernes',0,''
+ C062=JOR_VIHPM           ,'N',005,0,'','Horas PM Viernes',0,''
+ C063=JOR_VIPM            ,'L',001,0,'','Viernes PM',0,''
+ C064=JOR_VISAM           ,'C',005,0,'','Viernes Salida AM',0,''
+ C065=JOR_VISPM           ,'C',005,0,'','Viernes Salida PM',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=NMTRABAJADOR            , JOR_CODIGO=TURNO, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT JOR_DESCRI FROM NMJORNADAS INNER JOIN NMTABSXJ ON JOR_CODIGO=SXJ_CODIGO
+ SELECT JOR_DESCRI FROM NMJORNADAS INNER JOIN NMTRABAJADOR ON JOR_CODIGO=TURNO
+ SELECT * FROM NMJORNADAS INNER JOIN NMTRABAJADOR ON TURNO=JOR_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

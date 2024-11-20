@@ -1,0 +1,34 @@
+[ID]
+ NUMERO=1540
+ NOMBRE=NMFERIADOS
+ DESCRIPCION=Dias Feriados                                               
+ CONFIG=F
+ SINGUL=Feriado                       
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CAN_DESCRI          ,'C',030,0,'','Descripci¢n',0,''
+ C002=CAN_DIA             ,'C',002,0,'','Dia',1,''
+ C003=CAN_MES             ,'C',002,0,'','Mes',1,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

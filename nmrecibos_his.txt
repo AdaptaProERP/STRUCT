@@ -1,0 +1,51 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=NMRECIBOS_HIS
+ DESCRIPCION=Hist¢rico                                                   
+ CONFIG=F
+ SINGUL=Recibos                       
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=REC_CODBCO          ,'C',012,0,'','Cuenta Bancaria',0,''
+ C002=REC_CODDEP          ,'C',006,0,'','Departamento',0,''
+ C003=REC_CODGRU          ,'C',008,0,'','Grupo',0,''
+ C004=REC_CODMON          ,'C',003,0,'','Moneda',0,''
+ C005=REC_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C006=REC_CODTRA          ,'C',010,0,'','Trabajador',0,''
+ C007=REC_CODUND          ,'C',008,0,'','Unidad Funcional',0,''
+ C008=REC_CONPAT          ,'C',001,0,'','',0,''
+ C009=REC_CONTAB          ,'C',001,0,'','Contabilizado',0,''
+ C010=REC_CTABCO          ,'C',020,0,'','Cuenta Bancaria',0,''
+ C011=REC_FCHCHQ          ,'D',008,0,'','Fecha del Cheque',0,''
+ C012=REC_FECHAS          ,'D',008,0,'','Fecha de Sistema',0,''
+ C013=REC_FORMAP          ,'C',001,0,'','Forma de Pago',0,''
+ C014=REC_INTEGR          ,'C',001,0,'','Integrado',0,''
+ C015=REC_NUMCHQ          ,'C',010,0,'','N£mero de Cheque',0,''
+ C016=REC_NUMERO          ,'C',007,0,'','N£mero',0,''
+ C017=REC_NUMFCH          ,'C',005,0,'','N£mero de Fecha',0,''
+ C018=REC_TIPDOC          ,'C',004,0,'','Tipo Documento (Caja o Bancos)',0,''
+ C019=REC_USUARI          ,'C',003,0,'','Usuario',0,''
+ C020=REC_VALCAM          ,'N',018,0,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

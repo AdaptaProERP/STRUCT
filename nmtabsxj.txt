@@ -1,0 +1,42 @@
+[ID]
+ NUMERO=3001
+ NOMBRE=NMTABSXJ
+ DESCRIPCION=Tabla de salarios x Jornada                                 
+ CONFIG=F
+ SINGUL=Salario x Jornada             
+ APLICA=03
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SXJ_CODIGO          ,'C',004,0,'','C¢digo de Jornada',0,''
+ C002=SXJ_HORDIA          ,'N',005,2,'','Horas Diaria de la jornada',0,''
+ C003=SXJ_HORSEM          ,'N',005,0,'','Horas Semanales de la jornada',0,''
+ C004=SXJ_SALDIA          ,'N',010,2,'','Salario Diario de la jornada',0,''
+ C005=SXJ_SALMEN          ,'N',010,2,'','Salario Mensual de la jornada',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=NMJORNADAS              , SXJ_CODIGO=JOR_CODIGO, <CAMPO:JOR_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT JOR_DESCRI FROM NMTABSXJ INNER JOIN NMJORNADAS ON JOR_CODIGO=SXJ_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

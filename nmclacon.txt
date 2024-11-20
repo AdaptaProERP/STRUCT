@@ -1,0 +1,35 @@
+[ID]
+ NUMERO=1565
+ NOMBRE=NMCLACON
+ DESCRIPCION=Clasificaci¢n de Conceptos de N¢mina                        
+ CONFIG=F
+ SINGUL=Clasificaci¢n                 
+ APLICA=01
+ PRIMARY_KEY='CLA_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CLA_CODIGO          ,'C',025,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=CLA_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C003=CLA_DESCRI          ,'C',045,0,'','Descripci¢n',0,''
+ C004=CLA_ITEM            ,'C',004,0,'','Item',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

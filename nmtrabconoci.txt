@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=1611
+ NOMBRE=NMTRABCONOCI
+ DESCRIPCION=Conocimientos del Trabajador                                
+ CONFIG=F
+ SINGUL=Conocimiento                  
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CXT_CLACON          ,'C',040,0,'','Clasificaci¢n',0,''
+ C002=CXT_CODTRA          ,'C',010,0,'','Trabajador',0,''
+ C003=CXT_CONOCI          ,'C',040,0,'','Conocimiento',0,''
+ C004=CXT_FILMAI          ,'N',008,0,'','Digitalizaci¢n',0,''
+ C005=CXT_GRUCON          ,'C',030,0,'','Grupo',0,''
+ C006=CXT_NUMMEM          ,'N',008,0,'','Memo',0,''
+ C007=CXT_RIF             ,'C',012,0,'','RIF',0,''
+ C008=CXT_VALOR           ,'C',012,0,'','Valor',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMCONOCI                , CXT_GRUCON,CXT_CLACON,CXT_CONOCI=CNC_GRUCON,CNC_CLACON,CNC_DESCRI <UPDATE> <DELETE> <RUN>
+ T002=DPRIF                   , CXT_RIF=RIF_ID <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM NMTRABCONOCI INNER JOIN NMCONOCI ON CXT_GRUCON=CNC_GRUCON AND CXT_CLACON=CNC_CLACON AND CXT_CONOCI=CNC_DESCRI
+ SELECT * FROM NMTRABCONOCI INNER JOIN DPRIF ON CXT_RIF=RIF_ID
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CXT_VALOR           ,Bien                                                                            
+ C002=CXT_VALOR           ,Excelente                                                                       
+ C003=CXT_VALOR           ,Nada                                                                            
+ C004=CXT_VALOR           ,Poco                                                                            
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

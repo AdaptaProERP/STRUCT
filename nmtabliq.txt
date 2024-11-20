@@ -1,0 +1,56 @@
+[ID]
+ NUMERO=1596
+ NOMBRE=NMTABLIQ
+ DESCRIPCION=Tabla de Liquidaciones                                      
+ CONFIG=F
+ SINGUL=Liquidaci¢n                   
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=LIQ_BORRAR          ,'L',001,0,'','Borrar luego de Actualizar',0,''
+ C002=LIQ_CAUSA           ,'C',001,0,'','Motivo',0,''
+ C003=LIQ_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C004=LIQ_CODTRA          ,'C',010,0,'','C¢digo del Trabajador',0,''
+ C005=LIQ_COMEN1          ,'C',080,0,'','Comentario 1',0,''
+ C006=LIQ_COMEN2          ,'C',080,0,'','Comentario 2',0,''
+ C007=LIQ_DIAPRE          ,'N',003,0,'','D¡as Trabajado de Preaviso',0,''
+ C008=LIQ_FCHEGR          ,'D',008,0,'','Fecha de Egreso',0,''
+ C009=LIQ_FECHA           ,'D',008,0,'','Fecha',0,''
+ C010=LIQ_NUMERO          ,'C',008,0,'','N£mero de Registro',0,''
+ C011=LIQ_NUMREC          ,'C',007,0,'','N£mero de Recibo',0,''
+ C012=LIQ_PROCES          ,'L',001,0,'','Procesado',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , LIQ_CODTRA=CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM NMTABLIQ INNER JOIN NMTRABAJADOR ON LIQ_CODTRA=CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=LIQ_CAUSA           ,Culminaci¢n de Contrato                                                         
+ C002=LIQ_CAUSA           ,Despido Justificado                                                             
+ C003=LIQ_CAUSA           ,Fallecimiento                                                                   
+ C004=LIQ_CAUSA           ,Injustificado <Despido>                                                         
+ C005=LIQ_CAUSA           ,Jubilado                                                                        
+ C006=LIQ_CAUSA           ,Pensionado                                                                      
+ C007=LIQ_CAUSA           ,Renuncia                                                                        
+ C008=LIQ_CAUSA           ,Traslado a Otra Empresa                                                         
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

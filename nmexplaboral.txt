@@ -1,0 +1,45 @@
+[ID]
+ NUMERO=1505
+ NOMBRE=NMEXPLABORAL
+ DESCRIPCION=Experiencia Laboral                                         
+ CONFIG=F
+ SINGUL=Experiencia Laboral           
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=ELB_CARGO           ,'C',025,0,'','Cargo',0,''
+ C002=ELB_CODTRA          ,'C',010,0,'','Trabajador',0,''
+ C003=ELB_DESDE           ,'D',008,0,'','Desde',0,''
+ C004=ELB_EMPRES          ,'C',040,0,'','Empresa',0,''
+ C005=ELB_HASTA           ,'D',008,0,'','Hasta',0,''
+ C006=ELB_JEFE            ,'C',030,0,'','Jefe',0,''
+ C007=ELB_MOTIVO          ,'C',015,0,'','Motivo',0,''
+ C008=ELB_SUELDO          ,'N',014,2,'','Sueldo Mensual',0,''
+ C009=ELB_TELEFO          ,'C',020,0,'','Tel‚fono',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMTRABAJADOR            , ELB_CODTRA=CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM NMEXPLABORAL INNER JOIN NMTRABAJADOR ON ELB_CODTRA=CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

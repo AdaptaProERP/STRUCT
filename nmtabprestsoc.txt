@@ -1,0 +1,40 @@
+[ID]
+ NUMERO=1614
+ NOMBRE=NMTABPRESTSOC
+ DESCRIPCION=Tabulador de Prestaciones Sociales                          
+ CONFIG=F
+ SINGUL=Tabulador                     
+ APLICA=20
+ PRIMARY_KEY='TAB_ANO,TAB_CANTMP'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TAB_ANO             ,'C',004,0,'','A§o',0,''
+ C002=TAB_ANTIG           ,'N',005,2,'','D°as de AntigÅedad',0,''
+ C003=TAB_BOTAS           ,'N',005,2,'','Cantidad de Botas',0,''
+ C004=TAB_BRAGAS          ,'N',005,2,'','Cantidad de Bragas',0,''
+ C005=TAB_CANTMP          ,'N',005,2,'','Cantidad de Tiempo',0,''
+ C006=TAB_MEDTMP          ,'C',010,0,'','Medici¢n del Tiempo',0,''
+ C007=TAB_PREAVI          ,'N',005,2,'','Dias de PreAviso',0,''
+ C008=TAB_UTILID          ,'N',005,2,'','D°as de Utilidades',0,''
+ C009=TAB_VACACI          ,'N',005,2,'','D°as de Vacaciones',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

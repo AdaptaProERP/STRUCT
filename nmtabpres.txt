@@ -1,0 +1,56 @@
+[ID]
+ NUMERO=1597
+ NOMBRE=NMTABPRES
+ DESCRIPCION=Tabla de Pr‚stamos                                          
+ CONFIG=F
+ SINGUL=Pr‚stamos                     
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRE_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C002=PRE_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C003=PRE_CODTRA          ,'C',010,0,'','Trabajador',0,''
+ C004=PRE_CUOTA           ,'N',016,2,'','Cuota',0,''
+ C005=PRE_FCHINI          ,'D',008,0,'','Fecha de Inicio',0,''
+ C006=PRE_ID              ,'C',040,0,'','Indentificaci¢n',0,''
+ C007=PRE_INTERE          ,'N',016,2,'','Intereses Aplicados',0,''
+ C008=PRE_MODO            ,'N',002,0,'','Modo de Aplicaci¢n',0,''
+ C009=PRE_MONTO           ,'N',016,2,'','Monto',0,''
+ C010=PRE_NUMERO          ,'C',004,0,'','N£mero',1,''
+ C011=PRE_NUMREC          ,'C',007,0,'','N£mero de Recibo',0,''
+ C012=PRE_PROXIM          ,'L',001,0,'','Aplica en Proximo Proceso',0,''
+ C013=PRE_TASA            ,'N',006,2,'','Tasa de Inter‚s',0,''
+ C014=PRE_TIPO            ,'C',001,0,'','Pr‚stamo o Abono',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMRECIBOS               , PRE_CODSUC,PRE_NUMREC=REC_CODSUC,REC_NUMERO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=NMRECIBOS               , PRE_CODSUC,PRE_NUMREC=REC_CODSUC,REC_NUMERO, <CAMPO:>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMTABPRES INNER JOIN NMRECIBOS ON REC_CODSUC=PRE_CODSUC AND REC_NUMERO=PRE_NUMREC
+ SELECT * FROM NMTABPRES INNER JOIN NMRECIBOS ON PRE_CODSUC=REC_CODSUC AND PRE_NUMREC=REC_NUMERO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

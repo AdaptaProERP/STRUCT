@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1573
+ NOMBRE=NMHTTPINTERES
+ DESCRIPCION=Inteses para ser Visualizados desde HTTP                    
+ CONFIG=F
+ SINGUL=Intereses HTTP                
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=INT_ABONO           ,'N',014,2,'','Abono',0,''
+ C002=INT_CAPITA          ,'N',014,2,'','Capital',0,''
+ C003=INT_CODCON          ,'C',004,0,'','Concepto',0,''
+ C004=INT_CODTRA          ,'C',010,0,'','C¢digo Trabajador',0,''
+ C005=INT_DIAS            ,'N',003,0,'','D¡as',0,''
+ C006=INT_FECHA           ,'D',008,0,'','Fecha de C lculo',0,''
+ C007=INT_INTERE          ,'N',014,2,'','Intereses Ganado',0,''
+ C008=INT_TASA            ,'N',006,2,'','% Intereses',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

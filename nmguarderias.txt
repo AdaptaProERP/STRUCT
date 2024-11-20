@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=1605
+ NOMBRE=NMGUARDERIAS
+ DESCRIPCION=Guarder¡as                                                  
+ CONFIG=F
+ SINGUL=Guarder¡a                     
+ APLICA=02
+ PRIMARY_KEY='GRD_CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=GRD_CODIGO          ,'C',006,0,'PRIMARY KEY NOT NULL','C¢digo',1,''
+ C002=GRD_AREA            ,'C',004,0,'','C¢d. Area',0,''
+ C003=GRD_CELULA          ,'C',012,0,'','Celular',0,''
+ C004=GRD_DIR1            ,'C',040,0,'','Direcci¢n 1',0,''
+ C005=GRD_DIR2            ,'C',040,0,'','Direcci¢n 2',0,''
+ C006=GRD_EMAIL           ,'C',040,0,'','e-mail',0,''
+ C007=GRD_NOMBRE          ,'C',050,0,'','Nombre',0,''
+ C008=GRD_REPRES          ,'C',030,0,'','Representante',0,''
+ C009=GRD_RIF             ,'C',012,0,'','Rif',0,''
+ C010=GRD_TEL1            ,'C',012,0,'','Tel‚fono 1',0,''
+ C011=GRD_TEL2            ,'C',012,0,'','Tel‚fono 2',0,''
+ C012=GRD_TEL3            ,'C',012,0,'','Tel‚fono 3',0,''
+ C013=GRD_WEB             ,'C',040,0,'','P gina Web',0,''
+[END_FIELDS]
+
+[TABLE_REL]
+ T001=NMTRABGUARD             , GRD_CODIGO=GXT_CODGUA, <UPDATE>  <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT GRD_NOMBRE FROM NMGUARDERIAS INNER JOIN NMTRABGUARD ON GRD_CODIGO=GXT_CODGUA
+ SELECT * FROM NMGUARDERIAS INNER JOIN NMTRABGUARD ON GXT_CODGUA=GRD_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,40 @@
+[ID]
+ NUMERO=1613
+ NOMBRE=NMAUDITAELIMOD
+ DESCRIPCION=Auditor¡a de Modificaci¢n Eliminaci¢n                       
+ CONFIG=Y
+ SINGUL=Auditorio                     
+ APLICA=20
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=AEM_CLAVE           ,'C',040,0,'','Clave',0,''
+ C002=AEM_ESTACI          ,'C',020,0,'','',0,''
+ C003=AEM_FECHA           ,'D',008,0,'','',0,''
+ C004=AEM_HORA            ,'C',008,0,'','',0,''
+ C005=AEM_IP              ,'C',015,0,'','',0,''
+ C006=AEM_MEMO            ,'M',010,0,'','',0,''
+ C007=AEM_OPCION          ,'C',001,0,'','',0,''
+ C008=AEM_TABLA           ,'C',040,0,'','',0,''
+ C009=AEM_USUARI          ,'C',003,0,'','',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

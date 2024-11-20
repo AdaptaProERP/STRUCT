@@ -1,0 +1,263 @@
+[ID]
+ NUMERO=1500
+ NOMBRE=NMTRABAJADOR
+ DESCRIPCION=Trabajadores                                                
+ CONFIG=F
+ SINGUL=Trabajador                    
+ APLICA=01
+ PRIMARY_KEY='CODIGO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CODIGO              ,'C',012,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=ACUMPRES            ,'N',019,2,'','Acumulado de Prestaciones',0,''
+ C003=APELLIDO            ,'C',025,0,'','Apellido',0,''
+ C004=APELLIDO1           ,'C',060,0,'','2do Apellido',0,''
+ C005=APELLIDO2           ,'C',060,0,'','2do Apellido',0,''
+ C006=BANCO               ,'C',020,0,'','C¢digo del Banco',0,''
+ C007=BANCO_CTA           ,'C',025,0,'','Cuenta Bancaria',0,''
+ C008=CAJA_AHORR          ,'N',014,2,'','% Aporte de Caja de Ahorro',0,''
+ C009=CAJ_APORTE          ,'N',014,2,'','Aporte Patronal Caja de Ahorro',0,''
+ C010=CARGAS_FAM          ,'N',002,0,'','Carga Familiar',0,''
+ C011=CATEGORIA           ,'C',001,0,'','Categoria',0,''
+ C012=CAUSA_EGR           ,'C',035,0,'','Causa de Egreso',0,''
+ C013=CEDULA              ,'N',008,0,'','C‚dula',0,''
+ C014=CELULAR             ,'C',012,0,'','N£mero de Celular',0,''
+ C015=CLAVE               ,'C',010,0,'','Clave Acceso Web',0,''
+ C016=COD_CARGO           ,'C',008,0,'','C¢digo del Cargo',1,''
+ C017=COD_DPTO            ,'C',010,0,'','C¢digo del Departamento',0,''
+ C018=COD_PROF            ,'C',008,0,'','C¢digo de Profesi¢n',0,''
+ C019=COD_TURNO           ,'C',003,0,'','Turno por Horas',0,''
+ C020=COD_UND             ,'C',008,0,'','C¢digo de Unidad Funcional',0,''
+ C021=CONDICION           ,'C',001,0,'','Condicion del Trabajador',0,'"A"'
+ C022=COND_IVSS           ,'C',002,0,'','Cond. IVSS Activo',0,''
+ C023=CTABANAHOR          ,'C',022,0,'','Cuenta para Caja de Ahorro',0,''
+ C024=CUENTA_PRE          ,'C',012,0,'','Asignaci¢n por Veh¡culo',0,''
+ C025=DESCONTAR           ,'C',001,0,'','Descontar SSO',0,''
+ C026=DESC_LPH            ,'C',001,0,'','Descontar FAOV',0,''
+ C027=DESTINO_PR          ,'C',001,0,'','Destino de las Prestaciones',0,''
+ C028=DIR_HAB1            ,'C',035,0,'','Direcci¢n de Habitaci¢n 1',0,''
+ C029=DIR_HAB2            ,'C',035,0,'','Direcci¢n de Habitaci¢n 2',0,''
+ C030=DIR_HAB3            ,'C',035,0,'','Direcci¢n de Habitaci¢n 3',0,''
+ C031=EDO_CIVIL           ,'C',001,0,'','Estado Civil',0,''
+ C032=EMAIL               ,'C',045,0,'','Cuenta de Correo Electr¢nico',0,''
+ C033=ENTIDAD             ,'C',030,0,'','Entidad o Estado',0,''
+ C034=ESTATURA            ,'N',004,2,'','Estatura en Metros',0,''
+ C035=FCHULTDEP           ,'D',008,0,'','Fecha Ultimo Dep.Pres.Sociales',0,''
+ C036=FECHA_CON           ,'D',008,0,'','Fecha que Culmina el Contrato',0,''
+ C037=FECHA_EGR           ,'D',008,0,'','Fecha de Egreso',0,''
+ C038=FECHA_EJER          ,'D',008,0,'','Fecha de Inicio de Ejercicio Profesi¢n',0,''
+ C039=FECHA_FIN           ,'D',008,0,'','Fecha de Finalizaci¢n Vacaciones',0,''
+ C040=FECHA_ING           ,'D',008,0,'','Fecha de Ingreso',0,''
+ C041=FECHA_NAC           ,'D',008,0,'','Fecha de Nacimiento',0,''
+ C042=FECHA_REG           ,'D',008,0,'','Fecha de Registro',0,''
+ C043=FECHA_VAC           ,'D',008,0,'','Fecha de Inicio de Vacaciones',0,''
+ C044=FILEBMP             ,'C',040,0,'','Nombre del Archivo BMP de la Foto',0,''
+ C045=FORMA_PAG           ,'C',001,0,'','Forma de Pago',0,''
+ C046=GRADO_LIC           ,'N',002,0,'','Grado de Licencia',0,''
+ C047=GRUPO               ,'C',008,0,'','Grupo',0,''
+ C048=IDCAPTAHUE          ,'C',010,0,'','ID en Capta Huella',0,''
+ C049=ISR1                ,'N',005,2,'','% ISLR 1er Trimestre',0,''
+ C050=ISR2                ,'N',005,2,'','% ISLR 2do Trimestre',0,''
+ C051=ISR3                ,'N',005,2,'','% ISLR 3er  Trimestre',0,''
+ C052=ISR4                ,'N',005,2,'','% ISLR 4to Trimestre',0,''
+ C053=LIBRETA_MI          ,'C',008,0,'','Libreta Militar',0,''
+ C054=LICENCIA_C          ,'C',008,0,'','Licencia de Conducir',0,''
+ C055=LOGIN               ,'C',020,0,'','Usuario Emanager',0,''
+ C056=LUGAR_NAC           ,'C',040,0,'','Lugar de Nacimiento',0,''
+ C057=MANO                ,'C',001,0,'','Zurdo o Diestro',0,''
+ C058=NACIONALID          ,'C',035,0,'','Nacionalidad',0,''
+ C059=NIVEL_EDUC          ,'C',001,0,'','Nivel Educativo',0,''
+ C060=NIVEL_INS           ,'N',002,0,'','Nivel de Instrucci¢n',0,''
+ C061=NMACUNUTIL          ,'N',019,2,'','Acumulado para Utilidad',0,''
+ C062=NOMBRE              ,'C',025,0,'','Nombre',0,''
+ C063=NOMBRE1             ,'C',060,0,'','2do Nombre',0,''
+ C064=NOMBRE2             ,'C',060,0,'','2do Nombre',0,''
+ C065=NOM_MADRE           ,'C',040,0,'','Madre',0,''
+ C066=NOM_PADRE           ,'C',040,0,'','Padre',0,''
+ C067=NUMMEMO             ,'N',006,0,'','Registro NMMEMO',0,''
+ C068=NUM_ASCEND          ,'N',002,0,'','N£mero de Ascedentes Hijo',0,''
+ C069=NUM_DESCEN          ,'N',002,0,'','N£mero de Descendientes (Padre)',0,''
+ C070=NUM_SSO             ,'C',010,0,'','N£mero del Seguro Social',0,''
+ C071=OBS14100            ,'C',080,0,'','Observaci¢n en Planilla 14100',0,''
+ C072=PASAPORTE           ,'C',008,0,'','N£mero del Pasaporte',0,''
+ C073=PENSION_AL          ,'N',014,2,'','Pensi¢n de Alimentaci¢n',0,''
+ C074=PENSION_UT          ,'N',006,2,'','% de Utilidades por Pensi¢n Alimentos',0,''
+ C075=PESO                ,'N',003,0,'','Peso en Kilos',0,''
+ C076=PIN                 ,'C',008,0,'','Pin Celular',0,''
+ C077=PNMPROTRI           ,'N',019,2,'','Promedio Trimestral Vacaciones',0,''
+ C078=PORATIPICO          ,'N',006,2,'','% Salario At¡pico',0,''
+ C079=PORCENPRES          ,'N',005,0,'','% de Incidencia sobre las prestaciones',0,''
+ C080=PORC_COMI           ,'N',010,2,'','Porcentaje de Comisones',0,''
+ C081=POR_REPOSO          ,'N',006,2,'','%  Asume  Reposo M‚dico',0,''
+ C082=RESERVADO1          ,'N',014,2,'','Reservado para Cualquier Uso',0,''
+ C083=RESERVADO2          ,'N',014,2,'','Reservado para Cualquier Uso',0,''
+ C084=RET_HCM             ,'N',009,2,'','Retenci¢n HCM',0,''
+ C085=RIF                 ,'C',012,0,'','Rif',0,''
+ C086=SALARIO             ,'N',011,2,'','Salario',0,''
+ C087=SALARIOD            ,'N',010,0,'','Sueldo en Divisa',0,''
+ C088=SEXO                ,'C',001,0,'','Sexo',0,''
+ C089=SINDICATO           ,'N',009,2,'','Aporte Sindical',0,''
+ C090=TELEFONO1           ,'C',014,0,'','Tel‚fono [1]',0,''
+ C091=TELEFONO2           ,'C',010,0,'','Tel‚fono [2]',0,''
+ C092=TIPCTABCO           ,'C',001,0,'','Tipo de Cuenta Bancaria',0,''
+ C093=TIPO_CED            ,'C',001,0,'','Tipo de C‚dula',0,''
+ C094=TIPO_NOM            ,'C',001,0,'','Tipo de N¢mina',0,''
+ C095=TIPO_VAC            ,'C',001,0,'','Tipo de Vacaciones',0,''
+ C096=TRA_ACTIVO          ,'L',001,0,'','Registro Activo',0,''
+ C097=TRA_ARICAL          ,'C',001,0,'','Calcular ARI',0,'"S"'
+ C098=TRA_EMAFIL          ,'C',120,0,'','Afiliaci¢n eManager',0,''
+ C099=TRA_FILMAI          ,'N',008,0,'','Vinculo con DPFILEEMP',0,''
+ C100=TRA_NOMAPL          ,'C',120,0,'','Nombre y Apellidos',0,''
+ C101=TURNO               ,'C',004,0,'','Jornada',0,''
+ C102=VARPATRONO          ,'L',001,0,'','Trabaja para Varios Patrones',0,''
+ C103=VEHICULO            ,'N',011,2,'','Veh¡culo',0,''
+ C104=VEHICULOD           ,'C',250,0,'','Datos del Veh¡culo',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=NMDPTO                  , COD_DPTO=DEP_CODIGO <UPDATE>  <RUN>
+ T002=NMGRUPO                 , GRUPO=GTR_CODIGO <UPDATE>  <RUN>
+ T003=NMJORNADAS              , TURNO=JOR_CODIGO <UPDATE>  <RUN>
+ T004=NMUNDFUNC               , COD_UND=CEN_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=NMACADEMICO             , CODIGO=ACD_CODTRA, <UPDATE> <DELETE> <RUN>
+ T002=NMARI                   , CODIGO=ARI_CODTRA, <UPDATE> <DELETE> <RUN>
+ T003=NMAUSENCIA              , CODIGO=PER_CODTRA, <UPDATE>  <RUN>
+ T004=NMCONTRATOS             , CODIGO=CTR_CODTRA, <UPDATE> <DELETE> <RUN>
+ T005=NMCTAXTRAB              , CODIGO=CXT_CODTRA, <UPDATE> <DELETE> <RUN>
+ T006=NMEXPEDIENTE            , CODIGO=EXP_CODTRA, <UPDATE> <DELETE> <RUN>
+ T007=NMEXPLABORAL            , CODIGO=ELB_CODTRA, <UPDATE> <DELETE> <RUN>
+ T008=NMFAMILIA               , CODIGO=FAM_CODTRA, <UPDATE> <DELETE> <RUN>
+ T009=NMHCM                   , CODIGO=HCM_CODTRA, <UPDATE> <DELETE> <RUN>
+ T010=NMRECIBOS               , CODIGO=REC_CODTRA, <UPDATE>  <RUN>
+ T011=NMRESTRA                , CODIGO=RMT_CODTRA, <UPDATE> <DELETE> <RUN>
+ T012=NMTABLIQ                , CODIGO=LIQ_CODTRA, <UPDATE>  <RUN>
+ T013=NMTABVAC                , CODIGO=TAB_CODTRA, <UPDATE>  <RUN>
+ T014=NMTRABAJADORPROG        , CODIGO=PRT_CODTRA, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[LINK_VIRTUAL]
+ T001=NMCARGOS                , COD_CARGO=CAR_CODIGO, <CAMPO:CAR_DESCRI>, <WHERE:>
+ T002=NMESTADOS               , ENTIDAD=EDO_NOMBRE, <CAMPO:EDO_NOMBRE>, <WHERE:>
+ T003=NMGRUPO                 , GRUPO=GTR_CODIGO, <CAMPO:GTR_DESCRI>, <WHERE:>
+ T004=NMJORNADAS              , TURNO=JOR_CODIGO, <CAMPO:JOR_DESCRI>, <WHERE:>
+ T005=NMPAISES                , NACIONALID=PAIS_NOMBR, <CAMPO:PAIS_NOMBR>, <WHERE:>
+ T006=NMPROFESION             , COD_PROF=PRF_CODIGO, <CAMPO:PRF_NOMBRE>, <WHERE:>
+ T007=NMUNDFUNC               , COD_UND=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+ T008=NMTURNOS                , COD_TURNO=TUR_CODIGO, <CAMPO:TUR_DESCRI>, <WHERE:>
+ T009=DPBANCODIR              , BANCO=BAN_CODIGO, <CAMPO:BAN_NOMBRE>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMACADEMICO ON ACD_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMARI ON ARI_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMAUSENCIA ON PER_CODTRA=CODIGO
+ SELECT CAR_DESCRI FROM NMTRABAJADOR INNER JOIN NMCARGOS ON CAR_CODIGO=COD_CARGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMCONTRATOS ON CTR_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMCTAXTRAB ON CXT_CODTRA=CODIGO
+ SELECT EDO_NOMBRE FROM NMTRABAJADOR INNER JOIN NMESTADOS ON EDO_NOMBRE=ENTIDAD
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMEXPEDIENTE ON EXP_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMEXPLABORAL ON ELB_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMFAMILIA ON FAM_CODTRA=CODIGO
+ SELECT GTR_DESCRI FROM NMTRABAJADOR INNER JOIN NMGRUPO ON GTR_CODIGO=GRUPO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMHCM ON HCM_CODTRA=CODIGO
+ SELECT JOR_DESCRI FROM NMTRABAJADOR INNER JOIN NMJORNADAS ON JOR_CODIGO=TURNO
+ SELECT PAIS_NOMBR FROM NMTRABAJADOR INNER JOIN NMPAISES ON PAIS_NOMBR=NACIONALID
+ SELECT PRF_NOMBRE FROM NMTRABAJADOR INNER JOIN NMPROFESION ON PRF_CODIGO=COD_PROF
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMRECIBOS ON REC_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMRESTRA ON RMT_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMTABLIQ ON LIQ_CODTRA=CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMTABVAC ON TAB_CODTRA=CODIGO
+ SELECT NOMBRE FROM NMTRABAJADOR INNER JOIN NMARI ON CODIGO=ARI_CODTRA
+ SELECT APELLIDO FROM NMTRABAJADOR INNER JOIN NMAUSENCIA ON CODIGO=PER_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMDPTO ON COD_DPTO=DEP_CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMESTADOS ON ENTIDAD=EDO_NOMBRE
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMGRUPO ON GRUPO=GTR_CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMHCM ON CODIGO=HCM_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMHCMFAMILIA ON CODIGO=HFM_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMJORNADAS ON TURNO=JOR_CODIGO
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMPAISES ON NACIONALID=PAIS_NOMBR
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMPROFESION ON COD_PROF=PRF_CODIGO
+ SELECT APELLIDO FROM NMTRABAJADOR INNER JOIN NMRESTRA ON CODIGO=RMT_CODTRA
+ SELECT APELLIDO FROM NMTRABAJADOR INNER JOIN NMTABVAC ON CODIGO=TAB_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMTRABOTROS ON CODIGO=CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMUNDFUNC ON COD_UND=CEN_CODIGO
+ SELECT APELLIDO FROM NMTRABAJADOR INNER JOIN NMVARIAC ON CODIGO=VAR_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMTRABAJADORPROG ON PRT_CODTRA=CODIGO
+ SELECT CEN_DESCRI FROM NMTRABAJADOR INNER JOIN NMUNDFUNC ON CEN_CODIGO=COD_UND
+ SELECT * FROM NMTRABAJADOR INNER JOIN NMRECIBOS ON CODIGO=REC_CODTRA
+ SELECT * FROM NMTRABAJADOR INNER JOIN DPDPTO ON COD_DPTO=DEP_CODIGO
+ SELECT TUR_DESCRI FROM NMTRABAJADOR INNER JOIN NMTURNOS ON TUR_CODIGO=COD_TURNO
+ SELECT * FROM NMTRABAJADOR INNER JOIN DPBANCODIR ON BANCO=BAN_CODIGO
+ SELECT BAN_NOMBRE FROM NMTRABAJADOR INNER JOIN DPBANCODIR ON BAN_CODIGO=BANCO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CATEGORIA           ,Aprendices                                                                      
+ C002=CATEGORIA           ,Familiares no Remunerados                                                       
+ C003=CATEGORIA           ,Gerentes y Directores                                                           
+ C004=CATEGORIA           ,Menor de Media Jornada                                                          
+ C005=CATEGORIA           ,Obrero                                                                          
+ C006=CATEGORIA           ,Propietario o Socio                                                             
+ C007=CONDICION           ,Activo                                                                          
+ C008=CONDICION           ,Capacitaci¢n                                                                    
+ C009=CONDICION           ,Inactivo                                                                        
+ C010=CONDICION           ,Liquidado                                                                       
+ C011=CONDICION           ,Vacaciones                                                                      
+ C012=COND_IVSS           ,Activo                                                                          
+ C013=DESCONTAR           ,No                                                                              
+ C014=DESCONTAR           ,Si                                                                              
+ C015=DESC_LPH            ,No                                                                              
+ C016=DESC_LPH            ,Si                                                                              
+ C017=DESTINO_PR          ,Banco                                                                           
+ C018=DESTINO_PR          ,Contabilidad                                                                    
+ C019=EDO_CIVIL           ,Casado                                                                          
+ C020=EDO_CIVIL           ,Divorciado                                                                      
+ C021=EDO_CIVIL           ,Soltero                                                                         
+ C022=EDO_CIVIL           ,Viudo                                                                           
+ C023=FORMA_PAG           ,Cheque                                                                          
+ C024=FORMA_PAG           ,Efectivo                                                                        
+ C025=FORMA_PAG           ,Otra                                                                            
+ C026=FORMA_PAG           ,Transferencia Bancaria                                                          
+ C027=MANO                ,Diestro                                                                         
+ C028=NIVEL_EDUC          ,Analfabeto                                                                      
+ C029=NIVEL_EDUC          ,Norma                                                                           
+ C030=NIVEL_EDUC          ,Primaria                                                                        
+ C031=NIVEL_EDUC          ,Secundaria                                                                      
+ C032=NIVEL_EDUC          ,T‚cnica                                                                         
+ C033=NIVEL_EDUC          ,Universitaria                                                                   
+ C034=SEXO                ,Femenino                                                                        
+ C035=SEXO                ,Masculino                                                                       
+ C036=TIPCTABCO           ,Ahorro                                                                          
+ C037=TIPCTABCO           ,Corriente                                                                       
+ C038=TIPCTABCO           ,N¢mina                                                                          
+ C039=TIPO_CED            ,Extranjero                                                                      
+ C040=TIPO_CED            ,Venezolano                                                                      
+ C041=TIPO_NOM            ,Catorcenal                                                                      
+ C042=TIPO_NOM            ,Mensual                                                                         
+ C043=TIPO_NOM            ,Otra                                                                            
+ C044=TIPO_NOM            ,Otros                                                                           
+ C045=TIPO_NOM            ,Quincenal                                                                       
+ C046=TIPO_NOM            ,Semanal                                                                         
+ C047=TIPO_VAC            ,Colectiva                                                                       
+ C048=TIPO_VAC            ,Individual                                                                      
+ C049=TRA_ARICAL          ,No                                                                              
+ C050=TRA_ARICAL          ,Si                                                                              
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
