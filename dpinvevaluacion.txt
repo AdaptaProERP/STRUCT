@@ -1,20 +1,21 @@
 [ID]
  NUMERO=0325
  NOMBRE=DPINVEVALUACION
- DESCRIPCION=Evaluación de Productos                                     
+ DESCRIPCION=Evaluaci¢n de Productos                                     
  CONFIG=F
- SINGUL=Evaluación por Producto       
+ SINGUL=Evaluaci¢n por Producto       
  APLICA=03
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
- C001=EXP_CODCLI          ,'C',010,0,'','Cliente',0
- C002=EXP_CODINV          ,'C',020,0,'','Producto',0
- C003=EXP_NUMENT          ,'C',008,0,'','Número Entrevista',0
- C004=EXP_NUMMEM          ,'N',007,0,'','Memo Asociado',0
- C005=EXP_TIPEXP          ,'C',001,0,'','Tipo de Expediente',0
- C006=EXP_VALOR           ,'C',010,0,'','Respuesta',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=EXP_CODCLI          ,'C',010,0,'','Cliente',0,''
+ C002=EXP_CODINV          ,'C',020,0,'','Producto',0,''
+ C003=EXP_NUMENT          ,'C',008,0,'','N£mero Entrevista',0,''
+ C004=EXP_NUMMEM          ,'N',007,0,'','Memo Asociado',0,''
+ C005=EXP_TIPEXP          ,'C',001,0,'','Tipo de Expediente',0,''
+ C006=EXP_VALOR           ,'C',010,0,'','Respuesta',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
@@ -34,7 +35,7 @@
  C002=EXP_VALOR           ,Excelente                                                                       
  C003=EXP_VALOR           ,Malo                                                                            
  C004=EXP_VALOR           ,No Opina                                                                        
- C005=EXP_VALOR           ,Pésimo                                                                          
+ C005=EXP_VALOR           ,P‚simo                                                                          
  C006=EXP_VALOR           ,Regular                                                                         
 [END_OPTIONS]
 

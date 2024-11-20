@@ -1,23 +1,24 @@
 [ID]
  NUMERO=0104
  NOMBRE=DPINVPROMOCION
- DESCRIPCION=Promoción de Productos                                      
+ DESCRIPCION=Promoci¢n de Productos                                      
  CONFIG=F
- SINGUL=Promoción                     
+ SINGUL=Promoci¢n                     
  APLICA=01
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
- C001=PRO_CANPRO          ,'N',010,2,'','Cantidad Promoción',0
- C002=PRO_CANREQ          ,'N',010,2,'','Cant Requerida',0
- C003=PRO_CODIGO          ,'C',020,0,'','Código',0
- C004=PRO_FCHFIN          ,'D',008,0,'','Fecha Final',0
- C005=PRO_FCHINI          ,'D',008,0,'','Fecha Desde',0
- C006=PRO_PORPRO          ,'N',006,2,'','% Descuento',0
- C007=PRO_PRECIO          ,'N',014,2,'','Precio de Venta',0
- C008=PRO_UNDMED          ,'C',006,0,'','Medida',0
- C009=PRO_UNDPRO          ,'C',006,0,'','Unidad Promoción',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PRO_CANPRO          ,'N',010,2,'','Cantidad Promoci¢n',0,''
+ C002=PRO_CANREQ          ,'N',010,2,'','Cant Requerida',0,''
+ C003=PRO_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C004=PRO_FCHFIN          ,'D',008,0,'','Fecha Final',0,''
+ C005=PRO_FCHINI          ,'D',008,0,'','Fecha Desde',0,''
+ C006=PRO_PORPRO          ,'N',006,2,'','% Descuento',0,''
+ C007=PRO_PRECIO          ,'N',014,2,'','Precio de Venta',0,''
+ C008=PRO_UNDMED          ,'C',006,0,'','Medida',0,''
+ C009=PRO_UNDPRO          ,'C',006,0,'','Unidad Promoci¢n',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]

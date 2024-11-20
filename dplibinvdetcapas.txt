@@ -9,15 +9,16 @@
 [END_ID]
 
 [FIELDS]
- C001=CAP_ACT             ,'N',002,0,'','Signo',0
- C002=CAP_ACTINPC         ,'N',019,2,'','Monto de I.N.P.C',0
- C003=CAP_ACTIPC          ,'N',019,2,'','Monto de I.P.C.',0
- C004=CAP_CANTID          ,'N',016,2,'','Cantidad',0
- C005=CAP_CODIGO          ,'C',020,0,'','Código',0
- C006=CAP_CODSUC          ,'C',006,0,'','Sucursal',0
- C007=CAP_FECHA           ,'D',008,0,'','Fecha',0
- C008=CAP_INPC            ,'N',014,5,'','I.N.P.C',0
- C009=CAP_IPC             ,'N',014,5,'','I.P.C.',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CAP_ACT             ,'N',002,0,'','Signo',0,''
+ C002=CAP_ACTINPC         ,'N',019,2,'','Monto de I.N.P.C',0,''
+ C003=CAP_ACTIPC          ,'N',019,2,'','Monto de I.P.C.',0,''
+ C004=CAP_CANTID          ,'N',016,2,'','Cantidad',0,''
+ C005=CAP_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C006=CAP_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C007=CAP_FECHA           ,'D',008,0,'','Fecha',0,'&DPFECHA()'
+ C008=CAP_INPC            ,'N',014,5,'','I.N.P.C',0,''
+ C009=CAP_IPC             ,'N',014,5,'','I.P.C.',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]

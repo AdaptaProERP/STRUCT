@@ -9,16 +9,17 @@
 [END_ID]
 
 [FIELDS]
- C001=CAP_CAPA            ,'N',005,0,'','Capa',0
- C002=CAP_CODBAR          ,'C',010,0,'','Código de Barra',0
- C003=CAP_CODIGO          ,'C',020,0,'','Producto',0
- C004=CAP_CODSUC          ,'C',006,0,'','Sucursal',0
- C005=CAP_FCHVEN          ,'D',008,0,'','Fecha de Vencimiento',0
- C006=CAP_FECHA           ,'D',008,0,'','Fecha',0
- C007=CAP_HORA            ,'C',008,0,'','Hora',0
- C008=CAP_LOTE            ,'C',020,0,'','Lote',0
- C009=CAP_PRECIO          ,'N',014,2,'','Precio de Venta',0
- C010=CAP_UNDMED          ,'C',006,0,'','Unidad de Medida',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CAP_CAPA            ,'N',005,0,'','Capa',0,''
+ C002=CAP_CODBAR          ,'C',010,0,'','C¢digo de Barra',0,''
+ C003=CAP_CODIGO          ,'C',020,0,'','Producto',0,''
+ C004=CAP_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C005=CAP_FCHVEN          ,'D',008,0,'','Fecha de Vencimiento',0,''
+ C006=CAP_FECHA           ,'D',008,0,'','Fecha',0,''
+ C007=CAP_HORA            ,'C',008,0,'','Hora',0,''
+ C008=CAP_LOTE            ,'C',020,0,'','Lote',0,''
+ C009=CAP_PRECIO          ,'N',014,2,'','Precio de Venta',0,''
+ C010=CAP_UNDMED          ,'C',006,0,'','Unidad de Medida',0,''
 [END_FIELDS]
 
 [LINK_VIRTUAL]

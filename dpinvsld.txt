@@ -9,15 +9,16 @@
 [END_ID]
 
 [FIELDS]
- C001=SLD_CODALM          ,'C',004,0,'','Almacén',0
- C002=SLD_CODIGO          ,'C',022,0,'','Código',0
- C003=SLD_CODSUC          ,'C',006,0,'','Sucursal',0
- C004=SLD_CONTAB          ,'N',014,2,'','Saldo Contable',0
- C005=SLD_COSPRO          ,'N',019,2,'','Costo Promedio',0
- C006=SLD_FCHCOM          ,'D',008,0,'','Ultima Compra',0
- C007=SLD_FCHVTA          ,'D',008,0,'','Ultima Venta',0
- C008=SLD_FISICO          ,'N',014,2,'','Saldo Físico',0
- C009=SLD_LOGICO          ,'N',014,2,'','Saldo Lógico',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=SLD_CODALM          ,'C',004,0,'','Almac‚n',0,''
+ C002=SLD_CODIGO          ,'C',022,0,'','C¢digo',0,''
+ C003=SLD_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C004=SLD_CONTAB          ,'N',014,2,'','Saldo Contable',0,''
+ C005=SLD_COSPRO          ,'N',019,2,'','Costo Promedio',0,''
+ C006=SLD_FCHCOM          ,'D',008,0,'','Ultima Compra',0,''
+ C007=SLD_FCHVTA          ,'D',008,0,'','Ultima Venta',0,''
+ C008=SLD_FISICO          ,'N',014,2,'','Saldo F¡sico',0,''
+ C009=SLD_LOGICO          ,'N',014,2,'','Saldo L¢gico',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]

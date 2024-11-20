@@ -9,27 +9,28 @@
 [END_ID]
 
 [FIELDS]
- C001=DLI_ACTFIN          ,'N',019,2,'','Actualización Financiera',0
- C002=DLI_CANANT          ,'N',016,2,'','Cantidad Anterior',0
- C003=DLI_CANCOM          ,'N',016,2,'','Cantidad de Compras',0
- C004=DLI_CANENT          ,'N',016,2,'','Cantidad Entradas',0
- C005=DLI_CANSAL          ,'N',016,2,'','Cantidad Salida',0
- C006=DLI_CANVTA          ,'N',016,2,'','Cantidad de Ventas',0
- C007=DLI_CODIGO          ,'C',020,0,'','Cóigo',0
- C008=DLI_CODSUC          ,'C',006,0,'','Código Sucursal',1
- C009=DLI_COSANT          ,'N',016,2,'','Costo Anterior',0
- C010=DLI_COSCOM          ,'N',016,2,'','Costo Compra',0
- C011=DLI_COSENT          ,'N',016,2,'','Costo Entradas',0
- C012=DLI_COSINV          ,'N',019,2,'','Costo del Inventario',0
- C013=DLI_COSPRO          ,'N',019,2,'','Costo Promedio',0
- C014=DLI_COSSAL          ,'N',016,2,'','Costo Salida',0
- C015=DLI_COSVTA          ,'N',016,2,'','Costo Venta',0
- C016=DLI_FECHA           ,'D',008,0,'','Fecha',0
- C017=DLI_INDROT          ,'N',008,2,'','Indice de Rotación Mensual',0
- C018=DLI_INPC            ,'N',010,3,'','Factor I.N.P.C.',0
- C019=DLI_IPC             ,'N',010,3,'','Factor I.P.C.',0
- C020=DLI_NUMERO          ,'C',006,0,'','Número Registro',0
- C021=DLI_SALDO           ,'N',019,2,'','Saldo o Existencia',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=DLI_ACTFIN          ,'N',019,2,'','Actualizaci¢n Financiera',0,''
+ C002=DLI_CANANT          ,'N',016,2,'','Cantidad Anterior',0,''
+ C003=DLI_CANCOM          ,'N',016,2,'','Cantidad de Compras',0,''
+ C004=DLI_CANENT          ,'N',016,2,'','Cantidad Entradas',0,''
+ C005=DLI_CANSAL          ,'N',016,2,'','Cantidad Salida',0,''
+ C006=DLI_CANVTA          ,'N',016,2,'','Cantidad de Ventas',0,''
+ C007=DLI_CODIGO          ,'C',020,0,'','C¢igo',0,''
+ C008=DLI_CODSUC          ,'C',006,0,'','C¢digo Sucursal',1,'&oDp:cSucursal'
+ C009=DLI_COSANT          ,'N',016,2,'','Costo Anterior',0,''
+ C010=DLI_COSCOM          ,'N',016,2,'','Costo Compra',0,''
+ C011=DLI_COSENT          ,'N',016,2,'','Costo Entradas',0,''
+ C012=DLI_COSINV          ,'N',019,2,'','Costo del Inventario',0,''
+ C013=DLI_COSPRO          ,'N',019,2,'','Costo Promedio',0,''
+ C014=DLI_COSSAL          ,'N',016,2,'','Costo Salida',0,''
+ C015=DLI_COSVTA          ,'N',016,2,'','Costo Venta',0,''
+ C016=DLI_FECHA           ,'D',008,0,'','Fecha',0,''
+ C017=DLI_INDROT          ,'N',008,2,'','Indice de Rotaci¢n Mensual',0,'0'
+ C018=DLI_INPC            ,'N',010,3,'','Factor I.N.P.C.',0,''
+ C019=DLI_IPC             ,'N',010,3,'','Factor I.P.C.',0,''
+ C020=DLI_NUMERO          ,'C',006,0,'','N£mero Registro',0,''
+ C021=DLI_SALDO           ,'N',019,2,'','Saldo o Existencia',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]

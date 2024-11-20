@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1088
+ NOMBRE=DPINVCARACTERISTICAS
+ DESCRIPCION=Caracter¡sticas del Producto                                
+ CONFIG=F
+ SINGUL=Caracter¡sticas del Producto  
+ APLICA=  
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=INC_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C002=INC_CODMON          ,'C',003,0,'','C¢digo;Moneda',0,''
+ C003=INC_CODPRO          ,'C',020,0,'','C¢digo;Proveedor',0,''
+ C004=INC_DESCRI          ,'C',120,0,'','Descripci¢n Interna',0,''
+ C005=INC_DESPRO          ,'C',120,0,'','Descripci¢n Proveedor Interno',0,''
+ C006=INC_INVPRO          ,'C',020,0,'','Producto;Proveedor',0,''
+ C007=INC_TIPO            ,'C',020,0,'','Tipo',0,''
+ C008=INC_VALOR           ,'N',019,0,'','Valor',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

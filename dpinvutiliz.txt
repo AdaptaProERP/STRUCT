@@ -1,19 +1,20 @@
 [ID]
  NUMERO=9576
  NOMBRE=DPINVUTILIZ
- DESCRIPCION=Utilización de Productos                                    
+ DESCRIPCION=Utilizaci¢n de Productos                                    
  CONFIG=F
- SINGUL=Utilización                   
+ SINGUL=Utilizaci¢n                   
  APLICA=01
- PRIMARY_KEY=''
+ PRIMARY_KEY='UTL_CODIGO'
 [END_ID]
 
 [FIELDS]
- C001=UTL_ABASTE          ,'L',001,0,'','Nuevo Campo',0
- C002=UTL_CODIGO          ,'C',080,0,'PRIMARY KEY NOT NULL','Utilización',0
- C003=UTL_LIBINV          ,'L',001,0,'','Afecta Libro de Inventario',0
- C004=UTL_TIPO            ,'C',001,0,'','Tipo de Ubicación',0
- C005=UTL_UBIFIS          ,'L',001,0,'','Ubicación Física',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=UTL_CODIGO          ,'C',080,0,'PRIMARY KEY NOT NULL','Utilizaci¢n',0,''
+ C002=UTL_ABASTE          ,'L',001,0,'','Nuevo Campo',0,''
+ C003=UTL_LIBINV          ,'L',001,0,'','Afecta Libro de Inventario',0,'.F.'
+ C004=UTL_TIPO            ,'C',001,0,'','Tipo de Ubicaci¢n',0,''
+ C005=UTL_UBIFIS          ,'L',001,0,'','Ubicaci¢n F¡sica',0,''
 [END_FIELDS]
 
 [TABLE_REL]

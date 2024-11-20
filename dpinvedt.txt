@@ -1,23 +1,24 @@
 [ID]
  NUMERO=9944
  NOMBRE=DPINVEDT
- DESCRIPCION=Códigos de la EDT                                           
+ DESCRIPCION=C¢digos de la EDT                                           
  CONFIG=F
- SINGUL=Código de EDT                 
+ SINGUL=C¢digo de EDT                 
  APLICA=01
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
- C001=EDT_ACTIVO          ,'L',001,0,'','Activo',0
- C002=EDT_CODIGO          ,'C',020,0,'','Código',0
- C003=EDT_CODINV          ,'C',020,0,'','Código',0
- C004=EDT_COMPET          ,'C',020,0,'','Competencia',0
- C005=EDT_DESCRI          ,'C',060,0,'','Descripción',0
- C006=EDT_FILMAI          ,'N',007,0,'','Registro para Digitalización',0
- C007=EDT_NUMMEM          ,'N',010,0,'','Campo Memo',0
- C008=EDT_RECURS          ,'C',020,0,'','Recurso',0
- C009=EDT_ROL             ,'C',020,0,'','Rol Requerido',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=EDT_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
+ C002=EDT_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C003=EDT_CODINV          ,'C',020,0,'','C¢digo',0,''
+ C004=EDT_COMPET          ,'C',020,0,'','Competencia',0,''
+ C005=EDT_DESCRI          ,'C',060,0,'','Descripci¢n',0,''
+ C006=EDT_FILMAI          ,'N',007,0,'','Registro para Digitalizaci¢n',0,''
+ C007=EDT_NUMMEM          ,'N',010,0,'','Campo Memo',0,''
+ C008=EDT_RECURS          ,'C',020,0,'','Recurso',0,''
+ C009=EDT_ROL             ,'C',020,0,'','Rol Requerido',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
@@ -30,8 +31,8 @@
 
 
 [INNER_JOIN]
- SELECT * FROM DPINVEDT INNER JOIN DPINV ON EDT_CODINV=INV_CODIGO
  SELECT INV_DESCRI FROM DPINVEDT INNER JOIN DPINV ON INV_CODIGO=EDT_CODINV
+ SELECT * FROM DPINVEDT INNER JOIN DPINV ON EDT_CODINV=INV_CODIGO
 [END_INNER_JOIN]
 
 [OPTIONS]

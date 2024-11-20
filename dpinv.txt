@@ -9,72 +9,78 @@
 [END_ID]
 
 [FIELDS]
- C001=INV_APLICA          ,'C',001,0,'','Aplicación',0
- C002=INV_ARANCE          ,'C',016,0,'','Código del Arancel',0
- C003=INV_CAPACI          ,'N',010,2,'','Capacidad por Botella',0
- C004=INV_CATMER          ,'C',020,0,'','Categorizacion de mercado',0
- C005=INV_CODDEP          ,'C',010,0,'','Código del Departamento',0
- C006=INV_CODIGO          ,'C',022,0,'PRIMARY KEY NOT NULL','Código',0
- C007=INV_CODMAR          ,'C',010,0,'','Marca',0
- C008=INV_CODRET          ,'C',003,0,'','Código Retención ISLR/Servicio',0
- C009=INV_CODSAT          ,'C',100,0,'','Catálogo SAT Productos y Servicios',0
- C010=INV_COMVTA          ,'N',010,2,'','Comisión por Venta',0
- C011=INV_CONCRI          ,'N',006,0,'','Consideración Crítica',0
- C012=INV_COSADQ          ,'N',014,2,'','Costo de Aquisición sin Gastos',0
- C013=INV_COSFOB          ,'N',014,2,'','Costo en Otra Moneda F.O.B.',0
- C014=INV_COSMER          ,'N',014,2,'','Costo del Mercado',0
- C015=INV_COSPRO          ,'N',019,0,'','Costo Promedio',0
- C016=INV_CROSSD          ,'C',001,0,'','Cross-Docking',0
- C017=INV_DESCRI          ,'C',250,0,'','Descripción',0
- C018=INV_EDITAR          ,'C',001,0,'','Editable',0
- C019=INV_ESCOMN          ,'C',001,0,'','Solo para Comentario',0
- C020=INV_ESTADO          ,'C',001,0,'','Estado',0
- C021=INV_EXIMAX          ,'N',011,2,'','Existencia M+xima en Unidades',0
- C022=INV_EXIMIN          ,'N',011,2,'','Existencia M+nima en Unidades',0
- C023=INV_EXISTE          ,'N',019,0,'','Existencia',0
- C024=INV_FCHACT          ,'D',008,0,'','Fecha de Actualización',0
- C025=INV_FCHCOS          ,'D',010,0,'','Fecha Ultimo Costo',0
- C026=INV_FCHCRE          ,'D',008,0,'','Fecha de Creación',0
- C027=INV_FILBMP          ,'C',060,0,'','Foto Bmp',0
- C028=INV_FILMAI          ,'N',007,0,'','Digitalización',0
- C029=INV_GRADOS          ,'N',010,2,'','Grados alcohólicos',0
- C030=INV_GRUPO           ,'C',010,0,'','Grupo',0
- C031=INV_IMPPAT          ,'C',003,0,'','Código del Impuesto s/patente',0
- C032=INV_IMPPVP          ,'N',006,2,'','%Impuesto al Precio de Venta',0
- C033=INV_ITEMCO          ,'C',001,0,'','Item comentario sin precio ni cantidad',0
- C034=INV_IVA             ,'C',002,0,'','Tipo de I.V.A.',0
- C035=INV_LPT             ,'C',004,0,'','Puerto de Impresión',0
- C036=INV_MEDMUL          ,'C',001,0,'','Multiples Unidades de Medida',0
- C037=INV_MESGAR          ,'N',002,0,'','Meses de Garantía',0
- C038=INV_METCOS          ,'C',001,0,'','Método de Costo',0
- C039=INV_NUMMEM          ,'N',006,0,'','Registro de Descripción Amplia',0
- C040=INV_OBS1            ,'C',120,0,'','Observación 1',0
- C041=INV_OBS2            ,'C',120,0,'','Observación 2',0
- C042=INV_OBS3            ,'C',120,0,'','Observación 3',0
- C043=INV_PAIS            ,'C',020,0,'','Pais de Origen',0
- C044=INV_PESO            ,'N',014,0,'','Peso en Kilos',0
- C045=INV_PORARA          ,'N',006,2,'','% Arancel',0
- C046=INV_PORFAC          ,'N',006,2,'','Porcentaje de Descuento por Unidad',0
- C047=INV_PREREG          ,'C',001,0,'','Requiere Precio Regulado',0
- C048=INV_PROCED          ,'C',001,0,'','Procedencia',0
- C049=INV_PROMO           ,'C',001,0,'','Promocion',0
- C050=INV_PVPORG          ,'N',014,2,'','Precio de Venta Regular',0
- C051=INV_RECALC          ,'L',001,0,'','Indicación de modificación',0
- C052=INV_REQMED          ,'C',001,0,'','Requiere Unidad de Medida',0
- C053=INV_REQMEM          ,'C',001,0,'','Requiere Memo',0
- C054=INV_REQPES          ,'C',001,0,'','Requiere Peso Compras/Comercialización',0
- C055=INV_TALLAS          ,'C',006,0,'','Código de Tallas',0
- C056=INV_TIPCOM          ,'C',001,0,'','Totalizar Componentes por Monto o Cant.',0
- C057=INV_UBICAC          ,'C',008,0,'','Ubicación Fisica',0
- C058=INV_USO             ,'C',120,0,'','Uso',0
- C059=INV_UTILIZ          ,'C',030,0,'','Utilización',0
- C060=INV_VOLUME          ,'N',014,0,'','Peso Metros Cúbicos',0
- C061=INV_WEB             ,'C',001,0,'','Publicar en eDpcommerce',0
- C062=INV_WEBMEM          ,'N',006,0,'','Información para la Web',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=INV_CODIGO          ,'C',022,0,'PRIMARY KEY NOT NULL','C¢digo',0,''
+ C002=INV_APLICA          ,'C',001,0,'','Aplicaci¢n',0,'"T"'
+ C003=INV_ARANCE          ,'C',016,0,'','C¢digo del Arancel',0,''
+ C004=INV_CAPACI          ,'N',010,2,'','Capacidad por Botella',0,''
+ C005=INV_CATMER          ,'C',020,0,'','Categorizacion de mercado',0,'"Ninguna"'
+ C006=INV_CODCAR          ,'C',008,0,'','Caracter¡stica',0,'&oDp:cCodCar'
+ C007=INV_CODDEP          ,'C',010,0,'','C¢digo del Departamento',0,'&oDp:cDepIndef'
+ C008=INV_CODMAR          ,'C',010,0,'','Marca',0,''
+ C009=INV_CODRET          ,'C',003,0,'','C¢digo Retenci¢n ISLR/Servicio',0,''
+ C010=INV_CODSAT          ,'C',100,0,'','Cat logo SAT Productos y Servicios',0,''
+ C011=INV_COLOR           ,'C',040,0,'','Color',0,''
+ C012=INV_COMVTA          ,'N',010,2,'','Comisi¢n por Venta',0,''
+ C013=INV_CONCRI          ,'N',006,0,'','Consideraci¢n Cr¡tica',0,''
+ C014=INV_COSADQ          ,'N',014,2,'','Costo de Aquisici¢n sin Gastos',0,''
+ C015=INV_COSFOB          ,'N',014,2,'','Costo en Otra Moneda F.O.B.',0,''
+ C016=INV_COSMER          ,'N',014,2,'','Costo del Mercado',0,''
+ C017=INV_COSPRO          ,'N',019,0,'','Costo Promedio',0,''
+ C018=INV_CROSSD          ,'C',001,0,'','Cross-Docking',0,''
+ C019=INV_DESCRI          ,'C',250,0,'','Descripci¢n',0,''
+ C020=INV_EDITAR          ,'C',001,0,'','Editable',0,''
+ C021=INV_ESCOMN          ,'C',001,0,'','Solo para Comentario',0,'"No"'
+ C022=INV_ESTADO          ,'C',001,0,'','Estado',0,''
+ C023=INV_EXIMAX          ,'N',011,2,'','Existencia M+xima en Unidades',0,''
+ C024=INV_EXIMIN          ,'N',011,2,'','Existencia M+nima en Unidades',0,''
+ C025=INV_EXISTE          ,'N',019,0,'','Existencia',0,''
+ C026=INV_FCHACT          ,'D',008,0,'','Fecha de Actualizaci¢n',0,''
+ C027=INV_FCHCOS          ,'D',010,0,'','Fecha Ultimo Costo',0,''
+ C028=INV_FCHCRE          ,'D',008,0,'','Fecha de Creaci¢n',0,''
+ C029=INV_FILBMP          ,'C',060,0,'','Foto Bmp',0,''
+ C030=INV_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C031=INV_GRADOS          ,'N',010,2,'','Grados alcoh¢licos',0,''
+ C032=INV_GRUPO           ,'C',010,0,'','Grupo',0,''
+ C033=INV_IMPPAT          ,'C',003,0,'','C¢digo del Impuesto s/patente',0,''
+ C034=INV_IMPPVP          ,'N',006,2,'','%Impuesto al Precio de Venta',0,''
+ C035=INV_ITEMCO          ,'C',001,0,'','Item comentario sin precio ni cantidad',0,''
+ C036=INV_IVA             ,'C',002,0,'','Tipo de I.V.A.',0,'"GN"'
+ C037=INV_LPT             ,'C',004,0,'','Puerto de Impresi¢n',0,''
+ C038=INV_MEDMUL          ,'C',001,0,'','Multiples Unidades de Medida',0,''
+ C039=INV_MESGAR          ,'N',002,0,'','Meses de Garant¡a',0,''
+ C040=INV_METCOS          ,'C',001,0,'','M‚todo de Costo',0,'"Promedio"'
+ C041=INV_NUMMEM          ,'N',006,0,'','Registro de Descripci¢n Amplia',0,''
+ C042=INV_OBS1            ,'C',120,0,'','Observaci¢n 1',0,''
+ C043=INV_OBS2            ,'C',120,0,'','Observaci¢n 2',0,''
+ C044=INV_OBS3            ,'C',120,0,'','Observaci¢n 3',0,''
+ C045=INV_OBS4            ,'C',120,0,'','Observaci¢n 4',0,''
+ C046=INV_PAIS            ,'C',020,0,'','Pais de Origen',0,''
+ C047=INV_PESO            ,'N',014,0,'','Peso en Kilos',0,''
+ C048=INV_PORARA          ,'N',006,2,'','% Arancel',0,''
+ C049=INV_PORFAC          ,'N',006,2,'','Porcentaje de Descuento por Unidad',0,''
+ C050=INV_PREREG          ,'C',001,0,'','Requiere Precio Regulado',0,'"No"'
+ C051=INV_PROCED          ,'C',001,0,'','Procedencia',0,'"Nacional"'
+ C052=INV_PROMO           ,'C',001,0,'','Promocion',0,''
+ C053=INV_PVPORG          ,'N',014,2,'','Precio de Venta Regular',0,''
+ C054=INV_RECALC          ,'L',001,0,'','Indicaci¢n de modificaci¢n',0,''
+ C055=INV_REQMED          ,'C',001,0,'','Requiere Unidad de Medida',0,''
+ C056=INV_REQMEM          ,'C',001,0,'','Requiere Memo',0,'"N"'
+ C057=INV_REQPES          ,'C',001,0,'','Requiere Peso Compras/Comercializaci¢n',0,''
+ C058=INV_SERTER          ,'C',001,0,'','Servicio x Cta. de Terceros',0,'"N"'
+ C059=INV_TALLAS          ,'C',006,0,'','C¢digo de Tallas',0,''
+ C060=INV_TIPCOM          ,'C',001,0,'','Totalizar Componentes por Monto o Cant.',0,''
+ C061=INV_UBICAC          ,'C',008,0,'','Ubicaci¢n Fisica',0,''
+ C062=INV_USO             ,'C',120,0,'','Uso',0,''
+ C063=INV_UTILIZ          ,'C',030,0,'','Utilizaci¢n',0,'"Ventas"'
+ C064=INV_VOLUME          ,'N',014,0,'','Peso Metros C£bicos',0,''
+ C065=INV_WEB             ,'C',001,0,'','Publicar en eDpcommerce',0,''
+ C066=INV_WEBMEM          ,'N',006,0,'','Informaci¢n para la Web',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
  T001=DPGRU                   , INV_GRUPO=GRU_CODIGO <UPDATE>  <RUN>
+ T002=DPGRUCARACT             , INV_CODCAR=GCR_CODIGO <UPDATE> <DELETE> <RUN>
 [END_TABLE_MAIN]
 
 [TABLE_REL]
@@ -106,19 +112,28 @@
 
 [LINK_VIRTUAL]
  T001=DPCATSAT                , INV_CODSAT=CAT_CODIGO, <CAMPO:CAT_DESCRI>, <WHERE:>
- T002=DPCOMPPRODUCCION        , INV_CODIGO=COM_CODINV, <CAMPO:>, <WHERE:>
- T003=DPGRU                   , INV_GRUPO=GRU_CODIGO, <CAMPO:GRU_DESCRI>, <WHERE:>
- T004=DPIMPPAT                , INV_IMPPAT=IMP_CODIGO, <CAMPO:IMP_DESCRI>, <WHERE:>
- T005=DPIVATIP                , INV_IVA=TIP_CODIGO, <CAMPO:TIP_DESCRI>, <WHERE:>
- T006=DPMARCAS                , INV_CODMAR=MAR_CODIGO, <CAMPO:MAR_DESCRI>, <WHERE:>
- T007=DPPAISES                , INV_PAIS=PAIS, <CAMPO:PAIS>, <WHERE:>
- T008=DPTALLAS                , INV_TALLAS=TAL_CODIGO, <CAMPO:TAL_DESCRI>, <WHERE:>
- T009=VIEW_INVEXICON          , INV_CODIGO=EXC_CODIGO, <CAMPO:>, <WHERE:>
+ T002=DPCOLORES               , INV_COLOR=COL_CODIGO, <CAMPO:COL_CODIGO>, <WHERE:>
+ T003=DPCOMPPRODUCCION        , INV_CODIGO=COM_CODINV, <CAMPO:>, <WHERE:>
+ T004=DPGRU                   , INV_GRUPO=GRU_CODIGO, <CAMPO:GRU_DESCRI>, <WHERE:>
+ T005=DPIMPPAT                , INV_IMPPAT=IMP_CODIGO, <CAMPO:IMP_DESCRI>, <WHERE:>
+ T006=DPIVATIP                , INV_IVA=TIP_CODIGO, <CAMPO:TIP_DESCRI>, <WHERE:>
+ T007=DPMARCAS                , INV_CODMAR=MAR_CODIGO, <CAMPO:MAR_DESCRI>, <WHERE:>
+ T008=DPPAISES                , INV_PAIS=PAIS, <CAMPO:PAIS>, <WHERE:>
+ T009=DPTALLAS                , INV_TALLAS=TAL_CODIGO, <CAMPO:TAL_DESCRI>, <WHERE:>
+ T010=VIEW_INVEXICON          , INV_CODIGO=EXC_CODIGO, <CAMPO:>, <WHERE:>
+ T011=DPGRUCARACT             , INV_CODCAR=GCR_CODIGO, <CAMPO:GCR_DESCRI>, <WHERE:>
 [END_LINK_VIRTUAL]
 
 
 [INNER_JOIN]
- SELECT * FROM DPINV INNER JOIN DPCOMPONENTES ON INV_CODIGO=CPT_CODIGO
+ SELECT CAT_DESCRI FROM DPINV INNER JOIN DPCATSAT ON CAT_CODIGO=INV_CODSAT
+ SELECT COL_CODIGO FROM DPINV INNER JOIN DPCOLORES ON COL_CODIGO=INV_COLOR
+ SELECT * FROM DPINV INNER JOIN DPCOMPONENTES ON CPT_CODIGO=INV_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPCOMPPRODUCCION ON COM_CODINV=INV_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPEQUIV ON EQUI_CODIG=INV_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPFORMULASPROD ON FOR_CODINV=INV_CODIGO
+ SELECT GRU_DESCRI FROM DPINV INNER JOIN DPGRU ON GRU_CODIGO=INV_GRUPO
+ SELECT IMP_DESCRI FROM DPINV INNER JOIN DPIMPPAT ON IMP_CODIGO=INV_IMPPAT
  SELECT * FROM DPINV INNER JOIN DPCOMPONENTES ON INV_CODIGO=CPT_COMPON
  SELECT INV_DESCRI FROM DPINV INNER JOIN DPCOMPPRODUCCION ON INV_CODIGO=COM_CODINV
  SELECT * FROM DPINV INNER JOIN DPDOCENSBL ON INV_CODIGO=DOC_CODINV
@@ -126,13 +141,20 @@
  SELECT INV_DESCRI FROM DPINV INNER JOIN DPFORMULASPROD ON INV_CODIGO=FOR_CODINV
  SELECT * FROM DPINV INNER JOIN DPGRU ON INV_GRUPO=GRU_CODIGO
  SELECT * FROM DPINV INNER JOIN DPIMPPAT ON INV_IMPPAT=IMP_CODIGO
- SELECT CAT_DESCRI FROM DPINV INNER JOIN DPCATSAT ON CAT_CODIGO=INV_CODSAT
- SELECT * FROM DPINV INNER JOIN DPCOMPONENTES ON CPT_CODIGO=INV_CODIGO
- SELECT * FROM DPINV INNER JOIN DPCOMPPRODUCCION ON COM_CODINV=INV_CODIGO
- SELECT * FROM DPINV INNER JOIN DPEQUIV ON EQUI_CODIG=INV_CODIGO
- SELECT * FROM DPINV INNER JOIN DPFORMULASPROD ON FOR_CODINV=INV_CODIGO
- SELECT GRU_DESCRI FROM DPINV INNER JOIN DPGRU ON GRU_CODIGO=INV_GRUPO
- SELECT IMP_DESCRI FROM DPINV INNER JOIN DPIMPPAT ON IMP_CODIGO=INV_IMPPAT
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=ALQ_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=EDT_CODINV
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=UXP_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPIVATIP ON INV_IVA=TIP_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPMARCAS ON INV_CODMAR=MAR_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPMOVCONTEO ON INV_CODIGO=MDC_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVINV ON INV_CODIGO=MOV_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVINV_HIS ON INV_CODIGO=MOV_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVREQ ON INV_CODIGO=MOR_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVSERIAL ON INV_CODIGO=MSR_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPORDENPRODUCC ON INV_CODIGO=ORP_CODINV
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPPOSCOMANDA ON INV_CODIGO=COM_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPPRECIOS ON INV_CODIGO=PRE_CODIGO
+ SELECT INV_DESCRI FROM DPINV INNER JOIN DPPRECIOSHIS ON INV_CODIGO=PRE_CODIGO
  SELECT * FROM DPINV INNER JOIN DPINVALQUILER ON ALQ_CODIGO=INV_CODIGO
  SELECT * FROM DPINV INNER JOIN DPINVEDT ON EDT_CODINV=INV_CODIGO
  SELECT * FROM DPINV INNER JOIN DPINVEVALUACION ON EXP_CODINV=INV_CODIGO
@@ -159,19 +181,8 @@
  SELECT * FROM DPINV INNER JOIN DPSUSTITUTOS ON SUS_CODIGO=INV_CODIGO
  SELECT TAL_DESCRI FROM DPINV INNER JOIN DPTALLAS ON TAL_CODIGO=INV_TALLAS
  SELECT * FROM DPINV INNER JOIN VIEW_INVEXICON ON EXC_CODIGO=INV_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=ALQ_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=EDT_CODINV
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPINV ON INV_CODIGO=UXP_CODIGO
- SELECT * FROM DPINV INNER JOIN DPIVATIP ON INV_IVA=TIP_CODIGO
- SELECT * FROM DPINV INNER JOIN DPMARCAS ON INV_CODMAR=MAR_CODIGO
- SELECT * FROM DPINV INNER JOIN DPMOVCONTEO ON INV_CODIGO=MDC_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVINV ON INV_CODIGO=MOV_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVINV_HIS ON INV_CODIGO=MOV_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPMOVSERIAL ON INV_CODIGO=MSR_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPORDENPRODUCC ON INV_CODIGO=ORP_CODINV
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPPOSCOMANDA ON INV_CODIGO=COM_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPPRECIOS ON INV_CODIGO=PRE_CODIGO
- SELECT INV_DESCRI FROM DPINV INNER JOIN DPPRECIOSHIS ON INV_CODIGO=PRE_CODIGO
+ SELECT * FROM DPINV INNER JOIN DPGRUCARACT ON INV_CODCAR=GCR_CODIGO
+ SELECT GCR_DESCRI FROM DPINV INNER JOIN DPGRUCARACT ON GCR_CODIGO=INV_CODCAR
 [END_INNER_JOIN]
 
 [OPTIONS]
@@ -220,24 +231,27 @@
  C043=INV_REQMEM          ,Si                                                                              
  C044=INV_REQPES          ,No                                                                              
  C045=INV_REQPES          ,Si                                                                              
- C046=INV_TIPCOM          ,Cantidad                                                                        
- C047=INV_TIPCOM          ,Monto                                                                           
- C048=INV_TIPCOM          ,Ninguno                                                                         
- C049=INV_UTILIZ          ,Afiliación                                                                      
- C050=INV_UTILIZ          ,Alquiler                                                                        
- C051=INV_UTILIZ          ,Consumo                                                                         
- C052=INV_UTILIZ          ,Eventos                                                                         
- C053=INV_UTILIZ          ,Fabricacion                                                                     
- C054=INV_UTILIZ          ,Honorarios                                                                      
- C055=INV_UTILIZ          ,Materia Prima                                                                   
- C056=INV_UTILIZ          ,Material de Empaque                                                             
- C057=INV_UTILIZ          ,Partes de Activos                                                               
- C058=INV_UTILIZ          ,Reparacion                                                                      
- C059=INV_UTILIZ          ,Servicio                                                                        
- C060=INV_UTILIZ          ,Tara de Carga                                                                   
- C061=INV_UTILIZ          ,Tareas Internas                                                                 
- C062=INV_UTILIZ          ,Uniformes                                                                       
- C063=INV_UTILIZ          ,Venta                                                                           
+ C046=INV_SERTER          ,No                                                                              
+ C047=INV_SERTER          ,Si                                                                              
+ C048=INV_TIPCOM          ,Cantidad                                                                        
+ C049=INV_TIPCOM          ,Monto                                                                           
+ C050=INV_TIPCOM          ,Ninguno                                                                         
+ C051=INV_UTILIZ          ,Afiliaci¢n                                                                      
+ C052=INV_UTILIZ          ,Alquiler                                                                        
+ C053=INV_UTILIZ          ,Consumo                                                                         
+ C054=INV_UTILIZ          ,Eventos                                                                         
+ C055=INV_UTILIZ          ,Fabricacion                                                                     
+ C056=INV_UTILIZ          ,Honorarios                                                                      
+ C057=INV_UTILIZ          ,Materia Prima                                                                   
+ C058=INV_UTILIZ          ,Material de Empaque                                                             
+ C059=INV_UTILIZ          ,Partes de Activos                                                               
+ C060=INV_UTILIZ          ,Reparacion                                                                      
+ C061=INV_UTILIZ          ,Servicio                                                                        
+ C062=INV_UTILIZ          ,Tara de Carga                                                                   
+ C063=INV_UTILIZ          ,Tareas de Proyectos                                                             
+ C064=INV_UTILIZ          ,Tareas Internas                                                                 
+ C065=INV_UTILIZ          ,Uniformes                                                                       
+ C066=INV_UTILIZ          ,Venta                                                                           
 [END_OPTIONS]
 
 [COMENTARIOS]

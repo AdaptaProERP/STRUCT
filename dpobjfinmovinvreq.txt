@@ -1,0 +1,41 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPOBJFINMOVINVREQ
+ DESCRIPCION=Movimiento Producto                                         
+ CONFIG=F
+ SINGUL=Movimiento Requerimiento      
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=MOV_CANTID          ,'N',014,2,'','Cantidad',0,''
+ C002=MOV_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C003=MOV_CODSUC          ,'C',008,0,'','Sucursal',0,'&oDp:cSucursal'
+ C004=MOV_COSTO           ,'N',019,2,'','Costo',0,''
+ C005=MOV_CXUND           ,'N',014,2,'','Cantidad x Und/Medida',0,''
+ C006=MOV_DOCUME          ,'C',010,0,'','N£mero Documento',0,'&DPFECHA()'
+ C007=MOV_ID              ,'C',012,0,'','Codigo ID',0,''
+ C008=MOV_NUMMEM          ,'N',010,0,'','N£mero Memo',0,''
+ C009=MOV_TOTAL           ,'N',019,2,'','Monto Total',0,''
+ C010=MOV_UNDMED          ,'C',010,0,'','Unidad de Medida',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

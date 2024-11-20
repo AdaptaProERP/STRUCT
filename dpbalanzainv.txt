@@ -1,18 +1,17 @@
 [ID]
- NUMERO=1070
- NOMBRE=DPINVURL
- DESCRIPCION=Direcci¢n URL                                               
+ NUMERO=1008
+ NOMBRE=DPBALANZAINV
+ DESCRIPCION=Productos Recibidos por Balanza                             
  CONFIG=F
- SINGUL=URL                           
+ SINGUL=                              
  APLICA=01
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
- C001=URL_CODINV          ,'C',020,0,'','C¢digo',0,''
- C002=URL_IMAGEN          ,'M',000,0,'','Url Imagen',0,''
- C003=URL_TEXTO           ,'M',000,0,'','Url Texto',0,''
+ C001=PXB_CODIGO          ,'C',003,0,'','C¢digo Balanza',0,''
+ C002=PXB_CODINV          ,'C',020,0,'','Producto',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

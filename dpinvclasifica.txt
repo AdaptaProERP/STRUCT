@@ -1,7 +1,7 @@
 [ID]
  NUMERO=0142
  NOMBRE=DPINVCLASIFICA
- DESCRIPCION=Clasificación de Productos                                  
+ DESCRIPCION=Clasificaci¢n de Productos                                  
  CONFIG=F
  SINGUL=Tipo de Producto              
  APLICA=01
@@ -9,17 +9,18 @@
 [END_ID]
 
 [FIELDS]
- C001=TIP_ACTIVO          ,'L',001,0,'','Activo',0
- C002=TIP_ALTER           ,'L',001,0,'','Alterado',0
- C003=TIP_CODIGO          ,'C',020,0,'','Producto',0
- C004=TIP_CODTIP          ,'C',040,0,'','Tipo',0
- C005=TIP_CODUSU          ,'C',003,0,'','Usuario',0
- C006=TIP_FECHA           ,'D',008,0,'','Fecha',0
- C007=TIP_FORMA           ,'C',001,0,'','Forma de Incidencia',0
- C008=TIP_GRUPO           ,'C',080,0,'','Grupo',0
- C009=TIP_HORA            ,'C',008,0,'','Hora',0
- C010=TIP_INCIDE          ,'N',010,2,'','Monto Incidencia',0
- C011=TIP_REQCAN          ,'C',001,0,'','Incide Cant.',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TIP_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C002=TIP_ALTER           ,'L',001,0,'','Alterado',0,''
+ C003=TIP_CODIGO          ,'C',020,0,'','Producto',0,''
+ C004=TIP_CODTIP          ,'C',040,0,'','Tipo',0,''
+ C005=TIP_CODUSU          ,'C',003,0,'','Usuario',0,''
+ C006=TIP_FECHA           ,'D',008,0,'','Fecha',0,''
+ C007=TIP_FORMA           ,'C',001,0,'','Forma de Incidencia',0,''
+ C008=TIP_GRUPO           ,'C',080,0,'','Grupo',0,''
+ C009=TIP_HORA            ,'C',008,0,'','Hora',0,''
+ C010=TIP_INCIDE          ,'N',010,2,'','Monto Incidencia',0,''
+ C011=TIP_REQCAN          ,'C',001,0,'','Incide Cant.',0,''
 [END_FIELDS]
 
 [INNER_JOIN]

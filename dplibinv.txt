@@ -9,20 +9,21 @@
 [END_ID]
 
 [FIELDS]
- C001=LIV_AXIFIN          ,'L',001,0,'','Ajuste Financiero',0
- C002=LIV_AXIFIS          ,'L',001,0,'','Ajuste Fiscal',0
- C003=LIV_CODSUC          ,'C',006,0,'','Sucursal',0
- C004=LIV_CONTAB          ,'L',001,0,'','Contabilizado',0
- C005=LIV_FECHA           ,'D',008,0,'','Fecha',0
- C006=LIV_FECHAS          ,'D',008,0,'','Fecha de Sistema',0
- C007=LIV_INPC_F          ,'N',010,3,'','INPC Final',0
- C008=LIV_INPC_I          ,'N',010,3,'','IPC',0
- C009=LIV_INPC_V          ,'N',015,5,'','INPC Variación',0
- C010=LIV_IP              ,'C',010,0,'','IP del PC',0
- C011=LIV_NUMCBT          ,'C',008,0,'','Comprobante Contable',0
- C012=LIV_NUMEJE          ,'N',004,0,'','Numero de Ejercicio',0
- C013=LIV_NUMERO          ,'C',006,0,'','Registro Planificación',0
- C014=LIV_USUARI          ,'C',003,0,'','Usuarios',1
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=LIV_AXIFIN          ,'L',001,0,'','Ajuste Financiero',0,''
+ C002=LIV_AXIFIS          ,'L',001,0,'','Ajuste Fiscal',0,''
+ C003=LIV_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C004=LIV_CONTAB          ,'L',001,0,'','Contabilizado',0,''
+ C005=LIV_FECHA           ,'D',008,0,'','Fecha',0,''
+ C006=LIV_FECHAS          ,'D',008,0,'','Fecha de Sistema',0,''
+ C007=LIV_INPC_F          ,'N',010,3,'','INPC Final',0,''
+ C008=LIV_INPC_I          ,'N',010,3,'','IPC',0,''
+ C009=LIV_INPC_V          ,'N',015,5,'','INPC Variaci¢n',0,''
+ C010=LIV_IP              ,'C',010,0,'','IP del PC',0,''
+ C011=LIV_NUMCBT          ,'C',008,0,'','Comprobante Contable',0,''
+ C012=LIV_NUMEJE          ,'N',004,0,'','Numero de Ejercicio',0,''
+ C013=LIV_NUMERO          ,'C',006,0,'','Registro Planificaci¢n',0,''
+ C014=LIV_USUARI          ,'C',003,0,'','Usuarios',1,''
 [END_FIELDS]
 
 [TABLE_REL]

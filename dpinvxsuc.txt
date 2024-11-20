@@ -1,18 +1,19 @@
 [ID]
  NUMERO=1000
  NOMBRE=DPINVXSUC
- DESCRIPCION=Restricción de Producto x Sucursal                          
+ DESCRIPCION=Restricci¢n de Producto x Sucursal                          
  CONFIG=F
- SINGUL=Restricción de Produco        
+ SINGUL=Restricci¢n de Produco        
  APLICA=01
  PRIMARY_KEY=''
 [END_ID]
 
 [FIELDS]
- C001=IXS_CODIGO          ,'C',020,0,'','Código del Producto',0
- C002=IXS_CODSUC          ,'C',006,0,'','Sucursal',0
- C003=IXS_FECHA           ,'D',008,0,'','Fecha Registro',0
- C004=IXS_SELECT          ,'L',001,0,'','Restringido',0
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=IXS_CODIGO          ,'C',020,0,'','C¢digo del Producto',0,''
+ C002=IXS_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C003=IXS_FECHA           ,'D',008,0,'','Fecha Registro',0,'&DPFECHA()'
+ C004=IXS_SELECT          ,'L',001,0,'','Restringido',0,'.T.'
 [END_FIELDS]
 
 [TABLE_MAIN]
