@@ -1,0 +1,58 @@
+[ID]
+ NUMERO=1000
+ NOMBRE=DPCBTE_HIS
+ DESCRIPCION=Comprobante Contable Hist¢rico                              
+ CONFIG=F
+ SINGUL=Comprobante                   
+ APLICA=05
+ PRIMARY_KEY='CBT_CODSUC,CBT_ACTUAL,CBT_FECHA,CBT_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CBT_ACTUAL          ,'C',001,0,'','Actualizado',0,''
+ C002=CBT_CODEMP          ,'C',004,0,'','C¢digo de Empresa',0,''
+ C003=CBT_CODMON          ,'C',003,0,'','C¢digo Divisa',0,''
+ C004=CBT_CODSUC          ,'C',006,0,'','Sucursal',0,'&oDp:cSucursal'
+ C005=CBT_COMEN1          ,'C',060,0,'','Comentario',0,''
+ C006=CBT_COMEN2          ,'C',060,0,'','Comentario L¡nea 2',0,''
+ C007=CBT_DEFCBT          ,'C',003,0,'','Definici¢n del N£mero del Cbte.',0,''
+ C008=CBT_FCHFIN          ,'D',008,0,'','Fecha;Final',0,''
+ C009=CBT_FCHINI          ,'D',008,0,'','Fecha;Inicial',0,''
+ C010=CBT_FECHA           ,'D',008,0,'','Fecha',0,''
+ C011=CBT_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C012=CBT_NUMEJE          ,'C',004,0,'','N£mero del Ejercicio',0,''
+ C013=CBT_NUMERO          ,'C',008,0,'','N£mero',0,''
+ C014=CBT_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
+ C015=CBT_ORGPLA          ,'C',008,0,'','Origen;Planificaci¢n.',0,''
+ C016=CBT_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C017=CBT_PERIOD          ,'C',010,0,'','Frecuencia',0,''
+ C018=CBT_PERIODO         ,'C',020,0,'','Frecuencia',0,''
+ C019=CBT_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,''
+ C020=CBT_VALCAM          ,'N',017,2,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPEJERCICIOS            , CBT_CODSUC,CBT_NUMEJE=EJE_CODSUC,EJE_NUMERO <UPDATE>  <RUN>
+ T002=DPSUCURSAL              , CBT_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[INNER_JOIN]
+ SELECT * FROM DPCBTE_HIS INNER JOIN DPEJERCICIOS ON CBT_CODSUC=EJE_CODSUC AND CBT_NUMEJE=EJE_NUMERO
+ SELECT * FROM DPCBTE_HIS INNER JOIN DPSUCURSAL ON CBT_CODSUC=SUC_CODIGO
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

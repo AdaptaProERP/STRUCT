@@ -1,0 +1,100 @@
+[ID]
+ NUMERO=0205
+ NOMBRE=DPCBTEPAGO
+ DESCRIPCION=Comprobante de Pago                                         
+ CONFIG=F
+ SINGUL=Comprobante de Pago           
+ APLICA=04
+ PRIMARY_KEY='PAG_CODSUC,PAG_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=PAG_ACT             ,'N',002,0,'','Estatus',0,''
+ C002=PAG_ANOMBR          ,'C',040,0,'','A nombre de',0,''
+ C003=PAG_AUTORI          ,'L',001,0,'','Autorizado',0,''
+ C004=PAG_CBTNUM          ,'C',008,0,'','Comprobante Contable',1,''
+ C005=PAG_CENCOS          ,'C',008,0,'','Centro de Costos',1,'&oDp:cCenCos'
+ C006=PAG_CODCAJ          ,'C',006,0,'','Caja Origen',0,''
+ C007=PAG_CODIGO          ,'C',010,0,'','Proveedor',1,''
+ C008=PAG_CODMON          ,'C',003,0,'','Moneda',0,'&oDp:cMoneda'
+ C009=PAG_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C010=PAG_COMEN1          ,'C',060,0,'','Comentario 1',0,''
+ C011=PAG_COMEN2          ,'C',060,0,'','Comentario 2',0,''
+ C012=PAG_DIFCAM          ,'N',020,0,'','Diferencia Cambiario',0,''
+ C013=PAG_ESTADO          ,'C',001,0,'','Estado',0,''
+ C014=PAG_FCHREG          ,'D',002,0,'','Fecha Registro',0,''
+ C015=PAG_FECHA           ,'D',008,0,'','Fecha',0,''
+ C016=PAG_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C017=PAG_HORA            ,'C',008,0,'','Hora',0,''
+ C018=PAG_IMPRES          ,'L',001,0,'','Impreso',0,''
+ C019=PAG_LETRA           ,'C',002,0,'','Letra Correlativo',0,''
+ C020=PAG_MONTO           ,'N',014,2,'','Monto',0,''
+ C021=PAG_MTODIF          ,'N',020,0,'','Diferencia de Pago',0,''
+ C022=PAG_MTOITF          ,'N',019,0,'','Monto IGTF',0,''
+ C023=PAG_MTOIVA          ,'N',016,2,'','Monto de IVA',0,''
+ C024=PAG_NUMDOC          ,'C',020,0,'','Documento Asociado',0,''
+ C025=PAG_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C026=PAG_NUMMEM          ,'N',007,0,'','Registro Memo',0,''
+ C027=PAG_NUMORD          ,'C',008,0,'','Numero de Orden de Pago',0,''
+ C028=PAG_NUMORG          ,'C',008,0,'','Recibo Origen',0,''
+ C029=PAG_NUMPAR          ,'C',005,0,'','N£mero de Partida',0,''
+ C030=PAG_NUMRMU          ,'C',010,0,'','N£mero de Retenci¢n 1x1000',1,''
+ C031=PAG_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,'0'
+ C032=PAG_RETIRO          ,'L',001,0,'','Pago Retirado por el Receptor',0,''
+ C033=PAG_TIPDOC          ,'C',004,0,'','Tipo de Documento Asociado',0,''
+ C034=PAG_TIPPAG          ,'C',001,0,'','Tipo de Pago',0,''
+ C035=PAG_USUAR2          ,'C',003,0,'','Usuario que Autoriza',0,''
+ C036=PAG_VALCAM          ,'N',019,4,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPCENCOS                , PAG_CENCOS=CEN_CODIGO <UPDATE>  <RUN>
+ T002=DPPROVEEDOR             , PAG_CODIGO=PRO_CODIGO <UPDATE>  <RUN>
+ T003=DPSUCURSAL              , PAG_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[LINK_VIRTUAL]
+ T001=DPCENCOS                , PAG_CENCOS=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+ T002=DPCTABANCOMOV           , PAG_CODSUC,PAG_NUMERO=MOB_CODSUC,MOB_DOCASO, <CAMPO:MOB_CODBCO>, <WHERE:>
+ T003=DPMEMO                  , PAG_NUMMEM=MEM_NUMERO, <CAMPO:MEM_DESCRI>, <WHERE:>
+ T004=DPPROVEEDOR             , PAG_CODIGO=PRO_CODIGO, <CAMPO:PRO_NOMBRE>, <WHERE:>
+ T005=DPSUCURSAL              , PAG_CODSUC=SUC_CODIGO, <CAMPO:SUC_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPCBTEPAGO INNER JOIN DPCENCOS ON PAG_CENCOS=CEN_CODIGO
+ SELECT PAG_MONTO FROM DPCBTEPAGO INNER JOIN DPDOCPRO ON PAG_CODSUC=DOC_CODSUC AND PAG_CODIGO=DOC_CODIGO AND PAG_NUMERO=DOC_PAGNUM
+ SELECT PAG_MONTO FROM DPCBTEPAGO INNER JOIN DPDOCPRO_HIS ON PAG_CODSUC=DOC_CODSUC AND PAG_CODIGO=DOC_CODIGO AND PAG_NUMERO=DOC_PAGNUM
+ SELECT * FROM DPCBTEPAGO INNER JOIN DPPROVEEDOR ON PAG_CODIGO=PRO_CODIGO
+ SELECT * FROM DPCBTEPAGO INNER JOIN DPSUCURSAL ON PAG_CODSUC=SUC_CODIGO
+ SELECT CEN_DESCRI FROM DPCBTEPAGO INNER JOIN DPCENCOS ON CEN_CODIGO=PAG_CENCOS
+ SELECT MOB_CODBCO FROM DPCBTEPAGO INNER JOIN DPCTABANCOMOV ON MOB_CODSUC=PAG_CODSUC AND MOB_DOCASO=PAG_NUMERO
+ SELECT MEM_DESCRI FROM DPCBTEPAGO INNER JOIN DPMEMO ON MEM_NUMERO=PAG_NUMMEM
+ SELECT PRO_NOMBRE FROM DPCBTEPAGO INNER JOIN DPPROVEEDOR ON PRO_CODIGO=PAG_CODIGO
+ SELECT SUC_DESCRI FROM DPCBTEPAGO INNER JOIN DPSUCURSAL ON SUC_CODIGO=PAG_CODSUC
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=PAG_ESTADO          ,Activo                                                                          
+ C002=PAG_ESTADO          ,Nulo                                                                            
+ C003=PAG_ESTADO          ,Suspendido                                                                      
+ C004=PAG_TIPPAG          ,Anticipo                                                                        
+ C005=PAG_TIPPAG          ,Devoluci¢n                                                                      
+ C006=PAG_TIPPAG          ,Otros Pagos                                                                     
+ C007=PAG_TIPPAG          ,Pago                                                                            
+ C008=PAG_TIPPAG          ,Requerimiento de Efectivo                                                       
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

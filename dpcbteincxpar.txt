@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1101
+ NOMBRE=DPCBTEINCXPAR
+ DESCRIPCION=Incidencias por Partida Contable                            
+ CONFIG=F
+ SINGUL=Incidencia por Partida Contab.
+ APLICA=05
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=IPC_ACTUAL          ,'C',001,0,'','Tipo de Cbte',0,''
+ C002=IPC_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,'&oDp:cSucursal'
+ C003=IPC_FECHA           ,'D',008,0,'','Fecha',0,'&DPFECHA()'
+ C004=IPC_ITEM            ,'C',004,0,'','Item',0,''
+ C005=IPC_MOTIVO          ,'C',250,0,'','Motivo',0,''
+ C006=IPC_NUMCBT          ,'C',008,0,'','N£mero Cbt',0,''
+ C007=IPC_NUMPAR          ,'C',006,0,'','N£mero Partida',0,''
+ C008=IPC_ORIGEN          ,'C',003,0,'','Origen',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

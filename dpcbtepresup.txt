@@ -1,0 +1,52 @@
+[ID]
+ NUMERO=0531
+ NOMBRE=DPCBTEPRESUP
+ DESCRIPCION=Comprobante Presupuestario                                  
+ CONFIG=F
+ SINGUL=Comprobante                   
+ APLICA=11
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CPC_ACTUAL          ,'C',001,0,'','Actualizado',0,''
+ C002=CPC_CENCOS          ,'C',008,0,'','Centro de Costo',0,''
+ C003=CPC_CODSUC          ,'C',008,0,'','Centro de Costo',0,'&oDp:cSucursal'
+ C004=CPC_FECHA           ,'D',008,0,'','Fecha',0,''
+ C005=CPC_NUMEJE          ,'C',004,0,'','Ejercicio',0,''
+ C006=CPC_NUMERO          ,'C',010,0,'','Comprobante',1,''
+ C007=CPC_TIPO            ,'C',002,0,'','Tipo de Registro',0,''
+ C008=CPC_TITULO          ,'C',060,0,'','Titulo',0,''
+[END_FIELDS]
+
+[LINK_VIRTUAL]
+ T001=DPCENCOS                , CPC_CENCOS=CEN_CODIGO, <CAMPO:CEN_DESCRI>, <WHERE:>
+[END_LINK_VIRTUAL]
+
+
+[INNER_JOIN]
+ SELECT * FROM DPCBTEPRESUP INNER JOIN DPCENCOS ON CPC_CENCOS=CEN_CODIGO
+ SELECT CEN_DESCRI FROM DPCBTEPRESUP INNER JOIN DPCENCOS ON CEN_CODIGO=CPC_CENCOS
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CPC_TIPO            ,CA. Causado                                                                     
+ C002=CPC_TIPO            ,CO. Comprometido                                                                
+ C003=CPC_TIPO            ,CR. Cr‚ditos Adicionales                                                        
+ C004=CPC_TIPO            ,MO. Modificaciones                                                              
+ C005=CPC_TIPO            ,PA. Pagado                                                                      
+ C006=CPC_TIPO            ,PI.  Presupuesto Inicial                                                        
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]

@@ -1,0 +1,73 @@
+[ID]
+ NUMERO=0501
+ NOMBRE=DPCBTE
+ DESCRIPCION=Comprobante Contable                                        
+ CONFIG=F
+ SINGUL=Comprobante                   
+ APLICA=05
+ PRIMARY_KEY='CBT_CODSUC,CBT_ACTUAL,CBT_FECHA,CBT_NUMERO'
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=CBT_ACTUAL          ,'C',001,0,'','Actualizado',0,''
+ C002=CBT_CENCOS          ,'C',010,0,'','C¢digo de Centros de Costos',0,'&oDp:cCenCos'
+ C003=CBT_CENGEN          ,'L',001,0,'','General para Todos los Asientos de Orige',0,'.F.'
+ C004=CBT_CODEMP          ,'C',004,0,'','C¢digo de Empresa',0,''
+ C005=CBT_CODMON          ,'C',003,0,'','C¢digo Divisa',0,''
+ C006=CBT_CODSUC          ,'C',006,0,'','Sucursal',1,'&oDp:cSucursal'
+ C007=CBT_COMEN1          ,'C',060,0,'','Comentario',0,''
+ C008=CBT_COMEN2          ,'C',060,0,'','Comentario L¡nea 2',0,''
+ C009=CBT_DEFCBT          ,'C',003,0,'','Definici¢n del N£mero del Cbte.',0,''
+ C010=CBT_FCHFIN          ,'D',008,0,'','Fecha;Final',0,''
+ C011=CBT_FCHINI          ,'D',008,0,'','Fecha;Inicial',0,''
+ C012=CBT_FECHA           ,'D',008,0,'','Fecha',0,''
+ C013=CBT_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C014=CBT_NUMEJE          ,'C',004,0,'','N£mero del Ejercicio',0,'&oDp:cNumEje'
+ C015=CBT_NUMERO          ,'C',008,0,'','N£mero',1,''
+ C016=CBT_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
+ C017=CBT_NUMPRO          ,'C',006,0,'','N£mero de Proceso',0,''
+ C018=CBT_ORGPLA          ,'C',008,0,'','Origen;Planificaci¢n.',0,''
+ C019=CBT_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C020=CBT_PERIOD          ,'C',010,0,'','Frecuencia',0,''
+ C021=CBT_REGAUD          ,'N',008,0,'','Registro de Auditor¡a',0,''
+ C022=CBT_USUARI          ,'C',003,0,'','Usuario',0,'&oDp:cUsuario'
+ C023=CBT_VALCAM          ,'N',019,2,'','Valor Cambiario',0,''
+[END_FIELDS]
+
+[TABLE_MAIN]
+ T001=DPEJERCICIOS            , CBT_CODSUC,CBT_NUMEJE=EJE_CODSUC,EJE_NUMERO <UPDATE>  <RUN>
+ T002=DPSUCURSAL              , CBT_CODSUC=SUC_CODIGO <UPDATE>  <RUN>
+[END_TABLE_MAIN]
+
+[TABLE_REL]
+ T001=DPASIENTOS              , CBT_CODSUC,CBT_ACTUAL,CBT_NUMERO,CBT_FECHA=MOC_CODSUC,MOC_ACTUAL,MOC_NUMCBT,MOC_FECHA, <UPDATE> <DELETE> <RUN>
+ T002=DPCBTEPROG              , CBT_CODSUC,CBT_NUMERO,CBT_FECHA,CBT_ACTUAL=CCP_CODSUC,CCP_CBTNUM,CCP_CBTFCH,CCP_ACTUAL, <UPDATE> <DELETE> <RUN>
+ T003=DPCBTE_AUTO             , CBT_CODSUC,CBT_ACTUAL,CBT_FECHA,CBT_NUMERO=CBA_CODSUC,CBA_ACTUAL,CBA_FECHA,CBA_NUMERO, <UPDATE> <DELETE> <RUN>
+[END_TABLE_REL
+
+[INNER_JOIN]
+ SELECT * FROM DPCBTE INNER JOIN DPASIENTOS ON MOC_CODSUC=CBT_CODSUC AND MOC_ACTUAL=CBT_ACTUAL AND MOC_NUMCBT=CBT_NUMERO AND MOC_FECHA=CBT_FECHA
+ SELECT * FROM DPCBTE INNER JOIN DPEJERCICIOS ON CBT_CODSUC=EJE_CODSUC AND CBT_NUMEJE=EJE_NUMERO
+ SELECT * FROM DPCBTE INNER JOIN DPSUCURSAL ON CBT_CODSUC=SUC_CODIGO
+ SELECT * FROM DPCBTE INNER JOIN DPCBTEPROG ON CCP_CODSUC=CBT_CODSUC AND CCP_CBTNUM=CBT_NUMERO AND CCP_CBTFCH=CBT_FECHA AND CCP_ACTUAL=CBT_ACTUAL
+ SELECT * FROM DPCBTE INNER JOIN DPCBTE_AUTO ON CBA_CODSUC=CBT_CODSUC AND CBA_ACTUAL=CBT_ACTUAL AND CBA_FECHA=CBT_FECHA AND CBA_NUMERO=CBT_NUMERO
+[END_INNER_JOIN]
+
+[OPTIONS]
+ C001=CBT_ACTUAL          ,Auditor                                                                         
+ C002=CBT_ACTUAL          ,No Actualizado                                                                  
+ C003=CBT_ACTUAL          ,Si Actualizado                                                                  
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
