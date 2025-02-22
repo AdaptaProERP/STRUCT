@@ -58,48 +58,49 @@
  C046=TDC_INVMON          ,'L',001,0,'','Productos en Divisas',0,''
  C047=TDC_IVA             ,'L',001,0,'','Calcula I.V.A.',0,''
  C048=TDC_LBXEXI          ,'L',001,0,'','Browse muestra Existencia',0,'.F.'
- C049=TDC_LIBTRA          ,'C',015,0,'','Transacci¢n Libro de Venta',0,''
- C050=TDC_LIBVTA          ,'L',001,0,'','Libro de Venta',0,''
- C051=TDC_LISTA           ,'L',001,0,'','Lista de Precio',0,'.T.'
- C052=TDC_LITEM           ,'L',001,0,'','Requiere Items de Cuentas',0,''
- C053=TDC_MNUOTR          ,'L',001,0,'','Men£ Otros Documentos',0,''
- C054=TDC_MONEDA          ,'L',001,0,'','Moneda Extranjera',0,''
- C055=TDC_MONETA          ,'L',001,0,'','Documento con Valor Monetario',0,'.T.'
- C056=TDC_MOVED           ,'L',001,0,'','Mover N£mero de Documento',0,'.F.'
- C057=TDC_MOVEF           ,'L',001,0,'','Mover N£mero de Fiscal',0,'.F.'
- C058=TDC_NITEMS          ,'N',003,0,'','Cantidad M xima de Items',0,''
- C059=TDC_NUMEDT          ,'L',001,0,'','Nœmero Editable',0,''
- C060=TDC_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
- C061=TDC_ORGPLA          ,'L',001,0,'','Origina desde Plantilla',0,''
- C062=TDC_PAGOS           ,'L',001,0,'','Acepta Pagos',0,''
- C063=TDC_PESO            ,'L',001,0,'','Peso',0,'.T.'
- C064=TDC_PESPRI          ,'L',001,0,'','Peso Antes de Cantidad',0,''
- C065=TDC_PICFIS          ,'C',020,0,'','Mascara para introducir N£mero Fiscal',0,''
- C066=TDC_PICTUR          ,'C',020,0,'','Mascara',0,''
- C067=TDC_POSCOM          ,'N',003,0,'','Posici¢n en Comercializaci¢n',0,'0'
- C068=TDC_PRECIO          ,'L',001,0,'','Precio Din mico en Divisas',0,'.F.'
- C069=TDC_PREDES          ,'L',001,0,'','Precio con Descuento',0,'.T.'
- C070=TDC_PRODUC          ,'L',001,0,'','Requiere Productos',0,''
- C071=TDC_REGTAR          ,'L',001,0,'','Genera Control de Taras de Carga',0,''
- C072=TDC_REQAPR          ,'L',001,0,'','Requiere Aprobaci¢n',0,''
- C073=TDC_REQDIG          ,'L',001,0,'','Requiere Digitalizaci¢n',0,''
- C074=TDC_REQREC          ,'L',001,0,'','Requiere Recursos',0,''
- C075=TDC_REQSCA          ,'L',001,0,'','Scannea Documento al Finalizar',0,''
- C076=TDC_RETISR          ,'L',001,0,'','Retenciones de ISLR',0,''
- C077=TDC_RETIVA          ,'L',001,0,'','Retenciones de IVA',0,''
- C078=TDC_RETMUN          ,'L',001,0,'','Otras Retenciones',0,'.T.'
- C079=TDC_REVALO          ,'L',001,0,'','Revalorizable',0,''
- C080=TDC_SERIEF          ,'C',015,0,'','Serie Fiscal',0,''
- C081=TDC_TARA            ,'L',001,0,'','Tara de Carga',0,''
- C082=TDC_TEMANU          ,'C',050,0,'','Tema para Anular',0,''
- C083=TDC_TEMMOD          ,'C',050,0,'','Tema para Modificar',0,''
- C084=TDC_TIPORG          ,'L',001,0,'','Tipo de Origen',0,'.T.'
- C085=TDC_TIPPRO          ,'C',003,0,'','Tipo de Documento Destino del Proveedor',0,''
- C086=TDC_TRIBUT          ,'L',001,0,'','Tributo',0,'.F.'
- C087=TDC_TRIGGE          ,'C',250,0,'','Evento en Triggers',0,''
- C088=TDC_VALFCH          ,'L',001,0,'','Validar Fechas Restringidas',0,''
- C089=TDC_XY              ,'L',001,0,'','X*Y   (Calcular Medidas)',0,'.F.'
- C090=TDC_XYZ             ,'L',001,0,'','X*Y*Z (Calcular Volumen)',0,'.F.'
+ C049=TDC_LIBINV          ,'L',001,0,'','Libro de ventas',0,''
+ C050=TDC_LIBTRA          ,'C',015,0,'','Transacci¢n Libro de Venta',0,''
+ C051=TDC_LIBVTA          ,'L',001,0,'','Libro de Venta',0,''
+ C052=TDC_LISTA           ,'L',001,0,'','Lista de Precio',0,'.T.'
+ C053=TDC_LITEM           ,'L',001,0,'','Requiere Items de Cuentas',0,''
+ C054=TDC_MNUOTR          ,'L',001,0,'','Men£ Otros Documentos',0,''
+ C055=TDC_MONEDA          ,'L',001,0,'','Moneda Extranjera',0,''
+ C056=TDC_MONETA          ,'L',001,0,'','Documento con Valor Monetario',0,'.T.'
+ C057=TDC_MOVED           ,'L',001,0,'','Mover N£mero de Documento',0,'.F.'
+ C058=TDC_MOVEF           ,'L',001,0,'','Mover N£mero de Fiscal',0,'.F.'
+ C059=TDC_NITEMS          ,'N',003,0,'','Cantidad M xima de Items',0,''
+ C060=TDC_NUMEDT          ,'L',001,0,'','Nœmero Editable',0,''
+ C061=TDC_NUMMEM          ,'N',006,0,'','N£mero del Memo',0,''
+ C062=TDC_ORGPLA          ,'L',001,0,'','Origina desde Plantilla',0,''
+ C063=TDC_PAGOS           ,'L',001,0,'','Acepta Pagos',0,''
+ C064=TDC_PESO            ,'L',001,0,'','Peso',0,'.T.'
+ C065=TDC_PESPRI          ,'L',001,0,'','Peso Antes de Cantidad',0,''
+ C066=TDC_PICFIS          ,'C',020,0,'','Mascara para introducir N£mero Fiscal',0,''
+ C067=TDC_PICTUR          ,'C',020,0,'','Mascara',0,''
+ C068=TDC_POSCOM          ,'N',003,0,'','Posici¢n en Comercializaci¢n',0,'0'
+ C069=TDC_PRECIO          ,'L',001,0,'','Precio Din mico en Divisas',0,'.F.'
+ C070=TDC_PREDES          ,'L',001,0,'','Precio con Descuento',0,'.T.'
+ C071=TDC_PRODUC          ,'L',001,0,'','Requiere Productos',0,''
+ C072=TDC_REGTAR          ,'L',001,0,'','Genera Control de Taras de Carga',0,''
+ C073=TDC_REQAPR          ,'L',001,0,'','Requiere Aprobaci¢n',0,''
+ C074=TDC_REQDIG          ,'L',001,0,'','Requiere Digitalizaci¢n',0,''
+ C075=TDC_REQREC          ,'L',001,0,'','Requiere Recursos',0,''
+ C076=TDC_REQSCA          ,'L',001,0,'','Scannea Documento al Finalizar',0,''
+ C077=TDC_RETISR          ,'L',001,0,'','Retenciones de ISLR',0,''
+ C078=TDC_RETIVA          ,'L',001,0,'','Retenciones de IVA',0,''
+ C079=TDC_RETMUN          ,'L',001,0,'','Otras Retenciones',0,'.T.'
+ C080=TDC_REVALO          ,'L',001,0,'','Revalorizable',0,''
+ C081=TDC_SERIEF          ,'C',015,0,'','Serie Fiscal',0,''
+ C082=TDC_TARA            ,'L',001,0,'','Tara de Carga',0,''
+ C083=TDC_TEMANU          ,'C',050,0,'','Tema para Anular',0,''
+ C084=TDC_TEMMOD          ,'C',050,0,'','Tema para Modificar',0,''
+ C085=TDC_TIPORG          ,'L',001,0,'','Tipo de Origen',0,'.T.'
+ C086=TDC_TIPPRO          ,'C',003,0,'','Tipo de Documento Destino del Proveedor',0,''
+ C087=TDC_TRIBUT          ,'L',001,0,'','Tributo',0,'.F.'
+ C088=TDC_TRIGGE          ,'C',250,0,'','Evento en Triggers',0,''
+ C089=TDC_VALFCH          ,'L',001,0,'','Validar Fechas Restringidas',0,''
+ C090=TDC_XY              ,'L',001,0,'','X*Y   (Calcular Medidas)',0,'.F.'
+ C091=TDC_XYZ             ,'L',001,0,'','X*Y*Z (Calcular Volumen)',0,'.F.'
 [END_FIELDS]
 
 [TABLE_REL]
@@ -110,10 +111,11 @@
  T005=DPMODPROCDOCCLI         , TDC_TIPO=MPN_TIPDOC, <UPDATE> <DELETE> <RUN>
  T006=DPTIPDOCCLIGRU          , TDC_TIPO=TDG_TIPDOC, <UPDATE> <DELETE> <RUN>
  T007=DPTIPDOCCLIIMP          , TDC_TIPO=TIM_TIPDOC, <UPDATE> <DELETE> <RUN>
- T008=DPTIPDOCCLIMOT          , TDC_TIPO=MDC_TIPDOC, <UPDATE> <DELETE> <RUN>
- T009=DPTIPDOCCLI_CTA         , TDC_TIPO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
- T010=DPTIPDOCDIFCAM          , TDC_TIPO=DDC_TIPDOC, <UPDATE> <DELETE> <RUN>
- T011=DPTIPDOCXPLANT          , TDC_TIPO=TDP_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T008=DPTIPDOCCLI_CTA         , TDC_TIPO=CIC_CODIGO, <UPDATE> <DELETE> <RUN>
+ T009=DPTIPDOCDIFCAM          , TDC_TIPO=DDC_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T010=DPTIPDOCXPLANT          , TDC_TIPO=TDP_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T011=DPTIPDOCCLIMOT          , TDC_TIPO=MDC_TIPDOC, <UPDATE> <DELETE> <RUN>
+ T012=DPTIPDOCCLINUM          , TDC_TIPO=TDN_TIPDOC, <UPDATE> <DELETE> <RUN>
 [END_TABLE_REL
 
 [LINK_VIRTUAL]
@@ -141,12 +143,13 @@
  SELECT TDC_ABREVI FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLI ON TDC_TIPO=MDC_TIPDOC
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIGRU ON TDG_TIPDOC=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIIMP ON TIM_TIPDOC=TDC_TIPO
- SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIMOT ON MDC_TIPDOC=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLISLD ON SLD_TIPDOC=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIUTILIZ ON TDU_TIPDOC=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLI_CTA ON CIC_CODIGO=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCDIFCAM ON DDC_TIPDOC=TDC_TIPO
  SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCXPLANT ON TDP_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLIMOT ON MDC_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLI INNER JOIN DPTIPDOCCLINUM ON TDN_TIPDOC=TDC_TIPO
 [END_INNER_JOIN]
 
 [OPTIONS]

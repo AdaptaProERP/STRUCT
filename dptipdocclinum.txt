@@ -5,22 +5,33 @@
  CONFIG=F
  SINGUL=Tipo de Documento N£meraci¢n  
  APLICA=  
- PRIMARY_KEY=''
+ PRIMARY_KEY='TDN_CODSUC,TDN_TIPDOC,TDN_SERFIS'
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
  C001=TDN_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,''
- C002=TDN_ACTIVO          ,'L',001,0,'','Activo',0,''
- C003=TDN_LEN             ,'N',010,0,'','Longitud',0,''
- C004=TDN_NUMERO          ,'C',010,0,'','N£mero;Doc.',0,''
- C005=TDN_PICTUR          ,'C',015,0,'','Picture',0,''
- C006=TDN_SERFIS          ,'C',001,0,'','Serie;Fiscal',0,''
- C007=TDN_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
- C008=TDN_ZERO            ,'L',001,0,'','Relleno',0,''
+ C002=TDN_LLAVE           ,'C',250,0,'','Llave',0,''
+ C003=TDN_NUMULT          ,'C',010,0,'','Ultimo;N£mero',0,''
+ C004=TDN_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C005=TDN_LEN             ,'N',010,0,'','Longitud',0,''
+ C006=TDN_NUMERO          ,'C',010,0,'','N£mero;Doc.',0,''
+ C007=TDN_PICTUR          ,'C',015,0,'','Picture',0,''
+ C008=TDN_SERFIS          ,'C',001,0,'','Serie;Fiscal',0,''
+ C009=TDN_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C010=TDN_ZERO            ,'L',001,0,'','Relleno',0,''
 [END_FIELDS]
 
+[TABLE_MAIN]
+ T001=DPSERIEFISCAL           , TDN_SERFIS=SFI_LETRA <UPDATE> <DELETE> <RUN>
+ T002=DPTIPDOCCLI             , TDN_TIPDOC=TDC_TIPO <UPDATE> <DELETE> <RUN>
+ T003=DPSUCURSAL              , TDN_CODSUC=SUC_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
 [INNER_JOIN]
+ SELECT * FROM DPTIPDOCCLINUM INNER JOIN DPSERIEFISCAL ON TDN_SERFIS=SFI_LETRA
+ SELECT * FROM DPTIPDOCCLINUM INNER JOIN DPTIPDOCCLI ON TDN_TIPDOC=TDC_TIPO
+ SELECT * FROM DPTIPDOCCLINUM INNER JOIN DPSUCURSAL ON TDN_CODSUC=SUC_CODIGO
 [END_INNER_JOIN]
 
 [OPTIONS]

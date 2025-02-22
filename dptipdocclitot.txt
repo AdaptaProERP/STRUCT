@@ -5,24 +5,32 @@
  CONFIG=F
  SINGUL=Totales por Tipo de Documento 
  APLICA=  
- PRIMARY_KEY=''
+ PRIMARY_KEY='TDT_CODSUC,TDT_TIPDOC,TDT_SERFIS,TDT_FECHA'
 [END_ID]
 
 [FIELDS]
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
  C001=TDT_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,''
- C002=TDT_BASIMP          ,'N',019,2,'','Base Imponible',0,''
- C003=TDT_CANMOV          ,'N',010,0,'','Reg.;Items',0,''
- C004=TDT_CANTID          ,'N',010,0,'','Cant.;Reg.',0,''
- C005=TDT_ENCRIP          ,'C',250,2,'','Encriptado',0,''
- C006=TDT_FECHA           ,'D',010,0,'','Fecha',0,''
- C007=TDT_MTOEXE          ,'N',019,2,'','Monto Exento',0,''
- C008=TDT_MTOIVA          ,'N',019,2,'','Monto IVA',0,''
- C009=TDT_MTONET          ,'N',019,2,'','Monto Neto',0,''
- C010=TDT_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C002=TDT_SERFIS          ,'C',001,0,'','Serie;Fiscal',0,''
+ C003=TDT_BASIMP          ,'N',019,2,'','Base Imponible',0,''
+ C004=TDT_CANMOV          ,'N',010,0,'','Reg.;Items',0,''
+ C005=TDT_CANTID          ,'N',010,0,'','Cant.;Reg.',0,''
+ C006=TDT_ENCRIP          ,'C',250,0,'','Encriptado',0,''
+ C007=TDT_FECHA           ,'D',010,0,'','Fecha',0,''
+ C008=TDT_MTOEXE          ,'N',019,2,'','Monto Exento',0,''
+ C009=TDT_MTOIVA          ,'N',019,2,'','Monto IVA',0,''
+ C010=TDT_MTONET          ,'N',019,2,'','Monto Neto',0,''
+ C011=TDT_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
 [END_FIELDS]
 
+[TABLE_MAIN]
+ T001=DPSERIEFISCAL           , TDT_SERFIS=SFI_LETRA <UPDATE> <DELETE> <RUN>
+ T002=DPSUCURSAL              , TDT_CODSUC=SUC_CODIGO <UPDATE> <DELETE> <RUN>
+[END_TABLE_MAIN]
+
 [INNER_JOIN]
+ SELECT * FROM DPTIPDOCCLITOT INNER JOIN DPSERIEFISCAL ON TDT_SERFIS=SFI_LETRA
+ SELECT * FROM DPTIPDOCCLITOT INNER JOIN DPSUCURSAL ON TDT_CODSUC=SUC_CODIGO
 [END_INNER_JOIN]
 
 [OPTIONS]

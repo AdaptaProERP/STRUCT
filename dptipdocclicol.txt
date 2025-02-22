@@ -13,11 +13,12 @@
  C001=CTD_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
  C002=CTD_AFTER           ,'C',020,0,'','After',0,''
  C003=CTD_FIELD           ,'C',020,0,'','Columna',0,''
- C004=CTD_NUMPOS          ,'N',002,0,'','Posici¢n',0,''
- C005=CTD_PICTUR          ,'C',024,0,'','Formato',0,''
- C006=CTD_SIZE            ,'N',003,0,'','Ancho',0,''
- C007=CTD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
- C008=CTD_TITLE           ,'C',200,0,'','Titulo',0,''
+ C004=CTD_MEMOEJ          ,'M',010,0,'','Memo Ejecuci¢n',0,''
+ C005=CTD_NUMPOS          ,'N',002,0,'','Posici¢n',0,''
+ C006=CTD_PICTUR          ,'C',024,0,'','Formato',0,''
+ C007=CTD_SIZE            ,'N',003,0,'','Ancho',0,''
+ C008=CTD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C009=CTD_TITLE           ,'C',200,0,'','Titulo',0,''
 [END_FIELDS]
 
 [INNER_JOIN]
