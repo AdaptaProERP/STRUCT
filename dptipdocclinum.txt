@@ -1,0 +1,39 @@
+[ID]
+ NUMERO=1118
+ NOMBRE=DPTIPDOCCLINUM
+ DESCRIPCION=Tipo de Documento N£meraci¢n                                
+ CONFIG=F
+ SINGUL=Tipo de Documento N£meraci¢n  
+ APLICA=  
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=TDN_CODSUC          ,'C',006,0,'','C¢digo Sucursal',0,''
+ C002=TDN_ACTIVO          ,'L',001,0,'','Activo',0,''
+ C003=TDN_LEN             ,'N',010,0,'','Longitud',0,''
+ C004=TDN_NUMERO          ,'C',010,0,'','N£mero;Doc.',0,''
+ C005=TDN_PICTUR          ,'C',015,0,'','Picture',0,''
+ C006=TDN_SERFIS          ,'C',001,0,'','Serie;Fiscal',0,''
+ C007=TDN_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C008=TDN_ZERO            ,'L',001,0,'','Relleno',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
