@@ -1,0 +1,50 @@
+[ID]
+ NUMERO=1117
+ NOMBRE=DPAUDITOR_DOCFIS
+ DESCRIPCION=Registro de Auditoria Documentos de Ventas                  
+ CONFIG=F
+ SINGUL=Registro de Auditoria Document
+ APLICA=01
+ PRIMARY_KEY=''
+[END_ID]
+
+[FIELDS]
+ CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
+ C001=AUD_AP              ,'C',001,0,'','Horario A o P',0,''
+ C002=AUD_CODSUC          ,'C',006,0,'','Sucursal',0,''
+ C003=AUD_NUMDOC          ,'C',010,0,'','N£mero;Documento',0,''
+ C004=AUD_TIPDOC          ,'C',003,0,'','Tipo de Documento',0,''
+ C005=AUD_TIPTRA          ,'C',001,0,'','N£mero;Documento',0,''
+ C006=AUD_CLAVE           ,'C',200,0,'','Clave',0,''
+ C007=AUD_ENCRIP          ,'B',010,0,'','Encriptado',0,''
+ C008=AUD_ESTACI          ,'C',014,0,'','Estaci¢n',0,''
+ C009=AUD_FECHAO          ,'D',008,0,'','Fecha Sistema Operativo',0,''
+ C010=AUD_FECHAS          ,'D',008,0,'','Fecha Sistema',0,''
+ C011=AUD_FILMAI          ,'N',007,0,'','Digitalizaci¢n',0,''
+ C012=AUD_HORA            ,'C',008,0,'','Hora',0,''
+ C013=AUD_IP              ,'C',014,0,'','IP de la Estaci¢n',0,''
+ C014=AUD_MEMO            ,'M',010,0,'','Contenido de la Auditoria',0,''
+ C015=AUD_NUMERO          ,'N',010,0,'','Registro',0,''
+ C016=AUD_SCLAVE          ,'C',120,0,'','Sub Clave',0,''
+ C017=AUD_TABLA           ,'C',020,0,'','Nombre de la Tabla',0,''
+ C018=AUD_TIPO            ,'C',004,0,'','Tipo de Auditor¡a',0,''
+ C019=AUD_USUARI          ,'C',003,0,'','Usuario',0,''
+[END_FIELDS]
+
+[INNER_JOIN]
+[END_INNER_JOIN]
+
+[OPTIONS]
+[END_OPTIONS]
+
+[COMENTARIOS]
+ C: CHAR 
+ D: DATE 
+ L: LOGICAL 1=T 0=F 
+ N: NUMERICO
+ M: MEMO
+
+[SQL]
+ SELECT <CAMPOS> FROM <TABLA> 
+ INNER JOIN XTABLA ON XCAMPO=YCAMPO 
+[ENDSQL]
