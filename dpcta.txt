@@ -12,35 +12,36 @@
  CAM_NAME,CAM_TYPE,CAM_LEN,CAM_DEC,CAM_COMMAN,CAM_DESCRI,CAM_ZERO,CAM_DEFAUL 
  C001=CTA_ACTIVO          ,'L',001,0,'','Activo',0,'.T.'
  C002=CTA_AJUFIS          ,'L',001,0,'','Ajuste Fiscal',0,''
- C003=CTA_CODCLA          ,'C',010,0,'','C¢digo Clasificaci¢n',0,''
- C004=CTA_CODCON          ,'C',003,0,'','Concepto de Retenci¢n',0,''
- C005=CTA_CODIGO          ,'C',020,0,'','C¢digo',0,''
- C006=CTA_CODINT          ,'C',010,0,'','C¢digo de Integraci¢n',0,''
- C007=CTA_CODMOD          ,'C',006,0,'','Codigo de Cuenta Modelo',1,'&oDp:cCtaMod'
- C008=CTA_CODMON          ,'C',003,0,'','C¢digo de Moneda',0,''
- C009=CTA_COMEN1          ,'C',040,0,'','Comentario 1',0,''
- C010=CTA_COMEN2          ,'C',040,0,'','Comentario 2',0,''
- C011=CTA_CTADET          ,'L',001,0,'','Detalle o Saldo',0,''
- C012=CTA_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
- C013=CTA_DISDEP          ,'L',001,0,'','Distribuci¢n Departamento',0,'.F.'
- C014=CTA_DPJ26           ,'C',004,0,'','Casilla en DPJ26',0,''
- C015=CTA_EXPCEN          ,'L',001,0,'','Explosi¢n Centro de Costos',0,''
- C016=CTA_FLUJOC          ,'L',001,0,'','Flujo de Caja',0,''
- C017=CTA_GASDED          ,'L',001,0,'','Gastos;Deducibles',0,''
- C018=CTA_INGRES          ,'L',001,0,'','Acepta;Ingresos',0,''
- C019=CTA_LEN             ,'N',003,0,'','Longitud',0,''
- C020=CTA_MONFIN          ,'L',001,0,'','Moneda para Ajuste Financiero',0,''
- C021=CTA_MONFIS          ,'C',001,0,'','Moneda Ajsute Fiscal',0,''
- C022=CTA_NIVEL           ,'N',003,0,'','Nivel',0,''
- C023=CTA_NOMBRE          ,'C',040,0,'','Nombre Anterior',0,''
- C024=CTA_NUMMEM          ,'N',007,0,'','Memo',0,''
- C025=CTA_ORIGEN          ,'C',003,0,'','Origen',0,''
- C026=CTA_PAGOS           ,'L',001,0,'','Acepta Pagos',0,''
- C027=CTA_PRESEN          ,'C',040,0,'','C¢digo de Presentaci¢n',0,''
- C028=CTA_PROPIE          ,'C',030,0,'','Propiedad de las Cuentas',0,''
- C029=CTA_SIGN18          ,'C',001,0,'','Signo',0,''
- C030=CTA_SUBN18          ,'C',030,0,'','Categor¡a NIF18',0,''
- C031=CTA_UTDED           ,'N',004,0,'','UT-Gastos;Deducibles',0,''
+ C003=CTA_CLRTEX          ,'N',007,0,'','Color Texto',0,''
+ C004=CTA_CODCLA          ,'C',010,0,'','C¢digo Clasificaci¢n',0,''
+ C005=CTA_CODCON          ,'C',003,0,'','Concepto de Retenci¢n',0,''
+ C006=CTA_CODIGO          ,'C',020,0,'','C¢digo',0,''
+ C007=CTA_CODINT          ,'C',010,0,'','C¢digo de Integraci¢n',0,''
+ C008=CTA_CODMOD          ,'C',006,0,'','Codigo de Cuenta Modelo',1,'&oDp:cCtaMod'
+ C009=CTA_CODMON          ,'C',003,0,'','C¢digo de Moneda',0,''
+ C010=CTA_COMEN1          ,'C',040,0,'','Comentario 1',0,''
+ C011=CTA_COMEN2          ,'C',040,0,'','Comentario 2',0,''
+ C012=CTA_CTADET          ,'L',001,0,'','Detalle o Saldo',0,''
+ C013=CTA_DESCRI          ,'C',040,0,'','Descripci¢n',0,''
+ C014=CTA_DISDEP          ,'L',001,0,'','Distribuci¢n Departamento',0,'.F.'
+ C015=CTA_DPJ26           ,'C',004,0,'','Casilla en DPJ26',0,''
+ C016=CTA_EXPCEN          ,'L',001,0,'','Explosi¢n Centro de Costos',0,''
+ C017=CTA_FLUJOC          ,'L',001,0,'','Flujo de Caja',0,''
+ C018=CTA_GASDED          ,'L',001,0,'','Gastos;Deducibles',0,''
+ C019=CTA_INGRES          ,'L',001,0,'','Acepta;Ingresos',0,''
+ C020=CTA_LEN             ,'N',003,0,'','Longitud',0,''
+ C021=CTA_MONFIN          ,'L',001,0,'','Moneda para Ajuste Financiero',0,''
+ C022=CTA_MONFIS          ,'C',001,0,'','Moneda Ajsute Fiscal',0,''
+ C023=CTA_NIVEL           ,'N',003,0,'','Nivel',0,''
+ C024=CTA_NOMBRE          ,'C',040,0,'','Nombre Anterior',0,''
+ C025=CTA_NUMMEM          ,'N',007,0,'','Memo',0,''
+ C026=CTA_ORIGEN          ,'C',003,0,'','Origen',0,''
+ C027=CTA_PAGOS           ,'L',001,0,'','Acepta Pagos',0,''
+ C028=CTA_PRESEN          ,'C',040,0,'','C¢digo de Presentaci¢n',0,''
+ C029=CTA_PROPIE          ,'C',030,0,'','Propiedad de las Cuentas',0,''
+ C030=CTA_SIGN18          ,'C',001,0,'','Signo',0,''
+ C031=CTA_SUBN18          ,'C',030,0,'','Categor¡a NIF18',0,''
+ C032=CTA_UTDED           ,'N',004,0,'','UT-Gastos;Deducibles',0,''
 [END_FIELDS]
 
 [TABLE_MAIN]
@@ -71,18 +72,18 @@
  T020=DPGRU_CTA               , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
  T021=DPIVATIP_CTA            , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
  T022=DPLIBCOMPRASDET         , CTA_CODMOD,CTA_CODIGO=LBC_CODMOD,LBC_CODCTA, <UPDATE> <DELETE> <RUN>
- T023=DPLIBVENTASDET          , CTA_CODMOD,CTA_CODIGO=LBC_CODMOD,LBC_CODCTA, <UPDATE> <DELETE> <RUN>
- T024=DPPLACOS_CTA            , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T025=DPPROVEEDOR_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T026=DPSERIEFISCAL_CTA       , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T027=DPTIPDOCCLIGRU_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T028=DPTIPDOCCLI_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T029=DPTIPDOCDIFCAM          , CTA_CODMOD,CTA_CODIGO=DDC_CTAMOD,DDC_CODCTA, <UPDATE> <DELETE> <RUN>
- T030=DPTIPDOCPROGRU_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T031=DPTIPDOCPRO_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T032=DPVALAGREGADO_CTA       , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T033=NMOTRASNM_CTA           , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
- T034=DPTIPDOCCLIMOT_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T023=DPPLACOS_CTA            , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T024=DPPROVEEDOR_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T025=DPSERIEFISCAL_CTA       , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T026=DPTIPDOCCLIGRU_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T027=DPTIPDOCCLI_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T028=DPTIPDOCDIFCAM          , CTA_CODMOD,CTA_CODIGO=DDC_CTAMOD,DDC_CODCTA, <UPDATE> <DELETE> <RUN>
+ T029=DPTIPDOCPROGRU_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T030=DPTIPDOCPRO_CTA         , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T031=DPVALAGREGADO_CTA       , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T032=NMOTRASNM_CTA           , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T033=DPTIPDOCCLIMOT_CTA      , CTA_CODMOD,CTA_CODIGO=CIC_CTAMOD,CIC_CUENTA, <UPDATE> <DELETE> <RUN>
+ T034=DPLIBVENTASDET          , CTA_CODMOD,CTA_CODIGO=LBC_CODMOD,LBC_CODCTA, <UPDATE> <DELETE> <RUN>
 [END_TABLE_REL
 
 [LINK_VIRTUAL]
@@ -103,7 +104,6 @@
  SELECT * FROM DPCTA INNER JOIN DPCODINTEGRA_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT CTR_DESCRI FROM DPCTA INNER JOIN DPCONRETISLR ON CTR_CODIGO=CTA_CODCON
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPACTIVOS ON CTA_CODIGO=ATV_CTADEP
- SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPAGRCONTAB ON CTA_CODIGO=AGC_CODCTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPASIENTOCENCOS ON CTA_CODIGO=ACC_CODCTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPASIENTOS ON CTA_CODMOD=MOC_CTAMOD AND CTA_CODIGO=MOC_CUENTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPCLIENTES ON CTA_CODIGO=CLI_CUENTA
@@ -114,10 +114,7 @@
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPCTA ON CTA_CODIGO=CPP_CODCTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPDPTOPRODUCC ON CTA_CODIGO=DEP_CTACON
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPINVTRAN ON CTA_CODIGO=TAB_CUENTA
- SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPIVATIP ON CTA_CODIGO=TIP_CTACRE
- SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPIVATIP ON CTA_CODIGO=TIP_CTADEB
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPIVATIP ON CTA_CODIGO=TIP_SINCRE
- SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPPROVEEDOR ON CTA_CODIGO=PRO_CTACON
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPPROVEEDOR ON CTA_CODIGO=PRO_CUENTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPTIPDOCCLI ON CTA_CODIGO=TDC_CODCTA
  SELECT CTA_DESCRI FROM DPCTA INNER JOIN DPVALAGREGADO ON CTA_CODIGO=VAA_CODCTA
@@ -134,7 +131,6 @@
  SELECT * FROM DPCTA INNER JOIN DPGRU_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPIVATIP_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPLIBCOMPRASDET ON LBC_CODMOD=CTA_CODMOD AND LBC_CODCTA=CTA_CODIGO
- SELECT * FROM DPCTA INNER JOIN DPLIBVENTASDET ON LBC_CODMOD=CTA_CODMOD AND LBC_CODCTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPPLACOS_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPPROVEEDOR_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPSERIEFISCAL_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
@@ -146,6 +142,7 @@
  SELECT * FROM DPCTA INNER JOIN DPVALAGREGADO_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN NMOTRASNM_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
  SELECT * FROM DPCTA INNER JOIN DPTIPDOCCLIMOT_CTA ON CIC_CTAMOD=CTA_CODMOD AND CIC_CUENTA=CTA_CODIGO
+ SELECT * FROM DPCTA INNER JOIN DPLIBVENTASDET ON LBC_CODMOD=CTA_CODMOD AND LBC_CODCTA=CTA_CODIGO
 [END_INNER_JOIN]
 
 [OPTIONS]
@@ -164,11 +161,18 @@
  C013=CTA_PROPIE          ,Revaluaci¢n Activo                                                              
  C014=CTA_SIGN18          ,+ Suma                                                                          
  C015=CTA_SIGN18          ,- Resta                                                                         
- C016=CTA_SUBN18          ,1.Operaci¢n                                                                     
- C017=CTA_SUBN18          ,2.Inversi¢n                                                                     
- C018=CTA_SUBN18          ,3.Financiaci¢n                                                                  
- C019=CTA_SUBN18          ,4.Impuesto a la Renta                                                           
- C020=CTA_SUBN18          ,5.Operaciones Discontinuadas                                                    
+ C016=CTA_SUBN18          ,1.4.Operaci¢n (Ingresos)                                                        
+ C017=CTA_SUBN18          ,1.5.Operaci¢n (Costo)                                                           
+ C018=CTA_SUBN18          ,1.6.Operaci¢n (Gasto)                                                           
+ C019=CTA_SUBN18          ,2.4.Inversi¢n (Ingresos)                                                        
+ C020=CTA_SUBN18          ,2.5.Inversi¢n (Costo)                                                           
+ C021=CTA_SUBN18          ,2.6.Inversi¢n (Gasto)                                                           
+ C022=CTA_SUBN18          ,3.4.Financiaci¢n (Ingresos)                                                     
+ C023=CTA_SUBN18          ,3.5.Financiaci¢n (Costo)                                                        
+ C024=CTA_SUBN18          ,3.6.Financiaci¢n (Gasto)                                                        
+ C025=CTA_SUBN18          ,4.4.Operaciones Discontinuadas (Ingresos)                                       
+ C026=CTA_SUBN18          ,4.5.Operaciones Discontinuadas (Costo)                                          
+ C027=CTA_SUBN18          ,4.6.Operaciones Discontinuadas (Gastos)                                         
 [END_OPTIONS]
 
 [COMENTARIOS]
